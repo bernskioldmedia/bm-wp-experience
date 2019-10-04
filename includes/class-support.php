@@ -31,6 +31,11 @@ class Support {
 	 */
 	public static function load_beacon() {
 
+		// Hide the beacon if disabled.
+		if ( false === apply_filters( 'bm_wpexp_show_support', true ) ) {
+			return;
+		}
+
 		// Get current user object.
 		$current_user = wp_get_current_user();
 
@@ -41,8 +46,8 @@ class Support {
 		$email      = $current_user->user_email;
 
 		// Get current admin screen.
-		$screen = get_current_screen();
-		$screen_id = isset($screen->id) ? $screen->id : '';
+		$screen     = get_current_screen();
+		$screen_id  = isset($screen->id) ? $screen->id : '';
 
 		// Get current URL
 		$url = self::get_current_url();
