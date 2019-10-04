@@ -2,7 +2,8 @@
 /**
  * Plugin Name: BM WP Experience
  * Plugin URI:  https://www.bernskioldmedia.com
- * Description: Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.
+ * Description: Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have
+ * found runs WordPress best.
  * Version:     1.0.0
  * Author:      Bernskiold Media
  * Author URI:  https://www.bernskioldmedia.com
@@ -59,6 +60,10 @@ class BM_WP_Experience {
 	 */
 	protected const DATABASE_VERSION = '1000';
 
+	/**
+	 * URL to the GitHub Repository for the plugin.
+	 */
+	protected const GITHUB_REPO = 'https://github.com/bernskioldmedia/bm-wp-experience';
 
 	/**
 	 * Plugin Class Instance Variable
@@ -175,8 +180,7 @@ class BM_WP_Experience {
 		/**
 		 * Abstracts
 		 */
-		
-		
+
 
 		/**
 		 * Other
@@ -281,14 +285,12 @@ class BM_WP_Experience {
 	}
 
 	/**
-	 * Get Data Store Object
+	 * Get the URL to the GitHub repository.
 	 *
-	 * @param string $key
-	 *
-	 * @return \stdClass
+	 * @return string
 	 */
-	public function get_data_store( $key ) {
-		return $this->data_stores[ $key ];
+	public static function get_github_url() {
+		return self::GITHUB_REPO;
 	}
 
 }
@@ -304,3 +306,18 @@ function bm_wp_experience() {
 
 // Initialize the class instance only once.
 bm_wp_experience();
+
+/**
+ * Update Checker
+ */
+$bm_wp_experience_updater = \Puc_v4_Factory::buildUpdateChecker( BM_WP_Experience::get_github_url(), __FILE__, 'bm-wp-experience' );
+$bm_wp_experience_updater->getVcsApi()->enableReleaseAssets();
+
+// Add our own plugin icon.
+$bm_wp_experience_updater->addResultFilter( function ( $plugin_info ) {
+	$plugin_info->icons = [
+		'svg' => BM_WP_Experience::get_assets_url( 'icons/bm.svg' ),
+	];
+
+	return $plugin_info;
+} );
