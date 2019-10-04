@@ -58,3 +58,4 @@ node_modules/
 ehthumbs.db
 Thumbs.db
 /vendor/
+!vendor/yahnis-elsts/plugin-update-checker/*
