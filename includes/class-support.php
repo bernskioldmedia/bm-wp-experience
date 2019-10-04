@@ -42,6 +42,7 @@ class Support {
 
 		// Get current admin screen.
 		$screen = get_current_screen();
+		$screen_id = isset($screen->id) ? $screen->id : '';
 
 		// Get current URL
 		$url = self::get_current_url();
@@ -50,19 +51,7 @@ class Support {
 		$locale = get_user_locale( $current_user->ID );
 
 		ob_start(); ?>
-		<script type="text/javascript">! function( e, t, n ) {
-				function a() {
-					var e = t.getElementsByTagName( "script" )[ 0 ], n = t.createElement( "script" );
-					n.type = "text/javascript", n.async = ! 0, n.src = "https://beacon-v2.helpscout.net", e.parentNode.insertBefore( n, e )
-				}
-
-				if ( e.Beacon = n = function( t, n, a ) {
-					e.Beacon.readyQueue.push( { method: t, options: n, data: a } )
-				}, n.readyQueue = [], "complete" === t.readyState ) return a();
-				e.attachEvent ? e.attachEvent( "onload", a ) : e.addEventListener( "load", a, ! 1 )
-			}( window, document, window.Beacon || function() {
-			} );
-		</script>
+		<script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
 		<script type="text/javascript">
 
 			window.Beacon( 'init', '400d429a-e257-4a5d-bd60-97953b3a81c4' );
@@ -75,7 +64,7 @@ class Support {
 
 			Beacon( 'session-data', {
 				"Website": '<?php echo esc_js( get_bloginfo( 'name' ) ); ?>',
-				"Current Admin Screen": '<?php echo esc_js( $screen->id ); ?>',
+				"Current Admin Screen": '<?php echo esc_js( $screen ); ?>',
 				"Current URL": '<?php echo esc_js( $url ); ?>'
 			} );
 
