@@ -36,10 +36,6 @@ class Cleanup {
 		// Blank Search Query Fix.
 		add_filter( 'request', [ self::class, 'blank_search_fix' ] );
 
-		// Customize Admin.
-		add_filter( 'admin_footer_text', [ self::class, 'change_admin_footer_text' ] );
-		add_action( 'admin_menu', [ self::class, 'admin_no_footer_version' ] );
-
 	}
 
 	/**
@@ -130,29 +126,6 @@ class Cleanup {
 
 		return $query_vars;
 
-	}
-
-	/**
-	 * Change Admin Footer Text
-	 *
-	 * @return void
-	 */
-	public static function change_admin_footer_text() {
-
-		/* translators: 1. Website Name 2. Theme Author Name 3. Theme Author URL */
-		$text = sprintf( __( '%1$s Admin Panel. Website developed by <a href="%3$s">%2$s</a>.', 'THEMETEXTDOMAIN' ), get_bloginfo( 'name' ), Theme::get_author(), Theme::get_author_url() );
-
-		echo wp_kses_post( $text );
-
-	}
-
-	/**
-	 * Admin No Footer Version
-	 *
-	 * @return void
-	 */
-	public static function admin_no_footer_version() {
-		remove_filter( 'update_footer', 'core_update_footer' );
 	}
 
 }
