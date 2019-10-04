@@ -18,6 +18,7 @@ class Plugins {
 	 * Hooks & Actions
 	 */
 	public static function init() {
+	
 		add_filter( 'install_plugins_tabs', [ self::class, 'add_suggested_plugin_install_link' ] );
 		add_filter( 'install_plugins_table_api_args_bmedia', [ self::class, 'plugins_api_args' ] );
 
@@ -32,7 +33,7 @@ class Plugins {
 
 		add_filter( 'plugin_row_meta', [ self::class, 'show_plugin_meta' ], 100, 4 );
 
-		add_action( 'admin_head-plugins.php', [ 'show_deactivation_warning' ] );
+		add_action( 'admin_head-plugins.php', [ self::class, 'show_deactivation_warning' ] );
 
 	}
 
@@ -46,7 +47,7 @@ class Plugins {
 	public static function add_suggested_plugin_install_link( $tabs ) {
 
 		$new_tabs = [
-			'bmedia' => esc_html__( 'Bernskiold Media Suggested', 'bm-wp-experience' ),
+			'bmedia' => esc_html__( 'BM Suggested', 'bm-wp-experience' ),
 		];
 
 		foreach ( $tabs as $key => $value ) {
@@ -102,7 +103,7 @@ class Plugins {
 			<p>
 				<?php
 				// translators: 1. Link to Suggested Plugins
-				echo wp_kses_post( sprintf( __( "Some plugins may affect the display, performance, and reliability of your website negatively. Please consider <a href='%s'>Bernskiold Media suggestions</a> and if in doubt consult with Bernskiold Media support.", 'tenup' ), esc_url( network_admin_url( 'plugin-install.php?tab=bmedia' ) ) ) );
+				echo wp_kses_post( sprintf( __( "Some plugins may affect the display, performance, and reliability of your website negatively. Please consider <a href='%s'>Bernskiold Media suggestions</a> and if in doubt consult with Bernskiold Media support.", 'bm-wp-experience' ), esc_url( network_admin_url( 'plugin-install.php?tab=bmedia' ) ) ) );
 				?>
 			</p>
 		</div>
