@@ -187,7 +187,7 @@ class BM_WP_Experience {
 		require_once 'includes/class-plugins.php';
 		require_once 'includes/class-rest-api.php';
 		require_once 'includes/class-security.php';
-		require_once 'includes/class-support.php';
+		require_once 'includes/class-support.php'
 
 	}
 
@@ -311,7 +311,7 @@ bm_wp_experience();
 /**
  * Update Checker
  */
-$bm_wp_experience_updater = \Puc_v4_Factory::buildUpdateChecker( BM_WP_Experience::get_github_url(), __FILE__, 'bm-wp-experience' );
+$bm_wp_experience_updater = \Puc_v4p8_Factory::buildUpdateChecker( BM_WP_Experience::get_github_url(), __FILE__, 'bm-wp-experience' );
 $bm_wp_experience_updater->getVcsApi()->enableReleaseAssets();
 
 // Add our own plugin icon.
