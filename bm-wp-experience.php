@@ -187,6 +187,7 @@ class BM_WP_Experience {
 		require_once 'includes/class-plugins.php';
 		require_once 'includes/class-rest-api.php';
 		require_once 'includes/class-security.php';
+		require_once 'includes/class-support.php';
 
 	}
 
