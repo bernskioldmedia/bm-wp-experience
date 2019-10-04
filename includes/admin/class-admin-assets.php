@@ -3,10 +3,10 @@
  * Handles the loading of scripts and styles for the
  * theme through the proper enqueuing methods.
  *
- * @package BernskioldMedia\Pliant
+ * @package BernskioldMedia\WP\Experience
  **/
 
-namespace BernskioldMedia\Pliant;
+namespace BernskioldMedia\WP\Experience;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Assets Class
  *
- * @package BernskioldMedia\Pliant
+ * @package BernskioldMedia\WP\Experience
  */
 class Assets {
 
@@ -42,12 +42,12 @@ class Assets {
 		/**
 		 * Register Main Stylesheet.
 		 */
-		wp_register_style( 'wp-plugin-scaffold-public', WP_Plugin_Scaffold::get_assets_url() . '/styles/dist/app.css', false, WP_Plugin_Scaffold::get_version(), 'all' );
+		wp_register_style( 'bm-wp-experience-public', BM_WP_Experience::get_assets_url() . '/styles/dist/app.css', false, BM_WP_Experience::get_version(), 'all' );
 
 		/**
 		 * Enqueue Stylesheets.
 		 */
-		wp_enqueue_style( 'wp-plugin-scaffold-public' );
+		wp_enqueue_style( 'bm-wp-experience-public' );
 
 	}
 
@@ -59,12 +59,12 @@ class Assets {
 		/**
 		 * Register Main Stylesheet.
 		 */
-		wp_register_style( 'wp-plugin-scaffold-admin', WP_Plugin_Scaffold::get_assets_url() . '/styles/dist/admin.css', false, WP_Plugin_Scaffold::get_version(), 'all' );
+		wp_register_style( 'bm-wp-experience-admin', BM_WP_Experience::get_assets_url() . '/styles/dist/admin.css', false, BM_WP_Experience::get_version(), 'all' );
 
 		/**
 		 * Enqueue Stylesheets.
 		 */
-		wp_enqueue_style( 'wp-plugin-scaffold-admin' );
+		wp_enqueue_style( 'bm-wp-experience-admin' );
 
 	}
 
@@ -82,10 +82,10 @@ class Assets {
 		 * Register the main, minified
 		 * and compiled script file.
 		 */
-		wp_register_script( 'wp-plugin-scaffold-app', WP_Plugin_Scaffold::get_assets_url() . '/scripts/dist/app.js', [ 'jquery' ], WP_Plugin_Scaffold::get_version(), true );
+		wp_register_script( 'bm-wp-experience-app', BM_WP_Experience::get_assets_url() . '/scripts/dist/app.js', [ 'jquery' ], BM_WP_Experience::get_version(), true );
 
 		// Enqueue.
-		wp_enqueue_script( 'wp-plugin-scaffold-app' );
+		wp_enqueue_script( 'bm-wp-experience-app' );
 
 	}
 
@@ -103,10 +103,10 @@ class Assets {
 		 * Register the main, minified
 		 * and compiled script file.
 		 */
-		wp_register_script( 'wp-plugin-scaffold-admin', WP_Plugin_Scaffold::get_assets_url() . '/scripts/dist/admin.js', [ 'jquery' ], WP_Plugin_Scaffold::get_version(), true );
+		wp_register_script( 'bm-wp-experience-admin', BM_WP_Experience::get_assets_url() . '/scripts/dist/admin.js', [ 'jquery' ], BM_WP_Experience::get_version(), true );
 
 		// Enqueue.
-		wp_enqueue_script( 'wp-plugin-scaffold-admin' );
+		wp_enqueue_script( 'bm-wp-experience-admin' );
 
 	}
 }
