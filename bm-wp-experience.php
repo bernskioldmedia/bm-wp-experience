@@ -159,6 +159,10 @@ class BM_WP_Experience {
 	public function admin_includes() {
 		if ( is_admin() ) {
 
+			require_once 'includes/admin/class-admin.php';
+			require_once 'includes/admin/class-admin-assets.php';
+			require_once 'includes/admin/class-admin-bar.php';
+			require_once 'includes/admin/class-admin-pages.php';
 
 		}
 	}
@@ -176,17 +180,13 @@ class BM_WP_Experience {
 	 */
 	private function classes() {
 
-
-		/**
-		 * Abstracts
-		 */
-
-
-		/**
-		 * Other
-		 */
-		require_once 'includes/class-assets.php';
+		require_once 'includes/class-authors.php';
+		require_once 'includes/class-cleanup.php';
+		require_once 'includes/class-dashboard.php';
 		require_once 'includes/class-log.php';
+		require_once 'includes/class-plugins.php';
+		require_once 'includes/class-rest-api.php';
+		require_once 'includes/class-security.php';
 
 	}
 
