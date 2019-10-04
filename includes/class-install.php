@@ -2,10 +2,10 @@
 /**
  * Installer
  *
- * @package BernskioldMedia\WP\PluginScaffold
+ * @package BernskioldMedia\WP\Experience
  */
 
-namespace BernskioldMedia\WP\PluginScaffold;
+namespace BernskioldMedia\WP\Experience;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Install
  *
- * @package BernskioldMedia\WP\PluginScaffold
+ * @package BernskioldMedia\WP\Experience
  */
 class Install {
 

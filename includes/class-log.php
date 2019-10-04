@@ -9,10 +9,10 @@
  *
  * @link    https://github.com/Seldaek/monolog/blob/HEAD/doc/01-usage.md#log-levels
  *
- * @package BernskioldMedia\WP\PluginScaffold
+ * @package BernskioldMedia\WP\Experience
  */
 
-namespace BernskioldMedia\WP\PluginScaffold;
+namespace BernskioldMedia\WP\Experience;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\StreamHandler;
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Log
  *
- * @package BernskioldMedia\WP\PluginScaffold
+ * @package BernskioldMedia\WP\Experience
  */
 class Log {
 

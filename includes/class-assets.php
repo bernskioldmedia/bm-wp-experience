@@ -8,8 +8,6 @@
 
 namespace BernskioldMedia\Pliant;
 
-use BernskioldMedia\WP\PluginScaffold\WP_Plugin_Scaffold;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

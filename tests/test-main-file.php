@@ -2,10 +2,10 @@
 /**
  * Class MainFile
  *
- * @package BernskioldMedia\WP\PluginScaffold
+ * @package BernskioldMedia\WP\Experience
  */
 
-namespace BernskioldMedia\WP\PluginScaffold;
+namespace BernskioldMedia\WP\Experience;
 
 /**
  * Main File Tests
