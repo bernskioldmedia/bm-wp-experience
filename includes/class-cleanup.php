@@ -85,7 +85,8 @@ class Cleanup {
 	}
 
 	/**
-	 * Redirects search results from /?s=query to /search/query/, converts %20 to +
+	 * Redirects search results from /?s=query to /search/query/
+	 * and converts %20 to + in the URL.
 	 *
 	 * @link http://txfx.net/wordpress-plugins/nice-search/
 	 * @link https://github.com/roots/roots/blob/master/lib/cleanup.php
