@@ -183,11 +183,12 @@ class BM_WP_Experience {
 		require_once 'includes/class-authors.php';
 		require_once 'includes/class-cleanup.php';
 		require_once 'includes/class-dashboard.php';
+		require_once 'includes/class-licenses.php';
 		require_once 'includes/class-log.php';
 		require_once 'includes/class-plugins.php';
 		require_once 'includes/class-rest-api.php';
 		require_once 'includes/class-security.php';
-		require_once 'includes/class-support.php'
+		require_once 'includes/class-support.php';
 
 	}
 
