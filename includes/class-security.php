@@ -27,7 +27,6 @@ class Security {
 	 */
 	protected const TEST_TLDS = [
 		'test',
-		'dev',
 		'local',
 		'',
 	];
