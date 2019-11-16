@@ -21,7 +21,7 @@ class Support {
 	 * Initialize
 	 */
 	public static function init() {
-		add_action( 'admin_init', [ self::class, 'load_beacon' ] );
+		add_action( 'admin_print_footer_scripts', [ self::class, 'load_beacon' ], 10 );
 	}
 
 	/**
@@ -31,8 +31,7 @@ class Support {
 	 */
 	public static function load_beacon() {
 
-		// Hide the beacon if disabled.
-		if ( false === apply_filters( 'bm_wpexp_show_support', true ) ) {
+		if ( true === apply_filters( 'bm_wpexp_support_hide_beacon', false ) ) {
 			return;
 		}
 
@@ -46,8 +45,8 @@ class Support {
 		$email      = $current_user->user_email;
 
 		// Get current admin screen.
-		$screen     = get_current_screen();
-		$screen_id  = isset($screen->id) ? $screen->id : '';
+		$screen    = get_current_screen();
+		$screen_id = isset( $screen->id ) ? $screen->id : '';
 
 		// Get current URL
 		$url = self::get_current_url();
@@ -59,18 +58,19 @@ class Support {
 		<script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
 		<script type="text/javascript">
 
-			window.Beacon( 'init', '400d429a-e257-4a5d-bd60-97953b3a81c4' );
+			window.Beacon( "init", "400d429a-e257-4a5d-bd60-97953b3a81c4" );
 
-			Beacon( 'identify', {
+			Beacon( "identify", {
 				name: '<?php echo esc_js( $full_name ); ?>',
 				email: '<?php echo esc_js( $email ); ?>',
 				avatar: '<?php echo esc_url( get_avatar_url( $current_user->ID ) ); ?>'
 			} );
 
-			Beacon( 'session-data', {
+			Beacon( "session-data", {
 				"Website": '<?php echo esc_js( get_bloginfo( 'name' ) ); ?>',
-				"Current Admin Screen": '<?php echo esc_js( $screen ); ?>',
-				"Current URL": '<?php echo esc_js( $url ); ?>'
+				"Current Admin Screen": '<?php echo esc_js( $screen_id ); ?>',
+				"Current URL": '<?php echo esc_js( $url ); ?>',
+				"Locale": '<?php echo esc_js( $locale ); ?>'
 			} );
 
 			window.Beacon( "init", "400d429a-e257-4a5d-bd60-97953b3a81c4" );
