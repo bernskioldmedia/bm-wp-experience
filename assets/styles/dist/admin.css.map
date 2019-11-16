@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"assets/styles/dist/admin.css","sourceRoot":""}
+{"version":3,"sources":["webpack:///./assets/styles/src/admin.scss"],"names":[],"mappings":"AAAA,qCACC,eAGD,gCACC,SAGD,6GAEC","file":"assets/styles/dist/admin.css","sourcesContent":[".toplevel_page_bm-support #wpcontent {\n\tpadding-left: 0;\n}\n\n.toplevel_page_bm-support .wrap {\n\tmargin: 0;\n}\n\n.toplevel_page_bm-support .wpbody-content > .updated,\n.toplevel_page_bm-support .wpbody-content > .notice-success {\n\tdisplay: none;\n}"],"sourceRoot":""}
