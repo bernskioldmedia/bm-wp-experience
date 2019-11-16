@@ -18,7 +18,7 @@ class Plugins {
 	 * Hooks & Actions
 	 */
 	public static function init() {
-	
+
 		add_filter( 'install_plugins_tabs', [ self::class, 'add_suggested_plugin_install_link' ] );
 		add_filter( 'install_plugins_table_api_args_bmedia', [ self::class, 'plugins_api_args' ] );
 
