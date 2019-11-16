@@ -77,7 +77,7 @@ class Authors {
 	 * @return array
 	 */
 	public static function get_whitelisted_domains() {
-		return apply_filters( 'bm_wpexp_whitelisted_domains', self::WHITELISTED_DOMAINS );
+		return apply_filters( 'bm_wpexp_authors_whitelisted_domains', self::WHITELISTED_DOMAINS );
 	}
 
 	/**
@@ -86,7 +86,7 @@ class Authors {
 	 * @return array
 	 */
 	public static function get_email_domains() {
-		return apply_filters( 'bm_wpexp_email_domains', self::EMAIL_DOMAINS );
+		return apply_filters( 'bm_wpexp_authors_email_domains', self::EMAIL_DOMAINS );
 	}
 
 }
