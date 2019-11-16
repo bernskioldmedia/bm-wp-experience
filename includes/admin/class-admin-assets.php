@@ -25,12 +25,12 @@ class Assets {
 	public static function init() {
 
 		// Styles.
-		add_action( 'wp_enqueue_scripts', [ self::class, 'public_styles' ] );
-		add_action( 'admin_enqueue_scripts', [ self::class, 'admin_styles' ] );
+		//add_action( 'wp_enqueue_scripts', [ self::class, 'public_styles' ] );
+		//add_action( 'admin_enqueue_scripts', [ self::class, 'admin_styles' ] );
 
 		// Scripts.
-		add_action( 'wp_enqueue_scripts', [ self::class, 'public_scripts' ] );
-		add_action( 'admin_enqueue_scripts', [ self::class, 'admin_scripts' ] );
+		//add_action( 'wp_enqueue_scripts', [ self::class, 'public_scripts' ] );
+		//add_action( 'admin_enqueue_scripts', [ self::class, 'admin_scripts' ] );
 
 	}
 
