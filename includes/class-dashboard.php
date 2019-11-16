@@ -1,8 +1,8 @@
 <?php
 /**
  * Dashboard Extensions
- * 
- * Remove unnecessary dashboard widgets, and add 
+ *
+ * Remove unnecessary dashboard widgets, and add
  * some custom ones too.
  *
  * @package BernskioldMedia\WP\Experience
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Dashboard {
 
-    /**
+	/**
 	 * Init.
 	 */
 	public static function init() {
@@ -27,9 +27,9 @@ class Dashboard {
 		// Remove non-necessary dashboard widgets.
 		add_action( 'wp_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ] );
 
-    }
-    
-    /**
+	}
+
+	/**
 	 * Remove Dashboard Widgets
 	 *
 	 * @return void
