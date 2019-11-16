@@ -161,7 +161,6 @@ class BM_WP_Experience {
 
 			require_once 'includes/admin/class-admin.php';
 			require_once 'includes/admin/class-admin-assets.php';
-			require_once 'includes/admin/class-admin-bar.php';
 			require_once 'includes/admin/class-admin-pages.php';
 
 		}
@@ -179,6 +178,9 @@ class BM_WP_Experience {
 	 * Include various includes in the system.
 	 */
 	private function classes() {
+
+		// Contrary to its name, it is also loaded publically.
+		require_once 'includes/admin/class-admin-bar.php';
 
 		require_once 'includes/class-authors.php';
 		require_once 'includes/class-cleanup.php';
