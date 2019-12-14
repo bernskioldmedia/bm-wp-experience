@@ -60,7 +60,7 @@ class REST_API {
 	 *
 	 * @return array
 	 */
-	public function restrict_user_endpoints( $endpoints ) {
+	public static function restrict_user_endpoints( $endpoints ) {
 
 		$restrict = self::get_restricted_status();
 
