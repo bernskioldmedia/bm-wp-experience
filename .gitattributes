@@ -16,6 +16,7 @@
 /webpack.mix.js       export-ignore
 /tests                export-ignore
 /bin                  export-ignore
+/vendor/phpunit       export-ignore
 
 ##
 # Handle line endings.
