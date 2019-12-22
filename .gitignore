@@ -20,12 +20,6 @@ node_modules/
 # Ignore .idea
 .idea
 
-# Vendor Files
-vendor/*
-!vendor/yahnis-elsts/plugin-update-checker
-!vendor/composer
-!vendor/autoload.php
-
 # Compiled source #
 ###################
 *.com
