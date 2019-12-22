@@ -24,6 +24,7 @@ class Admin_Bar {
 	public static function hooks() {
 		add_action( 'admin_bar_menu', [ self::class, 'about_bm' ] );
 		add_action( 'admin_bar_menu', [ self::class, 'support' ], 60 );
+		add_action( 'admin_bar_menu', [ self::class, 'customizer' ], 60 );
 		add_action( 'admin_bar_menu', [ self::class, 'remove' ], 999999 );
 
 		add_action( 'wp_enqueue_scripts', [ self::class, 'assets' ] );
@@ -93,6 +94,13 @@ class Admin_Bar {
 			return;
 		}
 
+		/**
+		 * Hide the admin bar link in admin.
+		 */
+		if ( is_admin() ) {
+			return;
+		}
+
 		$wp_admin_bar->add_node( [
 			'id'    => 'bm-support',
 			'title' => '<span class="bm-support-icon"></span> ' . esc_html__( 'Help & Support', 'bm-wp-experience' ),
@@ -100,6 +108,34 @@ class Admin_Bar {
 			'meta'  => [
 				'title' => esc_html__( 'Help & Support', 'bm-wp-experience' ),
 				'class' => 'ab-help-support',
+			],
+		] );
+
+	}
+
+	/**
+	 * Re-hooking the customizer to place it under the home
+	 * menu item on frontend.
+	 *
+	 * @param \WP_Admin_Bar $wp_admin_bar
+	 */
+	public static function customizer( $wp_admin_bar ) {
+
+		/**
+		 * Hide the admin bar link in admin.
+		 */
+		if ( is_admin() ) {
+			return;
+		}
+
+		$wp_admin_bar->add_node( [
+			'id'     => 'bm-customizer',
+			'parent' => 'site-name',
+			'title'  => '<span class="bm-support-icon"></span> ' . esc_html__( 'Customize', 'bm-wp-experience' ),
+			'href'   => esc_url( admin_url( 'customize.php' ) ),
+			'meta'   => [
+				'title' => esc_html__( 'Customize the site appearance.', 'bm-wp-experience' ),
+				'class' => 'ab-customizer',
 			],
 		] );
 
