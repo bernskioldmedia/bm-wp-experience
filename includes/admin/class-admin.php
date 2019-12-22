@@ -31,7 +31,8 @@ class Admin {
 	 */
 	public static function change_admin_footer_text() {
 
-		$new_text = __( 'Thank you for creating with <a href="https://wordpress.org">WordPress</a> and <a href="https://www.bernskioldmedia.com/en/?utm_source=clientsite&utm_medium=dashboard&utm_campaign=footerlink">Bernskiold Media</a>.', 'bm-wp-experience' );
+		/* translators: 1. Site Name */
+		$new_text = sprintf( __( 'Thank you for creating with <a href="https://wordpress.org">WordPress</a> and <a href="https://www.bernskioldmedia.com/en/?utm_source=clientsite&utm_medium=dashboard_link&utm_campaign=%1$s">Bernskiold Media</a>.', 'bm-wp-experience' ), get_bloginfo( 'name' ) );
 
 		return $new_text;
 
