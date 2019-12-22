@@ -23,6 +23,20 @@ class Admin_Pages {
 	 */
 	public static function hooks() {
 		add_action( 'admin_menu', [ self::class, 'register_pages' ] );
+		add_action( 'admin_menu', [ self::class, 'add_reusable_blocks' ] );
+	}
+
+	/**
+	 * Add reusable blocks to pages menu.
+	 * Will be removed in future versions when WP core
+	 * adds its own blocks section.
+	 *
+	 * @since 1.0.1
+	 */
+	public static function add_reusable_blocks() {
+
+		add_submenu_page( 'edit.php?post_type=page', __( 'Reusable Blocks', 'bm-wp-experience' ), __( 'Reusable Blocks', 'bm-wp-experience' ), 'edit_pages', 'edit.php?post_type=wp_block' );
+
 	}
 
 	/**
