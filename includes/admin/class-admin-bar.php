@@ -131,7 +131,7 @@ class Admin_Bar {
 		$wp_admin_bar->add_node( [
 			'id'     => 'bm-customizer',
 			'parent' => 'site-name',
-			'title'  => '<span class="bm-support-icon"></span> ' . esc_html__( 'Customize', 'bm-wp-experience' ),
+			'title'  => esc_html__( 'Customize', 'bm-wp-experience' ),
 			'href'   => esc_url( admin_url( 'customize.php' ) ),
 			'meta'   => [
 				'title' => esc_html__( 'Customize the site appearance.', 'bm-wp-experience' ),
