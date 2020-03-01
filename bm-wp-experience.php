@@ -3,7 +3,7 @@
  * Plugin Name: BM WP Experience
  * Plugin URI:  https://www.bernskioldmedia.com
  * Description: Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.
- * Version:     1.0.2
+ * Version:     1.0.3
  * Author:      Bernskiold Media
  * Author URI:  https://www.bernskioldmedia.com
  * Text Domain: bm-wp-experience
@@ -50,7 +50,7 @@ class BM_WP_Experience {
 	 *
 	 * @var string
 	 */
-	protected const VERSION = '1.0.2';
+	protected const VERSION = '1.0.3';
 
 	/**
 	 * Database Version
@@ -215,7 +215,7 @@ class BM_WP_Experience {
 	 * Get the path to the plugin folder, or the specified
 	 * file relative to the plugin folder home.
 	 *
-	 * @param string $file
+	 * @param  string  $file
 	 *
 	 * @return string
 	 */
@@ -226,7 +226,7 @@ class BM_WP_Experience {
 	/**
 	 * Get View Template Path
 	 *
-	 * @param string $view_name
+	 * @param  string  $view_name
 	 *
 	 * @return string
 	 */
@@ -238,7 +238,7 @@ class BM_WP_Experience {
 	 * Get the URL to the plugin folder, or the specified
 	 * file relative to the plugin folder home.
 	 *
-	 * @param string $file
+	 * @param  string  $file
 	 *
 	 * @return string
 	 */
@@ -252,7 +252,7 @@ class BM_WP_Experience {
 	 * Get the URL to the assets folder, or the specified
 	 * file relative to the assets folder home.
 	 *
-	 * @param string $file
+	 * @param  string  $file
 	 *
 	 * @return string
 	 */

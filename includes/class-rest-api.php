@@ -21,15 +21,16 @@ class REST_API {
 	public static function hooks() {
 		add_filter( 'rest_authentication_errors', [ self::class, 'restrict' ], 99 );
 		add_filter( 'rest_endpoints', [ self::class, 'restrict_user_endpoints' ] );
+		add_filter( 'determine_current_user', [ self::class, 'handle_basic_auth' ], 20 );
 	}
 
 	/**
 	 * If we have chosen to restrict the REST API, we send a 403
 	 * status back if we are not authenticated.
 	 *
-	 * @param \WP_Error|null|bool $result Error from another authentication handler,
-	 *                                    null if we should handle it, or another value
-	 *                                    if not.
+	 * @param  \WP_Error|null|bool  $result  Error from another authentication handler,
+	 *                                       null if we should handle it, or another value
+	 *                                       if not.
 	 *
 	 * @return \WP_Error|null|bool
 	 */
@@ -56,7 +57,7 @@ class REST_API {
 	 * Restrict requests to user endpoints unless authenticated.
 	 * This will prevent
 	 *
-	 * @param array $endpoints Array of endpoints
+	 * @param  array  $endpoints  Array of endpoints
 	 *
 	 * @return array
 	 */
@@ -100,6 +101,49 @@ class REST_API {
 		}
 
 		return apply_filters( 'bm_wpexp_rest_api_restriction_level', $level );
+
+	}
+
+	/**
+	 * Handle Basic Authentication
+	 *
+	 * @param  \WP_User|null  $user
+	 *
+	 * @return  null|\WP_User
+	 */
+	public static function handle_basic_auth( $user ) {
+
+		// Don't authenticate twice
+		if ( ! empty( $user ) ) {
+			return $user;
+		}
+
+		// Check that we're trying to authenticate
+		if ( ! isset( $_SERVER['PHP_AUTH_USER'] ) ) {
+			return $user;
+		}
+
+		$username = wp_strip_all_tags( $_SERVER['PHP_AUTH_USER'] );
+		$password = wp_strip_all_tags( $_SERVER['PHP_AUTH_PW'] );
+
+		/**
+		 * In multi-site, wp_authenticate_spam_check filter is run on authentication. This filter calls
+		 * get_currentuserinfo which in turn calls the determine_current_user filter. This leads to infinite
+		 * recursion and a stack overflow unless the current function is removed from the determine_current_user
+		 * filter during authentication.
+		 */
+		remove_filter( 'determine_current_user', [ self::class, 'handle_basic_auth' ], 20 );
+
+		$user = wp_authenticate( $username, $password );
+
+		add_filter( 'determine_current_user', [ self::class, 'handle_basic_auth' ], 20 );
+
+
+		if ( is_wp_error( $user ) ) {
+			return null;
+		}
+
+		return $user->ID;
 
 	}
 
