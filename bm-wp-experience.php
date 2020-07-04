@@ -31,6 +31,8 @@
 
 namespace BernskioldMedia\WP\Experience;
 
+use Puc_v4_Factory;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -313,7 +315,7 @@ bm_wp_experience();
 /**
  * Update Checker
  */
-$bm_wp_experience_updater = \Puc_v4p8_Factory::buildUpdateChecker( BM_WP_Experience::get_github_url(), __FILE__, 'bm-wp-experience' );
+$bm_wp_experience_updater = Puc_v4_Factory::buildUpdateChecker( BM_WP_Experience::get_github_url(), __FILE__, 'bm-wp-experience' );
 $bm_wp_experience_updater->getVcsApi()->enableReleaseAssets();
 
 // Add our own plugin icon.
