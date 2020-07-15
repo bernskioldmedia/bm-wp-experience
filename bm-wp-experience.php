@@ -233,7 +233,7 @@ class BM_WP_Experience {
 	 * @return string
 	 */
 	public static function get_view_path( $view_name ) {
-		return self::get_path( '/views/' . $view_name . '.php' );
+		return self::get_path( 'views/' . $view_name . '.php' );
 	}
 
 	/**
@@ -259,7 +259,7 @@ class BM_WP_Experience {
 	 * @return string
 	 */
 	public static function get_assets_url( $file = '' ) {
-		return self::get_url( '/assets/' . $file );
+		return self::get_url( 'assets/' . $file );
 	}
 
 	/**
