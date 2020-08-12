@@ -3,7 +3,7 @@
  * Plugin Name: BM WP Experience
  * Plugin URI:  https://www.bernskioldmedia.com
  * Description: Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.
- * Version:     1.0.3
+ * Version:     1.1.0
  * Author:      Bernskiold Media
  * Author URI:  https://www.bernskioldmedia.com
  * Text Domain: bm-wp-experience
@@ -52,7 +52,7 @@ class BM_WP_Experience {
 	 *
 	 * @var string
 	 */
-	protected const VERSION = '1.0.3';
+	protected const VERSION = '1.1.0';
 
 	/**
 	 * Database Version
@@ -130,7 +130,7 @@ class BM_WP_Experience {
 	private function init_hooks() {
 
 		require_once 'includes/class-install.php';
-		register_activation_hook( __FILE__, [ __NAMESPACE__ . '\Install', 'install' ] );
+		register_activation_hook( __FILE__, [ Install::class, 'install' ] );
 
 		add_action( 'init', [ $this, 'init' ] );
 		add_action( 'admin_init', [ $this, 'admin_init' ] );
