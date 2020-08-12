@@ -185,6 +185,7 @@ class BM_WP_Experience {
 
 		require_once 'includes/class-authors.php';
 		require_once 'includes/class-cleanup.php';
+		require_once 'includes/class-customizer.php';
 		require_once 'includes/class-dashboard.php';
 		require_once 'includes/class-licenses.php';
 		require_once 'includes/class-log.php';
