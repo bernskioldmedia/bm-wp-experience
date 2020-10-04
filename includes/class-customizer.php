@@ -28,7 +28,7 @@ class Customizer {
 	 *
 	 * @var string
 	 */
-	protected static $custom_css_file_name = 'app.css';
+	protected static $custom_css_file_name = 'app';
 
 	/**
 	 * Custom CSS ID.
@@ -140,7 +140,13 @@ class Customizer {
 	 * @return string
 	 */
 	protected static function get_custom_css_file_name() {
-		return apply_filters( 'bm_wpexp_custom_css_file_name', self::$custom_css_file_name );
+		$base = apply_filters( 'bm_wpexp_custom_css_file_name', self::$custom_css_file_name );
+
+		if ( is_multisite() ) {
+			return $base . '-' . get_current_blog_id() . '.css';
+		}
+
+		return $base . '.css';
 	}
 
 	/**
