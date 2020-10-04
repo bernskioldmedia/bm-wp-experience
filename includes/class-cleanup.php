@@ -45,8 +45,11 @@ class Cleanup {
 	 */
 	public static function wp_head_cleanup() {
 
-		remove_action( 'wp_head', 'feed_links', 2 );
-		remove_action( 'wp_head', 'feed_links_extra', 3 );
+		if ( self::should_disable_feed_urls() ) {
+			remove_action( 'wp_head', 'feed_links', 2 );
+			remove_action( 'wp_head', 'feed_links_extra', 3 );
+		}
+
 		remove_action( 'wp_head', 'rsd_link' );
 		remove_action( 'wp_head', 'wlwmanifest_link' );
 		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
@@ -70,7 +73,7 @@ class Cleanup {
 	/**
 	 * Disable Emojis in TincyMCE
 	 *
-	 * @param array $plugins Active Plugins Array.
+	 * @param  array  $plugins  Active Plugins Array.
 	 *
 	 * @return array
 	 */
@@ -115,7 +118,7 @@ class Cleanup {
 	 * @link http://core.trac.wordpress.org/ticket/11330
 	 * @link https://github.com/roots/roots/blob/master/lib/cleanup.php
 	 *
-	 * @param array $query_vars Query Vars.
+	 * @param  array  $query_vars  Query Vars.
 	 *
 	 * @return array
 	 */
@@ -129,6 +132,23 @@ class Cleanup {
 
 	}
 
+	/**
+	 * Lets you select in the application config whether to
+	 * disable feed URLs in the <head> or not.
+	 *
+	 * If undefined, defaults to true = disable.
+	 *
+	 * @return bool
+	 */
+	protected static function should_disable_feed_urls(): bool {
+
+		if ( ! defined( 'BM_WP_DISABLE_FEED_URLS' ) ) {
+			return true;
+		}
+
+		return BM_WP_DISABLE_FEED_URLS;
+
+	}
 }
 
 Cleanup::init();
