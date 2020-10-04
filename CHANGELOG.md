@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Unreleased]
 
+## [1.1.1] - 2020-10-04
+
+### Added
+- A constant `BM_WP_DISABLE_FEED_URLS` that controls whether the feed URLs will be cleaned or not. Defaults to current behavior which is true.
+
+### Changed
+- Updated the composer.json for proper formatting.
+- Removing dev scripts from the committed composer vendor folder.
+
+### Fixed
+- An issue where the extra CSS file saving would overrite on multisite.
+
+### Removed
+- Unused folders that were left as placeholders.
+
 ## [1.1.0] - 2020-08-12
 
 ### Added

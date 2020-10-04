@@ -1,6 +1,6 @@
 {
-  "name": "bernskioldmedia/ilmenite-plugin-base",
-  "description": "A WordPress plugin base that we use at Bernskiold Media when developing client specific plugins.",
+  "name": "bernskioldmedia/bm-wp-experience",
+  "description": "Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.",
   "type": "wordpress-plugin",
   "require": {
 	"composer/installers": "~1.0",

@@ -1,6 +1,4 @@
 {
-    "/assets/scripts/dist/app.js": "/assets/scripts/dist/app.js",
-    "/assets/styles/dist/app.css": "/assets/styles/dist/app.css",
     "/assets/styles/dist/admin-bar.css": "/assets/styles/dist/admin-bar.css",
     "/assets/styles/dist/admin.css": "/assets/styles/dist/admin.css"
 }
