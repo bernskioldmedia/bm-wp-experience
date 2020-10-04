@@ -4,47 +4,61 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BM WP Experience 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bm-wp-experience\n"
-"POT-Creation-Date: 2019-11-16 16:12:23+00:00\n"
-"PO-Revision-Date: 2019-11-16 17:12+0100\n"
+"POT-Creation-Date: 2020-10-04 10:48:31+00:00\n"
+"PO-Revision-Date: 2020-10-04 12:49+0200\n"
 "Last-Translator: Erik Bernskiold <erik@bernskioldmedia.com>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/admin/class-admin-bar.php:98 includes/admin/class-admin-bar.php:101
-#: includes/admin/class-admin-pages.php:37
+#: includes/admin/class-admin-bar.php:106
+#: includes/admin/class-admin-bar.php:109
+#: includes/admin/class-admin-pages.php:51
 msgid "Help & Support"
 msgstr "Hjälp & support"
+
+#: includes/admin/class-admin-bar.php:134
+msgid "Customize"
+msgstr "Anpassa"
+
+#: includes/admin/class-admin-bar.php:137
+msgid "Customize the site appearance."
+msgstr "Anpassa webbplatsens utseende."
 
 #. Author of the plugin/theme
 msgid "Bernskiold Media"
 msgstr "Bernskiold Media"
 
-#: includes/admin/class-admin-bar.php:137
-#: includes/admin/class-admin-bar.php:140
-#: includes/admin/class-admin-pages.php:47
+#: includes/admin/class-admin-bar.php:173
+#: includes/admin/class-admin-bar.php:176
+#: includes/admin/class-admin-pages.php:61
 msgid "About Bernskiold Media"
 msgstr "Om Bernskiold Media"
 
-#: includes/admin/class-admin-bar.php:155
-#: includes/admin/class-admin-bar.php:158
+#: includes/admin/class-admin-bar.php:191
+#: includes/admin/class-admin-bar.php:194
 msgid "Academy"
 msgstr "Academy"
 
-#: includes/admin/class-admin-bar.php:165
-#: includes/admin/class-admin-bar.php:168
+#: includes/admin/class-admin-bar.php:201
+#: includes/admin/class-admin-bar.php:204
 msgid "Services"
 msgstr "Tjänster"
 
-#: includes/admin/class-admin.php:34
+#: includes/admin/class-admin-pages.php:38
+msgid "Reusable Blocks"
+msgstr "Återanvändbara block"
+
+#. translators: 1. Site Name
+#: includes/admin/class-admin.php:35
 msgid ""
 "Thank you for creating with <a href=\"https://wordpress.org\">WordPress</a> "
 "and <a href=\"https://www.bernskioldmedia.com/en/?"
-"utm_source=clientsite&utm_medium=dashboard&utm_campaign=footerlink"
+"utm_source=clientsite&utm_medium=dashboard_link&utm_campaign=%1$s"
 "\">Bernskiold Media</a>."
 msgstr ""
 "Tack för att du skapar med <a href=\"https://wordpress.org\">WordPress</a> "
@@ -86,12 +100,12 @@ msgstr ""
 "\n"
 "Är du säker på att du vill deaktivera?"
 
-#: includes/class-rest-api.php:46
+#: includes/class-rest-api.php:47
 msgid "Authentication is required."
 msgstr "Autentisering krävs."
 
 #. translators: 1. Lost Password URL
-#: includes/class-security.php:100
+#: includes/class-security.php:101
 msgid ""
 "Please <a href=\"%s\">reset your password</a> in order to meet the security "
 "guidelines for this website."
@@ -99,23 +113,23 @@ msgstr ""
 "Vänligen <a href=\"%s\">återställ ditt lösenord</a> för att uppfylla "
 "säkerhetsriktlinjerna för denna webbplats."
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:54
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:54
 msgid "View details"
 msgstr "Visa detaljer"
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:77
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:77
 msgid "More information about %s"
 msgstr "Mer information om %s"
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:128
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:128
 msgid "Check for updates"
 msgstr "Sök efter uppdateringar"
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:223
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:223
 msgid "Unknown update checker status \"%s\""
 msgstr "Okänd status på uppdateringskontrollen: \"%s\""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p8/Vcs/PluginUpdateChecker.php:98
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Vcs/PluginUpdateChecker.php:98
 msgid "There is no changelog available."
 msgstr "Det finns ingen ändringslogg tillgänglig."
 
@@ -135,27 +149,27 @@ msgstr ""
 "Ger en WordPress-upplevelse med justeringar och förbättringar som vi på "
 "Bernskiold Media tycker optimerar WordPress på bästa sätt."
 
-#: includes/admin/class-admin-bar.php:156
+#: includes/admin/class-admin-bar.php:192
 msgctxt "BM Academy URL"
 msgid "https://www.bernskioldmedia.com/en/academy/"
 msgstr "https://www.bernskioldmedia.com/sv/academy/"
 
-#: includes/admin/class-admin-bar.php:166
+#: includes/admin/class-admin-bar.php:202
 msgctxt "BM Services URL"
 msgid "https://www.bernskioldmedia.com/en/services/"
 msgstr "https://www.bernskioldmedia.com/en/tjanster/"
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:213
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:213
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr "Tillägget %s har senaste versionen."
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:215
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:215
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr "Det finns en ny version av tillägget %s tillgängligt."
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p8/Plugin/Ui.php:217
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:217
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
 msgstr ""
