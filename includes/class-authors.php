@@ -12,8 +12,6 @@ class Authors {
 	protected const WHITELISTED_DOMAINS = [
 		'bernskioldmedia.com',
 		'bernskioldmedia.se',
-		'bmedia.dev',
-		'bmdev.zone',
 	];
 
 	/**
