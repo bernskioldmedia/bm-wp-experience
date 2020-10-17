@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Unreleased]
 
+## [1.2.0] - 2020-10-17
+
+### Added
+- Sanitization of upload filenames. No more bad characters that cause problems.
+
+### Changed
+- No longer whitelist BM dev domains for author indexing.
+
+### Fixed
+- Added missing namespaces to some files.
+
+### Removed
+- Support beacon because of low usage.
+- Non-working ACF license management.
+
 ## [1.1.1] - 2020-10-04
 
 ### Added
