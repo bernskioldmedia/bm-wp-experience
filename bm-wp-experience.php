@@ -189,6 +189,7 @@ class BM_WP_Experience {
 		require_once 'includes/class-dashboard.php';
 		require_once 'includes/class-licenses.php';
 		require_once 'includes/class-log.php';
+		require_once 'includes/class-media.php';
 		require_once 'includes/class-plugins.php';
 		require_once 'includes/class-rest-api.php';
 		require_once 'includes/class-security.php';
