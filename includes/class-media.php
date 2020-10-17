@@ -3,6 +3,8 @@
  * Media Tweaks
  **/
 
+namespace BernskioldMedia\WP\Experience;
+
 class Media {
 
 	/**

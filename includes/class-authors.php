@@ -3,6 +3,8 @@
  * Authors Tweaks
  **/
 
+namespace BernskioldMedia\WP\Experience;
+
 class Authors {
 
 	/**

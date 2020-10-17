@@ -7,6 +7,8 @@
  * unlimited license plugins. So we iinterface with them here.
  **/
 
+namespace BernskioldMedia\WP\Experience;
+
 class Licenses {
 
 	/**
