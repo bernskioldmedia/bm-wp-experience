@@ -29,7 +29,6 @@ class Security {
 		'test',
 		'local',
 		'dev',
-		'',
 	];
 
 	/**
@@ -84,9 +83,9 @@ class Security {
 	/**
 	 * Prevent users from authenticating if they are using a weak password
 	 *
-	 * @param \WP_User $user     User object
-	 * @param string   $username Username
-	 * @param string   $password Password
+	 * @param  \WP_User  $user      User object
+	 * @param  string    $username  Username
+	 * @param  string    $password  Password
 	 *
 	 * @return \WP_User|\WP_Error
 	 */
@@ -98,7 +97,8 @@ class Security {
 		if ( ! in_array( $tld, self::get_test_tlds(), true ) && in_array( strtolower( trim( $password ) ), self::get_weak_passwords(), true ) ) {
 
 			/* translators: 1. Lost Password URL */
-			$error_message = sprintf( __( 'Please <a href="%s">reset your password</a> in order to meet the security guidelines for this website.', 'bm-wp-experience' ), esc_url( wp_lostpassword_url() ) );
+			$error_message = sprintf( __( 'Please <a href="%s">reset your password</a> in order to meet the security guidelines for this website.', 'bm-wp-experience' ),
+				esc_url( wp_lostpassword_url() ) );
 
 			return new \WP_Error( 'Auth Error', $error_message );
 		}
