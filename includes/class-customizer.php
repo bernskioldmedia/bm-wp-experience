@@ -44,7 +44,7 @@ class Customizer {
 		add_action( 'customize_save_after', [ self::class, 'save_custom_css_to_file' ] );
 
 		// Load the custom CSS file.
-		add_action( 'wp_enqueue_scripts', [ self::class, 'load_custom_css' ] );
+		add_action( 'wp_enqueue_scripts', [ self::class, 'load_custom_css' ], 999 );
 
 		// Remove the inline styles.
 		remove_action( 'wp_head', 'wp_custom_css_cb', 101 );
