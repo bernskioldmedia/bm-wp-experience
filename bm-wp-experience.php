@@ -132,7 +132,6 @@ class BM_WP_Experience {
 		register_activation_hook( __FILE__, [ Install::class, 'install' ] );
 
 		add_action( 'init', [ $this, 'init' ] );
-		add_action( 'admin_init', [ $this, 'admin_init' ] );
 
 	}
 
@@ -158,20 +157,11 @@ class BM_WP_Experience {
 	 */
 	public function admin_includes() {
 		if ( is_admin() ) {
-
 			require_once 'includes/admin/class-admin.php';
 			require_once 'includes/admin/class-admin-assets.php';
 			require_once 'includes/admin/class-admin-pages.php';
 
 		}
-	}
-
-	/**
-	 * Initialize Admin Only Features (admin_init)
-	 */
-	public function admin_init() {
-
-
 	}
 
 	/**
