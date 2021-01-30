@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Unreleased]
 
+## [1.3.0] - 2021-01-30
+
+### Added
+- Fix for REST API pagination with pages that caused duplicates in Gutenberg, until WordPress fixes this in core.
+
+### Changed
+- Hook custom stylesheet much later to try and override most other loaded styles.
+- Updated the BM logo. We've got a new one.
+
+### Fixed
+- Custom styles weren't loaded in the editor.
+
 ## [1.2.0] - 2020-10-17
 
 ### Added
