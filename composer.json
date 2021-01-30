@@ -4,7 +4,6 @@
   "type": "wordpress-plugin",
   "require": {
 	"composer/installers": "~1.0",
-	"monolog/monolog": "^1.23",
 	"yahnis-elsts/plugin-update-checker": "^4.8"
   },
   "require-dev": {

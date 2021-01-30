@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require 'vendor/autoload.php';
+require 'vendor/yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
 
 /**
  * Class BM_WP_Experience
@@ -177,7 +177,6 @@ class BM_WP_Experience {
 		require_once 'includes/class-cleanup.php';
 		require_once 'includes/class-customizer.php';
 		require_once 'includes/class-dashboard.php';
-		require_once 'includes/class-log.php';
 		require_once 'includes/class-media.php';
 		require_once 'includes/class-plugins.php';
 		require_once 'includes/class-rest-api.php';
