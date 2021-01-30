@@ -50,7 +50,7 @@ class Admin_Bar {
 	 * Nodes can be designated as "always", "admin" or "frontend"
 	 * to choose where we will remove them from.
 	 *
-	 * @param \WP_Admin_Bar $wp_admin_bar
+	 * @param  \WP_Admin_Bar  $wp_admin_bar
 	 */
 	public static function remove( $wp_admin_bar ) {
 
@@ -82,7 +82,7 @@ class Admin_Bar {
 	/**
 	 * Add a "Support" menu item to the admin bar.
 	 *
-	 * @param \WP_Admin_Bar $wp_admin_bar
+	 * @param  \WP_Admin_Bar  $wp_admin_bar
 	 */
 	public static function support( $wp_admin_bar ) {
 
@@ -117,7 +117,7 @@ class Admin_Bar {
 	 * Re-hooking the customizer to place it under the home
 	 * menu item on frontend.
 	 *
-	 * @param \WP_Admin_Bar $wp_admin_bar
+	 * @param  \WP_Admin_Bar  $wp_admin_bar
 	 */
 	public static function customizer( $wp_admin_bar ) {
 
@@ -144,7 +144,7 @@ class Admin_Bar {
 	/**
 	 * Add an "About BM" menu item to the admin bar.
 	 *
-	 * @param \WP_Admin_Bar $wp_admin_bar
+	 * @param  \WP_Admin_Bar  $wp_admin_bar
 	 */
 	public static function about_bm( $wp_admin_bar ) {
 
@@ -192,6 +192,16 @@ class Admin_Bar {
 				'href'   => esc_url( _x( 'https://www.bernskioldmedia.com/en/academy/', 'BM Academy URL', 'bm-wp-experience' ) ),
 				'meta'   => [
 					'title' => esc_html__( 'Academy', 'bm-wp-experience' ),
+				],
+			] );
+
+			$wp_admin_bar->add_node( [
+				'id'     => 'bm-support',
+				'parent' => 'bm-list',
+				'title'  => esc_html__( 'Support', 'bm-wp-experience' ),
+				'href'   => esc_url( _x( 'https://support.bernskioldmedia.com/', 'BM Support URL', 'bm-wp-experience' ) ),
+				'meta'   => [
+					'title' => esc_html__( 'Support', 'bm-wp-experience' ),
 				],
 			] );
 
