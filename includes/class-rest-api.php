@@ -8,6 +8,8 @@
 
 namespace BernskioldMedia\WP\Experience;
 
+use WP_Query;
+
 /**
  * Class REST_API
  *
@@ -22,6 +24,7 @@ class REST_API {
 		add_filter( 'rest_authentication_errors', [ self::class, 'restrict' ], 99 );
 		add_filter( 'rest_endpoints', [ self::class, 'restrict_user_endpoints' ] );
 		add_filter( 'determine_current_user', [ self::class, 'handle_basic_auth' ], 20 );
+		add_filter( 'posts_orderby', [ self::class, 'posts_orderby' ], 10, 2 );
 	}
 
 	/**
@@ -147,6 +150,29 @@ class REST_API {
 
 	}
 
+	/**
+	 * Filters a REST query ordered by menu_order to ensure a repeatable sequence over multiple pages.
+	 *
+	 * This can be removed when WordPress core supports pagination of requests ordering on menu_order.
+	 *
+	 * @see https://core.trac.wordpress.org/ticket/46294
+	 *
+	 * @param  string     $orderby  Current orderby value.
+	 * @param  \WP_Query  $query    Query object.
+	 *
+	 * @return string
+	 */
+	function posts_orderby( string $orderby, WP_Query $query ) {
+		global $wpdb;
+
+		if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+			if ( 'menu_order' === $query->query['orderby'] ) {
+				$orderby = "$wpdb->posts.menu_order,$wpdb->posts.post_title,$wpdb->posts.id " . $query->query['order'];
+			}
+		}
+
+		return $orderby;
+	}
 }
 
 REST_API::hooks();
