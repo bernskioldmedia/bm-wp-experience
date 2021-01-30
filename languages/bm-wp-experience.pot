@@ -1,17 +1,17 @@
-# Copyright (C) 2020 Bernskiold Media
+# Copyright (C) 2021 Bernskiold Media
 # This file is distributed under the same license as the BM WP Experience package.
 msgid ""
 msgstr ""
-"Project-Id-Version: BM WP Experience 1.1.1\n"
+"Project-Id-Version: BM WP Experience 1.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bm-wp-experience\n"
-"POT-Creation-Date: 2020-10-04 10:48:31+00:00\n"
+"POT-Creation-Date: 2021-01-30 11:16:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: node-wp-i18n 1.2.3\n"
+"X-Generator: node-wp-i18n 1.2.4\n"
 
 #: includes/admin/class-admin-bar.php:106
 #: includes/admin/class-admin-bar.php:109
@@ -44,6 +44,11 @@ msgstr ""
 
 #: includes/admin/class-admin-bar.php:201
 #: includes/admin/class-admin-bar.php:204
+msgid "Support"
+msgstr ""
+
+#: includes/admin/class-admin-bar.php:211
+#: includes/admin/class-admin-bar.php:214
 msgid "Services"
 msgstr ""
 
@@ -85,34 +90,34 @@ msgid ""
 "Are you sure you want to deactivate?"
 msgstr ""
 
-#: includes/class-rest-api.php:47
+#: includes/class-rest-api.php:50
 msgid "Authentication is required."
 msgstr ""
 
-#: includes/class-security.php:101
+#: includes/class-security.php:100
 #. translators: 1. Lost Password URL
 msgid ""
 "Please <a href=\"%s\">reset your password</a> in order to meet the security "
 "guidelines for this website."
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:54
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:54
 msgid "View details"
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:77
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:77
 msgid "More information about %s"
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:128
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:128
 msgid "Check for updates"
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:223
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:223
 msgid "Unknown update checker status \"%s\""
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Vcs/PluginUpdateChecker.php:98
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Vcs/PluginUpdateChecker.php:98
 msgid "There is no changelog available."
 msgstr ""
 
@@ -136,21 +141,26 @@ msgid "https://www.bernskioldmedia.com/en/academy/"
 msgstr ""
 
 #: includes/admin/class-admin-bar.php:202
+msgctxt "BM Support URL"
+msgid "https://support.bernskioldmedia.com/"
+msgstr ""
+
+#: includes/admin/class-admin-bar.php:212
 msgctxt "BM Services URL"
 msgid "https://www.bernskioldmedia.com/en/services/"
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:213
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:213
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:215
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:215
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p9/Plugin/Ui.php:217
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:217
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
 msgstr ""
