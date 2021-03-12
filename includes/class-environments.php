@@ -24,6 +24,14 @@ class Environments {
 		add_filter( 'wp_robots', [ self::class, 'disable_indexing_outside_production' ], 99999 );
 	}
 
+	/**
+	 * When we are not on production environments, we automatically
+	 * disable indexing to prevent human mistakes.
+	 *
+	 * @param  array  $robots
+	 *
+	 * @return mixed
+	 */
 	public static function disable_indexing_outside_production( $robots ) {
 
 		if ( 'production' === wp_get_environment_type() ) {
@@ -40,6 +48,10 @@ class Environments {
 		return $robots;
 	}
 
+	/**
+	 * Output the public staging notice to the footer,
+	 * clearly showing when we have a staging environment.
+	 */
 	public static function show_public_staging_notice() {
 
 		if ( 'staging' !== wp_get_environment_type() ) {
@@ -55,7 +67,6 @@ class Environments {
 		}
 
 		include BM_WP_Experience::get_view_path( 'public/staging-message' );
-
 	}
 
 	/**
@@ -84,12 +95,22 @@ class Environments {
 
 	}
 
+	/**
+	 * Decide if the user should see the environment notices.
+	 *
+	 * @return bool
+	 */
 	protected static function should_user_see() {
 		$required_role = apply_filters( 'bm_wpexp_environment_role', 'manage_options' );
 
 		return current_user_can( $required_role );
 	}
 
+	/**
+	 * Get a human readable label of the current environment.
+	 *
+	 * @return string
+	 */
 	protected static function get_environment_label() {
 
 		$environment = wp_get_environment_type();
