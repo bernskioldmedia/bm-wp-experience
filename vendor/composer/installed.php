@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '034b127b1c8f12b11326eabf6378b39dc748210c',
+    'reference' => 'af0222a858a68535668f742dbfaa27a8624b338d',
     'name' => 'bernskioldmedia/bm-wp-experience',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '034b127b1c8f12b11326eabf6378b39dc748210c',
+      'reference' => 'af0222a858a68535668f742dbfaa27a8624b338d',
     ),
     'composer/installers' => 
     array (

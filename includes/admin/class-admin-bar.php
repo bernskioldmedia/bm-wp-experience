@@ -55,6 +55,7 @@ class Admin_Bar {
 	public static function remove( $wp_admin_bar ) {
 
 		$nodes_to_remove = apply_filters( 'bm_wpexp_remove_admin_bar_items', [
+			'wp-logo'    => 'always',
 			'comments'   => 'always',
 			'wpseo-menu' => 'always',
 			'new_draft'  => 'always',

@@ -19,3 +19,47 @@
 	background-position: center;
 	background-size: 16px;
 }
+
+#wpadminbar .ab-environment-label {
+
+	.ab-item {
+		font-weight: bold;
+	}
+
+	&.environment--local,
+	&.environment--local {}
+
+	&.environment--production {
+		.ab-item {
+			background-color: rgba(250, 0, 0, 0.5);
+		}
+
+		&:hover .ab-item {
+			color: white !important;
+			background-color: rgba(250, 0, 0, 0.75) !important;
+		}
+	}
+
+	&.environment--staging {
+		.ab-item {
+			background-color: rgba(119, 68, 0, 1);
+		}
+
+		&:hover .ab-item {
+			color: white !important;
+			background-color: rgba(130, 75, 0, 1) !important;
+		}
+	}
+
+	&.environment--local,
+	&.environment--development {
+		.ab-item {
+			background-color: rgba(80, 80, 80, 1);
+		}
+
+		&:hover .ab-item {
+			color: white !important;
+			background-color: rgba(100, 100, 100, 1) !important;
+		}
+	}
+}
