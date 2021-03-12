@@ -95,7 +95,7 @@ class Multisite {
 	 */
 	public static function local_blog_password_reset_email_name( $title ) {
 		/* translators: 1. Blog Name */
-		return sprintf( __( '[%s] Password Reset' ), wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES ) );
+		return sprintf( __( '[%s] Password Reset', 'bm-wp-experience' ), wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES ) );
 	}
 
 }
