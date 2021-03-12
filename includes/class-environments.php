@@ -7,6 +7,7 @@
  * as well as having a clear staging message printed.
  *
  * @package BernskioldMedia\WP\Experience
+ * @since   1.4.0
  **/
 
 namespace BernskioldMedia\WP\Experience;
@@ -15,6 +16,7 @@ namespace BernskioldMedia\WP\Experience;
  * Class Environments
  *
  * @package BernskioldMedia\WP\Experience
+ * @since   1.4.0
  */
 class Environments {
 
@@ -31,6 +33,7 @@ class Environments {
 	 * @param  array  $robots
 	 *
 	 * @return mixed
+	 * @since 1.4.0
 	 */
 	public static function disable_indexing_outside_production( $robots ) {
 
@@ -51,6 +54,8 @@ class Environments {
 	/**
 	 * Output the public staging notice to the footer,
 	 * clearly showing when we have a staging environment.
+	 *
+	 * @since 1.4.0
 	 */
 	public static function show_public_staging_notice() {
 
@@ -73,6 +78,8 @@ class Environments {
 	 * Add a menu bar item showing the current environment.
 	 *
 	 * @param  \WP_Admin_Bar  $wp_admin_bar
+	 *
+	 * @since 1.4.0
 	 */
 	public static function show_in_admin_bar( $wp_admin_bar ) {
 
@@ -99,6 +106,7 @@ class Environments {
 	 * Decide if the user should see the environment notices.
 	 *
 	 * @return bool
+	 * @since 1.4.0
 	 */
 	protected static function should_user_see() {
 		$required_role = apply_filters( 'bm_wpexp_environment_role', 'manage_options' );
@@ -110,6 +118,7 @@ class Environments {
 	 * Get a human readable label of the current environment.
 	 *
 	 * @return string
+	 * @since 1.4.0
 	 */
 	protected static function get_environment_label() {
 
