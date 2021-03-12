@@ -21,6 +21,23 @@ class Environments {
 	public static function init() {
 		add_filter( 'admin_bar_menu', [ self::class, 'show_in_admin_bar' ], 40 );
 		add_action( 'wp_footer', [ self::class, 'show_public_staging_notice' ] );
+		add_filter( 'wp_robots', [ self::class, 'disable_indexing_outside_production' ], 99999 );
+	}
+
+	public static function disable_indexing_outside_production( $robots ) {
+
+		if ( 'production' === wp_get_environment_type() ) {
+			return $robots;
+		}
+
+		if ( false === apply_filters( 'bm_wpexp_environment_disable_indexing_for_non_production', true ) ) {
+			return $robots;
+		}
+
+		$robots['noindex']  = true;
+		$robots['nofollow'] = true;
+
+		return $robots;
 	}
 
 	public static function show_public_staging_notice() {
