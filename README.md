@@ -34,6 +34,9 @@ For almost every feature there is a filter, constant or action allowing you to c
 ### Media
 - Sanitize uploaded file names from non-ASCII characters.
 
+### Multisite
+- Have password resets go through the local site where the user is signing in, instead of the main site.
+
 ### Plugins
 - Include a tab with suggested plugins from Bernskiold Media.
 - Add a warning when disabling this plugin.
