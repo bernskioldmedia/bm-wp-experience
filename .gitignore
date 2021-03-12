@@ -57,3 +57,5 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
+/mix.js.map
+/mix-manifest.json
