@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Unreleased]
 
+## [1.4.0] - 2021-03-12
+
 ### Added
 - Public notice for logged in admins to clearly show when on a staging environment. (#34)
 - Notice in the admin bar showing environment for admins. (#34)
