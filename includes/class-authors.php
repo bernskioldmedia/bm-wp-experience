@@ -11,7 +11,7 @@ class Authors {
 	 * On these domain names, agency users may be indexed.
 	 * Includes sub-domains.
 	 */
-	protected const WHITELISTED_DOMAINS = [
+	protected const ALLOWLISTED_DOMAINS = [
 		'bernskioldmedia.com',
 		'bernskioldmedia.se',
 	];
@@ -47,7 +47,7 @@ class Authors {
 		$current_domain     = parse_url( get_site_url(), PHP_URL_HOST );
 
 		// Perform partial match on domains to catch subdomains or variation of domain name
-		$filtered_domains = array_filter( self::get_whitelisted_domains(), function ( $domain ) use ( $current_domain ) {
+		$filtered_domains = array_filter( self::get_allowlisted_domains(), function ( $domain ) use ( $current_domain ) {
 			return false !== stripos( $current_domain, $domain );
 		} );
 
@@ -72,12 +72,12 @@ class Authors {
 	}
 
 	/**
-	 * Get Whitelisted Domains
+	 * Get Allowlisted Domains
 	 *
 	 * @return array
 	 */
-	public static function get_whitelisted_domains() {
-		return apply_filters( 'bm_wpexp_authors_whitelisted_domains', self::WHITELISTED_DOMAINS );
+	public static function get_allowlisted_domains() {
+		return apply_filters( 'bm_wpexp_authors_allowlisted_domains', self::ALLOWLISTED_DOMAINS );
 	}
 
 	/**

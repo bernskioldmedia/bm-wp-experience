@@ -10,6 +10,9 @@ All notable changes to this project will be documented in this file. This projec
 - Prevent non-production environments from being indexed. (#35)
 - Multisite: Make password resets use the local blog and not the main blog. (#33)
 
+### Changed
+- Renamed the `bm_wpexp_authors_whitelisted_domains` to `bm_wpexp_authors_allowlisted_domains`.
+
 ## [1.3.0] - 2021-01-30
 
 ### Added

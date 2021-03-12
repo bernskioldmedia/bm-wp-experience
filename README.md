@@ -90,5 +90,5 @@ For almost every feature there is a filter, constant or action allowing you to c
 ### Users
 
 `bm_wpexp_allow_bm_author_index` - Define as `true` to allow indexing of agency users.
-`bm_wpexp_authors_whitelisted_domains` - Allows you to customize the array of domains where agency users are always allowed (our own websites).
+`bm_wpexp_authors_allowlisted_domains` - Allows you to customize the array of domains where agency users are always allowed (our own websites).
 `bm_wpexp_authors_email_domains` - Allows you to customize the array of email domains that designate agency users.
