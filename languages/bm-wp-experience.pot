@@ -4,26 +4,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BM WP Experience 1.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bm-wp-experience\n"
-"POT-Creation-Date: 2021-01-30 11:16:34+00:00\n"
+"POT-Creation-Date: 2021-03-12 12:32:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: node-wp-i18n 1.2.4\n"
+"X-Generator: node-wp-i18n 1.2.5\n"
 
-#: includes/admin/class-admin-bar.php:106
-#: includes/admin/class-admin-bar.php:109
+#: includes/admin/class-admin-bar.php:107
+#: includes/admin/class-admin-bar.php:110
 #: includes/admin/class-admin-pages.php:51
 msgid "Help & Support"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:134
+#: includes/admin/class-admin-bar.php:135
 msgid "Customize"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:137
+#: includes/admin/class-admin-bar.php:138
 msgid "Customize the site appearance."
 msgstr ""
 
@@ -31,24 +31,24 @@ msgstr ""
 msgid "Bernskiold Media"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:173
-#: includes/admin/class-admin-bar.php:176
+#: includes/admin/class-admin-bar.php:174
+#: includes/admin/class-admin-bar.php:177
 #: includes/admin/class-admin-pages.php:61
 msgid "About Bernskiold Media"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:191
-#: includes/admin/class-admin-bar.php:194
+#: includes/admin/class-admin-bar.php:192
+#: includes/admin/class-admin-bar.php:195
 msgid "Academy"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:201
-#: includes/admin/class-admin-bar.php:204
+#: includes/admin/class-admin-bar.php:202
+#: includes/admin/class-admin-bar.php:205
 msgid "Support"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:211
-#: includes/admin/class-admin-bar.php:214
+#: includes/admin/class-admin-bar.php:212
+#: includes/admin/class-admin-bar.php:215
 msgid "Services"
 msgstr ""
 
@@ -63,6 +63,23 @@ msgid ""
 "and <a "
 "href=\"https://www.bernskioldmedia.com/en/?utm_source=clientsite&utm_"
 "medium=dashboard_link&utm_campaign=%1$s\">Bernskiold Media</a>."
+msgstr ""
+
+#: includes/class-environments.php:130
+msgid "Local"
+msgstr ""
+
+#: includes/class-environments.php:134
+msgid "Staging"
+msgstr ""
+
+#: includes/class-environments.php:139
+msgid "Production"
+msgstr ""
+
+#: includes/class-multisite.php:98
+#. translators: 1. Blog Name
+msgid "[%s] Password Reset"
 msgstr ""
 
 #: includes/class-plugins.php:50
@@ -94,7 +111,7 @@ msgstr ""
 msgid "Authentication is required."
 msgstr ""
 
-#: includes/class-security.php:100
+#: includes/class-security.php:93
 #. translators: 1. Lost Password URL
 msgid ""
 "Please <a href=\"%s\">reset your password</a> in order to meet the security "
@@ -121,6 +138,10 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
+#: views/public/staging-message.php:2
+msgid "Staging Environment"
+msgstr ""
+
 #. Plugin Name of the plugin/theme
 msgid "BM WP Experience"
 msgstr ""
@@ -135,17 +156,17 @@ msgid ""
 "we at Bernskiold Media have found runs WordPress best."
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:192
+#: includes/admin/class-admin-bar.php:193
 msgctxt "BM Academy URL"
 msgid "https://www.bernskioldmedia.com/en/academy/"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:202
+#: includes/admin/class-admin-bar.php:203
 msgctxt "BM Support URL"
 msgid "https://support.bernskioldmedia.com/"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:212
+#: includes/admin/class-admin-bar.php:213
 msgctxt "BM Services URL"
 msgid "https://www.bernskioldmedia.com/en/services/"
 msgstr ""
