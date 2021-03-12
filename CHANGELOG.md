@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file. This projec
 
 ### Changed
 - Renamed the `bm_wpexp_authors_whitelisted_domains` to `bm_wpexp_authors_allowlisted_domains`.
+- Environment control of when weak passwords are allowed is now done via `wp_get_environment_type` instead of via TLD.
+
+### Removed
+- `bm_wpexp_test_tlds` no longer exists as it is not necessary.
 
 ## [1.3.0] - 2021-01-30
 

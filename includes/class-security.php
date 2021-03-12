@@ -22,16 +22,6 @@ namespace BernskioldMedia\WP\Experience;
 class Security {
 
 	/**
-	 * Top-level domains on local testing sites.
-	 * These are whitelisted for weak passwords.
-	 */
-	protected const TEST_TLDS = [
-		'test',
-		'local',
-		'dev',
-	];
-
-	/**
 	 * Define passwords that we always classify as weak.
 	 */
 	protected const WEEK_PASSWORDS = [
@@ -91,10 +81,13 @@ class Security {
 	 */
 	public static function prevent_weak_password_auth( $user, $username, $password ) {
 
-		// Get the TLD from the domain.
-		$tld = preg_replace( '#^.*\.(.*)$#', '$1', wp_parse_url( site_url(), PHP_URL_HOST ) );
+		// On local and development environments we allow a weak password.
+		if ( in_array( wp_get_environment_type(), [ 'development', 'local' ], true ) ) {
+			return $user;
+		}
 
-		if ( ! in_array( $tld, self::get_test_tlds(), true ) && in_array( strtolower( trim( $password ) ), self::get_weak_passwords(), true ) ) {
+		// If the password is tweak, prevent saving.
+		if ( in_array( strtolower( trim( $password ) ), self::get_weak_passwords(), true ) ) {
 
 			/* translators: 1. Lost Password URL */
 			$error_message = sprintf( __( 'Please <a href="%s">reset your password</a> in order to meet the security guidelines for this website.', 'bm-wp-experience' ),
@@ -117,18 +110,6 @@ class Security {
 	public static function get_weak_passwords() {
 		return apply_filters( 'bm_wpexp_weak_passwords', self::WEEK_PASSWORDS );
 	}
-
-	/**
-	 * Get test top-level domains.
-	 *
-	 * @filter bm_wpexp_test_tlds
-	 *
-	 * @return array
-	 */
-	public static function get_test_tlds() {
-		return apply_filters( 'bm_wpexp_test_tlds', self::TEST_TLDS );
-	}
-
 
 }
 

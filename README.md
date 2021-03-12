@@ -85,7 +85,6 @@ For almost every feature there is a filter, constant or action allowing you to c
 ### Security
 
 `bm_wpexp_weak_passwords` - Customize the array of passwords that are always considered weak.
-`bm_wpexp_test_tlds` - Customize the list of TLDs that designate a testing environment.
 
 ### Users
 
