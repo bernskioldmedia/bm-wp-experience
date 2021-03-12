@@ -38,7 +38,7 @@ class Plugins {
 	}
 
 	/**
-	 * Add 10up suggested tab to plugins install screen
+	 * Add BM suggested tab to plugins install screen
 	 *
 	 * @param array $tabs
 	 *
