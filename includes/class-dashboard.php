@@ -23,10 +23,8 @@ class Dashboard {
 	 * Init.
 	 */
 	public static function init() {
-
 		// Remove non-necessary dashboard widgets.
 		add_action( 'wp_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ] );
-
 	}
 
 	/**
@@ -35,7 +33,6 @@ class Dashboard {
 	 * @return void
 	 */
 	public static function remove_dashboard_widgets() {
-
 		global $wp_meta_boxes;
 
 		// Hide Some Default Dashboard Widgets.
@@ -46,6 +43,7 @@ class Dashboard {
 		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
 		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts'] );
 
+		remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );
 	}
 
 }
