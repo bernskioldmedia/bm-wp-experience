@@ -27,7 +27,7 @@
 	"license": "GPL-2.0+",
 	"devDependencies": {
 		"babel-preset-react": "^6.24.*",
-		"browser-sync": "^2.26.14",
+		"browser-sync": "^2.27.4",
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"copy-webpack-plugin": "^5.1.2",
 		"cross-env": "^6.0.*",
@@ -40,10 +40,10 @@
 		"postcss-custom-properties": "^9.2.0",
 		"postcss-preset-env": "^6.7.*",
 		"rimraf": "^3.0.2",
-		"sass": "^1.32.8",
+		"sass": "^1.35.2",
 		"sass-loader": "^8.0.2",
 		"stylelint": "^11.0.*",
 		"stylelint-config-wordpress": "^15.0.*",
-		"vue-template-compiler": "^2.6.12"
+		"vue-template-compiler": "^2.6.14"
 	}
 }
