@@ -67,7 +67,8 @@ const sassConfig = {
 
 // Process the scss files.
 mix.sass( `${ assetPaths.styles }/src/admin-bar.scss`, `${ assetPaths.styles }/dist`, sassConfig )
-   .sass( `${ assetPaths.styles }/src/admin.scss`, `${ assetPaths.styles }/dist`, sassConfig );
+   .sass( `${ assetPaths.styles }/src/admin.scss`, `${ assetPaths.styles }/dist`, sassConfig )
+   .sass( `${ assetPaths.styles }/src/admin-theme.scss`, `${ assetPaths.styles }/dist`, sassConfig );
 
 /**
  * Maybe enable sourcemaps

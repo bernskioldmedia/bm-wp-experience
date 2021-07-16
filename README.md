@@ -11,11 +11,12 @@ For almost every feature there is a filter, constant or action allowing you to c
 
 ### Admin & Admin Bar
 
-- Add slight Bernskiold Media brandning
+- Add slight Bernskiold Media branding
 - Add links to Bernskiold Media help and support
 - Clean up the admin bar with less important nodes (Comments, Yoast SEO, New Draft, Customizer)
 - Remove lesser used dashboard widgets.
 - Remove import/export pages by default and only show them if `BM_WP_ENABLE_IMPORT_EXPORT` is set to true. Most of the time we don't need this.
+- Custom branded admin theme in our colors.
 
 ### Block Editor
 
@@ -81,6 +82,8 @@ For almost every feature there is a filter, constant or action allowing you to c
 ### Admin
 
 **Enable Import/Export Screens:** By default we hide the import/export pages. If you need these in the menu, set `BM_WP_ENABLE_IMPORT_EXPORT` to `true`.
+
+`bm_wpexp_custom_admin_theme` - Return false to disable our custom branding.
 
 ### Block Editor
 
