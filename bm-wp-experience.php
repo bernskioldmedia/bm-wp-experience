@@ -148,7 +148,7 @@ class BM_WP_Experience {
 	 *
 	 */
 	public function admin_includes() {
-		if ( is_admin() ) {
+		if ( is_admin() || is_network_admin() ) {
 			require_once 'includes/admin/class-admin.php';
 			require_once 'includes/admin/class-admin-assets.php';
 			require_once 'includes/admin/class-admin-pages.php';
