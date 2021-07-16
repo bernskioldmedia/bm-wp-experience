@@ -15,6 +15,7 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Add links to Bernskiold Media help and support
 - Clean up the admin bar with less important nodes (Comments, Yoast SEO, New Draft, Customizer)
 - Remove lesser used dashboard widgets.
+- Remove import/export pages by default and only show them if `BM_WP_ENABLE_IMPORT_EXPORT` is set to true. Most of the time we don't need this.
 
 ### Block Editor
 
@@ -77,6 +78,10 @@ For almost every feature there is a filter, constant or action allowing you to c
 
 ## Constants & Filters
 
+### Admin
+
+**Enable Import/Export Screens:** By default we hide the import/export pages. If you need these in the menu, set `BM_WP_ENABLE_IMPORT_EXPORT` to `true`.
+
 ### Block Editor
 
 **Enable Block Directory:** By default the block directory is disabled. Define and set `BM_WP_ENABLE_BLOCK_DIRECTORY` to `false` to allow it.
@@ -116,7 +121,8 @@ default) restricts all endpoints. `users` restricts only the users endpoint. `no
 
 ### Updates
 
-**Hide update notices:** By default all update notices are showing, however for websites on a maintenance plan it is nice if users doesn't see any updates in the admin as they are managed anyway (just not daily). Define `BM_WP_HAS_MAINTENANCE_PLAN` to `true` in the config to disable updates.
+**Hide update notices:** By default all update notices are showing, however for websites on a maintenance plan it is nice if users doesn't see any updates in the admin as they are
+managed anyway (just not daily). Define `BM_WP_HAS_MAINTENANCE_PLAN` to `true` in the config to disable updates.
 
 ### Users
 
