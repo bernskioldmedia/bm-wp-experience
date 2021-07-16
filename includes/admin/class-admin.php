@@ -23,7 +23,7 @@ class Admin {
 		add_filter( 'admin_footer_text', [ self::class, 'change_admin_footer_text' ] );
 
 		// Remove the help tab.
-		add_filter( 'contextual_help_list', [ self::class, 'remove_help_tab' ] );
+		add_filter( 'admin_head', [ self::class, 'remove_help_tab' ] );
 	}
 
 	/**
@@ -52,8 +52,7 @@ class Admin {
 	 * Remove the help tabs.
 	 */
 	public static function remove_help_tab() {
-		global $current_screen;
-		$current_screen->remove_help_tabs();
+		get_current_screen()->remove_help_tabs();
 	}
 
 }
