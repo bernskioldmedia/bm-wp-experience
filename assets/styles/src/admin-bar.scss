@@ -63,3 +63,16 @@
 		}
 	}
 }
+
+#wpadminbar,
+#wpadminbar .menupop .ab-sub-wrapper, #wpadminbar .shortlink-input {
+	background-color: #1f2b3d;
+}
+
+#wpadminbar .quicklinks .menupop ul.ab-sub-secondary, #wpadminbar .quicklinks .menupop ul.ab-sub-secondary .ab-submenu {
+	background-color: #2b3b54;
+}
+
+#wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus, #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item, #wpadminbar .ab-top-menu > li.hover > .ab-item {
+	background-color: #2b3b54;
+}
