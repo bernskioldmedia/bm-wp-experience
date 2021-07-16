@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file. This projec
 - Remove import/export pages unless `BM_WP_ENABLE_IMPORT_EXPORT` is set to `true`.
 - Custom branded admin theme.
 - Add our help widget with support docs.
+- If Admin Columns Pro is active, we load a set of upgraded admin column views.
 
 ### Changed
 
