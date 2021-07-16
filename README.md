@@ -28,6 +28,10 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Disable emoji styles
 - Remove links to feeds unless specified by `BM_WP_DISABLE_FEED_URLS`.
 
+### Comments
+
+- Disable comments on site or network. Can be overridden with `BM_WP_ENABLE_COMMENTS`.
+
 ### Customizer
 
 - Enqueues extra CSS from the customizer to a file instead of printing inline.
@@ -76,6 +80,11 @@ For almost every feature there is a filter, constant or action allowing you to c
 ### Cleanup
 
 **Allow Feed URLs:** By default we hide feed URLs from the header. If you are using feeds, set `BM_WP_DISABLE_FEED_URLS` to `false` in your configuration.
+
+### Comments
+
+**Allow Comments:** By default we disable comments as more often than note we don't need them. If you want comments, just set `BM_WP_ENABLE_COMMENTS` to `true` in your
+configuration.
 
 ### Customizer
 

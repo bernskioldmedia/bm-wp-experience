@@ -164,6 +164,7 @@ class BM_WP_Experience {
 
 		require_once 'includes/class-block-editor.php';
 		require_once 'includes/class-cleanup.php';
+		require_once 'includes/class-comments.php';
 		require_once 'includes/class-customizer.php';
 		require_once 'includes/class-dashboard.php';
 		require_once 'includes/class-environments.php';
@@ -189,6 +190,15 @@ class BM_WP_Experience {
 
 		// Otherwise, load from the plugin.
 		load_plugin_textdomain( 'bm-wp-experience', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	}
+
+	/**
+	 * Check if this plugin is activated for the entire network.
+	 *
+	 * @return bool
+	 */
+	public static function is_network_active() {
+		return ( is_multisite() && array_key_exists( plugin_basename( __FILE__ ), (array) get_site_option( 'active_sitewide_plugins' ) ) );
 	}
 
 	/**

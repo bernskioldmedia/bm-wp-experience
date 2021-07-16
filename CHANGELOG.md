@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This projec
 ### Added
 
 - Remove color scheme picker by default. Can be overridden via filter `bm_wpexp_remove_color_scheme_picker`.
+- Disable comments by default. Can be overridden by defining `BM_WP_ENABLE_COMMENTS` as true in the config.
 
 ### Changed
 
