@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. This projec
 - Remove the help tab.
 - Remove import/export pages unless `BM_WP_ENABLE_IMPORT_EXPORT` is set to `true`.
 - Custom branded admin theme.
+- Add our help widget with support docs.
 
 ### Changed
 
