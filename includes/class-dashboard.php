@@ -23,8 +23,9 @@ class Dashboard {
 	 * Init.
 	 */
 	public static function init() {
-		// Remove non-necessary dashboard widgets.
 		add_action( 'wp_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ] );
+		add_action( 'wp_network_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ] );
+		add_action( 'wp_user_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ] );
 	}
 
 	/**
@@ -33,17 +34,18 @@ class Dashboard {
 	 * @return void
 	 */
 	public static function remove_dashboard_widgets() {
-		global $wp_meta_boxes;
+		remove_meta_box( 'dashboard_primary', get_current_screen(), 'side' );
+		remove_meta_box( 'dashboard_secondary', get_current_screen(), 'side' );
+		remove_meta_box( 'dashboard_plugins', get_current_screen(), 'normal' );
+		remove_meta_box( 'dashboard_incoming_links', get_current_screen(), 'normal' );
+		remove_meta_box( 'dashboard_quick_press', get_current_screen(), 'side' );
+		remove_meta_box( 'dashboard_recent_drafts', get_current_screen(), 'side' );
 
-		// Hide Some Default Dashboard Widgets.
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'] );
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links'] );
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts'] );
+		remove_meta_box( 'wpseo-dashboard-overview', get_current_screen(), 'side' );
 
-		remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );
+		if ( Updates::is_on_maintenance_plan() ) {
+			remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' );
+		}
 	}
 
 }
