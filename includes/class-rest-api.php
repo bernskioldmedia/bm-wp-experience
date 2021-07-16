@@ -38,7 +38,6 @@ class REST_API {
 	 * @return \WP_Error|null|bool
 	 */
 	public static function restrict( $result ) {
-
 		// Respect other handlers
 		if ( null !== $result ) {
 			return $result;
@@ -53,7 +52,6 @@ class REST_API {
 		}
 
 		return $result;
-
 	}
 
 	/**
@@ -65,7 +63,6 @@ class REST_API {
 	 * @return array
 	 */
 	public static function restrict_user_endpoints( $endpoints ) {
-
 		$restrict = self::get_restricted_status();
 
 		if ( 'none' === $restrict ) {
@@ -93,18 +90,15 @@ class REST_API {
 	 * @return string
 	 */
 	public static function get_restricted_status() {
-
 		$level = 'all';
 
 		if ( defined( 'BM_WP_RESTRICT_REST_API' ) ) {
-
 			if ( in_array( BM_WP_RESTRICT_REST_API, [ 'all', 'users', 'none' ], true ) ) {
 				$level = BM_WP_RESTRICT_REST_API;
 			}
 		}
 
 		return apply_filters( 'bm_wpexp_rest_api_restriction_level', $level );
-
 	}
 
 	/**
@@ -115,7 +109,6 @@ class REST_API {
 	 * @return  null|\WP_User
 	 */
 	public static function handle_basic_auth( $user ) {
-
 		// Don't authenticate twice
 		if ( ! empty( $user ) ) {
 			return $user;
@@ -147,7 +140,6 @@ class REST_API {
 		}
 
 		return $user->ID;
-
 	}
 
 	/**
@@ -157,12 +149,12 @@ class REST_API {
 	 *
 	 * @see https://core.trac.wordpress.org/ticket/46294
 	 *
-	 * @param  string     $orderby  Current orderby value.
-	 * @param  \WP_Query  $query    Query object.
+	 * @param  string  $orderby  Current orderby value.
+	 * @param  \WP_Query  $query  Query object.
 	 *
 	 * @return string
 	 */
-	function posts_orderby( string $orderby, WP_Query $query ) {
+	public static function posts_orderby( string $orderby, WP_Query $query ) {
 		global $wpdb;
 
 		if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
