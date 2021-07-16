@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Unreleased]
 
+## [2.0.0] - 2021-07-16
+
 ### Added
 
 - Remove color scheme picker by default. Can be overridden via filter `bm_wpexp_remove_color_scheme_picker`.
