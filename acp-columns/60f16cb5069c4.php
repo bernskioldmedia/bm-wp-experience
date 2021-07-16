@@ -2,14 +2,14 @@
 
 return [
 	'version'  => '5.2',
-	'title'    => __( 'Pages' ),
+	'title'    => __( 'Pages', 'bm-wp-experience' ),
 	'type'     => 'page',
 	'id'       => '60f16cb5069c4',
 	'updated'  => 1626435114,
 	'columns'  => [
 		'title'         => [
 			'type'       => 'title',
-			'label'      => __( 'Title' ),
+			'label'      => __( 'Title', 'bm-wp-experience' ),
 			'width'      => '',
 			'width_unit' => '%',
 			'sort'       => 'on',
@@ -19,7 +19,7 @@ return [
 		],
 		'60f16e2a2f01b' => [
 			'type'          => 'date',
-			'label'         => __( 'Published' ),
+			'label'         => __( 'Published', 'bm-wp-experience' ),
 			'width'         => '',
 			'width_unit'    => '%',
 			'sort'          => 'on',
@@ -27,12 +27,12 @@ return [
 			'export'        => 'off',
 			'search'        => 'on',
 			'filter'        => 'on',
-			'filter_label'  => __( 'Published' ),
+			'filter_label'  => __( 'Published', 'bm-wp-experience' ),
 			'filter_format' => 'range',
 		],
 		'author'        => [
 			'type'       => 'author',
-			'label'      => __( 'Author' ),
+			'label'      => __( 'Author', 'bm-wp-experience' ),
 			'width'      => '',
 			'width_unit' => '%',
 			'sort'       => 'on',

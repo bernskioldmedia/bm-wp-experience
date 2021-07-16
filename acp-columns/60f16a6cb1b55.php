@@ -2,14 +2,14 @@
 
 return [
 	'version'  => '5.2',
-	'title'    => __( 'Posts' ),
+	'title'    => __( 'Posts', 'bm-wp-experience' ),
 	'type'     => 'post',
 	'id'       => '60f16a6cb1b55',
 	'updated'  => 1626434557,
 	'columns'  => [
 		'60f16bfd35867' => [
 			'type'                   => 'column-featured_image',
-			'label'                  => __( 'Image' ),
+			'label'                  => __( 'Image', 'bm-wp-experience' ),
 			'width'                  => '80',
 			'width_unit'             => 'px',
 			'featured_image_display' => 'image',
@@ -25,7 +25,7 @@ return [
 		],
 		'title'         => [
 			'type'       => 'title',
-			'label'      => __( 'Title' ),
+			'label'      => __( 'Title', 'bm-wp-experience' ),
 			'width'      => '',
 			'width_unit' => '%',
 			'sort'       => 'on',
@@ -35,7 +35,7 @@ return [
 		],
 		'author'        => [
 			'type'       => 'author',
-			'label'      => __( 'Author' ),
+			'label'      => __( 'Author', 'bm-wp-experience' ),
 			'width'      => '10',
 			'width_unit' => '%',
 			'sort'       => 'on',
@@ -45,7 +45,7 @@ return [
 		],
 		'categories'    => [
 			'type'       => 'categories',
-			'label'      => __( 'Categories' ),
+			'label'      => __( 'Categories', 'bm-wp-experience' ),
 			'width'      => '15',
 			'width_unit' => '%',
 			'sort'       => 'on',
@@ -56,7 +56,7 @@ return [
 		],
 		'tags'          => [
 			'type'         => 'tags',
-			'label'        => __( 'Tags' ),
+			'label'        => __( 'Tags', 'bm-wp-experience' ),
 			'width'        => '15',
 			'width_unit'   => '%',
 			'sort'         => 'on',
@@ -68,7 +68,7 @@ return [
 		],
 		'date'          => [
 			'type'          => 'date',
-			'label'         => __( 'Date' ),
+			'label'         => __( 'Date', 'bm-wp-experience' ),
 			'width'         => '',
 			'width_unit'    => '%',
 			'sort'          => 'on',
@@ -76,7 +76,7 @@ return [
 			'export'        => 'on',
 			'search'        => 'on',
 			'filter'        => 'on',
-			'filter_label'  => __( 'Date' ),
+			'filter_label'  => __( 'Date', 'bm-wp-experience' ),
 			'filter_format' => 'range',
 		],
 		'60f16bfd35869' => [

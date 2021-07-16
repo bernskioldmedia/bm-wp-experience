@@ -23,7 +23,7 @@ return [
 		],
 		'lastupdated'   => [
 			'type'       => 'lastupdated',
-			'label'      => __( 'Last Updated' ),
+			'label'      => __( 'Last Updated', 'bm-wp-experience' ),
 			'width'      => '',
 			'width_unit' => '%',
 			'export'     => 'on',
@@ -37,7 +37,7 @@ return [
 		],
 		'users'         => [
 			'type'       => 'users',
-			'label'      => __( 'Users' ),
+			'label'      => __( 'Users', 'bm-wp-experience' ),
 			'width'      => '100',
 			'width_unit' => 'px',
 			'export'     => 'on',

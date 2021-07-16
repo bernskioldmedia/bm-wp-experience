@@ -2,14 +2,14 @@
 
 return [
 	'version'  => '5.2',
-	'title'    => __( 'Media' ),
+	'title'    => __( 'Media', 'bm-wp-experience' ),
 	'type'     => 'wp-media',
 	'id'       => '60f16ee483c17',
 	'updated'  => 1626435537,
 	'columns'  => [
 		'title'         => [
 			'type'       => 'title',
-			'label'      => __( 'Media File' ),
+			'label'      => __( 'Media File', 'bm-wp-experience' ),
 			'width'      => '',
 			'width_unit' => '%',
 			'sort'       => 'on',
@@ -31,7 +31,7 @@ return [
 		],
 		'60f16fd1f0450' => [
 			'type'       => 'column-dimensions',
-			'label'      => __( 'Dimensions' ),
+			'label'      => __( 'Dimensions', 'bm-wp-experience' ),
 			'width'      => '10',
 			'width_unit' => '%',
 			'before'     => '',
@@ -41,7 +41,7 @@ return [
 		],
 		'60f16fd1f0451' => [
 			'type'       => 'column-alternate_text',
-			'label'      => __( 'Alt Text' ),
+			'label'      => __( 'Alt Text', 'bm-wp-experience' ),
 			'width'      => '10',
 			'width_unit' => '%',
 			'sort'       => 'on',
@@ -51,7 +51,7 @@ return [
 		],
 		'author'        => [
 			'type'         => 'author',
-			'label'        => __( 'Author' ),
+			'label'        => __( 'Author', 'bm-wp-experience' ),
 			'width'        => '10',
 			'width_unit'   => '%',
 			'sort'         => 'on',
@@ -74,7 +74,7 @@ return [
 		],
 		'date'          => [
 			'type'          => 'date',
-			'label'         => __( 'Date' ),
+			'label'         => __( 'Date', 'bm-wp-experience' ),
 			'width'         => '10',
 			'width_unit'    => '%',
 			'sort'          => 'on',
@@ -82,7 +82,7 @@ return [
 			'export'        => 'on',
 			'search'        => 'on',
 			'filter'        => 'on',
-			'filter_label'  => __( 'Date' ),
+			'filter_label'  => __( 'Date', 'bm-wp-experience' ),
 			'filter_format' => 'range',
 		],
 		'60f16fd1f0452' => [

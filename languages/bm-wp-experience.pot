@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the BM WP Experience package.
 msgid ""
 msgstr ""
-"Project-Id-Version: BM WP Experience 1.3.0\n"
+"Project-Id-Version: BM WP Experience 1.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bm-wp-experience\n"
-"POT-Creation-Date: 2021-03-12 12:32:49+00:00\n"
+"POT-Creation-Date: 2021-07-16 19:33:01+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,17 +13,120 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: node-wp-i18n 1.2.5\n"
 
-#: includes/admin/class-admin-bar.php:107
-#: includes/admin/class-admin-bar.php:110
-#: includes/admin/class-admin-pages.php:51
+#: acp-columns/60f1655d5fd1f.php:26 acp-columns/60f16cb5069c4.php:45
+#: acp-columns/60f16cb5069c4.php:54
+msgid "Last Updated"
+msgstr ""
+
+#: acp-columns/60f1655d5fd1f.php:33
+msgid "Registered"
+msgstr ""
+
+#: acp-columns/60f1655d5fd1f.php:40
+msgid "Users"
+msgstr ""
+
+#: acp-columns/60f1655d5fd1f.php:47
+msgid "Storage"
+msgstr ""
+
+#: acp-columns/60f1655d5fd1f.php:54
+msgid "Status"
+msgstr ""
+
+#: acp-columns/60f16a6cb1b55.php:5
+msgid "Posts"
+msgstr ""
+
+#: acp-columns/60f16a6cb1b55.php:12
+msgid "Image"
+msgstr ""
+
+#: acp-columns/60f16a6cb1b55.php:28 acp-columns/60f16cb5069c4.php:12
+msgid "Title"
+msgstr ""
+
+#: acp-columns/60f16a6cb1b55.php:38 acp-columns/60f16cb5069c4.php:35
+#: acp-columns/60f16ee483c17.php:54
+msgid "Author"
+msgstr ""
+
+#: acp-columns/60f16a6cb1b55.php:48
+msgid "Categories"
+msgstr ""
+
+#: acp-columns/60f16a6cb1b55.php:59
+msgid "Tags"
+msgstr ""
+
+#: acp-columns/60f16a6cb1b55.php:67
+msgid "Any Tags"
+msgstr ""
+
+#: acp-columns/60f16a6cb1b55.php:71 acp-columns/60f16a6cb1b55.php:79
+#: acp-columns/60f16ee483c17.php:77 acp-columns/60f16ee483c17.php:85
+msgid "Date"
+msgstr ""
+
+#: acp-columns/60f16a6cb1b55.php:84 acp-columns/60f16cb5069c4.php:72
+msgid "Words"
+msgstr ""
+
+#: acp-columns/60f16a6cb1b55.php:92 acp-columns/60f16cb5069c4.php:80
+msgid "SEO"
+msgstr ""
+
+#: acp-columns/60f16cb5069c4.php:5
+msgid "Pages"
+msgstr ""
+
+#: acp-columns/60f16cb5069c4.php:22 acp-columns/60f16cb5069c4.php:30
+msgid "Published"
+msgstr ""
+
+#: acp-columns/60f16cb5069c4.php:59
+msgid "Last Updated By"
+msgstr ""
+
+#: acp-columns/60f16ee483c17.php:5
+msgid "Media"
+msgstr ""
+
+#: acp-columns/60f16ee483c17.php:12
+msgid "Media File"
+msgstr ""
+
+#: acp-columns/60f16ee483c17.php:22
+msgid "Format"
+msgstr ""
+
+#: acp-columns/60f16ee483c17.php:30
+msgid "Any Format"
+msgstr ""
+
+#: acp-columns/60f16ee483c17.php:34
+msgid "Dimensions"
+msgstr ""
+
+#: acp-columns/60f16ee483c17.php:44
+msgid "Alt Text"
+msgstr ""
+
+#: acp-columns/60f16ee483c17.php:66
+msgid "Uploaded To"
+msgstr ""
+
+#: includes/admin/class-admin-bar.php:102
+#: includes/admin/class-admin-bar.php:105
+#: includes/admin/class-admin-pages.php:50
 msgid "Help & Support"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:135
+#: includes/admin/class-admin-bar.php:128
 msgid "Customize"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:138
+#: includes/admin/class-admin-bar.php:131
 msgid "Customize the site appearance."
 msgstr ""
 
@@ -31,24 +134,24 @@ msgstr ""
 msgid "Bernskiold Media"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:174
-#: includes/admin/class-admin-bar.php:177
-#: includes/admin/class-admin-pages.php:61
+#: includes/admin/class-admin-bar.php:164
+#: includes/admin/class-admin-bar.php:167
+#: includes/admin/class-admin-pages.php:63
 msgid "About Bernskiold Media"
+msgstr ""
+
+#: includes/admin/class-admin-bar.php:182
+#: includes/admin/class-admin-bar.php:185
+msgid "Academy"
 msgstr ""
 
 #: includes/admin/class-admin-bar.php:192
 #: includes/admin/class-admin-bar.php:195
-msgid "Academy"
+msgid "Support"
 msgstr ""
 
 #: includes/admin/class-admin-bar.php:202
 #: includes/admin/class-admin-bar.php:205
-msgid "Support"
-msgstr ""
-
-#: includes/admin/class-admin-bar.php:212
-#: includes/admin/class-admin-bar.php:215
 msgid "Services"
 msgstr ""
 
@@ -56,7 +159,7 @@ msgstr ""
 msgid "Reusable Blocks"
 msgstr ""
 
-#: includes/admin/class-admin.php:35
+#: includes/admin/class-admin.php:42
 #. translators: 1. Site Name
 msgid ""
 "Thank you for creating with <a href=\"https://wordpress.org\">WordPress</a> "
@@ -65,15 +168,27 @@ msgid ""
 "medium=dashboard_link&utm_campaign=%1$s\">Bernskiold Media</a>."
 msgstr ""
 
-#: includes/class-environments.php:130
+#: includes/class-comments.php:86 includes/class-comments.php:166
+msgid "This site does not support comments."
+msgstr ""
+
+#: includes/class-dashboard.php:54
+msgid "Bernskiold Media Academy"
+msgstr ""
+
+#: includes/class-dashboard.php:58
+msgid "Unfortunately the academy content is not currently available."
+msgstr ""
+
+#: includes/class-environments.php:132
 msgid "Local"
 msgstr ""
 
-#: includes/class-environments.php:134
+#: includes/class-environments.php:136
 msgid "Staging"
 msgstr ""
 
-#: includes/class-environments.php:139
+#: includes/class-environments.php:141
 msgid "Production"
 msgstr ""
 
@@ -107,7 +222,7 @@ msgid ""
 "Are you sure you want to deactivate?"
 msgstr ""
 
-#: includes/class-rest-api.php:50
+#: includes/class-rest-api.php:49
 msgid "Authentication is required."
 msgstr ""
 
@@ -118,24 +233,32 @@ msgid ""
 "guidelines for this website."
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:54
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:54
 msgid "View details"
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:77
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:77
 msgid "More information about %s"
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:128
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:128
 msgid "Check for updates"
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:223
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:224
 msgid "Unknown update checker status \"%s\""
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Vcs/PluginUpdateChecker.php:98
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Vcs/PluginUpdateChecker.php:98
 msgid "There is no changelog available."
+msgstr ""
+
+#: views/dashboard-widgets/academy-feed.php:15
+msgid "https://bernskioldmedia.com/en/academy/"
+msgstr ""
+
+#: views/dashboard-widgets/academy-feed.php:15
+msgid "More at the Academy ›"
 msgstr ""
 
 #: views/public/staging-message.php:2
@@ -156,32 +279,37 @@ msgid ""
 "we at Bernskiold Media have found runs WordPress best."
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:193
+#: includes/admin/class-admin-bar.php:183
 msgctxt "BM Academy URL"
 msgid "https://www.bernskioldmedia.com/en/academy/"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:203
+#: includes/admin/class-admin-bar.php:193
 msgctxt "BM Support URL"
 msgid "https://support.bernskioldmedia.com/"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:213
+#: includes/admin/class-admin-bar.php:203
 msgctxt "BM Services URL"
 msgid "https://www.bernskioldmedia.com/en/services/"
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:213
+#: includes/class-dashboard.php:55
+msgctxt "academy feed"
+msgid "https://bernskioldmedia.com/en/feed/"
+msgstr ""
+
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:214
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:215
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:216
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr ""
 
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:217
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:218
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
 msgstr ""
