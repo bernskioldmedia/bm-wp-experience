@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file. This projec
 - Remove Yoast SEO dashboard widget.
 - Feature to disable update notices when website is on maintenance plan. To use, set `BM_WP_HAS_MAINTENANCE_PLAN` to true.
 - Remove the Site Health dashboard widget if on maintenance plan.
+- Remove the help tab.
 
 ### Changed
 
