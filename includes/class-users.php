@@ -1,11 +1,11 @@
 <?php
 /**
- * Authors Tweaks
+ * Users Tweaks
  **/
 
 namespace BernskioldMedia\WP\Experience;
 
-class Authors {
+class Users {
 
 	/**
 	 * On these domain names, agency users may be indexed.
@@ -30,6 +30,11 @@ class Authors {
 	 */
 	public static function init() {
 		add_action( 'wp', [ self::class, 'maybe_disable_author_archive' ] );
+
+		// Remove the color scheme picker from the admin.
+		if ( true === apply_filters( 'bm_wpexp_remove_color_scheme_picker', true ) ) {
+			remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+		}
 	}
 
 	/**
@@ -37,7 +42,6 @@ class Authors {
 	 * agency users never get indexed on client sites.
 	 */
 	public static function maybe_disable_author_archive() {
-
 		if ( ! is_author() ) {
 			return;
 		}
@@ -91,4 +95,4 @@ class Authors {
 
 }
 
-Authors::init();
+Users::init();

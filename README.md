@@ -1,22 +1,27 @@
 # BM WP Experience
+
 On a typical WordPress setup there are many small tweaks that we do all the time. Helping with workflow, security or performance.
 
-We call this our WordPress Experience because it's an opinionated set of features that make sense for a majority of our builds. Whether they are on the [Company Cloud platform](https://companycloud.io) or an install with any theme or plugins. It's simply the way we like WordPress.
+We call this our WordPress Experience because it's an opinionated set of features that make sense for a majority of our builds. Whether they are on
+the [Company Cloud platform](https://companycloud.io) or an install with any theme or plugins. It's simply the way we like WordPress.
 
 For almost every feature there is a filter, constant or action allowing you to customize the behavior.
 
 ## What do we do?
 
 ### Admin & Admin Bar
+
 - Add slight Bernskiold Media brandning
 - Add links to Bernskiold Media help and support
 - Clean up the admin bar with less important nodes (Comments, Yoast SEO, New Draft, Customizer)
 - Remove lesser used dashboard widgets.
 
 ### Block Editor
+
 - Disable the block directory.
 
 ### Cleanup
+
 - Remove WordPress version/generator info from header.
 - Rewrite the search URL to a nice url (`/search/{query}`) instead of query variable.
 - Prevent empty search queries from redirecting to home page
@@ -24,34 +29,43 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Remove links to feeds unless specified by `BM_WP_DISABLE_FEED_URLS`.
 
 ### Customizer
+
 - Enqueues extra CSS from the customizer to a file instead of printing inline.
 
 ### Environments
+
 - Show environment notice in admin bar for administrators.
 - Show staging environment notice publically for administrators.
 - Disable indexing for non-production environments.
 
 ### Media
+
 - Sanitize uploaded file names from non-ASCII characters.
 
 ### Multisite
+
 - Have password resets go through the local site where the user is signing in, instead of the main site.
 
 ### Plugins
+
 - Include a tab with suggested plugins from Bernskiold Media.
 - Add a warning when disabling this plugin.
 
 ### REST API
+
 - Restrict all API endpoints by default unless defined by `BM_WP_RESTRICT_REST_API` (all, users, none).
 - Fixes a WP bug where pagination isn't working when sorting by menu order.
 
 ### Security
+
 - Force non-local environments to use strong passwords.
 - Prevent users from using explicitly defined weak passwords.
 - Default to disabling the core file editor from admin.
 
 ### Users
+
 - Prevent agency users from being indexed.
+- Remove color scheme picker.
 
 ## Constants & Filters
 
@@ -80,7 +94,8 @@ For almost every feature there is a filter, constant or action allowing you to c
 
 ### REST API
 
-**Choose API restriction level:** By default, the REST API requires authentication for all endpoints. By setting the `BM_WP_RESTRICT_REST_API` constant you may change this. `all` (default) restricts all endpoints. `users` restricts only the users endpoint. `none` doesn't restrict any endpoint.
+**Choose API restriction level:** By default, the REST API requires authentication for all endpoints. By setting the `BM_WP_RESTRICT_REST_API` constant you may change this. `all` (
+default) restricts all endpoints. `users` restricts only the users endpoint. `none` doesn't restrict any endpoint.
 
 ### Security
 
@@ -91,3 +106,5 @@ For almost every feature there is a filter, constant or action allowing you to c
 `bm_wpexp_allow_bm_author_index` - Define as `true` to allow indexing of agency users.
 `bm_wpexp_authors_allowlisted_domains` - Allows you to customize the array of domains where agency users are always allowed (our own websites).
 `bm_wpexp_authors_email_domains` - Allows you to customize the array of email domains that designate agency users.
+
+`bm_wpexp_remove_color_scheme_picker` - Return `false` to override the default behavior of hide, and instead show the color scheme picker.

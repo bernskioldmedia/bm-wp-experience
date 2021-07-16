@@ -85,13 +85,11 @@ class BM_WP_Experience {
 	 * @return object
 	 */
 	public static function instance() {
-
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self();
 		}
 
 		return self::$_instance;
-
 	}
 
 	/**
@@ -114,25 +112,21 @@ class BM_WP_Experience {
 	 * Constructor
 	 */
 	public function __construct() {
-
 		$this->admin_includes();
 		$this->classes();
 		$this->init_hooks();
 
 		do_action( 'bm_wp_experience_loaded' );
-
 	}
 
 	/**
 	 * Hooks that are run on the time of init.
 	 */
 	private function init_hooks() {
-
 		require_once 'includes/class-install.php';
 		register_activation_hook( __FILE__, [ Install::class, 'install' ] );
 
 		add_action( 'init', [ $this, 'init' ] );
-
 	}
 
 	/**
@@ -141,14 +135,12 @@ class BM_WP_Experience {
 	 * @return void
 	 */
 	public function init() {
-
 		do_action( 'before_bm_wp_experience_init' );
 
 		// Localization support.
 		$this->load_languages();
 
 		do_action( 'bm_wp_experience_init' );
-
 	}
 
 	/**
@@ -160,7 +152,6 @@ class BM_WP_Experience {
 			require_once 'includes/admin/class-admin.php';
 			require_once 'includes/admin/class-admin-assets.php';
 			require_once 'includes/admin/class-admin-pages.php';
-
 		}
 	}
 
@@ -168,11 +159,9 @@ class BM_WP_Experience {
 	 * Include various includes in the system.
 	 */
 	private function classes() {
-
 		// Contrary to its name, it is also loaded publicly.
 		require_once 'includes/admin/class-admin-bar.php';
 
-		require_once 'includes/class-authors.php';
 		require_once 'includes/class-block-editor.php';
 		require_once 'includes/class-cleanup.php';
 		require_once 'includes/class-customizer.php';
@@ -183,14 +172,13 @@ class BM_WP_Experience {
 		require_once 'includes/class-plugins.php';
 		require_once 'includes/class-rest-api.php';
 		require_once 'includes/class-security.php';
-
+		require_once 'includes/class-users.php';
 	}
 
 	/**
 	 * Load translations in the right order.
 	 */
 	public function load_languages() {
-
 		$locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
 		$locale = apply_filters( 'plugin_locale', $locale, 'bm-wp-experience' );
 
@@ -201,7 +189,6 @@ class BM_WP_Experience {
 
 		// Otherwise, load from the plugin.
 		load_plugin_textdomain( 'bm-wp-experience', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-
 	}
 
 	/**
