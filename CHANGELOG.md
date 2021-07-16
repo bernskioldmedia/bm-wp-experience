@@ -10,11 +10,16 @@ All notable changes to this project will be documented in this file. This projec
 - Disable comments by default. Can be overridden by defining `BM_WP_ENABLE_COMMENTS` as true in the config.
 - Remove Yoast SEO dashboard widget.
 - Feature to disable update notices when website is on maintenance plan. To use, set `BM_WP_HAS_MAINTENANCE_PLAN` to true.
+- Remove the Site Health dashboard widget if on maintenance plan.
 
 ### Changed
 
 - Renamed the `Authors` class to more generic `Users`.
 - On multisite users need to be super admins in order to see environment notice.
+
+### Fixed
+
+- Dashboard widgets are now removed on network admin too.
 
 ## [1.4.0] - 2021-03-12
 
