@@ -27,6 +27,9 @@ class Admin {
 
 		// Add our help and support widget.
 		add_action( 'admin_footer', [ self::class, 'add_help_widget' ] );
+
+		// Maybe remove ACF from admin.
+		add_filter( 'acf/settings/show_admin',[self::class, 'maybe_show_acf'] );
 	}
 
 	/**
@@ -87,6 +90,10 @@ class Admin {
 			} )
 		</script>
 		<?php
+	}
+
+	public static function maybe_show_acf() {
+		return 'production' !== wp_get_environment_type();
 	}
 
 }

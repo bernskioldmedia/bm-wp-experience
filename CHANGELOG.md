@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. This projec
 - Custom branded admin theme.
 - Add our help widget with support docs.
 - If Admin Columns Pro is active, we load a set of upgraded admin column views.
+- Remove ACF settings if on production.
 
 ### Changed
 

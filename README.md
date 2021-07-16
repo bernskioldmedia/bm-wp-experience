@@ -17,6 +17,7 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Remove lesser used dashboard widgets.
 - Remove import/export pages by default and only show them if `BM_WP_ENABLE_IMPORT_EXPORT` is set to true. Most of the time we don't need this.
 - Custom branded admin theme in our colors.
+- Removes ACF settings if on production environment.
 
 ### Block Editor
 
