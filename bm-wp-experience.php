@@ -161,6 +161,7 @@ class BM_WP_Experience {
 	private function classes() {
 		// Contrary to its name, it is also loaded publicly.
 		require_once 'includes/admin/class-admin-bar.php';
+		require_once 'includes/admin/class-admin-columns.php';
 
 		require_once 'includes/class-block-editor.php';
 		require_once 'includes/class-cleanup.php';

@@ -1,0 +1,72 @@
+<?php
+
+return [
+	'version'  => '5.2',
+	'title'    => 'Network Sites',
+	'type'     => 'wp-ms_sites',
+	'id'       => '60f1655d5fd1f',
+	'updated'  => 1626433907,
+	'columns'  => [
+		'60f16609af00b' => [
+			'type'       => 'column-blog_id',
+			'label'      => 'ID',
+			'width'      => '50',
+			'width_unit' => 'px',
+			'export'     => 'on',
+		],
+		'blogname'      => [
+			'type'       => 'blogname',
+			'label'      => 'URL',
+			'width'      => '',
+			'width_unit' => '%',
+			'export'     => 'on',
+		],
+		'lastupdated'   => [
+			'type'       => 'lastupdated',
+			'label'      => __( 'Last Updated' ),
+			'width'      => '',
+			'width_unit' => '%',
+			'export'     => 'on',
+		],
+		'registered'    => [
+			'type'       => 'registered',
+			'label'      => __( 'Registered', 'bm-wp-experience' ),
+			'width'      => '',
+			'width_unit' => '%',
+			'export'     => 'on',
+		],
+		'users'         => [
+			'type'       => 'users',
+			'label'      => __( 'Users' ),
+			'width'      => '100',
+			'width_unit' => 'px',
+			'export'     => 'on',
+		],
+		'60f16609af00d' => [
+			'type'       => 'column-msite_uploadspace',
+			'label'      => __( 'Storage', 'bm-wp-experience' ),
+			'width'      => '',
+			'width_unit' => '%',
+			'export'     => 'on',
+		],
+		'60f16609af00e' => [
+			'type'       => 'column-msite_status',
+			'label'      => __( 'Status', 'bm-wp-experience' ),
+			'width'      => '',
+			'width_unit' => '%',
+			'export'     => 'on',
+		],
+	],
+	'settings' => [
+		'hide_inline_edit'     => 'off',
+		'hide_bulk_edit'       => 'off',
+		'hide_filters'         => 'off',
+		'hide_smart_filters'   => 'off',
+		'hide_segments'        => 'off',
+		'hide_search'          => 'off',
+		'hide_bulk_actions'    => 'off',
+		'horizontal_scrolling' => 'off',
+		'sorting'              => '0',
+		'sorting_order'        => 'asc',
+	],
+];
