@@ -36,7 +36,6 @@ class Environments {
 	 * @since 1.4.0
 	 */
 	public static function disable_indexing_outside_production( $robots ) {
-
 		if ( 'production' === wp_get_environment_type() ) {
 			return $robots;
 		}
@@ -58,7 +57,6 @@ class Environments {
 	 * @since 1.4.0
 	 */
 	public static function show_public_staging_notice() {
-
 		if ( 'staging' !== wp_get_environment_type() ) {
 			return;
 		}
@@ -82,7 +80,6 @@ class Environments {
 	 * @since 1.4.0
 	 */
 	public static function show_in_admin_bar( $wp_admin_bar ) {
-
 		if ( false === apply_filters( 'bm_wpexp_environment_show_admin_bar', true ) ) {
 			return;
 		}
@@ -99,16 +96,22 @@ class Environments {
 				'class' => 'ab-environment-label environment--' . wp_get_environment_type(),
 			],
 		] );
-
 	}
 
 	/**
 	 * Decide if the user should see the environment notices.
 	 *
+	 * For multisites we default to super admins. For standard sites
+	 * all users that can manage options.
+	 *
 	 * @return bool
 	 * @since 1.4.0
 	 */
 	protected static function should_user_see() {
+		if ( is_multisite() && BM_WP_Experience::is_network_active() ) {
+			return is_super_admin();
+		}
+
 		$required_role = apply_filters( 'bm_wpexp_environment_role', 'manage_options' );
 
 		return current_user_can( $required_role );
@@ -121,7 +124,6 @@ class Environments {
 	 * @since 1.4.0
 	 */
 	protected static function get_environment_label() {
-
 		$environment = wp_get_environment_type();
 
 		switch ( $environment ) {
