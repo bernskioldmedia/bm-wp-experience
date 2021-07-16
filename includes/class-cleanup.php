@@ -23,7 +23,6 @@ class Cleanup {
 	 * Init.
 	 */
 	public static function init() {
-
 		// Clean up wp_head().
 		self::wp_head_cleanup();
 
@@ -35,7 +34,6 @@ class Cleanup {
 
 		// Blank Search Query Fix.
 		add_filter( 'request', [ self::class, 'blank_search_fix' ] );
-
 	}
 
 	/**
@@ -44,7 +42,6 @@ class Cleanup {
 	 * Remove unnecessary <link>'s
 	 */
 	public static function wp_head_cleanup() {
-
 		if ( self::should_disable_feed_urls() ) {
 			remove_action( 'wp_head', 'feed_links', 2 );
 			remove_action( 'wp_head', 'feed_links_extra', 3 );
@@ -68,6 +65,14 @@ class Cleanup {
 		// filter to remove TinyMCE emojis.
 		add_filter( 'tiny_mce_plugins', [ self::class, 'disable_emojicons_tinymce' ] );
 
+		if ( true === apply_filters( 'bm_wpexp_disable_public_rest_api', true ) ) {
+			remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+			remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+		}
+
+		if ( true === apply_filters( 'bm_wpexp_disable_oembed_discovery', true ) ) {
+			remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
+		}
 	}
 
 	/**
@@ -78,13 +83,11 @@ class Cleanup {
 	 * @return array
 	 */
 	public static function disable_emojicons_tinymce( $plugins ) {
-
 		if ( is_array( $plugins ) ) {
 			return array_diff( $plugins, [ 'wpemoji' ] );
 		} else {
 			return [];
 		}
-
 	}
 
 	/**
@@ -95,7 +98,6 @@ class Cleanup {
 	 * @link https://github.com/roots/roots/blob/master/lib/cleanup.php
 	 */
 	public static function nice_search_url() {
-
 		global $wp_rewrite;
 
 		if ( ! isset( $wp_rewrite ) || ! is_object( $wp_rewrite ) || ! $wp_rewrite->using_permalinks() ) {
@@ -108,7 +110,6 @@ class Cleanup {
 			wp_safe_redirect( home_url( "/{$search_base}/" . rawurlencode( get_query_var( 's' ) ) ) );
 			exit();
 		}
-
 	}
 
 	/**
@@ -123,13 +124,11 @@ class Cleanup {
 	 * @return array
 	 */
 	public static function blank_search_fix( $query_vars ) {
-
 		if ( isset( $_GET['s'] ) && empty( $_GET['s'] ) && ! is_admin() ) {
 			$query_vars['s'] = ' ';
 		}
 
 		return $query_vars;
-
 	}
 
 	/**
@@ -141,13 +140,11 @@ class Cleanup {
 	 * @return bool
 	 */
 	protected static function should_disable_feed_urls(): bool {
-
 		if ( ! defined( 'BM_WP_DISABLE_FEED_URLS' ) ) {
 			return true;
 		}
 
 		return BM_WP_DISABLE_FEED_URLS;
-
 	}
 }
 

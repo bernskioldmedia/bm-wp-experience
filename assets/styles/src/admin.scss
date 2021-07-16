@@ -17,3 +17,52 @@
 #adminmenu span.update-plugins {
 	display: none;
 }
+
+/**
+ * Academy Feed
+ */
+#dashboard-widgets .bm-academy-feed-item {
+	margin-right: -12px;
+	margin-left: -12px;
+	border-bottom: 1px solid #dfdfdf;
+
+	a {
+		display: block;
+		padding: 12px;
+		text-decoration: none;
+		color: inherit;
+
+		&:hover h3 {
+			text-decoration: underline;
+		}
+	}
+
+	h3 {
+		font-size: 14px;
+		font-weight: bold;
+		margin-bottom: 6px;
+		color: #2271b1;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+#dashboard-widgets .bm-academy-feed-more {
+	display: block;
+	margin: 0 -12px -12px -12px !important;
+	padding: 8px 12px;
+	text-transform: uppercase;
+	background-color: #f4f6f7;
+	text-align: right;
+
+	a {
+		text-decoration: none;
+		font-weight: bold;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
