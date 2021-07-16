@@ -66,6 +66,10 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Prevent users from using explicitly defined weak passwords.
 - Default to disabling the core file editor from admin.
 
+### Updates
+
+- Ability to hide update notices by defining `BM_WP_HAS_MAINTENANCE_PLAN` in the config.
+
 ### Users
 
 - Prevent agency users from being indexed.
@@ -109,6 +113,10 @@ default) restricts all endpoints. `users` restricts only the users endpoint. `no
 ### Security
 
 `bm_wpexp_weak_passwords` - Customize the array of passwords that are always considered weak.
+
+### Updates
+
+**Hide update notices:** By default all update notices are showing, however for websites on a maintenance plan it is nice if users doesn't see any updates in the admin as they are managed anyway (just not daily). Define `BM_WP_HAS_MAINTENANCE_PLAN` to `true` in the config to disable updates.
 
 ### Users
 

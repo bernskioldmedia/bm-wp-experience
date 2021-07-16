@@ -40,7 +40,6 @@ class Admin_Bar {
 		if ( is_admin_bar_showing() ) {
 			wp_enqueue_style( 'bm-admin-bar' );
 		}
-
 	}
 
 	/**
@@ -53,18 +52,16 @@ class Admin_Bar {
 	 * @param  \WP_Admin_Bar  $wp_admin_bar
 	 */
 	public static function remove( $wp_admin_bar ) {
-
 		$nodes_to_remove = apply_filters( 'bm_wpexp_remove_admin_bar_items', [
 			'wp-logo'    => 'always',
 			'comments'   => 'always',
 			'wpseo-menu' => 'always',
 			'new_draft'  => 'always',
 			'customize'  => 'always',
-			'updates'    => 'frontend',
+			'updates'    => Updates::is_on_maintenance_plan() ? 'always' : 'frontend',
 		] );
 
 		foreach ( $nodes_to_remove as $id => $place ) {
-
 			if ( is_admin() && 'admin' === $place ) {
 				$wp_admin_bar->remove_node( $id );
 			}
@@ -77,7 +74,6 @@ class Admin_Bar {
 				$wp_admin_bar->remove_node( $id );
 			}
 		}
-
 	}
 
 	/**
@@ -86,7 +82,6 @@ class Admin_Bar {
 	 * @param  \WP_Admin_Bar  $wp_admin_bar
 	 */
 	public static function support( $wp_admin_bar ) {
-
 		/**
 		 * Allow the option of hiding the admin bar
 		 * links via a filter.
@@ -111,7 +106,6 @@ class Admin_Bar {
 				'class' => 'ab-help-support',
 			],
 		] );
-
 	}
 
 	/**
@@ -121,7 +115,6 @@ class Admin_Bar {
 	 * @param  \WP_Admin_Bar  $wp_admin_bar
 	 */
 	public static function customizer( $wp_admin_bar ) {
-
 		/**
 		 * Hide the admin bar link in admin.
 		 */
@@ -139,7 +132,6 @@ class Admin_Bar {
 				'class' => 'ab-customizer',
 			],
 		] );
-
 	}
 
 	/**
@@ -148,7 +140,6 @@ class Admin_Bar {
 	 * @param  \WP_Admin_Bar  $wp_admin_bar
 	 */
 	public static function about_bm( $wp_admin_bar ) {
-
 		/**
 		 * Allow the option of hiding the admin bar
 		 * links via a filter.
@@ -158,7 +149,6 @@ class Admin_Bar {
 		}
 
 		if ( is_user_logged_in() && current_user_can( 'edit_posts' ) ) {
-
 			$wp_admin_bar->add_node( [
 				'id'    => 'bm',
 				'title' => '<div class="bm-icon ab-item"><span class="screen-reader-text">' . esc_html__( 'Bernskiold Media', 'bm-wp-experience' ) . '</span></div>',
@@ -216,7 +206,6 @@ class Admin_Bar {
 				],
 			] );
 		}
-
 	}
 
 }

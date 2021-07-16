@@ -10,3 +10,10 @@
 .toplevel_page_bm-support #wpbody-content > .notice-success {
 	display: none;
 }
+
+/**
+ * Remove theme & plugin update count.
+ */
+#adminmenu span.update-plugins {
+	display: none;
+}
