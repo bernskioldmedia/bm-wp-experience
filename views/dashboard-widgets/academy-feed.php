@@ -12,5 +12,5 @@
 	</article>
 <?php endforeach; ?>
 <p class="bm-academy-feed-more">
-	<a href="#">More at the Academy ›</a>
+	<a href="<?php echo esc_url(__('https://bernskioldmedia.com/en/academy/')); ?>" target="_blank"><?php esc_html_e( 'More at the Academy ›', 'bm-wp-experience' ); ?></a>
 </p>
