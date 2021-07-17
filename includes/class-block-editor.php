@@ -28,7 +28,7 @@ class Block_Editor {
 		add_action( 'plugins_loaded', [ self::class, 'disable_block_directory' ] );
 
 		// Disable Yoast metabox if Block Editor.
-		add_action( 'add_meta_boxes', [ self::class, 'remove_yoast_metabox_in_block_editor' ], 11 );
+		add_action( 'add_meta_boxes', [ self::class, 'remove_yoast_metabox_in_block_editor' ], 999 );
 	}
 
 	/**
@@ -59,7 +59,9 @@ class Block_Editor {
 	 */
 	public static function remove_yoast_metabox_in_block_editor() {
 		if ( self::is_block_editor() ) {
-			remove_meta_box( 'wpseo_meta', 'post', 'normal' );
+			foreach ( get_post_types() as $post_type ) {
+				remove_meta_box( 'wpseo_meta', $post_type->name, 'normal' );
+			}
 		}
 	}
 
@@ -72,6 +74,7 @@ class Block_Editor {
 		if ( ! function_exists( 'get_current_screen' ) ) {
 			return false;
 		}
+
 
 		$screen = get_current_screen();
 
