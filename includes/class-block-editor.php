@@ -24,10 +24,11 @@ class Block_Editor {
 	 * Init.
 	 */
 	public static function init() {
-
 		// Disable the block directory in the editor.
 		add_action( 'plugins_loaded', [ self::class, 'disable_block_directory' ] );
 
+		// Disable Yoast metabox if Block Editor.
+		add_action( 'add_meta_boxes', [ self::class, 'remove_yoast_metabox_in_block_editor' ], 11 );
 	}
 
 	/**
@@ -41,7 +42,6 @@ class Block_Editor {
 	 * as true in your config.
 	 */
 	public static function disable_block_directory() {
-
 		// If we have explicitly set to enable the block directory, don't run this.
 		if ( defined( 'BM_WP_ENABLE_BLOCK_DIRECTORY' ) && BM_WP_ENABLE_BLOCK_DIRECTORY ) {
 			return;
@@ -49,7 +49,37 @@ class Block_Editor {
 
 		remove_action( 'enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets' );
 		remove_action( 'enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory' );
+	}
 
+	/**
+	 * Remove the Yoast SEO metabox if we're in the block editor.
+	 * The sidebar options are much better for the block editor
+	 * so we don't actually need it.
+	 *
+	 */
+	public static function remove_yoast_metabox_in_block_editor() {
+		if ( self::is_block_editor() ) {
+			remove_meta_box( 'wpseo_meta', 'post', 'normal' );
+		}
+	}
+
+	/**
+	 * Check if we are currently in the block editor.
+	 *
+	 * @return bool
+	 */
+	public static function is_block_editor() {
+		if ( ! function_exists( 'get_current_screen' ) ) {
+			return false;
+		}
+
+		$screen = get_current_screen();
+
+		if ( method_exists( $screen, 'is_block_editor' ) ) {
+			return $screen->is_block_editor();
+		}
+
+		return false;
 	}
 
 }

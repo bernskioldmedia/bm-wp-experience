@@ -22,6 +22,7 @@ For almost every feature there is a filter, constant or action allowing you to c
 ### Block Editor
 
 - Disable the block directory.
+- Remove Yoast SEO metabox in the block editor.
 
 ### Cleanup
 

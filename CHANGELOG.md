@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Unreleased]
 
+### Added
+
+- Remove Yoast SEO metabox in the block editor.
+
 ## [2.0.0] - 2021-07-16
 
 ### Added
