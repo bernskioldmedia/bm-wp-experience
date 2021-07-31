@@ -124,7 +124,7 @@ class Comments {
 	 *
 	 * @return array
 	 */
-	public function remove_comments_from_rest_api( $endpoints ) {
+	public static function remove_comments_from_rest_api( $endpoints ) {
 		unset( $endpoints['comments'] );
 
 		return $endpoints;
@@ -171,7 +171,7 @@ class Comments {
 	 * Hides comment counts and statements that we cannot
 	 * remove programatically in any other way.
 	 */
-	public function hide_comment_counts() {
+	public static function hide_comment_counts() {
 		echo '<style>
 			#dashboard_right_now .comment-count,
 			#dashboard_right_now .comment-mod-count,

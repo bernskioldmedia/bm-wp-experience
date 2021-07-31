@@ -4,9 +4,15 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Unreleased]
 
+## [2.1.0] - 2021-07-31
+
 ### Added
 
 - Remove Yoast SEO metabox in the block editor.
+
+### Fixed
+
+- Fixed a few PHP warnings (isset and static function call).
 
 ## [2.0.0] - 2021-07-16
 

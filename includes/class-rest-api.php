@@ -158,7 +158,7 @@ class REST_API {
 		global $wpdb;
 
 		if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
-			if ( 'menu_order' === $query->query['orderby'] ) {
+			if ( isset( $query->query['orderby'] ) && 'menu_order' === $query->query['orderby'] ) {
 				$orderby = "$wpdb->posts.menu_order,$wpdb->posts.post_title,$wpdb->posts.id " . $query->query['order'];
 			}
 		}
