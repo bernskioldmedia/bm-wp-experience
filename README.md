@@ -86,6 +86,9 @@ For almost every feature there is a filter, constant or action allowing you to c
 **Enable Import/Export Screens:** By default we hide the import/export pages. If you need these in the menu, set `BM_WP_ENABLE_IMPORT_EXPORT` to `true`.
 
 `bm_wpexp_custom_admin_theme` - Return false to disable our custom branding.
+`bm_wpexp_show_help_widget` - Return false to hide the BM help widget.
+`bm_wpexp_show_admin_page_support` - Return false to hide the support admin page.
+
 
 ### Block Editor
 

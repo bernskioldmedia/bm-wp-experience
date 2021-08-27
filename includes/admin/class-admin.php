@@ -62,7 +62,7 @@ class Admin {
 	}
 
 	public static function add_help_widget() {
-		if ( false === apply_filters( 'bm_wpexp_show_admin_page_support', true ) ) {
+		if ( false === apply_filters( 'bm_wpexp_show_help_widget', true ) ) {
 			return;
 		}
 

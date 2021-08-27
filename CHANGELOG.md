@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Unreleased]
 
+## [2.1.1] - 2021-08-27
+
+### Added
+
+- Added filter to hide only the BM help widget.
+
 ## [2.1.0] - 2021-07-31
 
 ### Added
