@@ -38,7 +38,7 @@ For almost every feature there is a filter, constant or action allowing you to c
 
 ### Customizer
 
-- Enqueues extra CSS from the customizer to a file instead of printing inline.
+- Option to enqueues extra CSS from the customizer to a file instead of printing inline.
 
 ### Environments
 
@@ -105,6 +105,7 @@ configuration.
 
 ### Customizer
 
+`bm_wpexp_custom_css_as_file` - Return true to split out customizer CSS to its own file.
 `bm_wpexp_custom_css_storage_directory_path` - Customize the path to the storage directory for custom CSS.
 `bm_wpexp_custom_css_storage_directory_uri` - Customize the URL to the storage directory for custom CSS.
 `bm_wpexp_custom_css_file_name` - Customize the name of the custom CSS file.

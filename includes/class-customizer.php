@@ -39,6 +39,9 @@ class Customizer {
 	 * Init.
 	 */
 	public static function init() {
+		if ( false === apply_filters( 'bm_wpexp_custom_css_as_file', false ) ) {
+			return;
+		}
 
 		// Create the custom CSS file on save.
 		add_action( 'customize_save_after', [ self::class, 'save_custom_css_to_file' ] );
@@ -56,6 +59,7 @@ class Customizer {
 	 */
 	public static function load_custom_css() {
 		wp_register_style( self::CUSTOM_CSS_ID, self::get_custom_css_file_url(), [], self::get_custom_css_last_updated_time(), 'all' );
+		wp_style_add_data( self::CUSTOM_CSS_ID, 'path', self::get_custom_css_file_path() );
 
 		// Only load the file if it exists = if we have custom files.
 		if ( file_exists( self::get_custom_css_file_path() ) ) {
@@ -74,7 +78,8 @@ class Customizer {
 		// If we don't have styles, we remove the file.
 		if ( empty( $styles ) ) {
 			self::remove_custom_css_file();
-		} else {
+		}
+		else {
 			self::create_custom_css_file( $styles );
 		}
 

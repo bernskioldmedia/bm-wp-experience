@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Unreleased]
 
+## [2.2.0] - 2021-10-07
+
+### Changed
+
+- By default, custom CSS will no longer be split out to its own file. To continue doing this, set `bm_wpexp_custom_css_as_file` to true.
+- If `bm_wpexp_custom_css_as_file` is set to true, we will now hook into the inline small CSS system which inlines small CSS files automatically up to a global limit per page.
+
 ## [2.1.1] - 2021-08-27
 
 ### Added
