@@ -10,8 +10,6 @@
 /.gitignore              export-ignore
 /package-lock.json       export-ignore
 /webpack.mix.js          export-ignore
-/tests                   export-ignore
-/bin                     export-ignore
 /assets/styles/src       export-ignore
 
 ##
