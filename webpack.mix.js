@@ -27,7 +27,7 @@ const assetPaths = {
 	scripts: 'assets/scripts',
 	styles: 'assets/styles',
 	images: 'assets/images',
-	fonts: 'assets/fonts'
+	fonts: 'assets/fonts',
 };
 
 /*
@@ -38,17 +38,16 @@ const assetPaths = {
 mix.options( {
 	processCssUrls: false,
 	postCss: [
-		require( 'postcss-custom-properties' )(),
 		require( 'postcss-preset-env' )( {
 			stage: 4,
 			browsers: [
 				'> 1%',
 				'last 2 versions',
-				'ie >= 11'
+				'ie >= 11',
 			],
-			autoprefixer: { grid: true }
-		} )
-	]
+			autoprefixer: { grid: true },
+		} ),
+	],
 } );
 
 /*
@@ -62,38 +61,10 @@ const sassConfig = {
 		outputStyle: 'compressed',
 		indentType: 'tab',
 		indentWidth: 1,
-	}
+	},
 };
 
 // Process the scss files.
 mix.sass( `${ assetPaths.styles }/src/admin-bar.scss`, `${ assetPaths.styles }/dist`, sassConfig )
    .sass( `${ assetPaths.styles }/src/admin.scss`, `${ assetPaths.styles }/dist`, sassConfig )
    .sass( `${ assetPaths.styles }/src/admin-theme.scss`, `${ assetPaths.styles }/dist`, sassConfig );
-
-/**
- * Maybe enable sourcemaps
- **/
-if ( ! mix.inProduction() ) {
-	mix.sourceMaps();
-}
-
-/*
- * Custom Webpack Config
- *
- * @link https://laravel.com/docs/6.x/mix#custom-webpack-configuration
- * @link https://webpack.js.org/configuration/
- */
-mix.webpackConfig( {
-	mode: mix.inProduction() ? 'production' : 'development',
-	devtool: mix.inProduction() ? '' : 'source-map',
-	stats: 'minimal',
-	performance: {
-		hints: false
-	},
-	externals: {
-		jquery: 'jQuery'
-	},
-	watchOptions: {
-		ignored: /node_modules/
-	}
-} );

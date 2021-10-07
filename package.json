@@ -1,49 +1,28 @@
 {
-	"name": "bm-wp-experience",
-	"version": "2.1.1",
-	"description": "Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.",
-	"main": "assets/scripts/src/index.js",
-	"scripts": {
-		"release": "composer install --no-dev -o && npm run prod",
-		"dev": "npm run development",
-		"development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-		"watch": "npm run development -- --watch",
-		"hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-		"prod": "npm run production",
-		"production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-		"build": "npm run prod && npm run i18n",
-		"lint": "npm run lint:styles && npm run lint:scripts && npm run lint:php",
-		"lint:styles": "cross-env stylelint './assets/styles/**/*.scss' --syntax scss",
-		"lint:scripts": "cross-env eslint './assets/scripts/**/*.js'",
-		"lint:php": "cross-env ./vendor/bin/phpcs .",
-		"i18n": "npm run i18n:textdomain && npm run i18n:pot",
-		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules --type theme",
-		"i18n:pot": "npx wpi18n makepot  --domain-path ./languages/"
-	},
-	"directories": {
-		"test": "tests"
-	},
-	"author": "Bernskiold Media",
-	"license": "GPL-2.0+",
-	"devDependencies": {
-		"babel-preset-react": "^6.24.*",
-		"browser-sync": "^2.27.4",
-		"browser-sync-webpack-plugin": "^2.3.0",
-		"copy-webpack-plugin": "^5.1.2",
-		"cross-env": "^6.0.*",
-		"eslint": "^6.8.0",
-		"eslint-config-wordpress": "^2.0.*",
-		"imagemin-mozjpeg": "^8.0.*",
-		"imagemin-webpack-plugin": "^2.4.*",
-		"laravel-mix": "^5.0.9",
-		"node-wp-i18n": "^1.2.5",
-		"postcss-custom-properties": "^9.2.0",
-		"postcss-preset-env": "^6.7.*",
-		"rimraf": "^3.0.2",
-		"sass": "^1.35.2",
-		"sass-loader": "^8.0.2",
-		"stylelint": "^11.0.*",
-		"stylelint-config-wordpress": "^15.0.*",
-		"vue-template-compiler": "^2.6.14"
-	}
+  "name": "bm-wp-experience",
+  "version": "2.2.0",
+  "description": "Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.",
+  "main": "assets/scripts/src/index.js",
+  "scripts": {
+	"release": "composer install --no-dev -o && npm run prod",
+	"development": "mix",
+	"watch": "mix watch",
+	"watch-poll": "mix watch -- --watch-options-poll=1000",
+	"hot": "mix watch --hot",
+	"production": "mix --production",
+	"i18n": "npm run i18n:textdomain && npm run i18n:pot",
+	"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules --type theme",
+	"i18n:pot": "npx wpi18n makepot  --domain-path ./languages/"
+  },
+  "author": "Bernskiold Media",
+  "license": "GPL-2.0+",
+  "devDependencies": {
+	"cross-env": "^7.0.*",
+	"laravel-mix": "^6.0.31",
+	"node-wp-i18n": "^1.2.6",
+	"postcss-preset-env": "^6.7.*",
+	"rimraf": "^3.0.2",
+	"sass": "^1.42.1",
+	"sass-loader": "^12.1.0"
+  }
 }
