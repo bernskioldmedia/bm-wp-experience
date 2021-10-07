@@ -3,7 +3,7 @@
  * Plugin Name: BM WP Experience
  * Plugin URI:  https://www.bernskioldmedia.com
  * Description: Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.
- * Version:     2.1.1
+ * Version:     2.2.0
  * Author:      Bernskiold Media
  * Author URI:  https://www.bernskioldmedia.com
  * Text Domain: bm-wp-experience
@@ -51,7 +51,7 @@ class BM_WP_Experience {
 	 *
 	 * @var string
 	 */
-	protected const VERSION = '2.1.1';
+	protected const VERSION = '2.2.0';
 
 	/**
 	 * Database Version
@@ -93,22 +93,6 @@ class BM_WP_Experience {
 	}
 
 	/**
-	 * Cloning is forbidden.
-	 *
-	 * @since 1.2
-	 */
-	private function __clone() {
-	}
-
-	/**
-	 * Unserializing instances of this class is forbidden.
-	 *
-	 * @since 1.2
-	 */
-	private function __wakeup() {
-	}
-
-	/**
 	 * Constructor
 	 */
 	public function __construct() {
@@ -126,21 +110,7 @@ class BM_WP_Experience {
 		require_once 'includes/class-install.php';
 		register_activation_hook( __FILE__, [ Install::class, 'install' ] );
 
-		add_action( 'init', [ $this, 'init' ] );
-	}
-
-	/**
-	 * Initialize when WordPress is initialized.
-	 *
-	 * @return void
-	 */
-	public function init() {
-		do_action( 'before_bm_wp_experience_init' );
-
-		// Localization support.
-		$this->load_languages();
-
-		do_action( 'bm_wp_experience_init' );
+		add_action( 'init', [ self::class, 'load_languages' ] );
 	}
 
 	/**
@@ -309,7 +279,7 @@ $bm_wp_experience_updater = Puc_v4_Factory::buildUpdateChecker( BM_WP_Experience
 $bm_wp_experience_updater->getVcsApi()->enableReleaseAssets();
 
 // Add our own plugin icon.
-$bm_wp_experience_updater->addResultFilter( function ( $plugin_info ) {
+$bm_wp_experience_updater->addResultFilter( function( $plugin_info ) {
 	$plugin_info->icons = [
 		'svg' => BM_WP_Experience::get_assets_url( 'icons/bm.svg' ),
 	];
