@@ -151,7 +151,7 @@ class BM_WP_Experience {
 	/**
 	 * Load translations in the right order.
 	 */
-	public function load_languages() {
+	public static function load_languages() {
 		$locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
 		$locale = apply_filters( 'plugin_locale', $locale, 'bm-wp-experience' );
 
