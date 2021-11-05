@@ -10,6 +10,7 @@ class Site_Health extends Module {
 		Security\Wp_Config_Permissions_Check::class,
 		Security\Env_File_Check::class,
 		Security\Bm_Config_Check::class,
+		Security\Maintenance_Plan_Check::class,
 	];
 
 	public static function hooks(): void {
