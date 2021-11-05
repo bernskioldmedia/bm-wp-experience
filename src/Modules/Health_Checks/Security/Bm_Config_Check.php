@@ -39,6 +39,6 @@ class Bm_Config_Check extends Security_Check {
 	}
 
 	public static function get_label(): string {
-		return __( 'WP-Config File Permissions', 'bm-wp-experience' );
+		return __( 'Configuration File Permissions', 'bm-wp-experience' );
 	}
 }
