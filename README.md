@@ -64,6 +64,13 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Restrict all API endpoints by default unless defined by `BM_WP_RESTRICT_REST_API` (all, users, none).
 - Fixes a WP bug where pagination isn't working when sorting by menu order.
 
+### Integration: SearchWP
+
+The SearchWP integration automatically runs if SearchWP is active.
+
+- Enables adding the license key via the `SEARCH_WP_LICENSE_KEY` in config.
+- Disabled admin bar entry.
+
 ### Security
 
 - Force non-local environments to use strong passwords.
