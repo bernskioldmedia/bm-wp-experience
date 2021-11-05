@@ -14,7 +14,7 @@ class Admin_Columns {
 	 */
 	public static function init() {
 		$acp_file_path = 'admin-columns-pro/admin-columns-pro.php';
-		if ( is_plugin_active( $acp_file_path ) || is_plugin_active_for_network( $acp_file_path ) ) {
+		if ( Helpers::is_plugin_active( $acp_file_path ) || Helpers::is_plugin_active_for_network( $acp_file_path ) ) {
 			self::create_repository();
 		}
 	}

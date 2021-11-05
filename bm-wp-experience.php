@@ -96,8 +96,8 @@ class BM_WP_Experience {
 	 * Constructor
 	 */
 	public function __construct() {
-		$this->admin_includes();
 		$this->classes();
+		$this->admin_includes();
 		$this->init_hooks();
 
 		do_action( 'bm_wp_experience_loaded' );
@@ -139,6 +139,7 @@ class BM_WP_Experience {
 		require_once 'includes/class-customizer.php';
 		require_once 'includes/class-dashboard.php';
 		require_once 'includes/class-environments.php';
+		require_once 'includes/class-helpers.php';
 		require_once 'includes/class-media.php';
 		require_once 'includes/class-multisite.php';
 		require_once 'includes/class-plugins.php';
