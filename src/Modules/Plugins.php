@@ -2,15 +2,12 @@
 /**
  * Plugin Tweaks & Customizations
  *
- * @package BernskioldMedia\WP\Experience
  **/
 
 namespace BernskioldMedia\WP\Experience\Modules;
 
-class Plugins extends Module
-{
-    public static function hooks(): void
-    {
+class Plugins extends Module {
+    public static function hooks(): void {
         add_filter('install_plugins_tabs', [ self::class, 'add_suggested_plugin_install_link' ]);
         add_filter('install_plugins_table_api_args_bmedia', [ self::class, 'plugins_api_args' ]);
 
@@ -30,13 +27,8 @@ class Plugins extends Module
 
     /**
      * Add BM suggested tab to plugins install screen
-     *
-     * @param array $tabs
-     *
-     * @return array
      */
-    public static function add_suggested_plugin_install_link(array $tabs): array
-    {
+    public static function add_suggested_plugin_install_link(array $tabs): array {
         $new_tabs = [
             'bmedia' => esc_html__('BM Suggested', 'bm-wp-experience'),
         ];
@@ -54,11 +46,8 @@ class Plugins extends Module
      * favourited on our WP.org account.
      *
      * This function sets up the args.
-     *
-     * @return array
      */
-    public static function plugins_api_args(): array
-    {
+    public static function plugins_api_args(): array {
         return [
             'page'     => 1,
             'per_page' => 60,
@@ -75,19 +64,15 @@ class Plugins extends Module
     /**
      * Show admin notice.
      */
-    public static function add_admin_notice(): void
-    {
+    public static function add_admin_notice(): void {
         add_action('admin_notices', [ self::class, 'display_install_warning' ]);
         add_action('network_admin_notices', [ self::class, 'display_install_warning' ]);
     }
 
     /**
      * Display a warning when the user is about to install a new plugin.
-     *
-     * @return void
      */
-    public static function display_install_warning(): void
-    {
+    public static function display_install_warning(): void {
         ?>
 		<div class="notice notice-warning">
 			<p>
@@ -102,19 +87,16 @@ class Plugins extends Module
     /**
      * Add a "learn more" link to the plugin row for this plugin that points to the admin page.
      *
-     * @param array  $plugin_meta An array of the plugin's metadata,
+     * @param array  $plugin_meta an array of the plugin's metadata,
      *                            including the version, author,
-     *                            author URI, and plugin URI.
-     * @param string $plugin_file Path to the plugin file, relative to the plugins directory.
-     * @param array  $plugin_data An array of plugin data.
+     *                            author URI, and plugin URI
+     * @param string $plugin_file path to the plugin file, relative to the plugins directory
+     * @param array  $plugin_data an array of plugin data
      * @param string $status      Status of the plugin. Defaults are 'All', 'Active',
      *                            'Inactive', 'Recently Activated', 'Upgrade', 'Must-Use',
      *                            'Drop-ins', 'Search'.
-     *
-     * @return array
      */
-    public static function show_plugin_meta(array $plugin_meta, string $plugin_file, array $plugin_data, string $status): array
-    {
+    public static function show_plugin_meta(array $plugin_meta, string $plugin_file, array $plugin_data, string $status): array {
         if ('bm-wp-experience/bm-wp-experience.php' !== $plugin_file) {
             return $plugin_meta;
         }
@@ -127,11 +109,8 @@ class Plugins extends Module
     /**
      * Show a small but friendly warning if the user tries to
      * disable this plugin.
-     *
-     * @return void
      */
-    public static function show_deactivation_warning(): void
-    {
+    public static function show_deactivation_warning(): void {
         $message = esc_html__("Warning: This plugin provides additional enterprise-grade protective measures, alongside WordPress core tweaks for an optimal experience. If you deactive, you should consider adding similar protective measuress.\n\nAre you sure you want to deactivate?", 'bm-wp-experience'); ?>
 		<script type="text/javascript">
 			jQuery( document ).ready( function( $ ) {

@@ -4,17 +4,14 @@
  *
  * General admin adjustments.
  *
- * @package BernskioldMedia\WP\Experience
  **/
 
 namespace BernskioldMedia\WP\Experience\Admin;
 
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\Interfaces\Hookable;
 
-class Admin implements Hookable
-{
-    public static function hooks(): void
-    {
+class Admin implements Hookable {
+    public static function hooks(): void {
         // Remove version from footer.
         add_action('admin_menu', [ self::class, 'admin_no_footer_version' ]);
         add_action('network_admin_menu', [ self::class, 'admin_no_footer_version' ]);
@@ -34,11 +31,8 @@ class Admin implements Hookable
 
     /**
      * Change Admin Footer Text
-     *
-     * @return string
      */
-    public static function change_admin_footer_text(): string
-    {
+    public static function change_admin_footer_text(): string {
         /* translators: 1. Site Name */
         $new_text = sprintf(__(
             'Thank you for creating with <a href="https://wordpress.org">WordPress</a> and <a href="https://www.bernskioldmedia.com/en/?utm_source=clientsite&utm_medium=dashboard_link&utm_campaign=%1$s">Bernskiold Media</a>.',
@@ -50,24 +44,19 @@ class Admin implements Hookable
 
     /**
      * Admin No Footer Version
-     *
-     * @return void
      */
-    public static function admin_no_footer_version(): void
-    {
+    public static function admin_no_footer_version(): void {
         remove_filter('update_footer', 'core_update_footer');
     }
 
     /**
      * Remove the help tabs.
      */
-    public static function remove_help_tab(): void
-    {
+    public static function remove_help_tab(): void {
         get_current_screen()->remove_help_tabs();
     }
 
-    public static function add_help_widget(): void
-    {
+    public static function add_help_widget(): void {
         if (false === apply_filters('bm_wpexp_show_help_widget', true)) {
             return;
         }
@@ -98,8 +87,7 @@ class Admin implements Hookable
 	<?php
     }
 
-    public static function maybe_show_acf(): bool
-    {
+    public static function maybe_show_acf(): bool {
         return 'production' !== wp_get_environment_type();
     }
 }

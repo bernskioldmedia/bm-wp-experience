@@ -3110,6 +3110,47 @@
             "install-path": "../szepeviktor/phpstan-wordpress"
         },
         {
+            "name": "tareq1988/wp-php-cs-fixer",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tareq1988/wp-php-cs-fixer.git",
+                "reference": "56b9c1dd2b979a4ff7a25afa2e1c6b290a5ae876"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tareq1988/wp-php-cs-fixer/zipball/56b9c1dd2b979a4ff7a25afa2e1c6b290a5ae876",
+                "reference": "56b9c1dd2b979a4ff7a25afa2e1c6b290a5ae876",
+                "shasum": ""
+            },
+            "time": "2020-09-21T09:47:38+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "WeDevs\\Fixer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tareq Hasan",
+                    "email": "tareq@wedevs.com"
+                }
+            ],
+            "description": "WordPress rules for php-cs-fixer",
+            "support": {
+                "issues": "https://github.com/tareq1988/wp-php-cs-fixer/issues",
+                "source": "https://github.com/tareq1988/wp-php-cs-fixer/tree/master"
+            },
+            "install-path": "../tareq1988/wp-php-cs-fixer"
+        },
+        {
             "name": "thecodingmachine/phpstan-strict-rules",
             "version": "v0.12.1",
             "version_normalized": "0.12.1.0",
@@ -3303,6 +3344,7 @@
         "symfony/stopwatch",
         "symfony/var-dumper",
         "szepeviktor/phpstan-wordpress",
+        "tareq1988/wp-php-cs-fixer",
         "thecodingmachine/phpstan-strict-rules",
         "wp-coding-standards/wpcs"
     ]

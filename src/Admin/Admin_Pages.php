@@ -2,7 +2,6 @@
 /**
  * Add Admin Pages
  *
- * @package BernskioldMedia\WP\Experience
  **/
 
 namespace BernskioldMedia\WP\Experience\Admin;
@@ -14,10 +13,8 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Admin_Pages implements Hookable
-{
-    public static function hooks(): void
-    {
+class Admin_Pages implements Hookable {
+    public static function hooks(): void {
         add_action('admin_menu', [ self::class, 'register_pages' ]);
         add_action('admin_menu', [ self::class, 'add_reusable_blocks' ]);
         add_action('admin_menu', [ self::class, 'remove_import_export' ]);
@@ -30,8 +27,7 @@ class Admin_Pages implements Hookable
      *
      * @since 1.0.1
      */
-    public static function add_reusable_blocks(): void
-    {
+    public static function add_reusable_blocks(): void {
         add_submenu_page(
             'edit.php?post_type=page',
             __('Reusable Blocks', 'bm-wp-experience'),
@@ -44,9 +40,8 @@ class Admin_Pages implements Hookable
     /**
      * Register Pages
      */
-    public static function register_pages(): void
-    {
-        /**
+    public static function register_pages(): void {
+        /*
          * Add support page.
          */
         if (true === apply_filters('bm_wpexp_show_admin_page_support', true)) {
@@ -64,7 +59,7 @@ class Admin_Pages implements Hookable
             );
         }
 
-        /**
+        /*
          * Add About Bernskiold Media page.
          */
         if (true === apply_filters('bm_wpexp_show_admin_page_about', true)) {
@@ -85,8 +80,7 @@ class Admin_Pages implements Hookable
     /**
      * Load the Support page view.
      */
-    public static function view_support(): void
-    {
+    public static function view_support(): void {
         $filtered_support_content = apply_filters('bm_wpexp_admin_page_support_content', null);
 
         if (null !== $filtered_support_content) {
@@ -99,13 +93,11 @@ class Admin_Pages implements Hookable
     /**
      * Load the About BM page view.
      */
-    public static function view_about_bm(): void
-    {
+    public static function view_about_bm(): void {
         include Plugin::get_view_path('admin/about-bm');
     }
 
-    public static function remove_import_export(): void
-    {
+    public static function remove_import_export(): void {
         if (defined('BM_WP_ENABLE_IMPORT_EXPORT') && BM_WP_ENABLE_IMPORT_EXPORT) {
             return;
         }

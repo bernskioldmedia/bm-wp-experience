@@ -1,8 +1,6 @@
 <?php
 /**
  * Adjustments to Comments
- *
- * @package BernskioldMedia\WP\Experience
  */
 
 namespace BernskioldMedia\WP\Experience\Modules;
@@ -14,10 +12,8 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Comments extends Module
-{
-    public static function hooks(): void
-    {
+class Comments extends Module {
+    public static function hooks(): void {
         // We disable comments by default. Set BM_WP_ENABLE_COMMENTS to true to enable, which skips this function.
         if (defined('BM_WP_ENABLE_COMMENTS') && BM_WP_ENABLE_COMMENTS === true) {
             return;
@@ -47,23 +43,16 @@ class Comments extends Module
 
     /**
      * Remove the recent comments widget.
-     *
      */
-    public static function remove_recent_comments_widget(): void
-    {
+    public static function remove_recent_comments_widget(): void {
         unregister_widget('WP_Widget_Recent_Comments');
         add_filter('show_recent_comments_widget_style', '__return_false');
     }
 
     /**
      * Remove the X-Pingback HTTP header
-     *
-     * @param  array  $headers
-     *
-     * @return array
      */
-    public static function remove_pingback_header(array $headers): array
-    {
+    public static function remove_pingback_header(array $headers): array {
         unset($headers['X-Pingback']);
 
         return $headers;
@@ -72,8 +61,7 @@ class Comments extends Module
     /**
      * 403 Protect all Comment Feeds
      */
-    public static function protect_comment_feeds(): void
-    {
+    public static function protect_comment_feeds(): void {
         if (! is_comment_feed()) {
             return;
         }
@@ -84,8 +72,7 @@ class Comments extends Module
     /**
      * Remove comments from admin bar.
      */
-    public static function remove_comments_from_admin_bar(): void
-    {
+    public static function remove_comments_from_admin_bar(): void {
         if (! is_admin_bar_showing()) {
             return;
         }
@@ -99,11 +86,8 @@ class Comments extends Module
 
     /**
      * Remove comment links from the admin bar in a multisite network.
-     *
-     * @param  WP_Admin_Bar  $wp_admin_bar
      */
-    public static function remove_comments_from_network_admin_bar(WP_Admin_Bar $wp_admin_bar): void
-    {
+    public static function remove_comments_from_network_admin_bar(WP_Admin_Bar $wp_admin_bar): void {
         // If network activated, remove for all sites.
         if (Helpers::is_network_active() && is_user_logged_in()) {
             foreach ((array) $wp_admin_bar->user->blogs as $blog) {
@@ -116,13 +100,8 @@ class Comments extends Module
 
     /**
      * Remove the comments endpoint from the REST API
-     *
-     * @param  array  $endpoints
-     *
-     * @return array
      */
-    public static function remove_comments_from_rest_api(array $endpoints): array
-    {
+    public static function remove_comments_from_rest_api(array $endpoints): array {
         unset($endpoints['comments']);
 
         return $endpoints;
@@ -130,13 +109,8 @@ class Comments extends Module
 
     /**
      * Disable comments via XMLRPC.
-     *
-     * @param  array  $methods
-     *
-     * @return array
      */
-    public static function disable_xmlrc_comments(array $methods): array
-    {
+    public static function disable_xmlrc_comments(array $methods): array {
         unset($methods['wp.newComment']);
 
         return $methods;
@@ -148,16 +122,14 @@ class Comments extends Module
      * @param $prepared_comment
      * @param $request
      */
-    public static function disable_adding_comments_from_rest_api($prepared_comment, $request): void
-    {
+    public static function disable_adding_comments_from_rest_api($prepared_comment, $request): void {
         return;
     }
 
     /**
      * Remove comments and discussion settings from the admin menu.
      */
-    public static function remove_comments_from_admin_menu(): void
-    {
+    public static function remove_comments_from_admin_menu(): void {
         global $pagenow;
 
         remove_menu_page('edit-comments.php');
@@ -172,8 +144,7 @@ class Comments extends Module
      * Hides comment counts and statements that we cannot
      * remove programatically in any other way.
      */
-    public static function hide_comment_counts(): void
-    {
+    public static function hide_comment_counts(): void {
         echo '<style>
 			#dashboard_right_now .comment-count,
 			#dashboard_right_now .comment-mod-count,

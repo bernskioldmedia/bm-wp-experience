@@ -8,12 +8,11 @@
 
 namespace BernskioldMedia\WP\Experience\Modules;
 
+use WP_Error;
 use WP_Query;
 
-class Rest_Api extends Module
-{
-    public static function hooks(): void
-    {
+class Rest_Api extends Module {
+    public static function hooks(): void {
         add_filter('rest_authentication_errors', [ self::class, 'restrict' ], 99);
         add_filter('rest_endpoints', [ self::class, 'restrict_user_endpoints' ]);
         add_filter('determine_current_user', [ self::class, 'handle_basic_auth' ], 20);
@@ -24,14 +23,13 @@ class Rest_Api extends Module
      * If we have chosen to restrict the REST API, we send a 403
      * status back if we are not authenticated.
      *
-     * @param  \WP_Error|null|bool  $result  Error from another authentication handler,
-     *                                       null if we should handle it, or another value
-     *                                       if not.
+     * @param WP_Error|bool|null $result error from another authentication handler,
+     *                                   null if we should handle it, or another value
+     *                                   if not
      *
-     * @return \WP_Error|null|bool
+     * @return WP_Error|bool|null
      */
-    public static function restrict($result)
-    {
+    public static function restrict($result) {
         // Respect other handlers
         if (null !== $result) {
             return $result;
@@ -40,7 +38,7 @@ class Rest_Api extends Module
         $is_restricted = self::get_restricted_status();
 
         if ('all' === $is_restricted && ! is_user_logged_in()) {
-            return new \WP_Error('rest_api_restricted', __('Authentication is required.', 'bm-wp-experience'), [
+            return new WP_Error('rest_api_restricted', __('Authentication is required.', 'bm-wp-experience'), [
                 'status' => rest_authorization_required_code(),
             ]);
         }
@@ -52,12 +50,9 @@ class Rest_Api extends Module
      * Restrict requests to user endpoints unless authenticated.
      * This will prevent
      *
-     * @param  array  $endpoints  Array of endpoints
-     *
-     * @return array
+     * @param array $endpoints Array of endpoints
      */
-    public static function restrict_user_endpoints(array $endpoints): array
-    {
+    public static function restrict_user_endpoints(array $endpoints): array {
         $restrict = self::get_restricted_status();
 
         if ('none' === $restrict) {
@@ -83,11 +78,8 @@ class Rest_Api extends Module
      * Get Restriction Status
      *
      * If nothing is set, we default to restricting everything.
-     *
-     * @return string
      */
-    public static function get_restricted_status(): string
-    {
+    public static function get_restricted_status(): string {
         $level = 'all';
 
         if (defined('BM_WP_RESTRICT_REST_API')) {
@@ -102,8 +94,7 @@ class Rest_Api extends Module
     /**
      * Handle Basic Authentication
      */
-    public static function handle_basic_auth($user)
-    {
+    public static function handle_basic_auth($user) {
         // Don't authenticate twice
         if (! empty($user)) {
             return $user;
@@ -117,7 +108,7 @@ class Rest_Api extends Module
         $username = wp_strip_all_tags($_SERVER['PHP_AUTH_USER']);
         $password = wp_strip_all_tags($_SERVER['PHP_AUTH_PW']);
 
-        /**
+        /*
          * In multi-site, wp_authenticate_spam_check filter is run on authentication. This filter calls
          * get_currentuserinfo which in turn calls the determine_current_user filter. This leads to infinite
          * recursion and a stack overflow unless the current function is removed from the determine_current_user
@@ -128,7 +119,6 @@ class Rest_Api extends Module
         $user = wp_authenticate($username, $password);
 
         add_filter('determine_current_user', [ self::class, 'handle_basic_auth' ], 20);
-
 
         if (is_wp_error($user)) {
             return null;
@@ -144,13 +134,10 @@ class Rest_Api extends Module
      *
      * @see https://core.trac.wordpress.org/ticket/46294
      *
-     * @param  string     $orderby  Current orderby value.
-     * @param  \WP_Query  $query    Query object.
-     *
-     * @return string
+     * @param string   $orderby current orderby value
+     * @param WP_Query $query   query object
      */
-    public static function posts_orderby(string $orderby, \WP_Query $query): string
-    {
+    public static function posts_orderby(string $orderby, WP_Query $query): string {
         global $wpdb;
 
         if (defined('REST_REQUEST') && REST_REQUEST) {

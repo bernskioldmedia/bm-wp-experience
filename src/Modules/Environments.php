@@ -6,7 +6,6 @@
  * environments. Such as automatically hiding non-production from Google,
  * as well as having a clear staging message printed.
  *
- * @package BernskioldMedia\WP\Experience
  * @since   1.4.0
  **/
 
@@ -16,10 +15,8 @@ use BernskioldMedia\WP\Experience\Helpers;
 use BernskioldMedia\WP\Experience\Plugin;
 use WP_Admin_Bar;
 
-class Environments extends Module
-{
-    public static function hooks(): void
-    {
+class Environments extends Module {
+    public static function hooks(): void {
         add_filter('admin_bar_menu', [ self::class, 'show_in_admin_bar' ], 40);
         add_action('wp_footer', [ self::class, 'show_public_staging_notice' ]);
         add_filter('wp_robots', [ self::class, 'disable_indexing_outside_production' ], 99999);
@@ -29,13 +26,9 @@ class Environments extends Module
      * When we are not on production environments, we automatically
      * disable indexing to prevent human mistakes.
      *
-     * @param  array  $robots
-     *
-     * @return array
      * @since 1.4.0
      */
-    public static function disable_indexing_outside_production(array $robots): array
-    {
+    public static function disable_indexing_outside_production(array $robots): array {
         if ('production' === wp_get_environment_type()) {
             return $robots;
         }
@@ -56,8 +49,7 @@ class Environments extends Module
      *
      * @since 1.4.0
      */
-    public static function show_public_staging_notice(): void
-    {
+    public static function show_public_staging_notice(): void {
         if ('staging' !== wp_get_environment_type()) {
             return;
         }
@@ -76,12 +68,9 @@ class Environments extends Module
     /**
      * Add a menu bar item showing the current environment.
      *
-     * @param  WP_Admin_Bar  $wp_admin_bar
-     *
      * @since 1.4.0
      */
-    public static function show_in_admin_bar(WP_Admin_Bar $wp_admin_bar): void
-    {
+    public static function show_in_admin_bar(WP_Admin_Bar $wp_admin_bar): void {
         if (false === apply_filters('bm_wpexp_environment_show_admin_bar', true)) {
             return;
         }
@@ -106,11 +95,9 @@ class Environments extends Module
      * For multisites we default to super admins. For standard sites
      * all users that can manage options.
      *
-     * @return bool
      * @since 1.4.0
      */
-    protected static function should_user_see(): bool
-    {
+    protected static function should_user_see(): bool {
         if (is_multisite() && Helpers::is_network_active()) {
             return is_super_admin();
         }
@@ -123,11 +110,9 @@ class Environments extends Module
     /**
      * Get a human readable label of the current environment.
      *
-     * @return string
      * @since 1.4.0
      */
-    protected static function get_environment_label(): string
-    {
+    protected static function get_environment_label(): string {
         $environment = wp_get_environment_type();
 
         switch ($environment) {

@@ -23,6 +23,10 @@ class ComposerStaticInitc6947907303abaaf7a0a6b488c10bb8a
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'WeDevs\\Fixer\\' => 13,
+        ),
         'T' => 
         array (
             'TheCodingMachine\\PHPStan\\' => 25,
@@ -82,6 +86,10 @@ class ComposerStaticInitc6947907303abaaf7a0a6b488c10bb8a
     );
 
     public static $prefixDirsPsr4 = array (
+        'WeDevs\\Fixer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tareq1988/wp-php-cs-fixer/src',
+        ),
         'TheCodingMachine\\PHPStan\\' => 
         array (
             0 => __DIR__ . '/..' . '/thecodingmachine/phpstan-strict-rules/src',
@@ -1362,6 +1370,10 @@ class ComposerStaticInitc6947907303abaaf7a0a6b488c10bb8a
         'TheCodingMachine\\PHPStan\\Utils\\PrefixGenerator' => __DIR__ . '/..' . '/thecodingmachine/phpstan-strict-rules/src/Utils/PrefixGenerator.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
+        'WeDevs\\Fixer\\BlankLineAfterClassOpeningFixer' => __DIR__ . '/..' . '/tareq1988/wp-php-cs-fixer/src/BlankLineAfterClassOpeningFixer.php',
+        'WeDevs\\Fixer\\Fixer' => __DIR__ . '/..' . '/tareq1988/wp-php-cs-fixer/src/Fixer.php',
+        'WeDevs\\Fixer\\FixerName' => __DIR__ . '/..' . '/tareq1988/wp-php-cs-fixer/src/FixerName.php',
+        'WeDevs\\Fixer\\SpaceInsideParenthesisFixer' => __DIR__ . '/..' . '/tareq1988/wp-php-cs-fixer/src/SpaceInsideParenthesisFixer.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

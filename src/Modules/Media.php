@@ -5,22 +5,15 @@
 
 namespace BernskioldMedia\WP\Experience\Modules;
 
-class Media extends Module
-{
-    public static function hooks(): void
-    {
+class Media extends Module {
+    public static function hooks(): void {
         add_filter('sanitize_file_name', [ self::class, 'sanitize_file_name_chars' ], 20);
     }
 
     /**
      * Sanitize the file names on upload.
-     *
-     * @param  string  $filename
-     *
-     * @return string
      */
-    public static function sanitize_file_name_chars(string $filename): string
-    {
+    public static function sanitize_file_name_chars(string $filename): string {
         $sanitized_filename = remove_accents($filename); // Convert to ASCII
 
         // Standard replacements

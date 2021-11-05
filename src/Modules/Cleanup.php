@@ -4,8 +4,6 @@
  *
  * Some things added to WordPress are not things we need.
  * These are cleanup and tweaks functions.
- *
- * @package BernskioldMedia\WP\Experience
  */
 
 namespace BernskioldMedia\WP\Experience\Modules;
@@ -14,10 +12,8 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Cleanup extends Module
-{
-    public static function hooks(): void
-    {
+class Cleanup extends Module {
+    public static function hooks(): void {
         // Clean up wp_head().
         self::wp_head_cleanup();
 
@@ -36,8 +32,7 @@ class Cleanup extends Module
      *
      * Remove unnecessary <link>'s
      */
-    public static function wp_head_cleanup(): void
-    {
+    public static function wp_head_cleanup(): void {
         if (self::should_disable_feed_urls()) {
             remove_action('wp_head', 'feed_links', 2);
             remove_action('wp_head', 'feed_links_extra', 3);
@@ -74,12 +69,9 @@ class Cleanup extends Module
     /**
      * Disable Emojis in TincyMCE
      *
-     * @param  array  $plugins  Active Plugins Array.
-     *
-     * @return array
+     * @param array $plugins active Plugins Array
      */
-    public static function disable_emojicons_tinymce($plugins): array
-    {
+    public static function disable_emojicons_tinymce($plugins): array {
         if (is_array($plugins)) {
             return array_diff($plugins, [ 'wpemoji' ]);
         }
@@ -91,11 +83,10 @@ class Cleanup extends Module
      * Redirects search results from /?s=query to /search/query/
      * and converts %20 to + in the URL.
      *
-     * @link http://txfx.net/wordpress-plugins/nice-search/
-     * @link https://github.com/roots/roots/blob/master/lib/cleanup.php
+     * @see http://txfx.net/wordpress-plugins/nice-search/
+     * @see https://github.com/roots/roots/blob/master/lib/cleanup.php
      */
-    public static function nice_search_url(): void
-    {
+    public static function nice_search_url(): void {
         global $wp_rewrite;
 
         if (! isset($wp_rewrite) || ! is_object($wp_rewrite) || ! $wp_rewrite->using_permalinks()) {
@@ -113,16 +104,13 @@ class Cleanup extends Module
     /**
      * Fix for empty search queries redirecting to home page
      *
-     * @link http://wordpress.org/support/topic/blank-search-sends-you-to-the-homepage#post-1772565
-     * @link http://core.trac.wordpress.org/ticket/11330
-     * @link https://github.com/roots/roots/blob/master/lib/cleanup.php
+     * @see http://wordpress.org/support/topic/blank-search-sends-you-to-the-homepage#post-1772565
+     * @see http://core.trac.wordpress.org/ticket/11330
+     * @see https://github.com/roots/roots/blob/master/lib/cleanup.php
      *
-     * @param  array  $query_vars  Query Vars.
-     *
-     * @return array
+     * @param array $query_vars query Vars
      */
-    public static function blank_search_fix(array $query_vars): array
-    {
+    public static function blank_search_fix(array $query_vars): array {
         if (isset($_GET['s']) && empty($_GET['s']) && ! is_admin()) {
             $query_vars['s'] = ' ';
         }
@@ -135,11 +123,8 @@ class Cleanup extends Module
      * disable feed URLs in the <head> or not.
      *
      * If undefined, defaults to true = disable.
-     *
-     * @return bool
      */
-    protected static function should_disable_feed_urls(): bool
-    {
+    protected static function should_disable_feed_urls(): bool {
         if (! defined('BM_WP_DISABLE_FEED_URLS')) {
             return true;
         }

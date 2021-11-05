@@ -2,7 +2,6 @@
 /**
  * Add options to the admin bar.
  *
- * @package BernskioldMedia\WP\Experience
  **/
 
 namespace BernskioldMedia\WP\Experience\Admin;
@@ -10,15 +9,14 @@ namespace BernskioldMedia\WP\Experience\Admin;
 use BernskioldMedia\WP\Experience\Modules\Updates;
 use BernskioldMedia\WP\Experience\Plugin;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\Interfaces\Hookable;
+use WP_Admin_Bar;
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-class Admin_Bar implements Hookable
-{
-    public static function hooks(): void
-    {
+class Admin_Bar implements Hookable {
+    public static function hooks(): void {
         add_action('admin_bar_menu', [ self::class, 'about_bm' ]);
         add_action('admin_bar_menu', [ self::class, 'support' ], 60);
         add_action('admin_bar_menu', [ self::class, 'customizer' ], 60);
@@ -31,8 +29,7 @@ class Admin_Bar implements Hookable
     /**
      * Load admin bar assets.
      */
-    public static function assets(): void
-    {
+    public static function assets(): void {
         wp_register_style('bm-admin-bar', Plugin::get_assets_url('styles/dist/admin-bar.css'), [], Plugin::get_version(), 'all');
 
         if (is_admin_bar_showing()) {
@@ -47,10 +44,9 @@ class Admin_Bar implements Hookable
      * Nodes can be designated as "always", "admin" or "frontend"
      * to choose where we will remove them from.
      *
-     * @param  \WP_Admin_Bar  $wp_admin_bar
+     * @param WP_Admin_Bar $wp_admin_bar
      */
-    public static function remove($wp_admin_bar): void
-    {
+    public static function remove($wp_admin_bar): void {
         $nodes_to_remove = apply_filters('bm_wpexp_remove_admin_bar_items', [
             'wp-logo'    => 'always',
             'comments'   => 'always',
@@ -78,11 +74,10 @@ class Admin_Bar implements Hookable
     /**
      * Add a "Support" menu item to the admin bar.
      *
-     * @param  \WP_Admin_Bar  $wp_admin_bar
+     * @param WP_Admin_Bar $wp_admin_bar
      */
-    public static function support($wp_admin_bar): void
-    {
-        /**
+    public static function support($wp_admin_bar): void {
+        /*
          * Allow the option of hiding the admin bar
          * links via a filter.
          */
@@ -90,7 +85,7 @@ class Admin_Bar implements Hookable
             return;
         }
 
-        /**
+        /*
          * Hide the admin bar link in admin.
          */
         if (is_admin()) {
@@ -112,11 +107,10 @@ class Admin_Bar implements Hookable
      * Re-hooking the customizer to place it under the home
      * menu item on frontend.
      *
-     * @param  \WP_Admin_Bar  $wp_admin_bar
+     * @param WP_Admin_Bar $wp_admin_bar
      */
-    public static function customizer($wp_admin_bar): void
-    {
-        /**
+    public static function customizer($wp_admin_bar): void {
+        /*
          * Hide the admin bar link in admin.
          */
         if (is_admin()) {
@@ -138,11 +132,10 @@ class Admin_Bar implements Hookable
     /**
      * Add an "About BM" menu item to the admin bar.
      *
-     * @param  \WP_Admin_Bar  $wp_admin_bar
+     * @param WP_Admin_Bar $wp_admin_bar
      */
-    public static function about_bm($wp_admin_bar): void
-    {
-        /**
+    public static function about_bm($wp_admin_bar): void {
+        /*
          * Allow the option of hiding the admin bar
          * links via a filter.
          */

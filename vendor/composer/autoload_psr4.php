@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'WeDevs\\Fixer\\' => array($vendorDir . '/tareq1988/wp-php-cs-fixer/src'),
     'TheCodingMachine\\PHPStan\\' => array($vendorDir . '/thecodingmachine/phpstan-strict-rules/src'),
     'SzepeViktor\\PHPStan\\WordPress\\' => array($vendorDir . '/szepeviktor/phpstan-wordpress/src'),
     'Symfony\\Polyfill\\Php81\\' => array($vendorDir . '/symfony/polyfill-php81'),

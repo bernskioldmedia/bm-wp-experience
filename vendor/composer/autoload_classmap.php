@@ -1143,4 +1143,8 @@ return array(
     'TheCodingMachine\\PHPStan\\Utils\\PrefixGenerator' => $vendorDir . '/thecodingmachine/phpstan-strict-rules/src/Utils/PrefixGenerator.php',
     'UnhandledMatchError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
     'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
+    'WeDevs\\Fixer\\BlankLineAfterClassOpeningFixer' => $vendorDir . '/tareq1988/wp-php-cs-fixer/src/BlankLineAfterClassOpeningFixer.php',
+    'WeDevs\\Fixer\\Fixer' => $vendorDir . '/tareq1988/wp-php-cs-fixer/src/Fixer.php',
+    'WeDevs\\Fixer\\FixerName' => $vendorDir . '/tareq1988/wp-php-cs-fixer/src/FixerName.php',
+    'WeDevs\\Fixer\\SpaceInsideParenthesisFixer' => $vendorDir . '/tareq1988/wp-php-cs-fixer/src/SpaceInsideParenthesisFixer.php',
 );

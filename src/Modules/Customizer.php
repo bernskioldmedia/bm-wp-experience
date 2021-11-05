@@ -3,8 +3,6 @@
  * Customizer
  *
  * Adds various opinionated tweaks to the customizer.
- *
- * @package BernskioldMedia\WP\Experience
  */
 
 namespace BernskioldMedia\WP\Experience\Modules;
@@ -13,8 +11,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Customizer extends Module
-{
+class Customizer extends Module {
     /**
      * Option key where to store the CSS last updated time.
      */
@@ -35,8 +32,7 @@ class Customizer extends Module
     /**
      * Init.
      */
-    public static function hooks(): void
-    {
+    public static function hooks(): void {
         if (false === apply_filters('bm_wpexp_custom_css_as_file', false)) {
             return;
         }
@@ -55,8 +51,7 @@ class Customizer extends Module
     /**
      * Enqueue the custom CSS file.
      */
-    public static function load_custom_css(): void
-    {
+    public static function load_custom_css(): void {
         wp_register_style(self::CUSTOM_CSS_ID, self::get_custom_css_file_url(), [], self::get_custom_css_last_updated_time(), 'all');
         wp_style_add_data(self::CUSTOM_CSS_ID, 'path', self::get_custom_css_file_path());
 
@@ -69,8 +64,7 @@ class Customizer extends Module
     /**
      * Save the custom CSS to a file.
      */
-    public static function save_custom_css_to_file(): void
-    {
+    public static function save_custom_css_to_file(): void {
         $styles = wp_get_custom_css();
 
         self::maybe_create_custom_css_storage_directory();
@@ -88,21 +82,17 @@ class Customizer extends Module
     /**
      * Get the time when the custom CSS was last updated.
      *
-     * @return null|string|int
+     * @return string|int|null
      */
-    protected static function get_custom_css_last_updated_time()
-    {
+    protected static function get_custom_css_last_updated_time() {
         return get_option(self::CSS_LAST_UPDATED_OPTION_KEY, null);
     }
 
     /**
      * Set the time when the custom CSS was last updated.
      * Defaults to the current time if none given.
-     *
-     * @param  null|int  $time
      */
-    protected static function set_custom_css_last_updated_time(?int $time = null): void
-    {
+    protected static function set_custom_css_last_updated_time(?int $time = null): void {
         if (null === $time) {
             $time = time();
         }
@@ -112,11 +102,8 @@ class Customizer extends Module
 
     /**
      * Get the custom CSS storage directory path.
-     *
-     * @return string
      */
-    protected static function get_custom_css_storage_directory(): string
-    {
+    protected static function get_custom_css_storage_directory(): string {
         $path = WP_CONTENT_DIR . '/custom-css';
 
         return apply_filters('bm_wpexp_custom_css_storage_directory_path', $path);
@@ -124,11 +111,8 @@ class Customizer extends Module
 
     /**
      * Get the custom CSS storage directory URL.
-     *
-     * @return string
      */
-    protected static function get_custom_css_storage_directory_uri(): string
-    {
+    protected static function get_custom_css_storage_directory_uri(): string {
         $path = WP_CONTENT_URL . '/custom-css';
 
         return apply_filters('bm_wpexp_custom_css_storage_directory_uri', $path);
@@ -137,8 +121,7 @@ class Customizer extends Module
     /**
      * Create the storage directory if it doesn't exist.
      */
-    protected static function maybe_create_custom_css_storage_directory(): void
-    {
+    protected static function maybe_create_custom_css_storage_directory(): void {
         if (! file_exists(self::get_custom_css_storage_directory())) {
             mkdir(self::get_custom_css_storage_directory(), 0755, true);
         }
@@ -146,11 +129,8 @@ class Customizer extends Module
 
     /**
      * Get the custom CSS file name.
-     *
-     * @return string
      */
-    protected static function get_custom_css_file_name(): string
-    {
+    protected static function get_custom_css_file_name(): string {
         $base = apply_filters('bm_wpexp_custom_css_file_name', self::$custom_css_file_name);
 
         if (is_multisite()) {
@@ -162,39 +142,29 @@ class Customizer extends Module
 
     /**
      * Get the path to the custom CSS file.
-     *
-     * @return string
      */
-    public static function get_custom_css_file_path(): string
-    {
+    public static function get_custom_css_file_path(): string {
         return self::get_custom_css_storage_directory() . '/' . self::get_custom_css_file_name();
     }
 
     /**
      * Get the custom CSS file URL.
-     *
-     * @return string
      */
-    public static function get_custom_css_file_url(): string
-    {
+    public static function get_custom_css_file_url(): string {
         return self::get_custom_css_storage_directory_uri() . '/' . self::get_custom_css_file_name();
     }
 
     /**
      * Create the the custom CSS file.
-     *
-     * @param  string  $contents
      */
-    protected static function create_custom_css_file(string $contents): void
-    {
+    protected static function create_custom_css_file(string $contents): void {
         file_put_contents(self::get_custom_css_file_path(), $contents);
     }
 
     /**
      * Remove the custom CSS file if it exists.
      */
-    protected static function remove_custom_css_file(): void
-    {
+    protected static function remove_custom_css_file(): void {
         $file_path = self::get_custom_css_file_path();
 
         if (file_exists($file_path)) {

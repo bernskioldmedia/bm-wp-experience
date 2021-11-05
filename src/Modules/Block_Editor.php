@@ -5,8 +5,6 @@
  * Most often we we build sites with the block editor,
  * we want to lock it down as much as possible. These options
  * exist here.
- *
- * @package BernskioldMedia\WP\Experience
  */
 
 namespace BernskioldMedia\WP\Experience\Modules;
@@ -15,10 +13,8 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Block_Editor extends Module
-{
-    public static function hooks(): void
-    {
+class Block_Editor extends Module {
+    public static function hooks(): void {
         // Disable the block directory in the editor.
         add_action('plugins_loaded', [ self::class, 'disable_block_directory' ]);
 
@@ -36,8 +32,7 @@ class Block_Editor extends Module
      * To enable the directory, define BM_WP_ENABLE_BLOCK_DIRECTORY
      * as true in your config.
      */
-    public static function disable_block_directory(): void
-    {
+    public static function disable_block_directory(): void {
         // If we have explicitly set to enable the block directory, don't run this.
         if (defined('BM_WP_ENABLE_BLOCK_DIRECTORY') && BM_WP_ENABLE_BLOCK_DIRECTORY) {
             return;
@@ -51,10 +46,8 @@ class Block_Editor extends Module
      * Remove the Yoast SEO metabox if we're in the block editor.
      * The sidebar options are much better for the block editor
      * so we don't actually need it.
-     *
      */
-    public static function remove_yoast_metabox_in_block_editor(): void
-    {
+    public static function remove_yoast_metabox_in_block_editor(): void {
         if (self::is_block_editor()) {
             foreach (get_post_types() as $post_type) {
                 remove_meta_box('wpseo_meta', $post_type->name, 'normal');
@@ -64,15 +57,11 @@ class Block_Editor extends Module
 
     /**
      * Check if we are currently in the block editor.
-     *
-     * @return bool
      */
-    public static function is_block_editor(): bool
-    {
+    public static function is_block_editor(): bool {
         if (! function_exists('get_current_screen')) {
             return false;
         }
-
 
         $screen = get_current_screen();
 

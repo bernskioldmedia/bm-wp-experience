@@ -2,16 +2,14 @@
 
 namespace BernskioldMedia\WP\Experience\Modules;
 
-class Multisite extends Module
-{
-    public static function hooks(): void
-    {
+class Multisite extends Module {
+    public static function hooks(): void {
         // Only run on multisite.
         if (! is_multisite()) {
             return;
         }
 
-        /**
+        /*
          * Fixes so that WordPress multisite uses the local blog for password resets where the
          * user is currently signing in, instead of the main blog.
          */
@@ -27,11 +25,9 @@ class Multisite extends Module
      * @param $url
      * @param $redirect
      *
-     * @return string
      * @since   1.4.0
      */
-    public static function local_blog_lostpassword_url($url, $redirect): string
-    {
+    public static function local_blog_lostpassword_url($url, $redirect): string {
         $args = [ 'action' => 'lostpassword' ];
 
         if (! empty($redirect)) {
@@ -45,20 +41,18 @@ class Multisite extends Module
      * Replace the password reset URL with the local blog version instead of
      * going to the main blog.
      *
-     * @param  string  $url
-     * @param  string  $path
-     * @param  string  $scheme
+     * @param string $url
+     * @param string $path
+     * @param string $scheme
      *
-     * @return string
      * @since   1.4.0
      */
-    public static function local_blog_password_reset_urls($url, $path, $scheme): string
-    {
-        if (stripos($url, "action=lostpassword") !== false) {
+    public static function local_blog_password_reset_urls($url, $path, $scheme): string {
+        if (stripos($url, 'action=lostpassword') !== false) {
             return site_url('wp-login.php?action=lostpassword', $scheme);
         }
 
-        if (stripos($url, "action=resetpass") !== false) {
+        if (stripos($url, 'action=resetpass') !== false) {
             return site_url('wp-login.php?action=resetpass', $scheme);
         }
 
@@ -69,13 +63,9 @@ class Multisite extends Module
      * Fix the body of the password reset email to replace the URLs
      * for the main blog, with the local blog.
      *
-     * @param  string  $message
-     *
-     * @return string
      * @since   1.4.0
      */
-    public static function local_blog_password_reset_email_url(string $message): string
-    {
+    public static function local_blog_password_reset_email_url(string $message): string {
         return str_replace(get_site_url(1), get_site_url(), $message);
     }
 
@@ -83,13 +73,9 @@ class Multisite extends Module
      * Fix the title in the email to use the local blog name instead of main blog name
      * for password resets.
      *
-     * @param  string  $title
-     *
-     * @return string
      * @since   1.4.0
      */
-    public static function local_blog_password_reset_email_name(string $title): string
-    {
+    public static function local_blog_password_reset_email_name(string $title): string {
         /* translators: 1. Blog Name */
         return sprintf(__('[%s] Password Reset', 'bm-wp-experience'), wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
     }

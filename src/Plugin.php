@@ -2,12 +2,9 @@
 
 namespace BernskioldMedia\WP\Experience;
 
-use BernskioldMedia\WP\Experience\Admin;
-use BernskioldMedia\WP\Experience\Modules;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\BasePlugin;
 
-class Plugin extends BasePlugin
-{
+class Plugin extends BasePlugin {
     protected static string $slug             = 'bm-wp-experience';
     protected static string $version          = '3.0.0';
     protected static string $textdomain       = 'bm-wp-experience';
@@ -40,8 +37,7 @@ class Plugin extends BasePlugin
         Modules\Users::class,
     ];
 
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
 
         add_action('init', [ self::class, 'boot_modules' ]);
@@ -53,15 +49,13 @@ class Plugin extends BasePlugin
         register_activation_hook(__FILE__, [ Install::class, 'install' ]);
     }
 
-    public static function boot_modules(): void
-    {
+    public static function boot_modules(): void {
         foreach (self::$modules as $bootableClass) {
             $bootableClass::hooks();
         }
     }
 
-    public static function boot_admin(): void
-    {
+    public static function boot_admin(): void {
         foreach (self::$admin_boot as $bootableClass) {
             $bootableClass::hooks();
         }
@@ -69,13 +63,8 @@ class Plugin extends BasePlugin
 
     /**
      * Get View Template Path
-     *
-     * @param  string  $view_name
-     *
-     * @return string
      */
-    public static function get_view_path(string $view_name): string
-    {
+    public static function get_view_path(string $view_name): string {
         return self::get_path('views/' . $view_name . '.php');
     }
 }

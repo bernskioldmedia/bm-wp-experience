@@ -5,8 +5,7 @@
 
 namespace BernskioldMedia\WP\Experience\Modules;
 
-class Users extends Module
-{
+class Users extends Module {
     /**
      * On these domain names, agency users may be indexed.
      * Includes sub-domains.
@@ -25,8 +24,7 @@ class Users extends Module
         'bernskioldmedia.se',
     ];
 
-    public static function hooks(): void
-    {
+    public static function hooks(): void {
         add_action('wp', [ self::class, 'maybe_disable_author_archive' ]);
 
         // Remove the color scheme picker from the admin.
@@ -39,8 +37,7 @@ class Users extends Module
      * We want to disable the author archive so that
      * agency users never get indexed on client sites.
      */
-    public static function maybe_disable_author_archive(): void
-    {
+    public static function maybe_disable_author_archive(): void {
         if (! is_author()) {
             return;
         }
@@ -54,7 +51,7 @@ class Users extends Module
             return false !== stripos($current_domain, $domain);
         });
 
-        /**
+        /*
          * The user in the query must have an email,
          * or if we allow indexing of BM users.
          */
@@ -76,21 +73,15 @@ class Users extends Module
 
     /**
      * Get Allowlisted Domains
-     *
-     * @return array
      */
-    public static function get_allowlisted_domains(): array
-    {
+    public static function get_allowlisted_domains(): array {
         return apply_filters('bm_wpexp_authors_allowlisted_domains', self::ALLOWLISTED_DOMAINS);
     }
 
     /**
      * Get E-Mail Domains
-     *
-     * @return array
      */
-    public static function get_email_domains(): array
-    {
+    public static function get_email_domains(): array {
         return apply_filters('bm_wpexp_authors_email_domains', self::EMAIL_DOMAINS);
     }
 }

@@ -5,7 +5,7 @@
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b8b6090010510e021095930f15e7b138783f80be',
+        'reference' => '017c847e9863ba9a493caca31ae4bcb313c07dbe',
         'name' => 'bernskioldmedia/bm-wp-experience',
         'dev' => true,
     ),
@@ -27,7 +27,7 @@
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b8b6090010510e021095930f15e7b138783f80be',
+            'reference' => '017c847e9863ba9a493caca31ae4bcb313c07dbe',
             'dev_requirement' => false,
         ),
         'bernskioldmedia/wp-plugin-base' => array(
@@ -434,6 +434,17 @@
             'install_path' => __DIR__ . '/../szepeviktor/phpstan-wordpress',
             'aliases' => array(),
             'reference' => 'bdbea69b2ba4a69998c3b6fe2b7106d78a23bd72',
+            'dev_requirement' => true,
+        ),
+        'tareq1988/wp-php-cs-fixer' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tareq1988/wp-php-cs-fixer',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'reference' => '56b9c1dd2b979a4ff7a25afa2e1c6b290a5ae876',
             'dev_requirement' => true,
         ),
         'thecodingmachine/phpstan-strict-rules' => array(

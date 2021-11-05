@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a30ec5b06ccb1fbd9e0e920febf7530",
+    "content-hash": "611eb0e4e4333099ccd69747a7945c4e",
     "packages": [
         {
             "name": "bernskioldmedia/wp-plugin-base",
@@ -3042,6 +3042,44 @@
             "time": "2021-07-14T09:19:15+00:00"
         },
         {
+            "name": "tareq1988/wp-php-cs-fixer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tareq1988/wp-php-cs-fixer.git",
+                "reference": "56b9c1dd2b979a4ff7a25afa2e1c6b290a5ae876"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tareq1988/wp-php-cs-fixer/zipball/56b9c1dd2b979a4ff7a25afa2e1c6b290a5ae876",
+                "reference": "56b9c1dd2b979a4ff7a25afa2e1c6b290a5ae876",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WeDevs\\Fixer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tareq Hasan",
+                    "email": "tareq@wedevs.com"
+                }
+            ],
+            "description": "WordPress rules for php-cs-fixer",
+            "support": {
+                "issues": "https://github.com/tareq1988/wp-php-cs-fixer/issues",
+                "source": "https://github.com/tareq1988/wp-php-cs-fixer/tree/master"
+            },
+            "time": "2020-09-21T09:47:38+00:00"
+        },
+        {
             "name": "thecodingmachine/phpstan-strict-rules",
             "version": "v0.12.1",
             "source": {
@@ -3151,7 +3189,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "bernskioldmedia/bm-wp-devtools": 20
+        "bernskioldmedia/bm-wp-devtools": 20,
+        "tareq1988/wp-php-cs-fixer": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -1,8 +1,6 @@
 <?php
 /**
  * Installer
- *
- * @package BernskioldMedia\WP\Experience
  */
 
 namespace BernskioldMedia\WP\Experience;
@@ -13,6 +11,5 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Install extends Installer
-{
+class Install extends Installer {
 }

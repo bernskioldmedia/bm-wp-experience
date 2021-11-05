@@ -4,8 +4,6 @@
  *
  * Remove unnecessary dashboard widgets, and add
  * some custom ones too.
- *
- * @package BernskioldMedia\WP\Experience
  */
 
 namespace BernskioldMedia\WP\Experience\Modules;
@@ -14,10 +12,8 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Dashboard extends Module
-{
-    public static function hooks(): void
-    {
+class Dashboard extends Module {
+    public static function hooks(): void {
         add_action('wp_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ]);
         add_action('wp_network_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ]);
         add_action('wp_user_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ]);
@@ -27,11 +23,8 @@ class Dashboard extends Module
 
     /**
      * Remove Dashboard Widgets
-     *
-     * @return void
      */
-    public static function remove_dashboard_widgets(): void
-    {
+    public static function remove_dashboard_widgets(): void {
         remove_meta_box('dashboard_primary', get_current_screen(), 'side');
         remove_meta_box('dashboard_secondary', get_current_screen(), 'side');
         remove_meta_box('dashboard_plugins', get_current_screen(), 'normal');
@@ -46,8 +39,7 @@ class Dashboard extends Module
         }
     }
 
-    public static function add_bm_academy_dashboard_widget(): void
-    {
+    public static function add_bm_academy_dashboard_widget(): void {
         wp_add_dashboard_widget('bm_academy', __('Bernskiold Media Academy', 'bm-wp-experience'), static function () {
             $feed = fetch_feed(_x('https://bernskioldmedia.com/en/feed/', 'academy feed', 'bm-wp-experience'));
 

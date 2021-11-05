@@ -3,7 +3,6 @@
  * Handles the loading of scripts and styles for the
  * theme through the proper enqueuing methods.
  *
- * @package BernskioldMedia\WP\Experience
  **/
 
 namespace BernskioldMedia\WP\Experience\Admin;
@@ -15,18 +14,15 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Admin_Assets implements Hookable
-{
-    public static function hooks(): void
-    {
+class Admin_Assets implements Hookable {
+    public static function hooks(): void {
         add_action('admin_enqueue_scripts', [ self::class, 'admin_styles' ]);
     }
 
     /**
      * Registers and enqueues plugin admin stylesheets.
      **/
-    public static function admin_styles(): void
-    {
+    public static function admin_styles(): void {
         wp_register_style('bm-wp-experience-admin', Plugin::get_assets_url() . '/styles/dist/admin.css', [], Plugin::get_version());
 
         wp_enqueue_style('bm-wp-experience-admin');
