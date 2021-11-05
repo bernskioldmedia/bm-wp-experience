@@ -10,9 +10,7 @@ class WooCommerce extends Integration {
 
 	public static function hooks(): void {
 		// Disable startup wizard.
-		add_filter( 'woocommerce_enable_setup_wizard', function() {
-			return false;
-		}, 20 );
+		add_filter( 'woocommerce_enable_setup_wizard', '__return_false', 20 );
 
 		// Disable marketing.
 		add_filter( 'woocommerce_marketing_menu_items', '__return_empty_array' );
@@ -28,12 +26,14 @@ class WooCommerce extends Integration {
 		add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false', 999 );
 
 		// Remove extension library from menus.
-		remove_submenu_page( 'woocommerce', 'wc-addons' );
-		remove_submenu_page( 'woocommerce', 'wc-addons&section=helper' );
+		add_action( 'admin_menu', static function() {
+			remove_submenu_page( 'woocommerce', 'wc-addons' );
+			remove_submenu_page( 'woocommerce', 'wc-addons&section=helper' );
+		}, 99 );
 
 		// Remove SkyVerge support dashboard.
-		add_action( 'admin_menu', function() { remove_menu_page( 'skyverge' ); }, 99 );
-		add_action( 'admin_enqueue_scripts', function() { wp_dequeue_style( 'sv-wordpress-plugin-admin-menus' ); }, 20 );
+		add_action( 'admin_menu', static function() { remove_menu_page( 'skyverge' ); }, 99 );
+		add_action( 'admin_enqueue_scripts', static function() { wp_dequeue_style( 'sv-wordpress-plugin-admin-menus' ); }, 20 );
 
 		// Hide WooCommerce dashboard widgets.
 		add_action( 'wp_dashboard_setup', [ self::class, 'hide_woocommerce_dashboard_widgets' ] );
@@ -45,10 +45,19 @@ class WooCommerce extends Integration {
 		add_filter( 'woocommerce_show_admin_notice', [ self::class, 'hide_wc_admin_install_notice' ], 10, 2 );
 
 		// Remove Processing Order Count in wp-admin.
-		add_filter( 'woocommerce_menu_order_count', 'false' );
+		add_filter( 'woocommerce_menu_order_count', '__return_false' );
 
 		// Delete the WooCommerce usage tracker cron event
 		wp_clear_scheduled_hook( 'woocommerce_tracker_send_event' );
+
+		// Disable password strength meter.
+		add_action( 'wp_print_scripts', [ self::class, 'disable_password_strength_meter' ], 100 );
+
+		// Disable assets on non-woocommerce pages.
+		add_action( 'wp_enqueue_scripts', [ self::class, 'disable_assets' ], 99 );
+
+		// Disable fragments on non-woocommerce pages.
+		add_action( 'wp_enqueue_scripts', [ self::class, 'disable_fragments' ], 99 );
 	}
 
 	public static function disable_marketing_features( array $features ): array {
@@ -96,5 +105,74 @@ class WooCommerce extends Integration {
 		}
 
 		return $notice_enabled;
+	}
+
+	public static function disable_password_strength_meter(): void {
+		if ( false === apply_filters( 'bm_wpexp_woocommerce_disable_password_strength_meter', true ) ) {
+			return;
+		}
+
+		global $wp;
+
+		$is_wp = isset( $wp->query_vars['lost-password'] ) || ( isset( $_GET['action'] ) && $_GET['action'] === 'lostpassword' ) || is_page( 'lost_password' );
+		$is_wc = is_account_page() || is_checkout();
+
+		if ( ! $is_wp && ! $is_wc ) {
+			if ( wp_script_is( 'zxcvbn-async', 'enqueued' ) ) {
+				wp_dequeue_script( 'zxcvbn-async' );
+			}
+
+			if ( wp_script_is( 'password-strength-meter', 'enqueued' ) ) {
+				wp_dequeue_script( 'password-strength-meter' );
+			}
+
+			if ( wp_script_is( 'wc-password-strength-meter', 'enqueued' ) ) {
+				wp_dequeue_script( 'wc-password-strength-meter' );
+			}
+		}
+	}
+
+	public static function disable_assets(): void {
+		if ( false === apply_filters( 'bm_wpexp_woocommerce_disable_assets_on_non_woo_pages', true ) ) {
+			return;
+		}
+
+		if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() && ! is_account_page() && ! is_product() && ! is_product_category() && ! is_shop() ) {
+			//Dequeue WooCommerce Styles
+			wp_dequeue_style( 'woocommerce-general' );
+			wp_dequeue_style( 'woocommerce-layout' );
+			wp_dequeue_style( 'woocommerce-smallscreen' );
+			wp_dequeue_style( 'woocommerce_frontend_styles' );
+			wp_dequeue_style( 'woocommerce_fancybox_styles' );
+			wp_dequeue_style( 'woocommerce_chosen_styles' );
+			wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
+
+			//Dequeue WooCommerce Scripts
+			wp_dequeue_script( 'wc_price_slider' );
+			wp_dequeue_script( 'wc-single-product' );
+			wp_dequeue_script( 'wc-add-to-cart' );
+			wp_dequeue_script( 'wc-checkout' );
+			wp_dequeue_script( 'wc-add-to-cart-variation' );
+			wp_dequeue_script( 'wc-single-product' );
+			wp_dequeue_script( 'wc-cart' );
+			wp_dequeue_script( 'wc-chosen' );
+			wp_dequeue_script( 'woocommerce' );
+			wp_dequeue_script( 'prettyPhoto' );
+			wp_dequeue_script( 'prettyPhoto-init' );
+			wp_dequeue_script( 'jquery-blockui' );
+			wp_dequeue_script( 'jquery-placeholder' );
+			wp_dequeue_script( 'fancybox' );
+			wp_dequeue_script( 'jqueryui' );
+		}
+	}
+
+	public static function disable_fragments(): void {
+		if ( false === apply_filters( 'bm_wpexp_woocommerce_disable_fragments_on_non_woo_pages', true ) ) {
+			return;
+		}
+
+		if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() && ! is_account_page() && ! is_product() && ! is_product_category() && ! is_shop() ) {
+			wp_dequeue_script( 'wc-cart-fragments' );
+		}
 	}
 }
