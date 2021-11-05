@@ -50,6 +50,6 @@ class Helpers {
 	}
 
 	public static function get_file_permissions( string $file ): int {
-		return decoct( fileperms( $file ) & 0777 );
+		return (int) decoct( fileperms( $file ) & 0777 );
 	}
 }
