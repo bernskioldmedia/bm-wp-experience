@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. This projec
 ### Changed
 
 - Refactored plugin to use our Plugin Base.
+- Added more passwords to our weak passwords list.
 
 ## [2.2.0] - 2021-10-07
 
