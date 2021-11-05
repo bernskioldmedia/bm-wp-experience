@@ -9,11 +9,17 @@ All notable changes to this project will be documented in this file. This projec
 ### Added
 
 - Site health checks for configuration file permissions.
+- Opinionated WooCommerce tweaks for performance and experience.
+- SearchWP Integration for opinionated tweaks.
 
 ### Changed
 
-- Refactored plugin to use our Plugin Base.
+- Refactored plugin to use our Plugin Base and PSR-4 autoloading.
 - Added more passwords to our weak passwords list.
+
+### Fixed
+
+- An `is_plugin_active` check would fail on some environments.
 
 ## [2.2.0] - 2021-10-07
 
