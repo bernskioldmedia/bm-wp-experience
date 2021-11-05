@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [Unreleased]
 
+## [3.0.0] - 2021-11-05
+
+### Changed
+
+- Refactored plugin to use our Plugin Base.
+
 ## [2.2.0] - 2021-10-07
 
 ### Changed
