@@ -79,6 +79,25 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Prevent agency users from being indexed.
 - Remove color scheme picker.
 
+### WooCommerce
+
+The WooCommerce integration automatically runs if WooCommerce is active.
+
+- Disable startup wizard.
+- Disable marketing section.
+- Suppress notice about connecting store to WC.com.
+- Remove suggestions from WooCommerce marketplace.
+- Remove extension library from menus.
+- Remove SkyVerge support dashboard.
+- Hide some dashboard widgets.
+- Remove WooCommerce widgets.
+- Hide notice to install WC Admin.
+- Remove order processing count in admin menu.
+- Remove usage tracker cron event.
+- Disables password strength meter.
+- Removes assets on non-woocommerce pages.
+- Removes fragments on non-woocommerce pages.
+
 ## Constants & Filters
 
 ### Admin
@@ -88,7 +107,6 @@ For almost every feature there is a filter, constant or action allowing you to c
 `bm_wpexp_custom_admin_theme` - Return false to disable our custom branding.
 `bm_wpexp_show_help_widget` - Return false to hide the BM help widget.
 `bm_wpexp_show_admin_page_support` - Return false to hide the support admin page.
-
 
 ### Block Editor
 
@@ -140,3 +158,10 @@ managed anyway (just not daily). Define `BM_WP_HAS_MAINTENANCE_PLAN` to `true` i
 `bm_wpexp_authors_email_domains` - Allows you to customize the array of email domains that designate agency users.
 
 `bm_wpexp_remove_color_scheme_picker` - Return `false` to override the default behavior of hide, and instead show the color scheme picker.
+
+### WooCommerce
+
+`bm_wpexp_woocommerce_widgets` - Customize the list of widgets to unregister.
+`bm_wpexp_woocommerce_disable_password_strength_meter` - Return as `false` to enable the password strength meter.
+`bm_wpexp_woocommerce_disable_assets_on_non_woo_pages` - Return as `false` to load assets even on non-WooCommerce pages.
+`bm_wpexp_woocommerce_disable_fragments_on_non_woo_pages` - Return as `false` to load fragments even on non-WooCommerce pages. For example if you have a dynamic cart on all pages.
