@@ -2,12 +2,20 @@
   "name": "bernskioldmedia/bm-wp-experience",
   "description": "Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.",
   "type": "wordpress-plugin",
+  "config": {
+	"sort-packages": true,
+	"optimize-autoloader": true
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
   "require": {
+	"php": "^7.4|^8.0",
 	"composer/installers": "~1.0",
-	"yahnis-elsts/plugin-update-checker": "^4.8"
+	"yahnis-elsts/plugin-update-checker": "^4.8",
+	"bernskioldmedia/wp-plugin-base": "^2.4"
   },
   "require-dev": {
-    "bernskioldmedia/bm-wp-devtools": "dev-main"
+	"bernskioldmedia/bm-wp-devtools": "dev-main"
   },
   "license": "GPL-3.0+",
   "authors": [
@@ -15,5 +23,38 @@
 	  "name": "Bernskiold Media",
 	  "email": "info@bernskioldmedia.com"
 	}
-  ]
+  ],
+  "autoload": {
+	"psr-4": {
+	  "BernskioldMedia\\WP\\Experience\\": "src"
+	},
+	"classmap": [
+	  "vendor_prefixed/"
+	]
+  },
+  "scripts": {
+	"lint": "php-cs-fixer fix -v src",
+	"test:cs": "phpcs-wp",
+	"test:types": "phpstan analyse --ansi --memory-limit=-1",
+	"test:lint": "php-cs-fixer fix -v --dry-run src",
+	"test": [
+	  "@test:lint",
+	  "@test:types"
+	],
+	"release": [
+	  "npm install",
+	  "npm run release",
+	  "composer install --no-dev -o",
+	  "@build"
+	],
+	"build": [
+	  "composer prefix-dependencies",
+	  "composer dump-autoload"
+	],
+	"prefix-dependencies": [
+	  "composer require humbug/php-scoper:dev-master --dev -W",
+	  "php ./vendor/humbug/php-scoper/bin/php-scoper add-prefix --prefix=BMWPEXP_Vendor --config config/php-scoper/bm-wp-plugin-base.php --output-dir vendor_prefixed/bernskioldmedia/wp-plugin-base --force",
+	  "composer remove humbug/php-scoper --dev"
+	]
+  }
 }
