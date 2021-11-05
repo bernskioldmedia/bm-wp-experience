@@ -16,6 +16,7 @@
 
 # Ignore node_modules
 node_modules/
+vendor
 
 # Ignore .idea
 .idea
