@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file. This projec
 
 ## [3.0.0] - 2021-11-05
 
+### Added
+
+- Site health checks for configuration file permissions.
+
 ### Changed
 
 - Refactored plugin to use our Plugin Base.

@@ -35,6 +35,7 @@ class Plugin extends BasePlugin {
 		Modules\Plugins::class,
 		Modules\Rest_Api::class,
 		Modules\Security::class,
+		Modules\Site_Health::class,
 		Modules\Updates::class,
 		Modules\Users::class,
 	];

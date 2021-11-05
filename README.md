@@ -78,6 +78,12 @@ The SearchWP integration automatically runs if SearchWP is active.
 - Prevent users from using explicitly defined weak passwords.
 - Default to disabling the core file editor from admin.
 
+### Site Health
+
+- Check that `wp-config.php` is secured properly.
+- If an `.env` file exists in the public directory, check that it is secured.
+- Check that our Company Cloud configuration files in `config/` are secured if it is placed in the web root.
+
 ### Updates
 
 - Ability to hide update notices by defining `BM_WP_HAS_MAINTENANCE_PLAN` in the config.
