@@ -6,82 +6,83 @@
 namespace BernskioldMedia\WP\Experience\Modules;
 
 class Users extends Module {
-    /**
-     * On these domain names, agency users may be indexed.
-     * Includes sub-domains.
-     */
-    protected const ALLOWLISTED_DOMAINS = [
-        'bernskioldmedia.com',
-        'bernskioldmedia.se',
-    ];
 
-    /**
-     * Agency users are those with e-mails
-     * in these domains (including sub-domains).
-     */
-    protected const EMAIL_DOMAINS = [
-        'bernskioldmedia.com',
-        'bernskioldmedia.se',
-    ];
+	/**
+	 * On these domain names, agency users may be indexed.
+	 * Includes sub-domains.
+	 */
+	protected const ALLOWLISTED_DOMAINS = [
+		'bernskioldmedia.com',
+		'bernskioldmedia.se',
+	];
 
-    public static function hooks(): void {
-        add_action('wp', [ self::class, 'maybe_disable_author_archive' ]);
+	/**
+	 * Agency users are those with e-mails
+	 * in these domains (including sub-domains).
+	 */
+	protected const EMAIL_DOMAINS = [
+		'bernskioldmedia.com',
+		'bernskioldmedia.se',
+	];
 
-        // Remove the color scheme picker from the admin.
-        if (true === apply_filters('bm_wpexp_remove_color_scheme_picker', true)) {
-            remove_action('admin_color_scheme_picker', 'admin_color_scheme_picker');
-        }
-    }
+	public static function hooks(): void {
+		add_action( 'wp', [ self::class, 'maybe_disable_author_archive' ] );
 
-    /**
-     * We want to disable the author archive so that
-     * agency users never get indexed on client sites.
-     */
-    public static function maybe_disable_author_archive(): void {
-        if (! is_author()) {
-            return;
-        }
+		// Remove the color scheme picker from the admin.
+		if ( true === apply_filters( 'bm_wpexp_remove_color_scheme_picker', true ) ) {
+			remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+		}
+	}
 
-        $is_author_disabled = false;
-        $author             = get_queried_object();
-        $current_domain     = parse_url(get_site_url(), PHP_URL_HOST);
+	/**
+	 * We want to disable the author archive so that
+	 * agency users never get indexed on client sites.
+	 */
+	public static function maybe_disable_author_archive(): void {
+		if ( ! is_author() ) {
+			return;
+		}
 
-        // Perform partial match on domains to catch subdomains or variation of domain name
-        $filtered_domains = array_filter(self::get_allowlisted_domains(), function ($domain) use ($current_domain) {
-            return false !== stripos($current_domain, $domain);
-        });
+		$is_author_disabled = false;
+		$author             = get_queried_object();
+		$current_domain     = parse_url( get_site_url(), PHP_URL_HOST );
 
-        /*
-         * The user in the query must have an email,
-         * or if we allow indexing of BM users.
-         */
-        if (! empty($filtered_domains) || empty($author->data->user_email) || true === apply_filters('bm_wpexp_allow_bm_author_index', false)) {
-            return;
-        }
+		// Perform partial match on domains to catch subdomains or variation of domain name
+		$filtered_domains = array_filter( self::get_allowlisted_domains(), function( $domain ) use ( $current_domain ) {
+			return false !== stripos( $current_domain, $domain );
+		} );
 
-        foreach (self::get_email_domains() as $domain) {
-            if (false !== stripos($author->data->user_email, $domain)) {
-                $is_author_disabled = true;
-            }
-        }
+		/*
+		 * The user in the query must have an email,
+		 * or if we allow indexing of BM users.
+		 */
+		if ( ! empty( $filtered_domains ) || empty( $author->data->user_email ) || true === apply_filters( 'bm_wpexp_allow_bm_author_index', false ) ) {
+			return;
+		}
 
-        if (true === $is_author_disabled) {
-            wp_safe_redirect('/', '301');
-            exit();
-        }
-    }
+		foreach ( self::get_email_domains() as $domain ) {
+			if ( false !== stripos( $author->data->user_email, $domain ) ) {
+				$is_author_disabled = true;
+			}
+		}
 
-    /**
-     * Get Allowlisted Domains
-     */
-    public static function get_allowlisted_domains(): array {
-        return apply_filters('bm_wpexp_authors_allowlisted_domains', self::ALLOWLISTED_DOMAINS);
-    }
+		if ( true === $is_author_disabled ) {
+			wp_safe_redirect( '/', '301' );
+			exit();
+		}
+	}
 
-    /**
-     * Get E-Mail Domains
-     */
-    public static function get_email_domains(): array {
-        return apply_filters('bm_wpexp_authors_email_domains', self::EMAIL_DOMAINS);
-    }
+	/**
+	 * Get Allowlisted Domains
+	 */
+	public static function get_allowlisted_domains(): array {
+		return apply_filters( 'bm_wpexp_authors_allowlisted_domains', self::ALLOWLISTED_DOMAINS );
+	}
+
+	/**
+	 * Get E-Mail Domains
+	 */
+	public static function get_email_domains(): array {
+		return apply_filters( 'bm_wpexp_authors_email_domains', self::EMAIL_DOMAINS );
+	}
 }
