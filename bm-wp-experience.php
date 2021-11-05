@@ -29,237 +29,25 @@
  * @package BernskioldMedia\WP\Experience
  */
 
-namespace BernskioldMedia\WP\Experience;
-
 use Puc_v4_Factory;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require 'vendor/yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
+/**
+ * Autoloader
+ */
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require __DIR__ . '/vendor/autoload.php';
+} else {
+	throw new Exception( 'Autoload does not exist. Please run composer install --no-dev -o.' );
+}
 
 /**
- * Class BM_WP_Experience
- *
- * @package BernskioldMedia\WP\Experience
+ * Basic Constants
  */
-class BM_WP_Experience {
-
-	/**
-	 * Version
-	 *
-	 * @var string
-	 */
-	protected const VERSION = '2.2.0';
-
-	/**
-	 * Database Version
-	 *
-	 * @var string
-	 */
-	protected const DATABASE_VERSION = '1000';
-
-	/**
-	 * URL to the GitHub Repository for the plugin.
-	 */
-	protected const GITHUB_REPO = 'https://github.com/bernskioldmedia/bm-wp-experience';
-
-	/**
-	 * Plugin Class Instance Variable
-	 *
-	 * @var object
-	 */
-	protected static $_instance = null;
-
-	/**
-	 * Data Stores
-	 *
-	 * @var array
-	 */
-	protected $data_stores = [];
-
-	/**
-	 * Plugin Instantiator
-	 *
-	 * @return object
-	 */
-	public static function instance() {
-		if ( is_null( self::$_instance ) ) {
-			self::$_instance = new self();
-		}
-
-		return self::$_instance;
-	}
-
-	/**
-	 * Constructor
-	 */
-	public function __construct() {
-		$this->classes();
-		$this->admin_includes();
-		$this->init_hooks();
-
-		do_action( 'bm_wp_experience_loaded' );
-	}
-
-	/**
-	 * Hooks that are run on the time of init.
-	 */
-	private function init_hooks() {
-		require_once 'includes/class-install.php';
-		register_activation_hook( __FILE__, [ Install::class, 'install' ] );
-
-		add_action( 'init', [ self::class, 'load_languages' ] );
-	}
-
-	/**
-	 * Admin Includes
-	 *
-	 */
-	public function admin_includes() {
-		if ( is_admin() || is_network_admin() ) {
-			require_once 'includes/admin/class-admin.php';
-			require_once 'includes/admin/class-admin-assets.php';
-			require_once 'includes/admin/class-admin-pages.php';
-			require_once 'includes/admin/class-admin-columns.php';
-		}
-	}
-
-	/**
-	 * Include various includes in the system.
-	 */
-	private function classes() {
-		// Contrary to its name, it is also loaded publicly.
-		require_once 'includes/admin/class-admin-bar.php';
-
-		require_once 'includes/class-block-editor.php';
-		require_once 'includes/class-cleanup.php';
-		require_once 'includes/class-comments.php';
-		require_once 'includes/class-customizer.php';
-		require_once 'includes/class-dashboard.php';
-		require_once 'includes/class-environments.php';
-		require_once 'includes/class-helpers.php';
-		require_once 'includes/class-media.php';
-		require_once 'includes/class-multisite.php';
-		require_once 'includes/class-plugins.php';
-		require_once 'includes/class-rest-api.php';
-		require_once 'includes/class-security.php';
-		require_once 'includes/class-updates.php';
-		require_once 'includes/class-users.php';
-	}
-
-	/**
-	 * Load translations in the right order.
-	 */
-	public static function load_languages() {
-		$locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
-		$locale = apply_filters( 'plugin_locale', $locale, 'bm-wp-experience' );
-
-		unload_textdomain( 'bm-wp-experience' );
-
-		// Start checking in the main language dir.
-		load_textdomain( 'bm-wp-experience', WP_LANG_DIR . '/bm-wp-experience/bm-wp-experience-' . $locale . '.mo' );
-
-		// Otherwise, load from the plugin.
-		load_plugin_textdomain( 'bm-wp-experience', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-	}
-
-	/**
-	 * Check if this plugin is activated for the entire network.
-	 *
-	 * @return bool
-	 */
-	public static function is_network_active() {
-		return ( is_multisite() && array_key_exists( plugin_basename( __FILE__ ), (array) get_site_option( 'active_sitewide_plugins' ) ) );
-	}
-
-	/**
-	 * Get the path to the plugin folder, or the specified
-	 * file relative to the plugin folder home.
-	 *
-	 * @param  string  $file
-	 *
-	 * @return string
-	 */
-	public static function get_path( $file = '' ) {
-		return untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/' . $file;
-	}
-
-	/**
-	 * Get View Template Path
-	 *
-	 * @param  string  $view_name
-	 *
-	 * @return string
-	 */
-	public static function get_view_path( $view_name ) {
-		return self::get_path( 'views/' . $view_name . '.php' );
-	}
-
-	/**
-	 * Get the URL to the plugin folder, or the specified
-	 * file relative to the plugin folder home.
-	 *
-	 * @param  string  $file
-	 *
-	 * @return string
-	 */
-	public static function get_url( $file = '' ) {
-		$plugins_url = plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) );
-
-		return untrailingslashit( $plugins_url ) . '/' . $file;
-	}
-
-	/**
-	 * Get the URL to the assets folder, or the specified
-	 * file relative to the assets folder home.
-	 *
-	 * @param  string  $file
-	 *
-	 * @return string
-	 */
-	public static function get_assets_url( $file = '' ) {
-		return self::get_url( 'assets/' . $file );
-	}
-
-	/**
-	 * Get AJAX URL
-	 *
-	 * @return string
-	 */
-	public static function get_ajax_url() {
-		return admin_url( 'admin-ajax.php', 'relative' );
-	}
-
-	/**
-	 * Get the Plugin's Version
-	 *
-	 * @return string
-	 */
-	public static function get_version() {
-		return self::VERSION;
-	}
-
-	/**
-	 * Get the database version number.
-	 *
-	 * @return string
-	 */
-	public static function get_database_version() {
-		return self::DATABASE_VERSION;
-	}
-
-	/**
-	 * Get the URL to the GitHub repository.
-	 *
-	 * @return string
-	 */
-	public static function get_github_url() {
-		return self::GITHUB_REPO;
-	}
-
-}
+define( 'BM_WP_EXPERIENCE_FILE_PATH', __FILE__ );
 
 /**
  * Main Plugin Class Function
@@ -267,23 +55,25 @@ class BM_WP_Experience {
  * @return object
  */
 function bm_wp_experience() {
-	return BM_WP_Experience::instance();
+	return \BernskioldMedia\WP\Experience\Plugin::instance();
 }
 
 // Initialize the class instance only once.
 bm_wp_experience();
 
 /**
- * Update Checker
+ * Run update checker if not disabled.
  */
-$bm_wp_experience_updater = Puc_v4_Factory::buildUpdateChecker( BM_WP_Experience::get_github_url(), __FILE__, 'bm-wp-experience' );
-$bm_wp_experience_updater->getVcsApi()->enableReleaseAssets();
+if ( ! defined( 'BM_WP_EXPERIENCE_DISABLE_UPDATER' ) || ( defined( 'BM_WP_EXPERIENCE_DISABLE_UPDATER' ) && false === BM_WP_EXPERIENCE_DISABLE_UPDATER ) ) {
+	$bm_wp_experience_updater = Puc_v4_Factory::buildUpdateChecker( 'https://github.com/bernskioldmedia/bm-wp-experience', __FILE__, 'bm-wp-experience' );
+	$bm_wp_experience_updater->getVcsApi()->enableReleaseAssets();
 
-// Add our own plugin icon.
-$bm_wp_experience_updater->addResultFilter( function( $plugin_info ) {
-	$plugin_info->icons = [
-		'svg' => BM_WP_Experience::get_assets_url( 'icons/bm.svg' ),
-	];
+	// Add our own plugin icon.
+	$bm_wp_experience_updater->addResultFilter( function( $plugin_info ) {
+		$plugin_info->icons = [
+			'svg' => \BernskioldMedia\WP\Experience\Plugin::get_assets_url( 'icons/bm.svg' ),
+		];
 
-	return $plugin_info;
-} );
+		return $plugin_info;
+	} );
+}
