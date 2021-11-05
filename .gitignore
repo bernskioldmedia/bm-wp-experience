@@ -12,3 +12,5 @@ vendor_prefixed
 ehthumbs.db
 Thumbs.db
 mix-manifest.json
+assets/styles/dist/**
+package-lock.json
