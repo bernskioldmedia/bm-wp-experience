@@ -48,11 +48,11 @@ class Plugin extends BasePlugin {
 	public function __construct() {
 		parent::__construct();
 
-		add_action( 'init', [ self::class, 'boot_modules' ] );
-		add_action( 'init', [ self::class, 'boot_integrations' ] );
+		self::boot_modules();
+		self::boot_integrations();
 
 		if ( is_admin() && ! empty( self::$admin_boot ) ) {
-			add_action( 'admin_init', [ self::class, 'boot_admin' ] );
+			self::boot_admin();
 		}
 
 		register_activation_hook( __FILE__, [ Install::class, 'install' ] );
