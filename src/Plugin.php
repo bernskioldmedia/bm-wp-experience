@@ -2,6 +2,7 @@
 
 namespace BernskioldMedia\WP\Experience;
 
+use BernskioldMedia\WP\Experience\Integrations\Integration;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\BasePlugin;
 
 class Plugin extends BasePlugin {
@@ -39,6 +40,7 @@ class Plugin extends BasePlugin {
 	];
 
 	protected static array $integrations = [
+		Integrations\SearchWp::class,
 		Integrations\WooCommerce::class,
 	];
 
