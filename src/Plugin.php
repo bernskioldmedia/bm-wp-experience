@@ -46,6 +46,7 @@ class Plugin extends BasePlugin {
 		parent::__construct();
 
 		add_action( 'init', [ self::class, 'boot_modules' ] );
+		add_action( 'init', [ self::class, 'boot_integrations' ] );
 
 		if ( is_admin() && ! empty( self::$admin_boot ) ) {
 			add_action( 'admin_init', [ self::class, 'boot_admin' ] );
