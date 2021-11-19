@@ -94,6 +94,10 @@ class Cleanup extends Module {
 	public static function nice_search_url(): void {
 		global $wp_rewrite;
 
+        if( defined('BM_WP_PRETTIFY_SEARCH_URL') && BM_WP_PRETTIFY_SEARCH_URL === false ){
+            return;
+        }
+
 		if ( ! isset( $wp_rewrite ) || ! is_object( $wp_rewrite ) || ! $wp_rewrite->using_permalinks() ) {
 			return;
 		}
