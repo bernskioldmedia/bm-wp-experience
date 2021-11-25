@@ -10,17 +10,17 @@ namespace BernskioldMedia\WP\Experience\Modules;
 
 use BernskioldMedia\WP\Experience\Plugin;
 
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
 class Dashboard extends Module {
     public static function hooks(): void {
-        add_action('wp_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ]);
-        add_action('wp_network_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ]);
-        add_action('wp_user_dashboard_setup', [ self::class, 'remove_dashboard_widgets' ]);
+        add_action('wp_dashboard_setup', [self::class, 'remove_dashboard_widgets']);
+        add_action('wp_network_dashboard_setup', [self::class, 'remove_dashboard_widgets']);
+        add_action('wp_user_dashboard_setup', [self::class, 'remove_dashboard_widgets']);
 
-        add_action('wp_dashboard_setup', [ self::class, 'add_bm_academy_dashboard_widget' ]);
+        add_action('wp_dashboard_setup', [self::class, 'add_bm_academy_dashboard_widget']);
     }
 
     /**
