@@ -29,8 +29,6 @@
  * @package BernskioldMedia\WP\Experience
  */
 
-use Puc_v4_Factory;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
