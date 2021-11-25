@@ -28,7 +28,7 @@ For almost every feature there is a filter, constant or action allowing you to c
 ### Cleanup
 
 - Remove WordPress version/generator info from header.
-- Rewrite the search URL to a nice url (`/search/{query}`) instead of query variable.
+- Rewrite the search URL to a nice url (`/search/{query}`) instead of query variable unless specified by `BM_WP_PRETTIFY_SEARCH_URL`
 - Prevent empty search queries from redirecting to home page
 - Disable emoji styles
 - Remove links to feeds unless specified by `BM_WP_DISABLE_FEED_URLS`.
