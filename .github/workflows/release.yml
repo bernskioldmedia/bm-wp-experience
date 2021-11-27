@@ -13,10 +13,12 @@ jobs:
         run: |
           composer run release
           mkdir build
+          mkdir ${{ github.event.repository.name}}
+          rsync -rv . ${{ github.event.repository.name}} --exclude=${{ github.event.repository.name}} --exclude *.git*  node_modules** .* "*/\.*" *.dist assets/styles/src** composer.* build** config** CHANGELOG.md README.md webpack.mix.js package.json package-lock.json phpstan.neon mix-manifest.json
       - name: Create Artifact
         uses: montudor/action-zip@v0.1.0
         with:
-          args: zip -X -r build/bm-wp-experience.zip . -x *.git*  node_modules** .* "*/\.*" *.dist assets/styles/src** composer.* build** config** CHANGELOG.md README.md webpack.mix.js package.json package-lock.json phpstan.neon mix-manifest.json
+          args: zip -qq -r build/bm-wp-experience.zip ${{ github.event.repository.name}}
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
