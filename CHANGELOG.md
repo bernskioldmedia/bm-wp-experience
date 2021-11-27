@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.0.2 - 2021-11-27
+
+## Fixed
+
+- Fix warning on block editor ([#46](https://github.com/bernskioldmedia/bm-wp-experience/pull/46))
+
 ## 3.0.1 - 2021-11-27
 
 ### Fixed
