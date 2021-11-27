@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.0.0 - 2021-11-27
+
+### Added
+
+- Site health checks for configuration file permissions.
+- Opinionated WooCommerce tweaks for performance and experience.
+- SearchWP Integration for opinionated tweaks.
+- Possibility to disable prettifying search URL. By default search URL will be prettified but can be overridden by defining `BM_WP_PRETTIFY_SEARCH_URL` as false in the config.
+
+### Changed
+
+- Refactored plugin to use our Plugin Base and PSR-4 autoloading.
+- Added more passwords to our weak passwords list.
+- 
+
+### Fixed
+
+- An `is_plugin_active` check would fail on some environments.
+
 ## [Unreleased] (https://github.com/org/repo/compare/2.2.0...HEAD)
 
 ### Added
