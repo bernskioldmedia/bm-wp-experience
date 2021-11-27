@@ -9,66 +9,67 @@
 
 namespace BernskioldMedia\WP\Experience\Modules;
 
-if (! defined('ABSPATH')) {
-    exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
 class Block_Editor extends Module {
-    public static function hooks(): void {
-        // Disable the block directory in the editor.
-        add_action('plugins_loaded', [ self::class, 'disable_block_directory' ]);
 
-        // Disable Yoast metabox if Block Editor.
-        add_action('add_meta_boxes', [ self::class, 'remove_yoast_metabox_in_block_editor' ], 999);
-    }
+	public static function hooks(): void {
+		// Disable the block directory in the editor.
+		add_action( 'plugins_loaded', [ self::class, 'disable_block_directory' ] );
 
-    /**
-     * Disable the block directory.
-     *
-     * As we typically don't want people to install their own blocks
-     * from within the editor on a whim, we disable the block directory
-     * very broadly.
-     *
-     * To enable the directory, define BM_WP_ENABLE_BLOCK_DIRECTORY
-     * as true in your config.
-     */
-    public static function disable_block_directory(): void {
-        // If we have explicitly set to enable the block directory, don't run this.
-        if (defined('BM_WP_ENABLE_BLOCK_DIRECTORY') && BM_WP_ENABLE_BLOCK_DIRECTORY) {
-            return;
-        }
+		// Disable Yoast metabox if Block Editor.
+		add_action( 'add_meta_boxes', [ self::class, 'remove_yoast_metabox_in_block_editor' ], 999 );
+	}
 
-        remove_action('enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets');
-        remove_action('enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory');
-    }
+	/**
+	 * Disable the block directory.
+	 *
+	 * As we typically don't want people to install their own blocks
+	 * from within the editor on a whim, we disable the block directory
+	 * very broadly.
+	 *
+	 * To enable the directory, define BM_WP_ENABLE_BLOCK_DIRECTORY
+	 * as true in your config.
+	 */
+	public static function disable_block_directory(): void {
+		// If we have explicitly set to enable the block directory, don't run this.
+		if ( defined( 'BM_WP_ENABLE_BLOCK_DIRECTORY' ) && BM_WP_ENABLE_BLOCK_DIRECTORY ) {
+			return;
+		}
 
-    /**
-     * Remove the Yoast SEO metabox if we're in the block editor.
-     * The sidebar options are much better for the block editor
-     * so we don't actually need it.
-     */
-    public static function remove_yoast_metabox_in_block_editor(): void {
-        if (self::is_block_editor()) {
-            foreach (get_post_types() as $post_type) {
-                remove_meta_box('wpseo_meta', $post_type->name, 'normal');
-            }
-        }
-    }
+		remove_action( 'enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets' );
+		remove_action( 'enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory' );
+	}
 
-    /**
-     * Check if we are currently in the block editor.
-     */
-    public static function is_block_editor(): bool {
-        if (! function_exists('get_current_screen')) {
-            return false;
-        }
+	/**
+	 * Remove the Yoast SEO metabox if we're in the block editor.
+	 * The sidebar options are much better for the block editor
+	 * so we don't actually need it.
+	 */
+	public static function remove_yoast_metabox_in_block_editor(): void {
+		if ( self::is_block_editor() ) {
+			foreach ( get_post_types() as $post_type ) {
+				remove_meta_box( 'wpseo_meta', $post_type, 'normal' );
+			}
+		}
+	}
 
-        $screen = get_current_screen();
+	/**
+	 * Check if we are currently in the block editor.
+	 */
+	public static function is_block_editor(): bool {
+		if ( ! function_exists( 'get_current_screen' ) ) {
+			return false;
+		}
 
-        if (method_exists($screen, 'is_block_editor')) {
-            return $screen->is_block_editor();
-        }
+		$screen = get_current_screen();
 
-        return false;
-    }
+		if ( method_exists( $screen, 'is_block_editor' ) ) {
+			return $screen->is_block_editor();
+		}
+
+		return false;
+	}
 }
