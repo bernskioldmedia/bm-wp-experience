@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.0.1 - 2021-11-27
+
+### Fixed
+
+- Fixes the release action so that the auto-updater script will work properly when downloading the ZIP.
+
 ## 3.0.0 - 2021-11-27
 
 ### Added
