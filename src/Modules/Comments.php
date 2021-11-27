@@ -119,8 +119,8 @@ class Comments extends Module {
     /**
      * Disables adding comments from the REST API.
      *
-     * @param $prepared_comment
-     * @param $request
+     * @param array|\WP_Error $prepared_comment
+     * @param \WP_REST_Request $request
      */
     public static function disable_adding_comments_from_rest_api($prepared_comment, $request): void {
         return;

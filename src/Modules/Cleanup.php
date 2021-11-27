@@ -62,7 +62,7 @@ class Cleanup extends Module {
 
         if ( true === apply_filters( 'bm_wpexp_disable_public_rest_api', true ) ) {
             remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-            remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+            remove_action( 'template_redirect', 'rest_output_link_header', 11 );
         }
 
         if ( true === apply_filters( 'bm_wpexp_disable_oembed_discovery', true ) ) {
@@ -76,11 +76,7 @@ class Cleanup extends Module {
      * @param array $plugins active Plugins Array
      */
     public static function disable_emojicons_tinymce($plugins): array {
-        if ( is_array( $plugins ) ) {
-            return array_diff( $plugins, [ 'wpemoji' ] );
-        }
-
-        return [];
+        return array_diff( $plugins, [ 'wpemoji' ] );
     }
 
     /**

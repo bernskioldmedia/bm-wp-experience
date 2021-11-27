@@ -67,7 +67,7 @@ class Users extends Module {
         }
 
         if ( true === $is_author_disabled ) {
-            wp_safe_redirect( '/', '301' );
+            wp_safe_redirect( '/', 301 );
             exit();
         }
     }
