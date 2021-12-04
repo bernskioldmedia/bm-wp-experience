@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BM WP Experience 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bm-wp-experience\n"
-"POT-Creation-Date: 2021-12-04 13:15:30+00:00\n"
-"PO-Revision-Date: 2021-12-04 14:19+0100\n"
+"POT-Creation-Date: 2021-12-04 14:01:51+00:00\n"
+"PO-Revision-Date: 2021-12-04 15:03+0100\n"
 "Last-Translator: Erik Bernskiold <erik@bernskioldmedia.com>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -365,11 +365,11 @@ msgstr ""
 msgid "Authentication is required."
 msgstr "Autentisering krävs."
 
-#: src/Modules/Security/TwoFactorAuthentication.php:255
+#: src/Modules/Security/TwoFactorAuthentication.php:279
 msgid "The code you entered is not valid. Please try again."
 msgstr "Koden du angav är inte giltig. Försök igen."
 
-#: src/Modules/Security/TwoFactorAuthentication.php:281
+#: src/Modules/Security/TwoFactorAuthentication.php:305
 msgid "The backup code you entered is not valid. Please try again."
 msgstr "Återställningskoden du angav är inte giltig. Försök igen."
 
@@ -450,11 +450,11 @@ msgstr ""
 msgid "Enable Two-Factor Authentication"
 msgstr "Aktivera tvåfaktorsautentisering"
 
-#: views/admin/two-factor.php:30
+#: views/admin/two-factor.php:30 views/public/2fa-activation.php:9
 msgid "Activate Two-Factor Authentication"
 msgstr "Aktivera tvåfaktorsautentisering"
 
-#: views/admin/two-factor.php:31
+#: views/admin/two-factor.php:31 views/public/2fa-activation.php:11
 msgid ""
 "We recommend using an application such as\n"
 "\t\t\t\t<a href=\"https://1password.com\" target=\"_blank\">1Password</a> "
@@ -464,7 +464,7 @@ msgstr ""
 "\"https://1password.com\" target=\"_blank\">1Password</a> som låter dig både "
 "lagra lösenord och tvåfaktorskoder säkert."
 
-#: views/admin/two-factor.php:33
+#: views/admin/two-factor.php:33 views/public/2fa-activation.php:13
 msgid ""
 "You can also use a dedicated app such as <a href=\"https://authy.com\" "
 "target=\"_blank\">Authy</a> if you don't want a full password manager."
@@ -473,23 +473,24 @@ msgstr ""
 "target=\"_blank\">Authy</a> om du inte vill ha en fullständig "
 "lösenordshanterare."
 
-#: views/admin/two-factor.php:35
+#: views/admin/two-factor.php:35 views/public/2fa-activation.php:15
 msgid "Get Started"
 msgstr "Kom igång"
 
-#: views/admin/two-factor.php:38
+#: views/admin/two-factor.php:38 views/public/2fa-activation.php:18
 msgid "Please scan the QR code below with your authenticator application . "
 msgstr "Skanna QR-koden nedan med din autentiseringsapplikation."
 
 #: views/admin/two-factor.php:41 views/admin/two-factor.php:62
+#: views/public/2fa-activation.php:21 views/public/2fa-activation.php:41
 msgid "Go back"
 msgstr "Gå tillbaka"
 
-#: views/admin/two-factor.php:42
+#: views/admin/two-factor.php:42 views/public/2fa-activation.php:22
 msgid "Proceed to Validate"
 msgstr "Fortsätt till validering"
 
-#: views/admin/two-factor.php:47
+#: views/admin/two-factor.php:47 views/public/2fa-activation.php:26
 msgid ""
 "Great! Your authenticator app should now be giving you a six-digit code "
 "back. Please enter it in below. "
@@ -498,22 +499,22 @@ msgstr ""
 "den nedan."
 
 #: views/admin/two-factor.php:49
-#, fuzzy
-#| msgid "Unfortunately the academy content is not currently available."
 msgid "Unfortunately the code you entered was not valid . Please try again"
-msgstr "Tyvärr är akademins innehåll inte tillgängligt för närvarande."
+msgstr "Tyvärr var koden du angav inte giltig. Försök igen"
 
-#: views/admin/two-factor.php:63
+#: views/admin/two-factor.php:63 views/public/2fa-activation.php:42
 msgid "Verify the Code"
 msgstr "Kontrollera koden"
 
-#: views/admin/two-factor.php:67
-msgid "Please store the follow recovery codes in case you loose access . "
+#: views/admin/two-factor.php:67 views/public/2fa-activation.php:46
+msgid ""
+"Please store the follow recovery codes securely in case you loose access. "
+"You will not be able to see these again."
 msgstr ""
 "Spara följande återställningskoder om du skulle förlora åtkomst till din "
-"autentiseringsapp."
+"autentiseringsapp. Du kommer inte att kunna se dessa igen."
 
-#: views/admin/two-factor.php:70
+#: views/admin/two-factor.php:70 views/public/2fa-activation.php:49
 msgid "Finish Setup"
 msgstr "Avsluta konfigurationen"
 
@@ -524,6 +525,18 @@ msgstr "https://bernskioldmedia.com/sv/academy/"
 #: views/dashboard-widgets/academy-feed.php:15
 msgid "More at the Academy ›"
 msgstr "Mer i akademin ›"
+
+#: views/public/2fa-activation.php:10
+msgid ""
+"You are required to activate two-factor authentication for your account to "
+"strengthen security."
+msgstr ""
+"Du måste aktivera tvåfaktorsautentisering för ditt konto för att öka "
+"säkerheten."
+
+#: views/public/2fa-activation.php:28
+msgid "Unfortunately the code you entered was not valid . Please try again."
+msgstr "Tyvärr var koden du angav inte giltig  Försök igen."
 
 #: views/public/2fa-backup.php:8 views/public/2fa-login.php:14
 msgid "Error"
@@ -546,10 +559,8 @@ msgid "Please enter the verification code from your authenticator app."
 msgstr "Ange koden från din autentiseringsapp."
 
 #: views/public/2fa-login.php:23
-#, fuzzy
-#| msgid "Authentication is required."
 msgid "Authentication Code:"
-msgstr "Autentisering krävs."
+msgstr "Autentiseringskod:"
 
 #: views/public/2fa-login.php:45
 msgid "Login using backup code"
@@ -612,9 +623,6 @@ msgstr ""
 "Det gick inte att avgöra om det finns tillgängliga uppdateringar för %s."
 
 #: views/admin/about-bm.php:12
-#, fuzzy
-#| msgctxt "academy feed"
-#| msgid "https://bernskioldmedia.com/en/feed/"
 msgctxt "bm website about url"
 msgid "https://bernskioldmedia.com/en/cc-embed/about/"
-msgstr "https://bernskioldmedia.com/sv/feed/"
+msgstr "https://bernskioldmedia.com/sv/cc-embed/om-oss/"
