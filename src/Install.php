@@ -17,6 +17,9 @@ class Install extends Installer {
 
 	public static function install(): void {
 		parent::install();
-		ResponseHeaders::activate();
+
+		if ( true === apply_filters( 'bm_wpexp_modify_htaccess_on_install', true ) ) {
+			ResponseHeaders::activate();
+		}
 	}
 }
