@@ -227,7 +227,7 @@ class TwoFactorAuthentication implements Hookable {
 		}
 
 		// Check if the user should be required to enable 2FA.
-		if ( ! self::is_required_for_website( $user->ID ) ) {
+		if ( ! self::is_required_for_website() ) {
 			return;
 		}
 
