@@ -29,10 +29,13 @@ class TwoFactorAuthentication implements Hookable {
 
 		// AJAX actions.
 		add_action( 'wp_ajax_bmwp_validate_two_factor', [ self::class, '_ajax_validate' ] );
+		add_action( 'wp_ajax_nopriv_bmwp_validate_two_factor', [ self::class, '_ajax_validate' ] );
 		add_action( 'wp_ajax_bmwp_activate_two_factor', [ self::class, '_ajax_activate' ] );
+		add_action( 'wp_ajax_nopriv_bmwp_activate_two_factor', [ self::class, '_ajax_activate' ] );
 		add_action( 'wp_ajax_bmwp_deactivate_two_factor', [ self::class, '_ajax_deactivate' ] );
 
 		// Add two factor to login flow.
+		add_action( 'wp_login', [ self::class, 'handle_2fa_check_on_login' ], 2, 2 );
 		add_action( 'wp_login', [ self::class, 'handle_login' ], 3, 2 );
 		add_action( 'login_form_2fa_validation', [ self::class, 'validate_login' ] );
 		add_action( 'login_form_2fa_backup', [ self::class, 'validate_backup_login' ] );
@@ -217,6 +220,25 @@ class TwoFactorAuthentication implements Hookable {
 		return $codes;
 	}
 
+	public static function handle_2fa_check_on_login( string $username, \WP_User $user ): void {
+		// We're alright if the user already has 2FA enabled.
+		if ( self::has_user_two_factor( $user->ID ) ) {
+			return;
+		}
+
+		// Check if the user should be required to enable 2FA.
+		if ( ! self::is_required_for_website( $user->ID ) ) {
+			return;
+		}
+
+		// Log the user out to force them over to 2FA.
+		wp_clear_auth_cookie();
+
+		self::load_login_template( '2fa-activation', [
+			'user' => $user,
+		] );
+	}
+
 	public static function handle_login( string $username, \WP_User $user ): void {
 		// No need to handle if user doesn't have 2FA activated.
 		if ( ! self::has_user_two_factor( $user->ID ) ) {
@@ -307,5 +329,35 @@ class TwoFactorAuthentication implements Hookable {
 
 		login_footer();
 		exit;
+	}
+
+	protected static function get_roles_where_required(): array {
+		return apply_filters( 'bm_wpexp_roles_requiring_two_factor', [
+			'administrator',
+			'editor',
+			'author',
+			'contributor',
+		] );
+	}
+
+	protected static function is_required_for_website(): bool {
+		return defined( 'BM_WP_REQUIRE_TWO_FACTOR' ) && BM_WP_REQUIRE_TWO_FACTOR === true;
+	}
+
+	protected static function is_required_for_user( ?int $user_id = null ): bool {
+		if ( ! self::is_required_for_website() ) {
+			return false;
+		}
+
+		$user_id = self::maybe_get_current_user_id( $user_id );
+		$user    = get_user_by( 'ID', $user_id );
+
+		if ( ! $user ) {
+			return false;
+		}
+
+		$matches = array_intersect( self::get_roles_where_required(), $user->roles );
+
+		return ! empty( $matches );
 	}
 }
