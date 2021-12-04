@@ -56,7 +56,7 @@ class Plugin extends BasePlugin {
 			self::boot_admin();
 		}
 
-		register_activation_hook( __FILE__, [ Install::class, 'install' ] );
+		register_activation_hook( self::$plugin_file_path, [ Install::class, 'install' ] );
 	}
 
 	public static function boot_modules(): void {
