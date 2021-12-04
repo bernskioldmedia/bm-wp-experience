@@ -79,6 +79,8 @@ The SearchWP integration automatically runs if SearchWP is active.
 - Force non-local environments to use strong passwords.
 - Prevent users from using explicitly defined weak passwords.
 - Default to disabling the core file editor from admin.
+- Adds common-sense default HTTP headers to .htaccess on install.
+- Adds rule to .htaccess to disable XMLRPC.
 
 ### Site Health
 
@@ -165,6 +167,7 @@ config. By default all core roles with admin access are required to opt in.
 
 `bm_wpexp_weak_passwords` - Customize the array of passwords that are always considered weak.
 `bm_wpexp_roles_requiring_two_factor` - Customize the array of roles which are required to have two-factor authentication enabled.
+`bm_wpexp_modify_htaccess_on_install` - Return false to stop the .htaccess file from being modified on install.
 
 ### Updates
 
