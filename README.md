@@ -74,6 +74,8 @@ The SearchWP integration automatically runs if SearchWP is active.
 
 ### Security
 
+- Add two-factor authentication support.
+- Ability to force two-factor authentication for the website.
 - Force non-local environments to use strong passwords.
 - Prevent users from using explicitly defined weak passwords.
 - Default to disabling the core file editor from admin.
@@ -158,7 +160,11 @@ default) restricts all endpoints. `users` restricts only the users endpoint. `no
 
 ### Security
 
+**Enforce Two Factor Authentication:** By default two-factor authentication is an opt-in option for users. To force it, please define `BM_WP_REQUIRE_TWO_FACTOR` to true in your
+config. By default all core roles with admin access are required to opt in.
+
 `bm_wpexp_weak_passwords` - Customize the array of passwords that are always considered weak.
+`bm_wpexp_roles_requiring_two_factor` - Customize the array of roles which are required to have two-factor authentication enabled.
 
 ### Updates
 

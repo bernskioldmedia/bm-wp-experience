@@ -9,7 +9,7 @@ class Maintenance_Plan_Check extends Security_Check {
 
     protected static function test(): array {
         $result = [
-            'label'       => __( 'This site is covered by a maintenance plan.' ),
+            'label'       => __( 'This site is covered by a maintenance plan.', 'bm-wp-experience' ),
             'status'      => 'good',
             'description' => sprintf(
                 '<p>%s</p>',
@@ -22,7 +22,7 @@ class Maintenance_Plan_Check extends Security_Check {
 
         if ( ! Updates::is_on_maintenance_plan() ) {
             $result['status']      = 'recommended';
-            $result['label']       = __( 'This site is not covered by a maintenance plan.' );
+            $result['label']       = __( 'This site is not covered by a maintenance plan.', 'bm-wp-experience' );
             $result['description'] = sprintf(
                 '<p>%s</p>',
                 __(
