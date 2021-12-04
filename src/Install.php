@@ -6,6 +6,7 @@
 namespace BernskioldMedia\WP\Experience;
 
 use BernskioldMedia\WP\Experience\Modules\Htaccess\HSTS;
+use BernskioldMedia\WP\Experience\Modules\Htaccess\ResponseHeaders;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\Installer;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,11 +17,6 @@ class Install extends Installer {
 
 	public static function install(): void {
 		parent::install();
-		self::htaccess();
+		ResponseHeaders::activate();
 	}
-
-	protected static function htaccess(): void {
-		HSTS::activate();
-	}
-
 }
