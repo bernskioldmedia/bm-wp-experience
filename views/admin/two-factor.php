@@ -36,7 +36,7 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 		</div>
 		<div class="two-factor-modal-step" x-show="activeStep === 2">
 			<p><?php esc_html_e( 'Please scan the QR code below with your authenticator application . ', 'bm-wp-experience' ); ?></p>
-			<?php TwoFactorAuthentication::the_qr_code_image( [ 'two-factor-qr-code' ] ); ?>
+			<?php TwoFactorAuthentication::the_qr_code_image( [ 'two-factor-qr-code' ], $user_id ); ?>
 			<div class="two-factor-modal-step-actions">
 				<button class="two-factor-step-button button" @click.prevent="activeStep--"><?php esc_html_e( 'Go back', 'bm-wp-experience' ); ?></button>
 				<button class="two-factor-step-button button button-primary" @click.prevent="activeStep++"><?php esc_html_e( 'Proceed to Validate',
@@ -77,7 +77,7 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 <script>
 	document.addEventListener( 'alpine:init', () => {
 		Alpine.data( 'twoFactorSettings', () => ( {
-			activated: <?php echo esc_js( json_encode( TwoFactorAuthentication::has_user_two_factor() ) ); ?>,
+			activated: <?php echo esc_js( json_encode( TwoFactorAuthentication::has_user_two_factor( $user_id ) ) ); ?>,
 			modalOpen: false,
 			activeStep: 1,
 			token: '',
@@ -87,7 +87,7 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 				const body = new FormData();
 				body.append( 'action', 'bmwp_deactivate_two_factor' );
 				body.append( 'nonce', '<?php echo esc_js( wp_create_nonce( 'bmwp-deactivate-two-factor-nonce' ) ); ?>' );
-				body.append( 'user_id', '<?php echo esc_js( get_current_user_id() ); ?>' );
+				body.append( 'user_id', '<?php echo esc_js( $user_id ); ?>' );
 
 				fetch( '<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>', {
 					method: 'POST',
@@ -104,7 +104,7 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 				body.append( 'action', 'bmwp_validate_two_factor' );
 				body.append( 'nonce', '<?php echo esc_js( wp_create_nonce( 'bmwp-validate-two-factor-nonce' ) ); ?>' );
 				body.append( 'token', this.token );
-				body.append( 'user_id', '<?php echo esc_js( get_current_user_id() ); ?>' );
+				body.append( 'user_id', '<?php echo esc_js( $user_id ); ?>' );
 
 				fetch( '<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>', {
 					method: 'POST',
@@ -127,7 +127,7 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 				body.append( 'action', 'bmwp_activate_two_factor' );
 				body.append( 'nonce', '<?php echo esc_js( wp_create_nonce( 'bmwp-activate-two-factor-nonce' ) ); ?>' );
 				body.append( 'token', this.token );
-				body.append( 'user_id', '<?php echo esc_js( get_current_user_id() ); ?>' );
+				body.append( 'user_id', '<?php echo esc_js( $user_id ); ?>' );
 
 				fetch( '<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>', {
 					method: 'POST',

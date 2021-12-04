@@ -42,7 +42,8 @@ class TwoFactorAuthentication implements Hookable {
 		add_action( 'login_form_load_backup_codes', [ self::class, 'load_backup_codes_form' ] );
 	}
 
-	public static function user_profile_section_content(): void {
+	public static function user_profile_section_content( \WP_User $user ): void {
+		$user_id = $user->ID;
 		include Plugin::get_view_path( 'admin/two-factor' );
 	}
 
