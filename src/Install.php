@@ -7,6 +7,7 @@ namespace BernskioldMedia\WP\Experience;
 
 use BernskioldMedia\WP\Experience\Modules\Htaccess\HSTS;
 use BernskioldMedia\WP\Experience\Modules\Htaccess\ResponseHeaders;
+use BernskioldMedia\WP\Experience\Modules\Htaccess\XMLRPC_Protection;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\Installer;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,6 +21,7 @@ class Install extends Installer {
 
 		if ( true === apply_filters( 'bm_wpexp_modify_htaccess_on_install', true ) ) {
 			ResponseHeaders::activate();
+			XMLRPC_Protection::activate();
 		}
 	}
 }
