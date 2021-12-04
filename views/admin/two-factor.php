@@ -64,8 +64,8 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 			</div>
 		</div>
 		<div class="two-factor-modal-step" x-show="activeStep === 4">
-			<p><?php esc_html_e( 'Please store the follow recovery codes in case you loose access . ', 'bm-wp-experience' ); ?></p>
-			<pre x-text="recoveryCodes"></pre>
+			<p><?php esc_html_e( 'Please store the follow recovery codes securely in case you loose access. You will not be able to see these again.', 'bm-wp-experience' ); ?></p>
+			<p class="two-factor-recovery-codes" x-text="recoveryCodes"></p>
 			<div class="two-factor-modal-step-actions">
 				<button class="two-factor-step-button button button-primary" @click.prevent="activate"><?php esc_html_e( 'Finish Setup', 'bm-wp-experience' ); ?></button>
 			</div>
@@ -86,7 +86,7 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 			disable() {
 				const body = new FormData();
 				body.append( 'action', 'bmwp_deactivate_two_factor' );
-				body.append( 'nonce', ' <?php echo esc_js( wp_create_nonce( 'bmwp-deactivate-two-factor-nonce' ) ); ?>' );
+				body.append( 'nonce', '<?php echo esc_js( wp_create_nonce( 'bmwp-deactivate-two-factor-nonce' ) ); ?>' );
 				body.append( 'user_id', '<?php echo esc_js( get_current_user_id() ); ?>' );
 
 				fetch( '<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>', {
@@ -202,5 +202,11 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 		height: 280px;
 		display: block;
 		margin: 1rem auto;
+	}
+
+	.two-factor-recovery-codes {
+		background-color: #f9f9f9;
+		padding: 1rem;
+		font-family: monospace;
 	}
 </style>

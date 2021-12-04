@@ -173,8 +173,10 @@ class TwoFactorAuthentication implements Hookable {
 
 	public static function _ajax_deactivate(): void {
 		if ( ! isset( $_REQUEST['nonce'] ) || ! wp_verify_nonce( $_REQUEST['nonce'], 'bmwp-deactivate-two-factor-nonce' ) ) {
-			return;
+			wp_send_json_error();
 		}
+
+		error_log( print_r( $_POST, true ) );
 
 		$user_id = (int) wp_strip_all_tags( $_REQUEST['user_id'] );
 
