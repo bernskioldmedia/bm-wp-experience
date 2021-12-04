@@ -9,7 +9,7 @@ class Wp_Config_Permissions_Check extends Security_Check {
 
     protected static function test(): array {
         $result = [
-            'label'       => __( 'The wp-config.php file is not readable.' ),
+            'label'       => __( 'The wp-config.php file is not readable.', 'bm-wp-experience' ),
             'status'      => 'good',
             'description' => sprintf(
                 '<p>%s</p>',
@@ -19,7 +19,7 @@ class Wp_Config_Permissions_Check extends Security_Check {
 
         if ( 440 < Helpers::get_file_permissions( ABSPATH . 'wp-config.php' ) ) {
             $result['status']      = 'critical';
-            $result['label']       = __( 'The wp-config.php file is publicly readable.' );
+            $result['label']       = __( 'The wp-config.php file is publicly readable.', 'bm-wp-experience' );
             $result['description'] = sprintf(
                 '<p>%s</p>',
                 __(

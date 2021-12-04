@@ -17,7 +17,7 @@ class Env_File_Check extends Security_Check {
         $path = ABSPATH . '.env';
 
         if ( ! file_exists( $path ) ) {
-            $result['label']       = __( 'There is no .env file present.' );
+            $result['label']       = __( 'There is no .env file present.', 'bm-wp-experience' );
             $result['description'] = sprintf( '<p>%s</p>', __( 'You are not using a .env file on this environment. No need to do anything.', 'bm-wp-experience' ) );
         }
 

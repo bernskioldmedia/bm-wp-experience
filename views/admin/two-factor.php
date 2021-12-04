@@ -17,7 +17,7 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 					<button class="button" @click.prevent="disable"><?php esc_html_e( 'Disable Two-Factor Authentication', 'bm-wp-experience' ); ?></button>
 				<?php else : ?>
 					<p style="margin-bottom: 0.5rem;"><?php _e( 'Two factor authentication is
-						<span style="color: red; font-weight: bold;">disabled</span>. Please enable to better secure your account.' ); ?></p>
+						<span style="color: red; font-weight: bold;">disabled</span>. Please enable to better secure your account.', 'bm-wp-experience' ); ?></p>
 					<button class="button" @click.prevent="modalOpen = true"><?php esc_html_e( 'Enable Two-Factor Authentication', 'bm-wp-experience' ); ?></button>
 				<?php endif; ?>
 			</td>

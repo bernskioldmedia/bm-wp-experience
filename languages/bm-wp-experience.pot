@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the BM WP Experience package.
 msgid ""
 msgstr ""
-"Project-Id-Version: BM WP Experience 1.4.0\n"
+"Project-Id-Version: BM WP Experience 3.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bm-wp-experience\n"
-"POT-Creation-Date: 2021-07-16 19:33:01+00:00\n"
+"POT-Creation-Date: 2021-12-04 13:15:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: node-wp-i18n 1.2.5\n"
+"X-Generator: node-wp-i18n 1.2.6\n"
 
 #: acp-columns/60f1655d5fd1f.php:26 acp-columns/60f16cb5069c4.php:45
 #: acp-columns/60f16cb5069c4.php:54
@@ -116,50 +116,7 @@ msgstr ""
 msgid "Uploaded To"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:102
-#: includes/admin/class-admin-bar.php:105
-#: includes/admin/class-admin-pages.php:50
-msgid "Help & Support"
-msgstr ""
-
-#: includes/admin/class-admin-bar.php:128
-msgid "Customize"
-msgstr ""
-
-#: includes/admin/class-admin-bar.php:131
-msgid "Customize the site appearance."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Bernskiold Media"
-msgstr ""
-
-#: includes/admin/class-admin-bar.php:164
-#: includes/admin/class-admin-bar.php:167
-#: includes/admin/class-admin-pages.php:63
-msgid "About Bernskiold Media"
-msgstr ""
-
-#: includes/admin/class-admin-bar.php:182
-#: includes/admin/class-admin-bar.php:185
-msgid "Academy"
-msgstr ""
-
-#: includes/admin/class-admin-bar.php:192
-#: includes/admin/class-admin-bar.php:195
-msgid "Support"
-msgstr ""
-
-#: includes/admin/class-admin-bar.php:202
-#: includes/admin/class-admin-bar.php:205
-msgid "Services"
-msgstr ""
-
-#: includes/admin/class-admin-pages.php:38
-msgid "Reusable Blocks"
-msgstr ""
-
-#: includes/admin/class-admin.php:42
+#: src/Admin/Admin.php:37
 #. translators: 1. Site Name
 msgid ""
 "Thank you for creating with <a href=\"https://wordpress.org\">WordPress</a> "
@@ -168,40 +125,185 @@ msgid ""
 "medium=dashboard_link&utm_campaign=%1$s\">Bernskiold Media</a>."
 msgstr ""
 
-#: includes/class-comments.php:86 includes/class-comments.php:166
+#: src/Admin/Admin_Bar.php:100 src/Admin/Admin_Bar.php:103
+#: src/Admin/Admin_Pages.php:49 src/Admin/Admin_Pages.php:50
+msgid "Help & Support"
+msgstr ""
+
+#: src/Admin/Admin_Bar.php:126
+msgid "Customize"
+msgstr ""
+
+#: src/Admin/Admin_Bar.php:129
+msgid "Customize the site appearance."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Bernskiold Media"
+msgstr ""
+
+#: src/Admin/Admin_Bar.php:162 src/Admin/Admin_Bar.php:165
+#: src/Admin/Admin_Pages.php:68 src/Admin/Admin_Pages.php:69
+msgid "About Bernskiold Media"
+msgstr ""
+
+#: src/Admin/Admin_Bar.php:180 src/Admin/Admin_Bar.php:183
+msgid "Academy"
+msgstr ""
+
+#: src/Admin/Admin_Bar.php:190 src/Admin/Admin_Bar.php:193
+msgid "Support"
+msgstr ""
+
+#: src/Admin/Admin_Bar.php:200 src/Admin/Admin_Bar.php:203
+msgid "Services"
+msgstr ""
+
+#: src/Admin/Admin_Pages.php:33 src/Admin/Admin_Pages.php:34
+msgid "Reusable Blocks"
+msgstr ""
+
+#: src/Modules/Comments.php:69 src/Modules/Comments.php:139
 msgid "This site does not support comments."
 msgstr ""
 
-#: includes/class-dashboard.php:54
+#: src/Modules/Dashboard.php:45
 msgid "Bernskiold Media Academy"
 msgstr ""
 
-#: includes/class-dashboard.php:58
+#: src/Modules/Dashboard.php:49
 msgid "Unfortunately the academy content is not currently available."
 msgstr ""
 
-#: includes/class-environments.php:132
+#: src/Modules/Environments.php:130
 msgid "Local"
 msgstr ""
 
-#: includes/class-environments.php:136
+#: src/Modules/Environments.php:134
 msgid "Staging"
 msgstr ""
 
-#: includes/class-environments.php:141
+#: src/Modules/Environments.php:139
 msgid "Production"
 msgstr ""
 
-#: includes/class-multisite.php:98
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:12
+msgid "Configuration files properly secured."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:14
+msgid "The application and environment configuration files are properly secured."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:19
+msgid "Configuration files needs securing."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:22
+msgid ""
+"It could be possible to access the files in the config directory. To fix, "
+"please CHMOD the file to a permission set less than, or equal to 440."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:45
+msgid "Configuration File Permissions"
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:12
+msgid "The .env file is protected."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:14
+msgid "The .env file with secrets is properly protected."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:20
+msgid "There is no .env file present."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:21
+msgid "You are not using a .env file on this environment. No need to do anything."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:26
+msgid "The .env file is readable!"
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:29
+msgid ""
+"This issue poses a major security flaw on the system. This should be fixed "
+"immediately as personal data and/or passwords could be exposed."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:40
+msgid ".env File Permissions"
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:12
+msgid "This site is covered by a maintenance plan."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:16
+msgid ""
+"This website is covered by a maintenance plan. That means it is getting the "
+"latest security updates and monitoring to keep it safe and secure."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:25
+msgid "This site is not covered by a maintenance plan."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:28
+msgid ""
+"Not having the site on a maintenance plan means that you need to take extra "
+"care updating WordPress, plugins and themes to keep it up to date with the "
+"latest security fixes. Contact us at <a "
+"href=\"mailto:support@bernskioldmedia.com\">support@bernskioldmedia.com</a> "
+"to find out more."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:39
+msgid "Maintenance Plan Coverage"
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Security_Check.php:9
+msgid "Security"
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:12
+msgid "The wp-config.php file is not readable."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:16
+msgid ""
+"When the wp-config.php file is protected there is less risk of important "
+"configuration secrets becoming exposed."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:22
+msgid "The wp-config.php file is publicly readable."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:25
+msgid ""
+"It could be possible to access the wp-config.php file publicly. To fix, "
+"please CHMOD the file to a permission set less than, or equal to 440."
+msgstr ""
+
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:36
+msgid "WP-Config File Permissions"
+msgstr ""
+
+#: src/Modules/Multisite.php:80
 #. translators: 1. Blog Name
 msgid "[%s] Password Reset"
 msgstr ""
 
-#: includes/class-plugins.php:50
+#: src/Modules/Plugins.php:33
 msgid "BM Suggested"
 msgstr ""
 
-#: includes/class-plugins.php:106
+#: src/Modules/Plugins.php:81
 #. translators: 1. Link to Suggested Plugins
 msgid ""
 "Some plugins may affect the display, performance, and reliability of your "
@@ -209,11 +311,11 @@ msgid ""
 "suggestions</a> and if in doubt consult with Bernskiold Media support."
 msgstr ""
 
-#: includes/class-plugins.php:134
+#: src/Modules/Plugins.php:104
 msgid "Learn More"
 msgstr ""
 
-#: includes/class-plugins.php:147
+#: src/Modules/Plugins.php:114
 msgid ""
 "Warning: This plugin provides additional enterprise-grade protective "
 "measures, alongside WordPress core tweaks for an optimal experience. If you "
@@ -222,15 +324,30 @@ msgid ""
 "Are you sure you want to deactivate?"
 msgstr ""
 
-#: includes/class-rest-api.php:49
+#: src/Modules/Rest_Api.php:41
 msgid "Authentication is required."
 msgstr ""
 
-#: includes/class-security.php:93
+#: src/Modules/Security/TwoFactorAuthentication.php:255
+msgid "The code you entered is not valid. Please try again."
+msgstr ""
+
+#: src/Modules/Security/TwoFactorAuthentication.php:281
+msgid "The backup code you entered is not valid. Please try again."
+msgstr ""
+
+#: src/Modules/Security.php:58
 #. translators: 1. Lost Password URL
 msgid ""
 "Please <a href=\"%s\">reset your password</a> in order to meet the security "
 "guidelines for this website."
+msgstr ""
+
+#: vendor/bernskioldmedia/wp-plugin-base/src/Jobs/Job.php:426
+#: vendor/bernskioldmedia/wp-plugin-base/src/Jobs/WP_Background_Process.php:426
+#: vendor_prefixed/bernskioldmedia/wp-plugin-base/src/Jobs/Job.php:366
+#: vendor_prefixed/bernskioldmedia/wp-plugin-base/src/Jobs/WP_Background_Process.php:366
+msgid "Every %d Minutes"
 msgstr ""
 
 #: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:54
@@ -253,12 +370,130 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
+#: views/admin/two-factor.php:7
+msgid "Two-Factor Authentication"
+msgstr ""
+
+#: views/admin/two-factor.php:8
+msgid ""
+"Protect your account and increase security by enabling two-factor "
+"authentication."
+msgstr ""
+
+#: views/admin/two-factor.php:12
+msgid "Activation Status"
+msgstr ""
+
+#: views/admin/two-factor.php:15
+msgid ""
+"Two factor authentication is <span style=\"color: green; font-weight: "
+"bold;\">enabled</span>."
+msgstr ""
+
+#: views/admin/two-factor.php:17
+msgid "Disable Two-Factor Authentication"
+msgstr ""
+
+#: views/admin/two-factor.php:19
+msgid ""
+"Two factor authentication is\n"
+"\t\t\t\t\t\t<span style=\"color: red; font-weight: bold;\">disabled</span>. "
+"Please enable to better secure your account."
+msgstr ""
+
+#: views/admin/two-factor.php:21
+msgid "Enable Two-Factor Authentication"
+msgstr ""
+
+#: views/admin/two-factor.php:30
+msgid "Activate Two-Factor Authentication"
+msgstr ""
+
+#: views/admin/two-factor.php:31
+msgid ""
+"We recommend using an application such as\n"
+"\t\t\t\t<a href=\"https://1password.com\" target=\"_blank\">1Password</a> "
+"that lets you both store passwords securely, as well two factor codes."
+msgstr ""
+
+#: views/admin/two-factor.php:33
+msgid ""
+"You can also use a dedicated app such as <a href=\"https://authy.com\" "
+"target=\"_blank\">Authy</a> if you don't want a full password manager."
+msgstr ""
+
+#: views/admin/two-factor.php:35
+msgid "Get Started"
+msgstr ""
+
+#: views/admin/two-factor.php:38
+msgid "Please scan the QR code below with your authenticator application . "
+msgstr ""
+
+#: views/admin/two-factor.php:41 views/admin/two-factor.php:62
+msgid "Go back"
+msgstr ""
+
+#: views/admin/two-factor.php:42
+msgid "Proceed to Validate"
+msgstr ""
+
+#: views/admin/two-factor.php:47
+msgid ""
+"Great! Your authenticator app should now be giving you a six-digit code "
+"back. Please enter it in below. "
+msgstr ""
+
+#: views/admin/two-factor.php:49
+msgid "Unfortunately the code you entered was not valid . Please try again"
+msgstr ""
+
+#: views/admin/two-factor.php:63
+msgid "Verify the Code"
+msgstr ""
+
+#: views/admin/two-factor.php:67
+msgid "Please store the follow recovery codes in case you loose access . "
+msgstr ""
+
+#: views/admin/two-factor.php:70
+msgid "Finish Setup"
+msgstr ""
+
 #: views/dashboard-widgets/academy-feed.php:15
 msgid "https://bernskioldmedia.com/en/academy/"
 msgstr ""
 
 #: views/dashboard-widgets/academy-feed.php:15
 msgid "More at the Academy ›"
+msgstr ""
+
+#: views/public/2fa-backup.php:8 views/public/2fa-login.php:14
+msgid "Error"
+msgstr ""
+
+#: views/public/2fa-backup.php:13
+msgid "Please enter one of your backup codes to log into your account."
+msgstr ""
+
+#: views/public/2fa-backup.php:16
+msgid "Backup Code:"
+msgstr ""
+
+#: views/public/2fa-backup.php:25 views/public/2fa-login.php:40
+msgid "Log In"
+msgstr ""
+
+#: views/public/2fa-login.php:20
+msgid "Please enter the verification code from your authenticator app."
+msgstr ""
+
+#: views/public/2fa-login.php:23
+msgid "Authentication Code:"
+msgstr ""
+
+#: views/public/2fa-login.php:45
+msgid "Login using backup code"
 msgstr ""
 
 #: views/public/staging-message.php:2
@@ -279,22 +514,22 @@ msgid ""
 "we at Bernskiold Media have found runs WordPress best."
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:183
+#: src/Admin/Admin_Bar.php:181
 msgctxt "BM Academy URL"
 msgid "https://www.bernskioldmedia.com/en/academy/"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:193
+#: src/Admin/Admin_Bar.php:191
 msgctxt "BM Support URL"
 msgid "https://support.bernskioldmedia.com/"
 msgstr ""
 
-#: includes/admin/class-admin-bar.php:203
+#: src/Admin/Admin_Bar.php:201
 msgctxt "BM Services URL"
 msgid "https://www.bernskioldmedia.com/en/services/"
 msgstr ""
 
-#: includes/class-dashboard.php:55
+#: src/Modules/Dashboard.php:46
 msgctxt "academy feed"
 msgid "https://bernskioldmedia.com/en/feed/"
 msgstr ""
@@ -312,4 +547,9 @@ msgstr ""
 #: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:218
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
+msgstr ""
+
+#: views/admin/about-bm.php:12
+msgctxt "bm website about url"
+msgid "https://bernskioldmedia.com/en/cc-embed/about/"
 msgstr ""

@@ -9,14 +9,14 @@ class Bm_Config_Check extends Security_Check {
 
     protected static function test(): array {
         $result = [
-            'label'       => __( 'Configuration files properly secured.' ),
+            'label'       => __( 'Configuration files properly secured.', 'bm-wp-experience' ),
             'status'      => 'good',
             'description' => sprintf( '<p>%s</p>', __( 'The application and environment configuration files are properly secured.', 'bm-wp-experience' ) ),
         ];
 
         if ( ! self::all_files_pass() ) {
             $result['status']      = 'critical';
-            $result['label']       = __( 'Configuration files needs securing.' );
+            $result['label']       = __( 'Configuration files needs securing.', 'bm-wp-experience' );
             $result['description'] = sprintf(
                 '<p>%s</p>',
                 __(

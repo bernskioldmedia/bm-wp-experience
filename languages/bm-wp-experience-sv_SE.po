@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BM WP Experience 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bm-wp-experience\n"
-"POT-Creation-Date: 2021-07-16 19:33:01+00:00\n"
-"PO-Revision-Date: 2021-07-16 21:39+0200\n"
+"POT-Creation-Date: 2021-12-04 13:15:30+00:00\n"
+"PO-Revision-Date: 2021-12-04 14:19+0100\n"
 "Last-Translator: Erik Bernskiold <erik@bernskioldmedia.com>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -118,51 +118,8 @@ msgstr "Alt-text"
 msgid "Uploaded To"
 msgstr "Uppladdat till"
 
-#: includes/admin/class-admin-bar.php:102
-#: includes/admin/class-admin-bar.php:105
-#: includes/admin/class-admin-pages.php:50
-msgid "Help & Support"
-msgstr "Hjälp & support"
-
-#: includes/admin/class-admin-bar.php:128
-msgid "Customize"
-msgstr "Anpassa"
-
-#: includes/admin/class-admin-bar.php:131
-msgid "Customize the site appearance."
-msgstr "Anpassa webbplatsens utseende."
-
-#. Author of the plugin/theme
-msgid "Bernskiold Media"
-msgstr "Bernskiold Media"
-
-#: includes/admin/class-admin-bar.php:164
-#: includes/admin/class-admin-bar.php:167
-#: includes/admin/class-admin-pages.php:63
-msgid "About Bernskiold Media"
-msgstr "Om Bernskiold Media"
-
-#: includes/admin/class-admin-bar.php:182
-#: includes/admin/class-admin-bar.php:185
-msgid "Academy"
-msgstr "Academy"
-
-#: includes/admin/class-admin-bar.php:192
-#: includes/admin/class-admin-bar.php:195
-msgid "Support"
-msgstr "Support"
-
-#: includes/admin/class-admin-bar.php:202
-#: includes/admin/class-admin-bar.php:205
-msgid "Services"
-msgstr "Tjänster"
-
-#: includes/admin/class-admin-pages.php:38
-msgid "Reusable Blocks"
-msgstr "Återanvändbara block"
-
 #. translators: 1. Site Name
-#: includes/admin/class-admin.php:42
+#: src/Admin/Admin.php:37
 msgid ""
 "Thank you for creating with <a href=\"https://wordpress.org\">WordPress</a> "
 "and <a href=\"https://www.bernskioldmedia.com/en/?"
@@ -174,41 +131,208 @@ msgstr ""
 "utm_source=clientsite&utm_medium=dashboard&utm_campaign=footerlink"
 "\">Bernskiold Media</a>."
 
-#: includes/class-comments.php:86 includes/class-comments.php:166
+#: src/Admin/Admin_Bar.php:100 src/Admin/Admin_Bar.php:103
+#: src/Admin/Admin_Pages.php:49 src/Admin/Admin_Pages.php:50
+msgid "Help & Support"
+msgstr "Hjälp & support"
+
+#: src/Admin/Admin_Bar.php:126
+msgid "Customize"
+msgstr "Anpassa"
+
+#: src/Admin/Admin_Bar.php:129
+msgid "Customize the site appearance."
+msgstr "Anpassa webbplatsens utseende."
+
+#. Author of the plugin/theme
+msgid "Bernskiold Media"
+msgstr "Bernskiold Media"
+
+#: src/Admin/Admin_Bar.php:162 src/Admin/Admin_Bar.php:165
+#: src/Admin/Admin_Pages.php:68 src/Admin/Admin_Pages.php:69
+msgid "About Bernskiold Media"
+msgstr "Om Bernskiold Media"
+
+#: src/Admin/Admin_Bar.php:180 src/Admin/Admin_Bar.php:183
+msgid "Academy"
+msgstr "Academy"
+
+#: src/Admin/Admin_Bar.php:190 src/Admin/Admin_Bar.php:193
+msgid "Support"
+msgstr "Support"
+
+#: src/Admin/Admin_Bar.php:200 src/Admin/Admin_Bar.php:203
+msgid "Services"
+msgstr "Tjänster"
+
+#: src/Admin/Admin_Pages.php:33 src/Admin/Admin_Pages.php:34
+msgid "Reusable Blocks"
+msgstr "Återanvändbara block"
+
+#: src/Modules/Comments.php:69 src/Modules/Comments.php:139
 msgid "This site does not support comments."
 msgstr "Den här webbplatsen stöder inte kommentarer."
 
-#: includes/class-dashboard.php:54
+#: src/Modules/Dashboard.php:45
 msgid "Bernskiold Media Academy"
 msgstr "Bernskiold Media Academy"
 
-#: includes/class-dashboard.php:58
+#: src/Modules/Dashboard.php:49
 msgid "Unfortunately the academy content is not currently available."
 msgstr "Tyvärr är akademins innehåll inte tillgängligt för närvarande."
 
-#: includes/class-environments.php:132
+#: src/Modules/Environments.php:130
 msgid "Local"
 msgstr "Utveckling"
 
-#: includes/class-environments.php:136
+#: src/Modules/Environments.php:134
 msgid "Staging"
 msgstr "Staging"
 
-#: includes/class-environments.php:141
+#: src/Modules/Environments.php:139
 msgid "Production"
 msgstr "Produktion"
 
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:12
+msgid "Configuration files properly secured."
+msgstr "Konfigurationsfiler är ordentligt säkrade."
+
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:14
+msgid ""
+"The application and environment configuration files are properly secured."
+msgstr "Program- och miljökonfigurationsfilerna är ordentligt säkrade."
+
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:19
+msgid "Configuration files needs securing."
+msgstr "Konfigurationsfilerna behöver säkras."
+
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:22
+msgid ""
+"It could be possible to access the files in the config directory. To fix, "
+"please CHMOD the file to a permission set less than, or equal to 440."
+msgstr ""
+"Det kan vara möjligt att få tillgång till filerna i konfigureringskatalogen. "
+"För att åtgärda detta, vänligen CHMOD filen till en behörighetsuppsättning "
+"som är mindre än eller lika med 440."
+
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:45
+msgid "Configuration File Permissions"
+msgstr "Behörigheter för konfigurationsfiler"
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:12
+msgid "The .env file is protected."
+msgstr ".env-filen är skyddad."
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:14
+msgid "The .env file with secrets is properly protected."
+msgstr ".env-filen med hemligheter är korrekt skyddad."
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:20
+msgid "There is no .env file present."
+msgstr "Det finns ingen .env-fil."
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:21
+msgid ""
+"You are not using a .env file on this environment. No need to do anything."
+msgstr ""
+"Du använder inte en .env-fil i den här miljön. Du behöver inte göra något."
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:26
+msgid "The .env file is readable!"
+msgstr ".env-filen är läsbar!"
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:29
+msgid ""
+"This issue poses a major security flaw on the system. This should be fixed "
+"immediately as personal data and/or passwords could be exposed."
+msgstr ""
+"Detta problem utgör en stor säkerhetsbrist i systemet. Detta bör åtgärdas "
+"omedelbart eftersom personuppgifter och/eller lösenord kan komma att "
+"avslöjas."
+
+#: src/Modules/Health_Checks/Security/Env_File_Check.php:40
+msgid ".env File Permissions"
+msgstr ".env-filens behörigheter"
+
+#: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:12
+msgid "This site is covered by a maintenance plan."
+msgstr "Denna webbplats omfattas av ett underhållsavtal."
+
+#: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:16
+msgid ""
+"This website is covered by a maintenance plan. That means it is getting the "
+"latest security updates and monitoring to keep it safe and secure."
+msgstr ""
+"Denna webbplats omfattas av ett underhållsavtal. Det innebär att den får de "
+"senaste säkerhetsuppdateringarna och övervakningen för att hålla den säker "
+"och trygg."
+
+#: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:25
+msgid "This site is not covered by a maintenance plan."
+msgstr "Denna webbplats omfattas inte av något underhållsavtal."
+
+#: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:28
+msgid ""
+"Not having the site on a maintenance plan means that you need to take extra "
+"care updating WordPress, plugins and themes to keep it up to date with the "
+"latest security fixes. Contact us at <a href=\"mailto:"
+"support@bernskioldmedia.com\">support@bernskioldmedia.com</a> to find out "
+"more."
+msgstr ""
+"Om webbplatsen inte har ett underhållsavtal innebär det att du måste vara "
+"extra noga med att uppdatera WordPress, plugins och teman för att hålla den "
+"uppdaterad med de senaste säkerhetsfixarna. Kontakta oss på <a href=\"mailto:"
+"support@bernskioldmedia.com\">support@bernskioldmedia.com</a> för att få "
+"veta mer."
+
+#: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:39
+msgid "Maintenance Plan Coverage"
+msgstr "Underhållsavtal"
+
+#: src/Modules/Health_Checks/Security/Security_Check.php:9
+msgid "Security"
+msgstr "Säkerhet"
+
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:12
+msgid "The wp-config.php file is not readable."
+msgstr "Filen wp-config.php kan inte läsas."
+
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:16
+msgid ""
+"When the wp-config.php file is protected there is less risk of important "
+"configuration secrets becoming exposed."
+msgstr ""
+"När filen wp-config.php är skyddad är risken mindre att viktiga "
+"konfigurationshemligheter avslöjas."
+
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:22
+msgid "The wp-config.php file is publicly readable."
+msgstr "Filen wp-config.php kan läsas av allmänheten."
+
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:25
+msgid ""
+"It could be possible to access the wp-config.php file publicly. To fix, "
+"please CHMOD the file to a permission set less than, or equal to 440."
+msgstr ""
+"Det kan vara möjligt att komma åt filen wp-config.php offentligt. För att "
+"åtgärda detta, vänligen ändra filens rättigheter till en "
+"behörighetsuppsättning som är mindre än eller lika med 440."
+
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:36
+msgid "WP-Config File Permissions"
+msgstr "Filbehörigheter för wp-config"
+
 #. translators: 1. Blog Name
-#: includes/class-multisite.php:98
+#: src/Modules/Multisite.php:80
 msgid "[%s] Password Reset"
 msgstr "[%s] Återställning av lösenord"
 
-#: includes/class-plugins.php:50
+#: src/Modules/Plugins.php:33
 msgid "BM Suggested"
 msgstr "BM-förslag"
 
 #. translators: 1. Link to Suggested Plugins
-#: includes/class-plugins.php:106
+#: src/Modules/Plugins.php:81
 msgid ""
 "Some plugins may affect the display, performance, and reliability of your "
 "website negatively. Please consider <a href='%s'>Bernskiold Media "
@@ -219,11 +343,11 @@ msgstr ""
 "href='%s'>Bernskiold Medias föreslagna tillägg</a> och om du är osäker, "
 "rådfråga Bernskiold Medias support."
 
-#: includes/class-plugins.php:134
+#: src/Modules/Plugins.php:104
 msgid "Learn More"
 msgstr "Lär dig mer"
 
-#: includes/class-plugins.php:147
+#: src/Modules/Plugins.php:114
 msgid ""
 "Warning: This plugin provides additional enterprise-grade protective "
 "measures, alongside WordPress core tweaks for an optimal experience. If you "
@@ -237,18 +361,33 @@ msgstr ""
 "\n"
 "Är du säker på att du vill deaktivera?"
 
-#: includes/class-rest-api.php:49
+#: src/Modules/Rest_Api.php:41
 msgid "Authentication is required."
 msgstr "Autentisering krävs."
 
+#: src/Modules/Security/TwoFactorAuthentication.php:255
+msgid "The code you entered is not valid. Please try again."
+msgstr "Koden du angav är inte giltig. Försök igen."
+
+#: src/Modules/Security/TwoFactorAuthentication.php:281
+msgid "The backup code you entered is not valid. Please try again."
+msgstr "Återställningskoden du angav är inte giltig. Försök igen."
+
 #. translators: 1. Lost Password URL
-#: includes/class-security.php:93
+#: src/Modules/Security.php:58
 msgid ""
 "Please <a href=\"%s\">reset your password</a> in order to meet the security "
 "guidelines for this website."
 msgstr ""
 "Vänligen <a href=\"%s\">återställ ditt lösenord</a> för att uppfylla "
 "säkerhetsriktlinjerna för denna webbplats."
+
+#: vendor/bernskioldmedia/wp-plugin-base/src/Jobs/Job.php:426
+#: vendor/bernskioldmedia/wp-plugin-base/src/Jobs/WP_Background_Process.php:426
+#: vendor_prefixed/bernskioldmedia/wp-plugin-base/src/Jobs/Job.php:366
+#: vendor_prefixed/bernskioldmedia/wp-plugin-base/src/Jobs/WP_Background_Process.php:366
+msgid "Every %d Minutes"
+msgstr "Varje %d minuter"
 
 #: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:54
 msgid "View details"
@@ -270,6 +409,114 @@ msgstr "Okänd status på uppdateringskontrollen: \"%s\""
 msgid "There is no changelog available."
 msgstr "Det finns ingen ändringslogg tillgänglig."
 
+#: views/admin/two-factor.php:7
+msgid "Two-Factor Authentication"
+msgstr "Tvåfaktorsautentisering"
+
+#: views/admin/two-factor.php:8
+msgid ""
+"Protect your account and increase security by enabling two-factor "
+"authentication."
+msgstr ""
+"Skydda ditt konto och öka säkerheten genom att aktivera "
+"tvåfaktorsautentisering."
+
+#: views/admin/two-factor.php:12
+msgid "Activation Status"
+msgstr "Aktiveringsstatus"
+
+#: views/admin/two-factor.php:15
+msgid ""
+"Two factor authentication is <span style=\"color: green; font-weight: bold;"
+"\">enabled</span>."
+msgstr ""
+"Tvåfaktorsautentisering är <span style=\"color: green; font-weight: bold;"
+"\">aktiverat</span>."
+
+#: views/admin/two-factor.php:17
+msgid "Disable Two-Factor Authentication"
+msgstr "Inaktivera tvåfaktorsautentisering"
+
+#: views/admin/two-factor.php:19
+msgid ""
+"Two factor authentication is\n"
+"\t\t\t\t\t\t<span style=\"color: red; font-weight: bold;\">disabled</span>. "
+"Please enable to better secure your account."
+msgstr ""
+"Tvåfaktorsautentisering är <span style=\"color: red; font-weight: bold;"
+"\">inaktiverat</span>. Aktivera för att skydda ditt konto bättre."
+
+#: views/admin/two-factor.php:21
+msgid "Enable Two-Factor Authentication"
+msgstr "Aktivera tvåfaktorsautentisering"
+
+#: views/admin/two-factor.php:30
+msgid "Activate Two-Factor Authentication"
+msgstr "Aktivera tvåfaktorsautentisering"
+
+#: views/admin/two-factor.php:31
+msgid ""
+"We recommend using an application such as\n"
+"\t\t\t\t<a href=\"https://1password.com\" target=\"_blank\">1Password</a> "
+"that lets you both store passwords securely, as well two factor codes."
+msgstr ""
+"Vi rekommenderar att du använder ett program som t.ex <a href="
+"\"https://1password.com\" target=\"_blank\">1Password</a> som låter dig både "
+"lagra lösenord och tvåfaktorskoder säkert."
+
+#: views/admin/two-factor.php:33
+msgid ""
+"You can also use a dedicated app such as <a href=\"https://authy.com\" "
+"target=\"_blank\">Authy</a> if you don't want a full password manager."
+msgstr ""
+"Du kan också använda en särskild app som <a href=\"https://authy.com\" "
+"target=\"_blank\">Authy</a> om du inte vill ha en fullständig "
+"lösenordshanterare."
+
+#: views/admin/two-factor.php:35
+msgid "Get Started"
+msgstr "Kom igång"
+
+#: views/admin/two-factor.php:38
+msgid "Please scan the QR code below with your authenticator application . "
+msgstr "Skanna QR-koden nedan med din autentiseringsapplikation."
+
+#: views/admin/two-factor.php:41 views/admin/two-factor.php:62
+msgid "Go back"
+msgstr "Gå tillbaka"
+
+#: views/admin/two-factor.php:42
+msgid "Proceed to Validate"
+msgstr "Fortsätt till validering"
+
+#: views/admin/two-factor.php:47
+msgid ""
+"Great! Your authenticator app should now be giving you a six-digit code "
+"back. Please enter it in below. "
+msgstr ""
+"Bra! Din autentiseringsapp bör nu ge dig en sexsiffrig kod tillbaka. Ange "
+"den nedan."
+
+#: views/admin/two-factor.php:49
+#, fuzzy
+#| msgid "Unfortunately the academy content is not currently available."
+msgid "Unfortunately the code you entered was not valid . Please try again"
+msgstr "Tyvärr är akademins innehåll inte tillgängligt för närvarande."
+
+#: views/admin/two-factor.php:63
+msgid "Verify the Code"
+msgstr "Kontrollera koden"
+
+#: views/admin/two-factor.php:67
+msgid "Please store the follow recovery codes in case you loose access . "
+msgstr ""
+"Spara följande återställningskoder om du skulle förlora åtkomst till din "
+"autentiseringsapp."
+
+#: views/admin/two-factor.php:70
+msgid "Finish Setup"
+msgstr "Avsluta konfigurationen"
+
 #: views/dashboard-widgets/academy-feed.php:15
 msgid "https://bernskioldmedia.com/en/academy/"
 msgstr "https://bernskioldmedia.com/sv/academy/"
@@ -277,6 +524,36 @@ msgstr "https://bernskioldmedia.com/sv/academy/"
 #: views/dashboard-widgets/academy-feed.php:15
 msgid "More at the Academy ›"
 msgstr "Mer i akademin ›"
+
+#: views/public/2fa-backup.php:8 views/public/2fa-login.php:14
+msgid "Error"
+msgstr "Fel"
+
+#: views/public/2fa-backup.php:13
+msgid "Please enter one of your backup codes to log into your account."
+msgstr "Ange en av dina återställningskoder för att logga in på ditt konto."
+
+#: views/public/2fa-backup.php:16
+msgid "Backup Code:"
+msgstr "Återställningskod:"
+
+#: views/public/2fa-backup.php:25 views/public/2fa-login.php:40
+msgid "Log In"
+msgstr "Logga in"
+
+#: views/public/2fa-login.php:20
+msgid "Please enter the verification code from your authenticator app."
+msgstr "Ange koden från din autentiseringsapp."
+
+#: views/public/2fa-login.php:23
+#, fuzzy
+#| msgid "Authentication is required."
+msgid "Authentication Code:"
+msgstr "Autentisering krävs."
+
+#: views/public/2fa-login.php:45
+msgid "Login using backup code"
+msgstr "Logga in med återställningskod"
 
 #: views/public/staging-message.php:2
 msgid "Staging Environment"
@@ -298,22 +575,22 @@ msgstr ""
 "Ger en WordPress-upplevelse med justeringar och förbättringar som vi på "
 "Bernskiold Media tycker optimerar WordPress på bästa sätt."
 
-#: includes/admin/class-admin-bar.php:183
+#: src/Admin/Admin_Bar.php:181
 msgctxt "BM Academy URL"
 msgid "https://www.bernskioldmedia.com/en/academy/"
 msgstr "https://www.bernskioldmedia.com/sv/academy/"
 
-#: includes/admin/class-admin-bar.php:193
+#: src/Admin/Admin_Bar.php:191
 msgctxt "BM Support URL"
 msgid "https://support.bernskioldmedia.com/"
 msgstr "https://support.bernskioldmedia.com/"
 
-#: includes/admin/class-admin-bar.php:203
+#: src/Admin/Admin_Bar.php:201
 msgctxt "BM Services URL"
 msgid "https://www.bernskioldmedia.com/en/services/"
 msgstr "https://www.bernskioldmedia.com/en/tjanster/"
 
-#: includes/class-dashboard.php:55
+#: src/Modules/Dashboard.php:46
 msgctxt "academy feed"
 msgid "https://bernskioldmedia.com/en/feed/"
 msgstr "https://bernskioldmedia.com/sv/feed/"
@@ -333,3 +610,11 @@ msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
 msgstr ""
 "Det gick inte att avgöra om det finns tillgängliga uppdateringar för %s."
+
+#: views/admin/about-bm.php:12
+#, fuzzy
+#| msgctxt "academy feed"
+#| msgid "https://bernskioldmedia.com/en/feed/"
+msgctxt "bm website about url"
+msgid "https://bernskioldmedia.com/en/cc-embed/about/"
+msgstr "https://bernskioldmedia.com/sv/feed/"
