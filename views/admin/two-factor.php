@@ -35,7 +35,7 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 			<button class="two-factor-step-button button button-primary" @click.prevent="activeStep++"><?php esc_html_e( 'Get Started', 'bm-wp-experience' ); ?></button>
 		</div>
 		<div class="two-factor-modal-step" x-show="activeStep === 2">
-			<p><?php esc_html_e( 'Please scan the QR code below with your code scanner application . ', 'bm-wp-experience' ); ?></p>
+			<p><?php esc_html_e( 'Please scan the QR code below with your authenticator application . ', 'bm-wp-experience' ); ?></p>
 			<?php TwoFactorAuthentication::the_qr_code_image( [ 'two-factor-qr-code' ] ); ?>
 			<div class="two-factor-modal-step-actions">
 				<button class="two-factor-step-button button" @click.prevent="activeStep--"><?php esc_html_e( 'Go back', 'bm-wp-experience' ); ?></button>
@@ -44,7 +44,7 @@ use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 			</div>
 		</div>
 		<div class="two-factor-modal-step" x-show="activeStep === 3">
-			<p><?php esc_html_e( 'Great! Your code scanner should now be giving you a six-digit code back. Please enter it in below. ', 'bm-wp-experience' ); ?></p>
+			<p><?php esc_html_e( 'Great! Your authenticator app should now be giving you a six-digit code back. Please enter it in below. ', 'bm-wp-experience' ); ?></p>
 			<div class="notice notice-error inline two-factor-error" x-show="activationError" x-cloak x-transition>
 				<p><?php esc_html_e( 'Unfortunately the code you entered was not valid . Please try again', 'bm-wp-experience' ); ?>.</p>
 			</div>
