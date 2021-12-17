@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.2.0 - 2021-12-17
+
+## Added
+
+- OhDear Application Health Integration ([#49](https://github.com/bernskioldmedia/bm-wp-experience/pull/49))
+
+## Changed
+
+- Weaker checks for file permissions ([#50](https://github.com/bernskioldmedia/bm-wp-experience/pull/50))
+
 ## 3.1.0 - 2021-12-04
 
 ## Added
