@@ -34,9 +34,9 @@ class OhDear_Application_Health implements Hookable {
 			], 403 );
 		}
 
-		include ABSPATH . 'wp-admin/includes/update.php';
-		include ABSPATH . 'wp-admin/includes/plugin.php';
-		include ABSPATH . 'wp-admin/includes/misc.php';
+		require_once ABSPATH . 'wp-admin/includes/update.php';
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		require_once ABSPATH . 'wp-admin/includes/misc.php';
 
 		$check_results = new CheckResults( new DateTime() );
 		$site_health   = WP_Site_Health::get_instance();
