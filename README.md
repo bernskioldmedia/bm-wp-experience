@@ -55,6 +55,10 @@ For almost every feature there is a filter, constant or action allowing you to c
 
 - Have password resets go through the local site where the user is signing in, instead of the main site.
 
+### Monitoring
+
+- Added a REST API endpoint for Oh Dear that we use for monitoring client sites.
+
 ### Plugins
 
 - Include a tab with suggested plugins from Bernskiold Media.
