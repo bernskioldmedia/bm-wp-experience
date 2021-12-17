@@ -3,6 +3,7 @@
 namespace BernskioldMedia\WP\Experience;
 
 use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
+use BernskioldMedia\WP\Experience\Rest\OhDear_Application_Health;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\BasePlugin;
 
 class Plugin extends BasePlugin {
@@ -15,6 +16,7 @@ class Plugin extends BasePlugin {
 	protected static array $boot = [
 		Admin\Admin_Bar::class, // Boots publicly because it is loaded in public views too.
 		TwoFactorAuthentication::class,
+		OhDear_Application_Health::class,
 	];
 
 	protected static array $admin_boot = [
