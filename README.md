@@ -192,3 +192,16 @@ managed anyway (just not daily). Define `BM_WP_HAS_MAINTENANCE_PLAN` to `true` i
 `bm_wpexp_woocommerce_disable_password_strength_meter` - Return as `false` to enable the password strength meter.
 `bm_wpexp_woocommerce_disable_assets_on_non_woo_pages` - Return as `false` to load assets even on non-WooCommerce pages.
 `bm_wpexp_woocommerce_disable_fragments_on_non_woo_pages` - Return as `false` to load fragments even on non-WooCommerce pages. For example if you have a dynamic cart on all pages.
+
+## Setting up Monitoring
+
+To set up monitoring via [OhDear.app](https://ohdear.app) you need to add the REST API endpoint to the website in OhDear's application monitoring settings. The URL
+is `https://yourdomain.com/wp-json/bm-wp-experience/v1/application-health`.
+
+To run this endpoint, a secret must be configured and defined in your config:
+
+```php
+define( 'BM_WP_OH_DEAR_SECRET', 'my-secret-here' );
+```
+
+The same secret needs to be defined in OhDear's settings. It will then be sent via all requests to the API. The secrets in OhDear and the application must match for proper authentication.
