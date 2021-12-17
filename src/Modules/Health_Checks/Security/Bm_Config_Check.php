@@ -33,7 +33,7 @@ class Bm_Config_Check extends Security_Check {
         $files = glob( ABSPATH . 'config{,*/,*/*/,*/*/*/}*.php', GLOB_BRACE );
 
         foreach ( $files as $file ) {
-            if ( Helpers::get_file_permissions( $file ) >= 440 ) {
+            if ( Helpers::get_file_permissions( $file ) >= 640 ) {
                 return false;
             }
         }
