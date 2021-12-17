@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb4367bdca0cd9da1e5b6c480c50ad10",
+    "content-hash": "21728b9845d335ad3857e604464a561f",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -256,6 +256,70 @@
                 "source": "https://github.com/DASPRiD/Enum/tree/1.0.3"
             },
             "time": "2020-10-02T16:03:48+00:00"
+        },
+        {
+            "name": "ohdearapp/health-check-results",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ohdearapp/health-check-results.git",
+                "reference": "be0f81dcd82ac70368b88d2955ba6a92180025ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ohdearapp/health-check-results/zipball/be0f81dcd82ac70368b88d2955ba6a92180025ae",
+                "reference": "be0f81dcd82ac70368b88d2955ba6a92180025ae",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "pestphp/pest": "^1.20",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "spatie/pest-plugin-snapshots": "^1.1",
+                "spatie/ray": "^1.28"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OhDear\\HealthCheckResults\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Create application health check results for Oh Dear",
+            "homepage": "https://github.com/ohdearapp/health-check-results",
+            "keywords": [
+                "application",
+                "health",
+                "health-check-results",
+                "monitoring",
+                "ohdear"
+            ],
+            "support": {
+                "issues": "https://github.com/ohdearapp/health-check-results/issues",
+                "source": "https://github.com/ohdearapp/health-check-results/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ohdearapp",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-12-07T14:59:56+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",
