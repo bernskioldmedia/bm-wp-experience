@@ -2,10 +2,9 @@
 
 namespace BernskioldMedia\WP\Experience\Modules;
 
-use BernskioldMedia\WP\PluginBase\Interfaces\Hookable;
 use PHPMailer\PHPMailer\PHPMailer;
 
-class Mail implements Hookable {
+class Mail extends Module {
 
 	public static function hooks(): void {
 		add_action( 'phpmailer_init', [ self::class, 'send_mail_via_smtp' ] );
