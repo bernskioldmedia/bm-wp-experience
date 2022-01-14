@@ -8,9 +8,9 @@ use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\BasePlugin;
 
 class Plugin extends BasePlugin {
 
-	protected static string $slug             = 'bm-wp-experience';
-	protected static string $version          = '3.2.1';
-	protected static string $textdomain       = 'bm-wp-experience';
+	protected static string $slug = 'bm-wp-experience';
+	protected static string $version = '3.2.1';
+	protected static string $textdomain = 'bm-wp-experience';
 	protected static string $plugin_file_path = BM_WP_EXPERIENCE_FILE_PATH;
 
 	protected static array $boot = [
@@ -33,6 +33,7 @@ class Plugin extends BasePlugin {
 		Modules\Customizer::class,
 		Modules\Dashboard::class,
 		Modules\Environments::class,
+		Modules\Mail::class,
 		Modules\Media::class,
 		Modules\Multisite::class,
 		Modules\Plugins::class,
