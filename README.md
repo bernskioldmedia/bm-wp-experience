@@ -47,6 +47,10 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Show staging environment notice publically for administrators.
 - Disable indexing for non-production environments.
 
+### Mail
+
+- Allows easy configuration of sending via SMTP instead of PHP Sendmail.
+
 ### Media
 
 - Sanitize uploaded file names from non-ASCII characters.
@@ -159,6 +163,16 @@ configuration.
 `bm_wpexp_environment_disable_indexing_for_non_production` - Return `false` to enable indexing for non-production environments.
 `bm_wpexp_environment_staging_public_label` - Customize the label shown on the public staging environment banner.
 
+### Mail
+
+`BM_WP_SMTP_ENABLED` - Set to `true` to send e-mail via SMTP. By default this will only apply to production environments.
+`BM_WP_SMTP_OUTSIDE_PRODUCTION` - Set to `true` to send e-mail via SMTP even if the environment is not set as production.
+`BM_WP_SMTP_HOST` - Define the SMTP host to send through.
+`BM_WP_SMTP_USERNAME` - Define the SMTP e-mail account username to send through.
+`BM_WP_SMTP_PASSWORD` - Define the SMTP e-mail account password to send through.
+`BM_WP_SMTP_PORT` - Set which port the connection should be made through. Should be set as an integer. Defaults to `587`.
+`BM_WP_SMTP_SECURITY` - Set the sending security for the SMTP server. Defaults to `tls`.
+
 ### REST API
 
 **Choose API restriction level:** By default, the REST API requires authentication for all endpoints. By setting the `BM_WP_RESTRICT_REST_API` constant you may change this. `all` (
@@ -204,4 +218,5 @@ To run this endpoint, a secret must be configured and defined in your config:
 define( 'BM_WP_OH_DEAR_SECRET', 'my-secret-here' );
 ```
 
-The same secret needs to be defined in OhDear's settings. It will then be sent via all requests to the API. The secrets in OhDear and the application must match for proper authentication.
+The same secret needs to be defined in OhDear's settings. It will then be sent via all requests to the API. The secrets in OhDear and the application must match for proper
+authentication.
