@@ -1,28 +1,28 @@
 {
-  "name": "bm-wp-experience",
-  "version": "3.2.1",
-  "description": "Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.",
-  "main": "assets/scripts/src/index.js",
-  "scripts": {
-	"release": "npm run production",
-	"development": "mix",
-	"watch": "mix watch",
-	"watch-poll": "mix watch -- --watch-options-poll=1000",
-	"hot": "mix watch --hot",
-	"production": "mix --production",
-	"i18n": "npm run i18n:textdomain && npm run i18n:pot",
-	"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules --type theme",
-	"i18n:pot": "npx wpi18n makepot  --domain-path ./languages/"
-  },
-  "author": "Bernskiold Media",
-  "license": "GPL-2.0+",
-  "devDependencies": {
-	"cross-env": "^7.0.*",
-	"laravel-mix": "^6.0.31",
-	"node-wp-i18n": "^1.2.6",
-	"postcss-preset-env": "^6.7.*",
-	"rimraf": "^3.0.2",
-	"sass": "^1.42.1",
-	"sass-loader": "^12.1.0"
-  }
+	"name": "bm-wp-experience",
+	"version": "3.2.1",
+	"description": "Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.",
+	"main": "assets/scripts/src/index.js",
+	"scripts": {
+		"release": "npm run production",
+		"development": "mix",
+		"watch": "mix watch",
+		"watch-poll": "mix watch -- --watch-options-poll=1000",
+		"hot": "mix watch --hot",
+		"production": "mix --production",
+		"i18n": "npm run i18n:textdomain && npm run i18n:pot",
+		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules --type theme",
+		"i18n:pot": "npx wpi18n makepot  --domain-path ./languages/"
+	},
+	"author": "Bernskiold Media",
+	"license": "GPL-2.0+",
+	"devDependencies": {
+		"cross-env": "^7.0.*",
+		"laravel-mix": "^6.0.31",
+		"node-wp-i18n": "^1.2.6",
+		"postcss-preset-env": "^6.7.*",
+		"rimraf": "^3.0.2",
+		"sass": "^1.48.0",
+		"sass-loader": "^12.4.0"
+	}
 }
