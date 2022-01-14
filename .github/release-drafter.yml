@@ -31,6 +31,7 @@ version-resolver:
   major:
     labels:
       - 'changelog:removed'
+      - 'changelog:breaking'
   minor:
     labels:
       - 'changelog:added'
