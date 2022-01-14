@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.3.1 - 2022-01-14
+
+## Fixed
+
+- Mailer integration was not loading the right Hookable class ([#55](https://github.com/bernskioldmedia/bm-wp-experience/pull/55))
+
 ## 3.3.0 - 2022-01-14
 
 ## Added
