@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.3.0 - 2022-01-14
+
+## Added
+
+- Seriously Simple Podcasting Integration: Show all episodes in feed ([#54](https://github.com/bernskioldmedia/bm-wp-experience/pull/54))
+- Add support for SMTP e-mail sending ([#52](https://github.com/bernskioldmedia/bm-wp-experience/pull/52))
+
+## Dependency Updates
+
+- Bump follow-redirects from 1.14.5 to 1.14.7 ([#53](https://github.com/bernskioldmedia/bm-wp-experience/pull/53))
+
 ## 3.2.1 - 2021-12-17
 
 ## Fixed
