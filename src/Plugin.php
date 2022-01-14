@@ -47,6 +47,7 @@ class Plugin extends BasePlugin {
 	protected static array $integrations = [
 		Integrations\SearchWp::class,
 		Integrations\WooCommerce::class,
+		Integrations\SSPodcast::class,
 	];
 
 	public function __construct() {

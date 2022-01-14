@@ -90,6 +90,10 @@ The SearchWP integration automatically runs if SearchWP is active.
 - Adds common-sense default HTTP headers to .htaccess on install.
 - Adds rule to .htaccess to disable XMLRPC.
 
+### Seriously Simple Podcasting
+
+- Always show all (100 000) episodes of a podcast in the podcast feed that goes out to platforms.
+
 ### Site Health
 
 - Check that `wp-config.php` is secured properly.
@@ -186,6 +190,10 @@ config. By default all core roles with admin access are required to opt in.
 `bm_wpexp_weak_passwords` - Customize the array of passwords that are always considered weak.
 `bm_wpexp_roles_requiring_two_factor` - Customize the array of roles which are required to have two-factor authentication enabled.
 `bm_wpexp_modify_htaccess_on_install` - Return false to stop the .htaccess file from being modified on install.
+
+### Seriously Simple Podcasting
+
+`bm_wpexp_sspodcast_posts_in_feed` - Customize how many posts should show up in the podcasting feeds. Defaults to 100 000.
 
 ### Updates
 
