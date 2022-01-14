@@ -18,9 +18,9 @@
     "yahnis-elsts/plugin-update-checker": "^4.8"
   },
   "require-dev": {
-	"bernskioldmedia/bm-wp-devtools": "dev-main",
-	"bernskioldmedia/wp-plugin-base": "^2.4",
-	"humbug/php-scoper": "dev-master"
+    "bernskioldmedia/bm-wp-devtools": "dev-main",
+    "bernskioldmedia/wp-plugin-base": "^2.4",
+    "humbug/php-scoper": "dev-master"
   },
   "license": "GPL-3.0+",
   "authors": [
