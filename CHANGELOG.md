@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.3.2 - 2022-02-02
+
+## Fixed
+
+- Fixed issue with yoast metabox after removing it ([#57](https://github.com/bernskioldmedia/bm-wp-experience/pull/57))
+
 ## 3.3.1 - 2022-01-14
 
 ## Fixed
