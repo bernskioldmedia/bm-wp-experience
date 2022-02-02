@@ -18,9 +18,6 @@ class Block_Editor extends Module {
 	public static function hooks(): void {
 		// Disable the block directory in the editor.
 		add_action( 'plugins_loaded', [ self::class, 'disable_block_directory' ] );
-
-		// Disable Yoast metabox if Block Editor.
-		add_action( 'add_meta_boxes', [ self::class, 'remove_yoast_metabox_in_block_editor' ], 999 );
 	}
 
 	/**
