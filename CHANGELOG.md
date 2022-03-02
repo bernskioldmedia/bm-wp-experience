@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.3.3 - 2022-03-02
+
+## Fixed
+
+- Issue with search not working with special characters
+
 ## 3.3.2 - 2022-02-02
 
 ## Fixed
