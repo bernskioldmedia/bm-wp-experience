@@ -22,6 +22,7 @@ class Cleanup extends Module {
 
         // Rewrites the search URL.
         add_action( 'template_redirect', [ self::class, 'nice_search_url' ] );
+        add_action('parse_query', [ self::class, 'query_vars_search_filter' ]);
 
         // Blank Search Query Fix.
         add_filter( 'request', [ self::class, 'blank_search_fix' ] );
@@ -103,6 +104,21 @@ class Cleanup extends Module {
             wp_safe_redirect( home_url( "/{$search_base}/" . rawurlencode( get_query_var( 's' ) ) ) );
             exit();
         }
+    }
+
+    /**
+     * URL decode our search result to be able to search and display the search query properly
+     * Special characters will otherwise look weird
+     *
+     * @param $query
+     * @return mixed
+     */
+    public static function query_vars_search_filter( $query ) {
+        if ($query->is_search && !is_admin()) {
+            $query->query_vars['s'] = urldecode( $query->query_vars['s'] );
+        }
+
+        return $query;
     }
 
     /**
