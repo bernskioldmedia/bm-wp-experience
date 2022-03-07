@@ -110,7 +110,7 @@ class Comments extends Module {
     /**
      * Disable comments via XMLRPC.
      */
-    public static function disable_xmlrc_comments(array $methods): array {
+    public static function disable_comments_via_xmlrpc(array $methods): array {
         unset($methods['wp.newComment']);
 
         return $methods;
