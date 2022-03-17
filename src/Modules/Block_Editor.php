@@ -9,6 +9,8 @@
 
 namespace BernskioldMedia\WP\Experience\Modules;
 
+use BernskioldMedia\WP\Experience\Plugin;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -18,6 +20,7 @@ class Block_Editor extends Module {
 	public static function hooks(): void {
 		// Disable the block directory in the editor.
 		add_action( 'plugins_loaded', [ self::class, 'disable_block_directory' ] );
+		add_action( 'admin_enqueue_scripts', [ self::class, 'block_editor_styles' ] );
 	}
 
 	/**
@@ -51,6 +54,18 @@ class Block_Editor extends Module {
 				remove_meta_box( 'wpseo_meta', $post_type, 'normal' );
 			}
 		}
+	}
+
+	public static function block_editor_styles(): void {
+		if ( ! self::is_block_editor() ) {
+			return;
+		}
+
+		if ( true !== apply_filters( 'bm_wpexp_enable_block_editor_styling', true ) ) {
+			return;
+		}
+
+		wp_enqueue_style( 'bm-block-editor', Plugin::get_assets_url( 'styles/dist/block-editor.css' ), [], Plugin::get_version() );
 	}
 
 	/**
