@@ -17,6 +17,7 @@ class Admin_Ad_Blocker extends Module {
 		}
 
 		add_action( 'admin_head', [ self::class, 'styles' ] );
+		add_action( 'admin_init', [ self::class, 'hide_ad_pages' ], 9999 );
 
 	}
 
@@ -27,19 +28,24 @@ class Admin_Ad_Blocker extends Module {
 			return;
 		}
 
+		// @formatter:off
 		?>
 		<style>
-			<?php echo $selectors; ?>
-			{
-				display: none !important
-			;
-			}
+<?php echo $selectors; ?> { display: none !important; }
 		</style>
 		<?php
+		// @formatter:on
+	}
+
+	public static function hide_ad_pages(): void {
+		remove_submenu_page( 'wpseo_dashboard', 'wpseo_licenses' );
+		remove_submenu_page( 'wpseo_dashboard', 'wpseo_workouts' );
 	}
 
 	protected static function get_ad_selectors(): string {
 		$selectors = apply_filters( 'bm_wpexp_admin_ads_selectors', [
+			'#yoast-helpscout-beacon',
+			'.yoast-container__configuration-wizard',
 			'.wpseo_content_wrapper #sidebar-container',
 			'.yoast_premium_upsell',
 			'#wpseo-local-seo-upsell',
