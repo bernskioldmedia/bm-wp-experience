@@ -27,6 +27,7 @@ class Plugin extends BasePlugin {
 	];
 
 	protected static array $modules = [
+		Modules\Admin_Ad_Blocker::class,
 		Modules\Block_Editor::class,
 		Modules\Cleanup::class,
 		Modules\Comments::class,
