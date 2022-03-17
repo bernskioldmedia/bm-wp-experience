@@ -19,6 +19,7 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Custom branded admin theme in our colors.
 - Removes ACF settings if on production environment.
 - Remove "Howdy" from the admin bar.
+- Removes ads from a series of plugins
 
 ### Block Editor
 
@@ -135,6 +136,8 @@ The WooCommerce integration automatically runs if WooCommerce is active.
 
 **Enable Import/Export Screens:** By default we hide the import/export pages. If you need these in the menu, set `BM_WP_ENABLE_IMPORT_EXPORT` to `true`.
 
+**Show ads from plugins:** If you for some reason would like to show ads from plugins in the admin, you can set the `bm_wpexp_enable_admin_ad_blocker` filter to false: `add_filter( 'bm_wpexp_enable_admin_ad_blocker', '__return_false' )`.
+
 `bm_wpexp_custom_admin_theme` - Return false to disable our custom branding.
 `bm_wpexp_show_help_widget` - Return false to hide the BM help widget.
 `bm_wpexp_show_admin_page_support` - Return false to hide the support admin page.
@@ -143,7 +146,9 @@ The WooCommerce integration automatically runs if WooCommerce is active.
 
 **Enable Block Directory:** By default the block directory is disabled. Define and set `BM_WP_ENABLE_BLOCK_DIRECTORY` to `false` to allow it.
 
-**Disable Block Editor Styling** By default we ship a block editor styling. By returning the `bm_wpexp_enable_block_editor_styling` as false you can disable this, for example via an mu-plugin. `apply_filters( 'bm_wpexp_enable_block_editor_styling', '__return_false' )`.
+**Disable Block Editor Styling** By default we ship a block editor styling. By returning the `bm_wpexp_enable_block_editor_styling` as false you can disable this, for example via a mu-plugin. `add_filter( 'bm_wpexp_enable_block_editor_styling', '__return_false' )`.
+
+**Hides Yoast Metabox** Yoast SEO has a lovely block editor plugin which works great. So we prefer to get rid of the metabox. We hide it with plain CSS.
 
 ### Cleanup
 
