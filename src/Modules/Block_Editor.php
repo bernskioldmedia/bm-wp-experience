@@ -61,6 +61,10 @@ class Block_Editor extends Module {
 			return;
 		}
 
+		if ( true !== apply_filters( 'bm_wpexp_enable_block_editor_styling', true ) ) {
+			return;
+		}
+
 		wp_enqueue_style( 'bm-block-editor', Plugin::get_assets_url( 'styles/dist/block-editor.css' ), [], Plugin::get_version() );
 	}
 
