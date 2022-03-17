@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.4.0 - 2022-03-17
+
+## Added
+
+- Hide plugin ads in the admin panel ([#61](https://github.com/bernskioldmedia/bm-wp-experience/pull/61))
+- Add custom block editor styling for better experience ([#60](https://github.com/bernskioldmedia/bm-wp-experience/pull/60))
+
+## Fixed
+
+- Fatal error because of the wrong name on a function in the Comments Module ([#59](https://github.com/bernskioldmedia/bm-wp-experience/pull/59))
+
+## Dependency Updates
+
+- Bump nanoid from 3.1.30 to 3.2.0 ([#56](https://github.com/bernskioldmedia/bm-wp-experience/pull/56))
+- Bump follow-redirects from 1.14.7 to 1.14.8 ([#58](https://github.com/bernskioldmedia/bm-wp-experience/pull/58))
+
 ## 3.3.3 - 2022-03-02
 
 ## Fixed
