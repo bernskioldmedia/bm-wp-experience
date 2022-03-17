@@ -38,8 +38,12 @@ class Admin_Ad_Blocker extends Module {
 	}
 
 	public static function hide_ad_pages(): void {
-		remove_submenu_page( 'wpseo_dashboard', 'wpseo_licenses' );
-		remove_submenu_page( 'wpseo_dashboard', 'wpseo_workouts' );
+
+		// Remove premium only pages from Yoast unless we are running premium.
+		if ( ! YoastSEO()->helpers->product->is_premium() ) {
+			remove_submenu_page( 'wpseo_dashboard', 'wpseo_licenses' );
+			remove_submenu_page( 'wpseo_dashboard', 'wpseo_workouts' );
+		}
 	}
 
 	protected static function get_ad_selectors(): string {
