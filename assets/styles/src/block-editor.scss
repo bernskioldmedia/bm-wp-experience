@@ -31,3 +31,10 @@ html :where(.wp-block) {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
+/**
+ * Hide Yoast Metabox
+ */
+#wpseo_meta {
+	display: none;
+}
