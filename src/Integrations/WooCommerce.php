@@ -138,6 +138,10 @@ class WooCommerce extends Integration {
             return;
         }
 
+        if( !function_exists( 'is_woocommerce')){
+            return;
+        }
+
         if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() && ! is_account_page() && ! is_product() && ! is_product_category() && ! is_shop() ) {
             //Dequeue WooCommerce Styles
             wp_dequeue_style( 'woocommerce-general' );
@@ -169,6 +173,10 @@ class WooCommerce extends Integration {
 
     public static function disable_fragments(): void {
         if ( false === apply_filters( 'bm_wpexp_woocommerce_disable_fragments_on_non_woo_pages', true ) ) {
+            return;
+        }
+
+        if( !function_exists( 'is_woocommerce')){
             return;
         }
 
