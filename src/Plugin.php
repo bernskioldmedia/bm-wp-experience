@@ -16,7 +16,6 @@ class Plugin extends BasePlugin {
 	protected static array $boot = [
 		Admin\Admin_Bar::class, // Boots publicly because it is loaded in public views too.
 		TwoFactorAuthentication::class,
-		OhDear_Application_Health::class,
 	];
 
 	protected static array $admin_boot = [
