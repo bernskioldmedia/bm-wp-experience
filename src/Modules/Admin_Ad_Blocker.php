@@ -40,7 +40,7 @@ class Admin_Ad_Blocker extends Module {
 	public static function hide_ad_pages(): void {
 
 		// Remove premium only pages from Yoast unless we are running premium.
-		if ( ! YoastSEO()->helpers->product->is_premium() ) {
+		if ( function_exists( 'YoastSEO' ) && ! YoastSEO()->helpers->product->is_premium() ) {
 			remove_submenu_page( 'wpseo_dashboard', 'wpseo_licenses' );
 			remove_submenu_page( 'wpseo_dashboard', 'wpseo_workouts' );
 		}
