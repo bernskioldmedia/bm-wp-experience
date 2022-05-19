@@ -45,6 +45,7 @@ class Plugin extends BasePlugin {
 	];
 
 	protected static array $integrations = [
+        Integrations\DownloadManager::class,
 		Integrations\SearchWp::class,
 		Integrations\WooCommerce::class,
 		Integrations\SSPodcast::class,
