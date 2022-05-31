@@ -10,15 +10,15 @@ class Wp_Config_Permissions_Check extends Security_Check {
 
 	protected static function test(): array {
 		$result = [
-			'label'       => __( 'The wp-config.php file is not readable.' ),
+			'label'       => __( 'The wp-config.php file is not readable.', 'bm-wp-experience' ),
 			'status'      => 'good',
 			'description' => sprintf( '<p>%s</p>',
 				__( 'When the wp-config.php file is protected there is less risk of important configuration secrets becoming exposed.', 'bm-wp-experience' ) ),
 		];
 
-		if ( 440 < Helpers::get_file_permissions( ABSPATH . 'wp-config.php' ) ) {
+		if ( Helpers::get_file_permissions( ABSPATH . 'wp-config.php' ) > 644 ) {
 			$result['status']      = 'critical';
-			$result['label']       = __( 'The wp-config.php file is publicly readable.' );
+			$result['label']       = __( 'The wp-config.php file is publicly readable.', 'bm-wp-experience' );
 			$result['description'] = sprintf( '<p>%s</p>',
 				__( 'It could be possible to access the wp-config.php file publicly. To fix, please CHMOD the file to a permission set less than, or equal to 440.',
 					'bm-wp-experience' ) );

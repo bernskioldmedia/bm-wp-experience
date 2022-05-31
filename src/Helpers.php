@@ -52,4 +52,15 @@ class Helpers {
 	public static function get_file_permissions( string $file ): int {
 		return (int) decoct( fileperms( $file ) & 0777 );
 	}
+
+	public static function setup_wp_filesystem() {
+		global $wp_filesystem;
+
+		if ( empty( $wp_filesystem ) ) {
+			require_once( ABSPATH . '/wp-admin/includes/file.php' );
+			WP_Filesystem();
+		}
+
+		return $wp_filesystem;
+	}
 }

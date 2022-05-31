@@ -19,11 +19,13 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Custom branded admin theme in our colors.
 - Removes ACF settings if on production environment.
 - Remove "Howdy" from the admin bar.
+- Removes ads from a series of plugins
 
 ### Block Editor
 
 - Disable the block directory.
 - Remove Yoast SEO metabox in the block editor.
+- Styles the post editor and title to be less part of the page and more title to better go with the template.
 
 ### Cleanup
 
@@ -47,6 +49,10 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Show staging environment notice publically for administrators.
 - Disable indexing for non-production environments.
 
+### Mail
+
+- Allows easy configuration of sending via SMTP instead of PHP Sendmail.
+
 ### Media
 
 - Sanitize uploaded file names from non-ASCII characters.
@@ -54,6 +60,10 @@ For almost every feature there is a filter, constant or action allowing you to c
 ### Multisite
 
 - Have password resets go through the local site where the user is signing in, instead of the main site.
+
+### Monitoring
+
+- Added a REST API endpoint for Oh Dear that we use for monitoring client sites.
 
 ### Plugins
 
@@ -74,9 +84,17 @@ The SearchWP integration automatically runs if SearchWP is active.
 
 ### Security
 
+- Add two-factor authentication support.
+- Ability to force two-factor authentication for the website.
 - Force non-local environments to use strong passwords.
 - Prevent users from using explicitly defined weak passwords.
 - Default to disabling the core file editor from admin.
+- Adds common-sense default HTTP headers to .htaccess on install.
+- Adds rule to .htaccess to disable XMLRPC.
+
+### Seriously Simple Podcasting
+
+- Always show all (100 000) episodes of a podcast in the podcast feed that goes out to platforms.
 
 ### Site Health
 
@@ -118,6 +136,8 @@ The WooCommerce integration automatically runs if WooCommerce is active.
 
 **Enable Import/Export Screens:** By default we hide the import/export pages. If you need these in the menu, set `BM_WP_ENABLE_IMPORT_EXPORT` to `true`.
 
+**Show ads from plugins:** If you for some reason would like to show ads from plugins in the admin, you can set the `bm_wpexp_enable_admin_ad_blocker` filter to false: `add_filter( 'bm_wpexp_enable_admin_ad_blocker', '__return_false' )`.
+
 `bm_wpexp_custom_admin_theme` - Return false to disable our custom branding.
 `bm_wpexp_show_help_widget` - Return false to hide the BM help widget.
 `bm_wpexp_show_admin_page_support` - Return false to hide the support admin page.
@@ -125,6 +145,10 @@ The WooCommerce integration automatically runs if WooCommerce is active.
 ### Block Editor
 
 **Enable Block Directory:** By default the block directory is disabled. Define and set `BM_WP_ENABLE_BLOCK_DIRECTORY` to `false` to allow it.
+
+**Disable Block Editor Styling** By default we ship a block editor styling. By returning the `bm_wpexp_enable_block_editor_styling` as false you can disable this, for example via a mu-plugin. `add_filter( 'bm_wpexp_enable_block_editor_styling', '__return_false' )`.
+
+**Hides Yoast Metabox** Yoast SEO has a lovely block editor plugin which works great. So we prefer to get rid of the metabox. We hide it with plain CSS.
 
 ### Cleanup
 
@@ -151,6 +175,16 @@ configuration.
 `bm_wpexp_environment_disable_indexing_for_non_production` - Return `false` to enable indexing for non-production environments.
 `bm_wpexp_environment_staging_public_label` - Customize the label shown on the public staging environment banner.
 
+### Mail
+
+`BM_WP_SMTP_ENABLED` - Set to `true` to send e-mail via SMTP. By default this will only apply to production environments.
+`BM_WP_SMTP_OUTSIDE_PRODUCTION` - Set to `true` to send e-mail via SMTP even if the environment is not set as production.
+`BM_WP_SMTP_HOST` - Define the SMTP host to send through.
+`BM_WP_SMTP_USERNAME` - Define the SMTP e-mail account username to send through.
+`BM_WP_SMTP_PASSWORD` - Define the SMTP e-mail account password to send through.
+`BM_WP_SMTP_PORT` - Set which port the connection should be made through. Should be set as an integer. Defaults to `587`.
+`BM_WP_SMTP_SECURITY` - Set the sending security for the SMTP server. Defaults to `tls`.
+
 ### REST API
 
 **Choose API restriction level:** By default, the REST API requires authentication for all endpoints. By setting the `BM_WP_RESTRICT_REST_API` constant you may change this. `all` (
@@ -158,7 +192,16 @@ default) restricts all endpoints. `users` restricts only the users endpoint. `no
 
 ### Security
 
+**Enforce Two Factor Authentication:** By default two-factor authentication is an opt-in option for users. To force it, please define `BM_WP_REQUIRE_TWO_FACTOR` to true in your
+config. By default all core roles with admin access are required to opt in.
+
 `bm_wpexp_weak_passwords` - Customize the array of passwords that are always considered weak.
+`bm_wpexp_roles_requiring_two_factor` - Customize the array of roles which are required to have two-factor authentication enabled.
+`bm_wpexp_modify_htaccess_on_install` - Return false to stop the .htaccess file from being modified on install.
+
+### Seriously Simple Podcasting
+
+`bm_wpexp_sspodcast_posts_in_feed` - Customize how many posts should show up in the podcasting feeds. Defaults to 100 000.
 
 ### Updates
 
@@ -179,3 +222,17 @@ managed anyway (just not daily). Define `BM_WP_HAS_MAINTENANCE_PLAN` to `true` i
 `bm_wpexp_woocommerce_disable_password_strength_meter` - Return as `false` to enable the password strength meter.
 `bm_wpexp_woocommerce_disable_assets_on_non_woo_pages` - Return as `false` to load assets even on non-WooCommerce pages.
 `bm_wpexp_woocommerce_disable_fragments_on_non_woo_pages` - Return as `false` to load fragments even on non-WooCommerce pages. For example if you have a dynamic cart on all pages.
+
+## Setting up Monitoring
+
+To set up monitoring via [OhDear.app](https://ohdear.app) you need to add the REST API endpoint to the website in OhDear's application monitoring settings. The URL
+is `https://yourdomain.com/wp-json/bm-wp-experience/v1/application-health`.
+
+To run this endpoint, a secret must be configured and defined in your config:
+
+```php
+define( 'BM_WP_OH_DEAR_SECRET', 'my-secret-here' );
+```
+
+The same secret needs to be defined in OhDear's settings. It will then be sent via all requests to the API. The secrets in OhDear and the application must match for proper
+authentication.

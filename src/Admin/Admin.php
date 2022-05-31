@@ -11,59 +11,61 @@ namespace BernskioldMedia\WP\Experience\Admin;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\Interfaces\Hookable;
 
 class Admin implements Hookable {
+    public static function hooks(): void {
+        // Remove version from footer.
+        add_action( 'admin_menu', [ self::class, 'admin_no_footer_version' ] );
+        add_action( 'network_admin_menu', [ self::class, 'admin_no_footer_version' ] );
 
-	public static function hooks(): void {
-		// Remove version from footer.
-		add_action( 'admin_menu', [ self::class, 'admin_no_footer_version' ] );
-		add_action( 'network_admin_menu', [ self::class, 'admin_no_footer_version' ] );
+        // Change admin footer text.
+        add_filter( 'admin_footer_text', [ self::class, 'change_admin_footer_text' ] );
 
-		// Change admin footer text.
-		add_filter( 'admin_footer_text', [ self::class, 'change_admin_footer_text' ] );
+        // Remove the help tab.
+        add_filter( 'admin_head', [ self::class, 'remove_help_tab' ] );
 
-		// Remove the help tab.
-		add_filter( 'admin_head', [ self::class, 'remove_help_tab' ] );
+        // Add our help and support widget.
+        add_action( 'admin_footer', [ self::class, 'add_help_widget' ] );
 
-		// Add our help and support widget.
-		add_action( 'admin_footer', [ self::class, 'add_help_widget' ] );
+        // Maybe remove ACF from admin.
+        add_filter( 'acf/settings/show_admin', [ self::class, 'maybe_show_acf' ] );
+    }
 
-		// Maybe remove ACF from admin.
-		add_filter( 'acf/settings/show_admin', [ self::class, 'maybe_show_acf' ] );
-	}
+    /**
+     * Change Admin Footer Text
+     */
+    public static function change_admin_footer_text(): string {
+        /* translators: 1. Site Name */
+        $new_text = sprintf( __(
+            'Thank you for creating with <a href="https://wordpress.org">WordPress</a> and <a href="https://www.bernskioldmedia.com/en/?utm_source=clientsite&utm_medium=dashboard_link&utm_campaign=%1$s">Bernskiold Media</a>.',
+            'bm-wp-experience'
+        ), get_bloginfo( 'name' ) );
 
-	/**
-	 * Change Admin Footer Text
-	 */
-	public static function change_admin_footer_text(): string {
-		/* translators: 1. Site Name */
-		$new_text = sprintf( __( 'Thank you for creating with <a href="https://wordpress.org">WordPress</a> and <a href="https://www.bernskioldmedia.com/en/?utm_source=clientsite&utm_medium=dashboard_link&utm_campaign=%1$s">Bernskiold Media</a>.',
-			'bm-wp-experience' ), get_bloginfo( 'name' ) );
+        return $new_text;
+    }
 
-		return $new_text;
-	}
+    /**
+     * Admin No Footer Version
+     */
+    public static function admin_no_footer_version(): void {
+        remove_filter( 'update_footer', 'core_update_footer' );
+    }
 
-	/**
-	 * Admin No Footer Version
-	 */
-	public static function admin_no_footer_version(): void {
-		remove_filter( 'update_footer', 'core_update_footer' );
-	}
+    /**
+     * Remove the help tabs.
+     */
+    public static function remove_help_tab(): void {
+        $screen = get_current_screen();
 
-	/**
-	 * Remove the help tabs.
-	 */
-	public static function remove_help_tab(): void {
-		$screen = get_current_screen();
-		if ( $screen ) {
-			$screen->remove_help_tabs();
-		}
-	}
+        if ( $screen ) {
+            $screen->remove_help_tabs();
+        }
+    }
 
-	public static function add_help_widget(): void {
-		if ( false === apply_filters( 'bm_wpexp_show_help_widget', true ) ) {
-			return;
-		}
+    public static function add_help_widget(): void {
+        if ( false === apply_filters( 'bm_wpexp_show_help_widget', true ) ) {
+            return;
+        }
 
-		$user = get_user_by( 'ID', get_current_user_id() ); ?>
+        $user = get_user_by( 'ID', get_current_user_id() ); ?>
 		<script type="text/javascript" defer>
 			! function( e, t, n ) {
 				function a() {
@@ -87,9 +89,9 @@ class Admin implements Hookable {
 			} );
 		</script>
 		<?php
-	}
+    }
 
-	public static function maybe_show_acf(): bool {
-		return 'production' !== wp_get_environment_type();
-	}
+    public static function maybe_show_acf(): bool {
+        return 'production' !== wp_get_environment_type();
+    }
 }

@@ -3,6 +3,17 @@
 includes:
     - vendor/bernskioldmedia/bm-wp-devtools/phpstan/extension.neon
 parameters:
+    level: 4
     paths:
         - bm-wp-experience.php
         - src/
+    ignoreErrors:
+    		-
+    			message: '#Function is_[a-zA-Z0-9\\_]+ not found.#'
+    			path: src/Integrations/WooCommerce.php
+    		-
+    			message: '#Call to an undefined method Puc_v4p11_Vcs_Api::enableReleaseAssets\(\).#'
+    			path: bm-wp-experience.php
+    		- '#Constant WP_CONTENT_DIR not found.#'
+    		- '#Constant WP_CONTENT_URL not found.#'
+    		- '#Function apply_filters invoked with 3 parameters, 2 required.#'

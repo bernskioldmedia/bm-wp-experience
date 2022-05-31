@@ -25,8 +25,8 @@ class Admin_Bar implements Hookable {
         add_action('wp_enqueue_scripts', [ self::class, 'assets' ]);
         add_action('admin_enqueue_scripts', [ self::class, 'assets' ]);
 
-	    // Remove "howdy" from admin bar.
-	    add_action( 'admin_bar_menu', [ self::class, 'remove_howdy' ], 11 );
+        // Remove "howdy" from admin bar.
+        add_action( 'admin_bar_menu', [ self::class, 'remove_howdy' ], 11 );
     }
 
     /**
@@ -206,13 +206,13 @@ class Admin_Bar implements Hookable {
         }
     }
 
-	public static function remove_howdy( \WP_Admin_Bar $wp_admin_bar ): void {
-		$current_user = wp_get_current_user();
-		$avatar       = get_avatar( $current_user->ID, 28 );
+    public static function remove_howdy(WP_Admin_Bar $wp_admin_bar): void {
+        $current_user = wp_get_current_user();
+        $avatar       = get_avatar( $current_user->ID, 28 );
 
-		$wp_admin_bar->add_node( [
-			'id'    => 'my-account',
-			'title' => $current_user->display_name . $avatar,
-		] );
-	}
+        $wp_admin_bar->add_node( [
+            'id'    => 'my-account',
+            'title' => $current_user->display_name . $avatar,
+        ] );
+    }
 }

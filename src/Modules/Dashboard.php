@@ -10,8 +10,8 @@ namespace BernskioldMedia\WP\Experience\Modules;
 
 use BernskioldMedia\WP\Experience\Plugin;
 
-if (! defined('ABSPATH')) {
-    exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
 class Dashboard extends Module {

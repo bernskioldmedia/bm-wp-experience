@@ -10,14 +10,14 @@ class Bm_Config_Check extends Security_Check {
 
 	protected static function test(): array {
 		$result = [
-			'label'       => __( 'Configuration files properly secured.' ),
+			'label'       => __( 'Configuration files properly secured.', 'bm-wp-experience' ),
 			'status'      => 'good',
 			'description' => sprintf( '<p>%s</p>', __( 'The application and environment configuration files are properly secured.', 'bm-wp-experience' ) ),
 		];
 
 		if ( ! self::all_files_pass() ) {
 			$result['status']      = 'critical';
-			$result['label']       = __( 'Configuration files needs securing.' );
+			$result['label']       = __( 'Configuration files needs securing.', 'bm-wp-experience' );
 			$result['description'] = sprintf( '<p>%s</p>',
 				__( 'It could be possible to access the files in the config directory. To fix, please CHMOD the file to a permission set less than, or equal to 440.',
 					'bm-wp-experience' ) );
@@ -30,7 +30,7 @@ class Bm_Config_Check extends Security_Check {
 		$files = glob( ABSPATH . 'config{,*/,*/*/,*/*/*/}*.php', GLOB_BRACE );
 
 		foreach ( $files as $file ) {
-			if ( Helpers::get_file_permissions( $file ) >= 440 ) {
+			if ( Helpers::get_file_permissions( $file ) > 640 ) {
 				return false;
 			}
 		}

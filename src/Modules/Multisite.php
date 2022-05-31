@@ -22,8 +22,8 @@ class Multisite extends Module {
     /**
      * Make the lost password URL go to the local blog instead of the main blog.
      *
-     * @param $url
-     * @param $redirect
+     * @param string $url
+     * @param string $redirect
      *
      * @since   1.4.0
      */

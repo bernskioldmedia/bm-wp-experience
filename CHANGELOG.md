@@ -2,7 +2,93 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## 3.4.2 - 2022-05-03
+
+## Changed
+
+- remove ohdear functionality ([#63](https://github.com/bernskioldmedia/bm-wp-experience/pull/63))
+
+## 3.4.0 - 2022-03-17
+
+## Added
+
+- Hide plugin ads in the admin panel ([#61](https://github.com/bernskioldmedia/bm-wp-experience/pull/61))
+- Add custom block editor styling for better experience ([#60](https://github.com/bernskioldmedia/bm-wp-experience/pull/60))
+
+## Fixed
+
+- Fatal error because of the wrong name on a function in the Comments Module ([#59](https://github.com/bernskioldmedia/bm-wp-experience/pull/59))
+
+## Dependency Updates
+
+- Bump nanoid from 3.1.30 to 3.2.0 ([#56](https://github.com/bernskioldmedia/bm-wp-experience/pull/56))
+- Bump follow-redirects from 1.14.7 to 1.14.8 ([#58](https://github.com/bernskioldmedia/bm-wp-experience/pull/58))
+
+## 3.3.3 - 2022-03-02
+
+## Fixed
+
+- Issue with search not working with special characters
+
+## 3.3.2 - 2022-02-02
+
+## Fixed
+
+- Fixed issue with yoast metabox after removing it ([#57](https://github.com/bernskioldmedia/bm-wp-experience/pull/57))
+
+## 3.3.1 - 2022-01-14
+
+## Fixed
+
+- Mailer integration was not loading the right Hookable class ([#55](https://github.com/bernskioldmedia/bm-wp-experience/pull/55))
+
+## 3.3.0 - 2022-01-14
+
+## Added
+
+- Seriously Simple Podcasting Integration: Show all episodes in feed ([#54](https://github.com/bernskioldmedia/bm-wp-experience/pull/54))
+- Add support for SMTP e-mail sending ([#52](https://github.com/bernskioldmedia/bm-wp-experience/pull/52))
+
+## Dependency Updates
+
+- Bump follow-redirects from 1.14.5 to 1.14.7 ([#53](https://github.com/bernskioldmedia/bm-wp-experience/pull/53))
+
+## 3.2.1 - 2021-12-17
+
+## Fixed
+
+- File would be loaded twice causing error ([#51](https://github.com/bernskioldmedia/bm-wp-experience/pull/51))
+
+## 3.2.0 - 2021-12-17
+
+## Added
+
+- OhDear Application Health Integration ([#49](https://github.com/bernskioldmedia/bm-wp-experience/pull/49))
+
+## Changed
+
+- Weaker checks for file permissions ([#50](https://github.com/bernskioldmedia/bm-wp-experience/pull/50))
+
+## 3.1.0 - 2021-12-04
+
+## Added
+
+- Add security headers to .htaccess on activation ([#48](https://github.com/bernskioldmedia/bm-wp-experience/pull/48))
+- Add support for two-factor authentication ([#47](https://github.com/bernskioldmedia/bm-wp-experience/pull/47))
+
+## 3.0.2 - 2021-11-27
+
+## Fixed
+
+- Fix warning on block editor ([#46](https://github.com/bernskioldmedia/bm-wp-experience/pull/46))
+
+## 3.0.1 - 2021-11-27
+
+### Fixed
+
+- Fixes the release action so that the auto-updater script will work properly when downloading the ZIP.
+
+## 3.0.0 - 2021-11-27
 
 ### Added
 

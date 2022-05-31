@@ -2,18 +2,20 @@
 
 namespace BernskioldMedia\WP\Experience;
 
-use BernskioldMedia\WP\Experience\Integrations\Integration;
+use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
+use BernskioldMedia\WP\Experience\Rest\OhDear_Application_Health;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\BasePlugin;
 
 class Plugin extends BasePlugin {
 
-	protected static string $slug             = 'bm-wp-experience';
-	protected static string $version          = '3.0.0';
-	protected static string $textdomain       = 'bm-wp-experience';
+	protected static string $slug = 'bm-wp-experience';
+	protected static string $version = '3.4.2';
+	protected static string $textdomain = 'bm-wp-experience';
 	protected static string $plugin_file_path = BM_WP_EXPERIENCE_FILE_PATH;
 
 	protected static array $boot = [
 		Admin\Admin_Bar::class, // Boots publicly because it is loaded in public views too.
+		TwoFactorAuthentication::class,
 	];
 
 	protected static array $admin_boot = [
@@ -24,12 +26,14 @@ class Plugin extends BasePlugin {
 	];
 
 	protected static array $modules = [
+		Modules\Admin_Ad_Blocker::class,
 		Modules\Block_Editor::class,
 		Modules\Cleanup::class,
 		Modules\Comments::class,
 		Modules\Customizer::class,
 		Modules\Dashboard::class,
 		Modules\Environments::class,
+		Modules\Mail::class,
 		Modules\Media::class,
 		Modules\Multisite::class,
 		Modules\Plugins::class,
@@ -41,8 +45,10 @@ class Plugin extends BasePlugin {
 	];
 
 	protected static array $integrations = [
+        Integrations\DownloadManager::class,
 		Integrations\SearchWp::class,
 		Integrations\WooCommerce::class,
+		Integrations\SSPodcast::class,
 	];
 
 	public function __construct() {
@@ -55,7 +61,7 @@ class Plugin extends BasePlugin {
 			self::boot_admin();
 		}
 
-		register_activation_hook( __FILE__, [ Install::class, 'install' ] );
+		register_activation_hook( self::$plugin_file_path, [ Install::class, 'install' ] );
 	}
 
 	public static function boot_modules(): void {

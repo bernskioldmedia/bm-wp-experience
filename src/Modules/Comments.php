@@ -110,7 +110,7 @@ class Comments extends Module {
     /**
      * Disable comments via XMLRPC.
      */
-    public static function disable_xmlrc_comments(array $methods): array {
+    public static function disable_comments_via_xmlrpc(array $methods): array {
         unset($methods['wp.newComment']);
 
         return $methods;
@@ -119,8 +119,8 @@ class Comments extends Module {
     /**
      * Disables adding comments from the REST API.
      *
-     * @param $prepared_comment
-     * @param $request
+     * @param array|\WP_Error $prepared_comment
+     * @param \WP_REST_Request $request
      */
     public static function disable_adding_comments_from_rest_api($prepared_comment, $request): void {
         return;

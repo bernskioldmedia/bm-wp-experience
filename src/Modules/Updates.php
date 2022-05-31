@@ -35,7 +35,7 @@ class Updates extends Module {
     /**
      * Prevent sending auto update e-mails for core updates.
      *
-     * @param        $send
+     * @param bool $send
      * @param string $type
      */
     public static function dont_send_auto_update_emails($send, $type): bool {
