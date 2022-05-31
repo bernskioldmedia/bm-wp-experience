@@ -3,7 +3,7 @@
  * Plugin Name: BM WP Experience
  * Plugin URI:  https://www.bernskioldmedia.com
  * Description: Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.
- * Version:     3.4.2
+ * Version:     3.5.0
  * Author:      Bernskiold Media
  * Author URI:  https://www.bernskioldmedia.com
  * Text Domain: bm-wp-experience

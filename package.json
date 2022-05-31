@@ -1,6 +1,6 @@
 {
 	"name": "bm-wp-experience",
-	"version": "3.4.2",
+	"version": "3.5.0",
 	"description": "Provides an opinionated WordPress experience with clean-up and tweaks that we at Bernskiold Media have found runs WordPress best.",
 	"main": "assets/scripts/src/index.js",
 	"scripts": {
