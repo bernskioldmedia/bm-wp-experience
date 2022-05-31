@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.5.0 - 2022-05-31
+
+### Added
+
+- Remove Simple History Dashboard Widget ([#67](https://github.com/bernskioldmedia/bm-wp-experience/pull/67))
+- Add default settings to Download Manager ([#66](https://github.com/bernskioldmedia/bm-wp-experience/pull/66))
+
 ## 3.4.2 - 2022-05-03
 
 ## Changed
