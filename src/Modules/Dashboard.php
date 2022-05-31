@@ -33,6 +33,7 @@ class Dashboard extends Module {
         remove_meta_box('dashboard_incoming_links', get_current_screen(), 'normal');
         remove_meta_box('dashboard_quick_press', get_current_screen(), 'side');
         remove_meta_box('dashboard_recent_drafts', get_current_screen(), 'side');
+        remove_meta_box('simple_history_dashboard_widget', get_current_screen(), 'normal');
 
         remove_meta_box('wpseo-dashboard-overview', get_current_screen(), 'side');
 
