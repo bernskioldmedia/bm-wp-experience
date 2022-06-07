@@ -1,0 +1,32 @@
+#wpdm-settings{
+  #all-package-settings{
+    .nav-tabs{
+      li:nth-child( 3 ) {
+        display: none;
+      }
+    }
+  }
+}
+
+#package-icons{
+  display: none;
+}
+
+#wpdm-activate-shop{
+  display: none;
+}
+
+#page_template_row{
+  display: none;
+}
+
+#attachsf{
+  display: none;
+}
+
+form#addtag{
+  /* remove Category Page Template */
+  .form-field.w3eden:nth-of-type( 7 ){
+    display: none;
+  }
+}

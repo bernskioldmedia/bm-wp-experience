@@ -23,6 +23,8 @@ class Admin_Assets implements Hookable {
      * Registers and enqueues plugin admin stylesheets.
      **/
     public static function admin_styles(): void {
+        $screen = get_current_screen();
+
         wp_register_style('bm-wp-experience-admin', Plugin::get_assets_url() . '/styles/dist/admin.css', [], Plugin::get_version());
 
         wp_enqueue_style('bm-wp-experience-admin');
@@ -31,6 +33,12 @@ class Admin_Assets implements Hookable {
             wp_register_style('bm-wp-experience-admin-theme', Plugin::get_assets_url() . '/styles/dist/admin-theme.css', [], Plugin::get_version());
 
             wp_enqueue_style('bm-wp-experience-admin-theme');
+        }
+
+        if( $screen->base === 'post' && $screen->post_type  === 'wpdmpro'
+            || $screen->base === 'edit-tags' && $screen->post_type  === 'wpdmpro' ){
+            wp_register_style('bm-wp-experience-admin-download-manager', Plugin::get_assets_url() . '/styles/dist/admin-download-manager.css', [], Plugin::get_version());
+            wp_enqueue_style('bm-wp-experience-admin-download-manager');
         }
     }
 }
