@@ -24,7 +24,6 @@ class Admin_Assets implements Hookable {
      **/
     public static function admin_styles(): void {
         $screen = get_current_screen();
-        error_log( print_r( $screen, true));
 
         wp_register_style('bm-wp-experience-admin', Plugin::get_assets_url() . '/styles/dist/admin.css', [], Plugin::get_version());
 
