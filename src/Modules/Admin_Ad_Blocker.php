@@ -102,6 +102,7 @@ class Admin_Ad_Blocker extends Module {
 			'.sui-dashboard-upsell-upsell',
 			'.anwp-post-grid__rate',
 			'.cff-settings-cta',
+            '#wpdmpro_notice'
 		] );
 
 		return implode( ', ', $selectors );

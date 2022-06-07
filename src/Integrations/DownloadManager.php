@@ -8,6 +8,8 @@ class DownloadManager extends Integration {
     public static function hooks(): void {
         // Hide notice to install WC Admin.
         add_filter( 'init', [ self::class, 'update_options' ], 10, 2 );
+
+        add_action( 'admin_menu', [ self::class, 'remove_sub_menus' ], 9999999 );
     }
 
     public static function update_options(){
@@ -27,5 +29,19 @@ class DownloadManager extends Integration {
         update_option( '__wpdm_noip', 1 );
         update_option( '__wpdm_delstats_on_udel', 1 );
 
+    }
+
+    public static function remove_sub_menus(){
+
+        $pages = [
+            'wpdm-asset-manager',
+            'templates',
+            'wpdm-addons',
+            'settings'
+        ];
+
+        foreach( $pages as $page ){
+            remove_submenu_page( 'edit.php?post_type=wpdmpro', $page );
+        }
     }
 }
