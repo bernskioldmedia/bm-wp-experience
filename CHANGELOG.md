@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.7.0 - 2022-06-14
+
+### Added
+
+- Added filter to remove Jetpack promotions in WooCommerce
+
 ## 3.6.0 - 2022-06-07
 
 ### Added
