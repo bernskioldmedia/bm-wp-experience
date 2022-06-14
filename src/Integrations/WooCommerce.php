@@ -22,6 +22,10 @@ class WooCommerce extends Integration {
         // No suggestions from WooCommerce marketplace.
         add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false', 999 );
 
+        /* Jetpack promotions*/
+        add_filter( 'jetpack_just_in_time_msgs', '__return_false', 20 );
+        add_filter( 'jetpack_show_promotions', '__return_false', 20 );
+
         // Remove extension library from menus.
         add_action( 'admin_menu', static function () {
             remove_submenu_page( 'woocommerce', 'wc-addons' );
