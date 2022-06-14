@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.6.0 - 2022-06-07
+
+### Added
+
+- Hide submenus and panels from Download Manager ([#68](https://github.com/bernskioldmedia/bm-wp-experience/pull/68))
+
 ## 3.5.0 - 2022-05-31
 
 ### Added
