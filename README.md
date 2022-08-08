@@ -49,6 +49,13 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Show staging environment notice publically for administrators.
 - Disable indexing for non-production environments.
 
+### Matomo
+
+- Integrates with BM Analytics for easy configuration.
+- Configure the tracking code with common settings through filters.
+- Ability to configure another Matomo instance for the tracking code.
+- Automatically tracks site search.
+
 ### Mail
 
 - Allows easy configuration of sending via SMTP instead of PHP Sendmail.
@@ -184,6 +191,18 @@ configuration.
 `BM_WP_SMTP_PASSWORD` - Define the SMTP e-mail account password to send through.
 `BM_WP_SMTP_PORT` - Set which port the connection should be made through. Should be set as an integer. Defaults to `587`.
 `BM_WP_SMTP_SECURITY` - Set the sending security for the SMTP server. Defaults to `tls`.
+
+### Matomo
+
+`BM_WP_MATOMO_SITE_ID` - Set the site id from Matomo.
+`bm_wpexp_matomo_enabled` - Return this filter false to disable the Matomo module completely (by default it is enabled if the site ID is set).
+`bm_wpexp_matomo_url` - Return a string URL with the Matomo instance base URL.
+`bm_wpexp_matomo_require_cookie_consent` - Return false to disable the automatic cookie consent requirement (integrates with Ilmenite Cookie Consent)
+`bm_wpexp_matomo_enable_user_id` - Return true to track the user ID. This is not compatible with cookie-less.
+`bm_wpexp_matomo_enable_subdomains` - Return true to enable subdomain tracking.
+`bm_wpexp_matomo_subdomains_domain` - Return the domain name for subdomain tracking (for example: example.com). Requires for subdomain tracking.
+
+`bm_wpexp_matomo_configuration_before_pageview` - This action lets you further customize and configure the tracking code.
 
 ### REST API
 
