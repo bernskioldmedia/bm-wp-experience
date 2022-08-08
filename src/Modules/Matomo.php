@@ -29,7 +29,7 @@ class Matomo extends Module {
 	}
 
 	protected static function get_instance_url(): string {
-		return apply_filters( 'bm_wpexp_matomo_url', 'https://analytics.bmedia.io/' );
+		return trailingslashit( apply_filters( 'bm_wpexp_matomo_url', 'https://analytics.bmedia.io/' ));
 	}
 
 	public static function analytics_code(): void {
