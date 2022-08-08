@@ -4,16 +4,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BM WP Experience 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bm-wp-experience\n"
-"POT-Creation-Date: 2021-12-04 14:01:51+00:00\n"
-"PO-Revision-Date: 2021-12-04 15:03+0100\n"
+"POT-Creation-Date: 2022-08-08 20:46:33+00:00\n"
+"PO-Revision-Date: 2022-08-08 22:48+0200\n"
 "Last-Translator: Erik Bernskiold <erik@bernskioldmedia.com>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: acp-columns/60f1655d5fd1f.php:26 acp-columns/60f16cb5069c4.php:45
 #: acp-columns/60f16cb5069c4.php:54
@@ -132,7 +132,7 @@ msgstr ""
 "\">Bernskiold Media</a>."
 
 #: src/Admin/Admin_Bar.php:100 src/Admin/Admin_Bar.php:103
-#: src/Admin/Admin_Pages.php:49 src/Admin/Admin_Pages.php:50
+#: src/Admin/Admin_Pages.php:43
 msgid "Help & Support"
 msgstr "Hjälp & support"
 
@@ -149,7 +149,7 @@ msgid "Bernskiold Media"
 msgstr "Bernskiold Media"
 
 #: src/Admin/Admin_Bar.php:162 src/Admin/Admin_Bar.php:165
-#: src/Admin/Admin_Pages.php:68 src/Admin/Admin_Pages.php:69
+#: src/Admin/Admin_Pages.php:53
 msgid "About Bernskiold Media"
 msgstr "Om Bernskiold Media"
 
@@ -165,19 +165,27 @@ msgstr "Support"
 msgid "Services"
 msgstr "Tjänster"
 
-#: src/Admin/Admin_Pages.php:33 src/Admin/Admin_Pages.php:34
+#: src/Admin/Admin_Pages.php:32
 msgid "Reusable Blocks"
 msgstr "Återanvändbara block"
+
+#: src/Admin/Admin_Pages.php:63
+msgid "Company Cloud Dashboard"
+msgstr "Company Cloud Dashboard"
+
+#: src/Admin/Admin_Pages.php:63
+msgid "My Website"
+msgstr "Min webbplats"
 
 #: src/Modules/Comments.php:69 src/Modules/Comments.php:139
 msgid "This site does not support comments."
 msgstr "Den här webbplatsen stöder inte kommentarer."
 
-#: src/Modules/Dashboard.php:45
+#: src/Modules/Dashboard.php:46
 msgid "Bernskiold Media Academy"
 msgstr "Bernskiold Media Academy"
 
-#: src/Modules/Dashboard.php:49
+#: src/Modules/Dashboard.php:50
 msgid "Unfortunately the academy content is not currently available."
 msgstr "Tyvärr är akademins innehåll inte tillgängligt för närvarande."
 
@@ -193,16 +201,16 @@ msgstr "Staging"
 msgid "Production"
 msgstr "Produktion"
 
-#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:12
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:13
 msgid "Configuration files properly secured."
 msgstr "Konfigurationsfiler är ordentligt säkrade."
 
-#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:14
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:15
 msgid ""
 "The application and environment configuration files are properly secured."
 msgstr "Program- och miljökonfigurationsfilerna är ordentligt säkrade."
 
-#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:19
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:20
 msgid "Configuration files needs securing."
 msgstr "Konfigurationsfilerna behöver säkras."
 
@@ -215,7 +223,7 @@ msgstr ""
 "För att åtgärda detta, vänligen CHMOD filen till en behörighetsuppsättning "
 "som är mindre än eller lika med 440."
 
-#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:45
+#: src/Modules/Health_Checks/Security/Bm_Config_Check.php:42
 msgid "Configuration File Permissions"
 msgstr "Behörigheter för konfigurationsfiler"
 
@@ -293,7 +301,7 @@ msgstr "Underhållsavtal"
 msgid "Security"
 msgstr "Säkerhet"
 
-#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:12
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:13
 msgid "The wp-config.php file is not readable."
 msgstr "Filen wp-config.php kan inte läsas."
 
@@ -305,11 +313,11 @@ msgstr ""
 "När filen wp-config.php är skyddad är risken mindre att viktiga "
 "konfigurationshemligheter avslöjas."
 
-#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:22
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:21
 msgid "The wp-config.php file is publicly readable."
 msgstr "Filen wp-config.php kan läsas av allmänheten."
 
-#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:25
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:23
 msgid ""
 "It could be possible to access the wp-config.php file publicly. To fix, "
 "please CHMOD the file to a permission set less than, or equal to 440."
@@ -318,9 +326,32 @@ msgstr ""
 "åtgärda detta, vänligen ändra filens rättigheter till en "
 "behörighetsuppsättning som är mindre än eller lika med 440."
 
-#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:36
+#: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:31
 msgid "WP-Config File Permissions"
 msgstr "Filbehörigheter för wp-config"
+
+#: src/Modules/Mail.php:27
+msgid "E-Mails Not Sending:"
+msgstr "E-postmeddelanden skickas inte:"
+
+#: src/Modules/Mail.php:29
+msgid ""
+"Sending via SMTP is currently enabled but the configuration has not been "
+"properly set in the configuration files. Sending via SMTP is therefore "
+"disabled and e-mail will be send via the default PHP sendmail functions."
+msgstr ""
+"Sändning via SMTP är för närvarande aktiverat, men konfigurationen har inte "
+"ställts in korrekt i konfigurationsfilerna. Sändning via SMTP är därför "
+"inaktiverad och e-post kommer att skickas via PHP:s standardfunktioner för "
+"sendmail."
+
+#: src/Modules/Mail.php:30
+msgid ""
+"You can fix this error by either disabling SMTP in the configuration, or "
+"providing proper configuration values."
+msgstr ""
+"Du kan åtgärda felet genom att antingen inaktivera SMTP i konfigurationen "
+"eller ange korrekta konfigurationsvärden."
 
 #. translators: 1. Blog Name
 #: src/Modules/Multisite.php:80
@@ -365,11 +396,11 @@ msgstr ""
 msgid "Authentication is required."
 msgstr "Autentisering krävs."
 
-#: src/Modules/Security/TwoFactorAuthentication.php:279
+#: src/Modules/Security/TwoFactorAuthentication.php:280
 msgid "The code you entered is not valid. Please try again."
 msgstr "Koden du angav är inte giltig. Försök igen."
 
-#: src/Modules/Security/TwoFactorAuthentication.php:305
+#: src/Modules/Security/TwoFactorAuthentication.php:306
 msgid "The backup code you entered is not valid. Please try again."
 msgstr "Återställningskoden du angav är inte giltig. Försök igen."
 
@@ -601,7 +632,7 @@ msgctxt "BM Services URL"
 msgid "https://www.bernskioldmedia.com/en/services/"
 msgstr "https://www.bernskioldmedia.com/en/tjanster/"
 
-#: src/Modules/Dashboard.php:46
+#: src/Modules/Dashboard.php:47
 msgctxt "academy feed"
 msgid "https://bernskioldmedia.com/en/feed/"
 msgstr "https://bernskioldmedia.com/sv/feed/"
