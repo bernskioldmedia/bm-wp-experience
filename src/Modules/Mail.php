@@ -24,7 +24,7 @@ class Mail extends Module {
 		?>
 		<div class="notice notice-error">
 			<p>
-				<strong><?php esc_html_e( 'E-Mails Not Sending:' ); ?></strong>
+				<strong><?php esc_html_e( 'E-Mails Not Sending:', 'bm-wp-experience' ); ?></strong>
 			</p>
 			<p><?php esc_html_e( 'Sending via SMTP is currently enabled but the configuration has not been properly set in the configuration files. Sending via SMTP is therefore disabled and e-mail will be send via the default PHP sendmail functions.', 'bm-wp-experience' ); ?></p>
 			<p><?php esc_html_e( 'You can fix this error by either disabling SMTP in the configuration, or providing proper configuration values.', 'bm-wp-experience' ); ?></p>
