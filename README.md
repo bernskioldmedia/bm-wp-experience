@@ -201,6 +201,7 @@ configuration.
 `bm_wpexp_matomo_enable_user_id` - Return true to track the user ID. This is not compatible with cookie-less.
 `bm_wpexp_matomo_enable_subdomains` - Return true to enable subdomain tracking.
 `bm_wpexp_matomo_subdomains_domain` - Return the domain name for subdomain tracking (for example: example.com). Requires for subdomain tracking.
+`bm_wpexp_matomo_load_outside_production` - Return true to load the tracking code outside of a defined production environment.
 
 `bm_wpexp_matomo_configuration_before_pageview` - This action lets you further customize and configure the tracking code.
 

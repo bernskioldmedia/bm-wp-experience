@@ -11,6 +11,10 @@ class Matomo extends Module {
 			return;
 		}
 
+		if ( wp_get_environment_type() !== 'production' && false === apply_filters( 'bm_wpexp_matomo_load_outside_production', false ) ) {
+			return;
+		}
+
 		// Don't enable if no site ID is set.
 		if ( empty( self::get_site_id() ) ) {
 			return;
