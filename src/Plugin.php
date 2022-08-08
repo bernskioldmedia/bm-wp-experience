@@ -2,6 +2,7 @@
 
 namespace BernskioldMedia\WP\Experience;
 
+use BernskioldMedia\WP\Experience\Modules\Module;
 use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
 use BernskioldMedia\WP\Experience\Rest\OhDear_Application_Health;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\BasePlugin;
@@ -34,6 +35,7 @@ class Plugin extends BasePlugin {
 		Modules\Dashboard::class,
 		Modules\Environments::class,
 		Modules\Mail::class,
+		Modules\Matomo::class,
 		Modules\Media::class,
 		Modules\Multisite::class,
 		Modules\Plugins::class,
