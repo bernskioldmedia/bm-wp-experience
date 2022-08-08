@@ -9,6 +9,10 @@ For almost every feature there is a filter, constant or action allowing you to c
 
 ## What do we do?
 
+### Company Cloud
+
+- Adds link to a "My Website" dashboard powered by BM360.
+
 ### Admin & Admin Bar
 
 - Add slight Bernskiold Media branding
@@ -138,6 +142,11 @@ The WooCommerce integration automatically runs if WooCommerce is active.
 - Removes fragments on non-woocommerce pages.
 
 ## Constants & Filters
+
+### Company Cloud
+
+`BM_WP_WEBSITE_UUID` - Set the website UUID from BM360. Don't forget to add the server IP to the website in BM360 to allow access.
+`bm_wpexp_show_admin_page_cc_dashboard` - Disable the admin page for the dashboard, even if the UUID is set.
 
 ### Admin
 
