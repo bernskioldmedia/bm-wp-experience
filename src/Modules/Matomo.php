@@ -25,11 +25,17 @@ class Matomo extends Module {
 	}
 
 	protected static function get_site_id(): string {
-		return defined( 'BM_WP_MATOMO_SITE_ID' ) ? BM_WP_MATOMO_SITE_ID : '';
+		$global = defined( 'BM_WP_MATOMO_SITE_ID' ) ? BM_WP_MATOMO_SITE_ID : '';
+
+		if ( is_multisite() ) {
+			return get_option( 'bm_wp_matomo_site_id', '' );
+		}
+
+		return $global;
 	}
 
 	protected static function get_instance_url(): string {
-		return trailingslashit( apply_filters( 'bm_wpexp_matomo_url', 'https://analytics.bmedia.io/' ));
+		return trailingslashit( apply_filters( 'bm_wpexp_matomo_url', 'https://analytics.bmedia.io/' ) );
 	}
 
 	public static function analytics_code(): void {
