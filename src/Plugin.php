@@ -2,9 +2,7 @@
 
 namespace BernskioldMedia\WP\Experience;
 
-use BernskioldMedia\WP\Experience\Modules\Module;
 use BernskioldMedia\WP\Experience\Modules\Security\TwoFactorAuthentication;
-use BernskioldMedia\WP\Experience\Rest\OhDear_Application_Health;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\BasePlugin;
 
 class Plugin extends BasePlugin {
@@ -24,6 +22,7 @@ class Plugin extends BasePlugin {
 		Admin\Admin_Assets::class,
 		Admin\Admin_Columns::class,
 		Admin\Admin_Pages::class,
+        Admin\Admin_Analytics_Tab::class,
 	];
 
 	protected static array $modules = [
