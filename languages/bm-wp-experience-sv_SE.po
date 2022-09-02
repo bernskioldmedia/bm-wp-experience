@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BM WP Experience 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bm-wp-experience\n"
-"POT-Creation-Date: 2022-08-08 20:46:33+00:00\n"
-"PO-Revision-Date: 2022-08-08 22:48+0200\n"
+"POT-Creation-Date: 2022-09-02 12:56:08+00:00\n"
+"PO-Revision-Date: 2022-09-02 15:08+0200\n"
 "Last-Translator: Erik Bernskiold <erik@bernskioldmedia.com>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -130,6 +130,82 @@ msgstr ""
 "och <a href=\"https://www.bernskioldmedia.com/sv/?"
 "utm_source=clientsite&utm_medium=dashboard&utm_campaign=footerlink"
 "\">Bernskiold Media</a>."
+
+#: src/Admin/Admin_Analytics_Tab.php:25
+msgid "BM Analytics"
+msgstr "BM Analytics"
+
+#: src/Admin/Admin_Analytics_Tab.php:35
+msgid "The analytics settings has been updated"
+msgstr "Analysinställningarna har uppdaterats"
+
+#: src/Admin/Admin_Analytics_Tab.php:93
+msgid "Analytics Settings for: %s"
+msgstr "Analysinställningar för: %s"
+
+#: src/Admin/Admin_Analytics_Tab.php:95
+msgid "Visit"
+msgstr "Besök"
+
+#: src/Admin/Admin_Analytics_Tab.php:96
+msgid "Dashboard"
+msgstr "Adminpanel"
+
+#: src/Admin/Admin_Analytics_Tab.php:111
+msgid "Matomo ID"
+msgstr "Matomo-ID"
+
+#: src/Admin/Admin_Analytics_Tab.php:121
+msgid "Instance URL"
+msgstr "URL för instans"
+
+#: src/Admin/Admin_Analytics_Tab.php:131
+msgid "Cookie Consent"
+msgstr "Cookiesamtycke"
+
+#: src/Admin/Admin_Analytics_Tab.php:135
+msgid "Yes, enable automatic cookie consent integration"
+msgstr "Ja, aktivera automatisk integrering av cookie-samtycke"
+
+#: src/Admin/Admin_Analytics_Tab.php:141
+msgid "User ID"
+msgstr "Användar-ID"
+
+#: src/Admin/Admin_Analytics_Tab.php:145
+msgid "Yes, send user id to analytics"
+msgstr "Ja, skicka användar-id till analytics"
+
+#: src/Admin/Admin_Analytics_Tab.php:146
+msgid ""
+"Please note that passing user id to analytics requires informed and specific "
+"user consent under GDPR."
+msgstr ""
+"Observera att överföring av användar-ID till analys kräver informerat och "
+"specifikt användarmedgivande enligt GDPR."
+
+#: src/Admin/Admin_Analytics_Tab.php:152
+msgid "Track Subdomains"
+msgstr "Spåra underdomäner"
+
+#: src/Admin/Admin_Analytics_Tab.php:156
+msgid "Yes, enable tracking of subdomains"
+msgstr "Ja, aktivera spårning av underdomäner"
+
+#: src/Admin/Admin_Analytics_Tab.php:162
+msgid "Domain"
+msgstr "Domän"
+
+#: src/Admin/Admin_Analytics_Tab.php:167
+msgid ""
+"If you have enables subdomains above you need to enter your website domain "
+"here, for example: example.com"
+msgstr ""
+"Om du har aktiverat underdomäner ovan måste du ange din webbplatsdomän här, "
+"till exempel: example.com"
+
+#: src/Admin/Admin_Analytics_Tab.php:172
+msgid "Save"
+msgstr "Spara"
 
 #: src/Admin/Admin_Bar.php:100 src/Admin/Admin_Bar.php:103
 #: src/Admin/Admin_Pages.php:43
