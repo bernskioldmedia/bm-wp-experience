@@ -38,14 +38,46 @@ class Matomo extends Module {
 		return trailingslashit( apply_filters( 'bm_wpexp_matomo_url', 'https://analytics.bmedia.io/' ) );
 	}
 
-	public static function analytics_code(): void {
+    protected static function get_enable_cookie_consent():bool{
+        if ( is_multisite() ) {
+            return get_option( 'bm_wp_matomo_require_cookie_consent', '' );
+        }
+
+        return  apply_filters( 'bm_wpexp_matomo_require_cookie_consent', false );
+    }
+
+    protected static function get_enable_user_id():bool{
+        if ( is_multisite() ) {
+            return get_option( 'bm_wp_matomo_enable_user_id', '' );
+        }
+
+        return  apply_filters( 'bm_wpexp_matomo_enable_user_id', false );
+    }
+
+    protected static function get_enable_subdomains():bool{
+        if ( is_multisite() ) {
+            return get_option( 'bm_wp_matomo_enable_subdomains', '' );
+        }
+
+        return  apply_filters( 'bm_wpexp_matomo_enable_subdomains', false );
+    }
+
+    protected static function get_subdomains_domain():bool{
+        if ( is_multisite() ) {
+            return get_option( 'bm_wp_matomo_subdomains_domain', '' );
+        }
+
+        return  apply_filters( 'bm_wpexp_matomo_subdomains_domain', false );
+    }
+
+    public static function analytics_code(): void {
 		global $wp_query;
 
 		$site_id               = self::get_site_id();
-		$enable_cookie_consent = apply_filters( 'bm_wpexp_matomo_require_cookie_consent', true );
-		$enable_user_id        = apply_filters( 'bm_wpexp_matomo_enable_user_id', false );
-		$enable_subdomains     = apply_filters( 'bm_wpexp_matomo_enable_subdomains', false );
-		$domain                = apply_filters( 'bm_wpexp_matomo_subdomains_domain', '' );
+		$enable_cookie_consent = self::get_enable_cookie_consent();
+		$enable_user_id        = self::get_enable_user_id();
+		$enable_subdomains     = self::get_enable_subdomains();
+		$domain                = self::get_subdomains_domain();
 		$matomo_url            = self::get_instance_url();
 
 		?>
