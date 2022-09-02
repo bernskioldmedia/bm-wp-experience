@@ -120,7 +120,10 @@ class WooCommerce extends Integration {
         global $wp;
 
         $is_wp = isset( $wp->query_vars['lost-password'] ) || ( isset( $_GET['action'] ) && $_GET['action'] === 'lostpassword' ) || is_page( 'lost_password' );
-        $is_wc = is_account_page() || is_checkout();
+        $is_wc = false;
+        if( function_exists( 'is_account_page')){
+            $is_wc = is_account_page() || is_checkout();
+        }
 
         if ( ! $is_wp && ! $is_wc ) {
             if ( wp_script_is( 'zxcvbn-async', 'enqueued' ) ) {
