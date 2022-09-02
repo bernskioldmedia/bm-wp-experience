@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.8.0 - 2022-09-02
+
+### What's Changed
+
+- Bump montudor/action-zip from 0.1.0 to 1 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/71
+- Bump actions/upload-artifact from 2 to 3 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/73
+- Bump actions/checkout from 2 to 3 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/72
+- Bump peter-evans/create-pull-request from 3 to 4 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/70
+- Bump terser from 4.8.0 to 4.8.1 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/69
+- Bump minimist from 1.2.5 to 1.2.6 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/65
+- Bump async from 2.6.3 to 2.6.4 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/64
+- Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/74
+- Matomo Tracking Module by @ErikBernskiold in https://github.com/bernskioldmedia/bm-wp-experience/pull/75
+- Add "My Website" Dashboard by @ErikBernskiold in https://github.com/bernskioldmedia/bm-wp-experience/pull/76
+- Multisite support for Matomo by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/79
+- fixes issue with missing function when activating new user by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/77
+- Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/78
+
+### New Contributors
+
+- @github-actions made their first contribution in https://github.com/bernskioldmedia/bm-wp-experience/pull/74
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.7.0...3.8.0
+
 ## 3.7.0 - 2022-06-14
 
 ### Added
