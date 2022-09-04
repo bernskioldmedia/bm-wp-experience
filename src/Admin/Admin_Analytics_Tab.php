@@ -7,9 +7,7 @@
 
 namespace BernskioldMedia\WP\Experience\Admin;
 
-
-use BernskioldMedia\WP\PluginBase\Admin\Multisite_Tab;
-use WP_Site;
+use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\Admin\Multisite_Tab;
 
 if (! defined('ABSPATH')) {
 exit;
@@ -37,7 +35,7 @@ class Admin_Analytics_Tab extends Multisite_Tab {
         <?php
     }
 
-    public static function save( WP_Site $site, $request_data ):void{
+    public static function save( $site, $request_data ):void{
         if( isset( $request_data['matomo_ID'] ) ){
             update_blog_option($site->id, 'bm_wp_matomo_site_id', $request_data['matomo_ID']);
         }

@@ -18,6 +18,7 @@ return [
 		'WP_REST_Controller',
 		'WP_Customize_Control',
 		'WP_Customize_Manager',
+		'WP_Site',
 	],
 
 	/*
@@ -43,17 +44,13 @@ return [
 		/**
 		 * Replaces the Adapter string references with the prefixed versions.
 		 *
-		 * @param  string  $filePath  The path of the current file.
-		 * @param  string  $prefix    The prefix to be used.
-		 * @param  string  $content   The content of the specific file.
+		 * @param string $filePath The path of the current file.
+		 * @param string $prefix   The prefix to be used.
+		 * @param string $content  The content of the specific file.
 		 *
 		 * @return string The modified content.
 		 */
-		function(
-			$file_path,
-			$prefix,
-			$contents
-		) {
+		function ( $file_path, $prefix, $contents ) {
 			return str_replace( 'BernskioldMedia\\\\WP\\\\PluginBase\\\\', sprintf( '%s\\\\BernskioldMedia\\\\WP\\\\PluginBase\\\\', addslashes( $prefix ) ), $contents );
 		},
 	],
