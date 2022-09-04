@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.8.1 - 2022-09-04
+
+### What's Changed
+
+- Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/80
+- Fixed a vendor prefix error that caused the entire site to get a fatal error
+- Changed the production URL on the my website embed
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.8.0...3.8.1
+
 ## 3.8.0 - 2022-09-02
 
 ### What's Changed
