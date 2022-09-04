@@ -15,7 +15,7 @@ if ( ! $website_id ) {
 
 ?>
 <div class="wrap" style="margin: -8px 0 0 -20px;">
-	<iframe src="https://connect.bernskioldmedia.test/embed/website-dashboard/<?php echo esc_attr( $website_id ); ?>" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
+	<iframe src="https://360.bmedia.com/embed/website-dashboard/<?php echo esc_attr( $website_id ); ?>" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
 </div>
 <style>
 	#wpfooter {display: none;}
