@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.8.2 - 2022-09-05
+
+### What's Changed
+
+- Changed the iframe URL to the correct one
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.8.1...3.8.2
+
 ## 3.8.1 - 2022-09-04
 
 ### What's Changed
