@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.9.0 - 2022-09-21
+
+### What's Changed
+
+- Remove user autocomplete from editor and make it possible to override by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/82
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.8.2...3.9.0
+
 ## 3.8.2 - 2022-09-05
 
 ### What's Changed
