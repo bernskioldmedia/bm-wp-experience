@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.10.0 - 2022-10-05
+
+### What's Changed
+
+- Don't let facetwp run their pre_get_post on tribe_events queries by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/84
+- Bump dependabot/fetch-metadata from 1.3.3 to 1.3.4 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/83
+- Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/81
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.9.0...3.10.0
+
 ## 3.9.0 - 2022-09-21
 
 ### What's Changed
