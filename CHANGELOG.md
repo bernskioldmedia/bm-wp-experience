@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.10.1 - 2022-10-05
+
+### What's Changed
+
+- Add the missing FacetWp file by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/85
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.10.0...3.10.1
+
 ## 3.10.0 - 2022-10-05
 
 ### What's Changed
