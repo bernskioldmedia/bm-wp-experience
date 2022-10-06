@@ -30,6 +30,7 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Disable the block directory.
 - Remove Yoast SEO metabox in the block editor.
 - Styles the post editor and title to be less part of the page and more title to better go with the template.
+- Disable User Autocomplete unless specified by `BM_WP_ALLOW_USER_AUTOCOMPLETE`.
 
 ### Cleanup
 

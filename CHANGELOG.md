@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.10.2 - 2022-10-06
+
+### What's Changed
+
+- Make sure we get the url option if multisite by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/86
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.10.1...3.10.2
+
+## 3.10.1 - 2022-10-05
+
+### What's Changed
+
+- Add the missing FacetWp file by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/85
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.10.0...3.10.1
+
+## 3.10.0 - 2022-10-05
+
+### What's Changed
+
+- Don't let facetwp run their pre_get_post on tribe_events queries by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/84
+- Bump dependabot/fetch-metadata from 1.3.3 to 1.3.4 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/83
+- Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/81
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.9.0...3.10.0
+
+## 3.9.0 - 2022-09-21
+
+### What's Changed
+
+- Remove user autocomplete from editor and make it possible to override by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/82
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.8.2...3.9.0
+
+## 3.8.2 - 2022-09-05
+
+### What's Changed
+
+- Changed the iframe URL to the correct one
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.8.1...3.8.2
+
+## 3.8.1 - 2022-09-04
+
+### What's Changed
+
+- Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/80
+- Fixed a vendor prefix error that caused the entire site to get a fatal error
+- Changed the production URL on the my website embed
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.8.0...3.8.1
+
 ## 3.8.0 - 2022-09-02
 
 ### What's Changed
