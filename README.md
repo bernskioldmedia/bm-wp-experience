@@ -64,6 +64,7 @@ For almost every feature there is a filter, constant or action allowing you to c
 ### Mail
 
 - Allows easy configuration of sending via SMTP instead of PHP Sendmail.
+- Allows easy configuration of sending via [Postal](https://www.oderland.se/postal) instead of SMTP or PHP Sendmail.
 
 ### Media
 
@@ -153,7 +154,8 @@ The WooCommerce integration automatically runs if WooCommerce is active.
 
 **Enable Import/Export Screens:** By default we hide the import/export pages. If you need these in the menu, set `BM_WP_ENABLE_IMPORT_EXPORT` to `true`.
 
-**Show ads from plugins:** If you for some reason would like to show ads from plugins in the admin, you can set the `bm_wpexp_enable_admin_ad_blocker` filter to false: `add_filter( 'bm_wpexp_enable_admin_ad_blocker', '__return_false' )`.
+**Show ads from plugins:** If you for some reason would like to show ads from plugins in the admin, you can set the `bm_wpexp_enable_admin_ad_blocker` filter to
+false: `add_filter( 'bm_wpexp_enable_admin_ad_blocker', '__return_false' )`.
 
 `bm_wpexp_custom_admin_theme` - Return false to disable our custom branding.
 `bm_wpexp_show_help_widget` - Return false to hide the BM help widget.
@@ -163,7 +165,8 @@ The WooCommerce integration automatically runs if WooCommerce is active.
 
 **Enable Block Directory:** By default the block directory is disabled. Define and set `BM_WP_ENABLE_BLOCK_DIRECTORY` to `false` to allow it.
 
-**Disable Block Editor Styling** By default we ship a block editor styling. By returning the `bm_wpexp_enable_block_editor_styling` as false you can disable this, for example via a mu-plugin. `add_filter( 'bm_wpexp_enable_block_editor_styling', '__return_false' )`.
+**Disable Block Editor Styling** By default we ship a block editor styling. By returning the `bm_wpexp_enable_block_editor_styling` as false you can disable this, for example via a
+mu-plugin. `add_filter( 'bm_wpexp_enable_block_editor_styling', '__return_false' )`.
 
 **Hides Yoast Metabox** Yoast SEO has a lovely block editor plugin which works great. So we prefer to get rid of the metabox. We hide it with plain CSS.
 
@@ -201,6 +204,11 @@ configuration.
 `BM_WP_SMTP_PASSWORD` - Define the SMTP e-mail account password to send through.
 `BM_WP_SMTP_PORT` - Set which port the connection should be made through. Should be set as an integer. Defaults to `587`.
 `BM_WP_SMTP_SECURITY` - Set the sending security for the SMTP server. Defaults to `tls`.
+
+`BM_WP_POSTAL_DOMAIN` - Optionally customize the domain for the Postal install. Defaults to `https://postal.oderland.com`
+`BM_WP_POSTAL_API_KEY` - Add the API key for the Postal service. Without it, Postal is not active.
+`BM_WP_POSTAL_OUTSIDE_PRODUCTION` - Set to `true` to send e-mail via Postal even if the environment is not set as production.
+`BM_WP_POSTAL_ENABELD` - Set to `true` to send e-mail via Postal. Defaults to `true` if the API key is set.
 
 ### Matomo
 
