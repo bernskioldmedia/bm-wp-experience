@@ -117,7 +117,7 @@ class Mail extends Module {
 	}
 
 	protected static function should_send_postal_in_production(): bool {
-		return defined( 'BM_WP_POSTAL_ENABLED' ) && true === BM_WP_POSTAL_ENABLED;
+		return defined( 'BM_WP_POSTAL_ENABLED' ) ? BM_WP_POSTAL_ENABLED : defined( 'BM_WP_POSTAL_API_KEY' );
 	}
 
 	public static function send_mail_via_postal( $null, $atts ): ?bool {
