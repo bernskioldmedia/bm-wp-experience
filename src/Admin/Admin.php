@@ -27,6 +27,8 @@ class Admin implements Hookable {
 
         // Maybe remove ACF from admin.
         add_filter( 'acf/settings/show_admin', [ self::class, 'maybe_show_acf' ] );
+
+        add_action( 'admin_init', [ self::class, 'maybe_hide_litespeed' ] );
     }
 
     /**
@@ -93,5 +95,13 @@ class Admin implements Hookable {
 
     public static function maybe_show_acf(): bool {
         return 'production' !== wp_get_environment_type();
+    }
+
+    public static function maybe_hide_litespeed() {
+        if( is_multisite() ){
+            if( ! current_user_can('setup_network')){ // is not superadmin
+                remove_menu_page( 'litespeed' );
+            }
+        }
     }
 }
