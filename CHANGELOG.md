@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.10.3 - 2023-01-17
+
+### What's Changed
+
+- Add support for sending mail via Postal by @ErikBernskiold in https://github.com/bernskioldmedia/bm-wp-experience/pull/87
+- Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/88
+- Bump dependabot/fetch-metadata from 1.3.4 to 1.3.5 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/89
+- Bump loader-utils from 1.4.0 to 1.4.2 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/91
+- Bump json5 from 1.0.1 to 1.0.2 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/92
+- Hide litespeed admin page for non superadmins by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/94
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.10.2...3.10.3
+
 ## 3.10.2 - 2022-10-06
 
 ### What's Changed
