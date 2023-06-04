@@ -35,6 +35,7 @@ class Plugin extends BasePlugin {
 		Modules\Environments::class,
 		Modules\Mail::class,
 		Modules\Matomo::class,
+        Modules\Matomo_Sync::class,
 		Modules\Media::class,
 		Modules\Multisite::class,
 		Modules\Plugins::class,
