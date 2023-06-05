@@ -45,7 +45,8 @@ class Admin_Analytics_Tab extends Multisite_Tab
         if (isset($request_data['automatic_connection'])) {
             update_blog_option($site->id, Matomo_Sync::$automatic_connection_option,
                 $request_data['automatic_connection'] ?? 0);
-            Matomo_Sync::create_site_and_add_users_to_matomo($site);
+            $matomo_id = Matomo_Sync::maybe_create_site_and_get_matomo_id($site);
+            Matomo_sync::add_users_to_matomo($site, $matomo_id);
         }
         else{
             update_blog_option($site->id, Matomo_Sync::$automatic_connection_option,

@@ -66,7 +66,8 @@ class Matomo_Sync extends Module
         if (isset($_POST['blog']['automatic_connection'])) {
             update_blog_option($site->id, self::$automatic_connection_option, 1);
 
-            self::create_site_and_add_users_to_matomo($site);
+            $matomo_id = self::maybe_create_site_and_get_matomo_id($site);
+            self::add_users_to_matomo($site, $matomo_id);
 
         } else {
             update_blog_option($site->id, self::$automatic_connection_option, 0);
@@ -74,12 +75,14 @@ class Matomo_Sync extends Module
 
     }
 
-    public static function create_site_and_add_users_to_matomo($site){
+    public static function maybe_create_site_and_get_matomo_id($site){
+
+        if( get_blog_option($site->id, self::$matomo_id_option, false) && get_blog_option($site->id, self::$matomo_id_option, false) !== ''){
+            return get_blog_option($site->id, self::$matomo_id_option, true);
+        }
 
         $matomo_id = Matomo_Api::create_site(get_blog_details(['blog_id' => $site->id])->blogname,
             $site->domain);
-
-
 
         if(!$matomo_id){
             return;
@@ -87,6 +90,10 @@ class Matomo_Sync extends Module
 
         update_blog_option($site->id, self::$matomo_id_option, $matomo_id);
 
+        return $matomo_id;
+    }
+
+    public static function add_users_to_matomo($site, $matomo_id){
         $users_to_add = get_users([
             'blog_id' => $site->id,
         ]);
