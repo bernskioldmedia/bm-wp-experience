@@ -134,7 +134,7 @@ class Matomo_Sync extends Module
 
         $matomo_role = self::get_matomo_role_from_wordpress_role($_POST['role']);
 
-        $matomo_id = self::get_matomo_id_for_current_blog();
+        $matomo_id = self::get_matomo_id_for_current_or_given_blog();
 
         if (!$matomo_id) {
             return;
@@ -157,7 +157,7 @@ class Matomo_Sync extends Module
             return;
         }
 
-        $matomo_id = self::get_matomo_id_for_current_blog();
+        $matomo_id = self::get_matomo_id_for_current_or_given_blog();
 
         if (!$matomo_id) {
             return;
@@ -183,7 +183,7 @@ class Matomo_Sync extends Module
             return;
         }
 
-        $matomo_id = self::get_matomo_id_for_current_blog();
+        $matomo_id = self::get_matomo_id_for_current_or_given_blog();
 
         if (!$matomo_id) {
             return;
@@ -224,8 +224,12 @@ class Matomo_Sync extends Module
         ]);
     }
 
-    public static function get_matomo_id_for_current_blog(): ?int
+    public static function get_matomo_id_for_current_or_given_blog($site_id = null): ?int
     {
+        if( $site_id !== null ){
+            return get_blog_option($site_id, self::$matomo_id_option, null);
+        }
+
         $current_blog = get_current_blog_id();
 
         if (!$current_blog) {
