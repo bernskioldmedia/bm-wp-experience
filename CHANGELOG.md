@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.11.0 - 2023-06-26
+
+### What's Changed
+
+- Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/93
+- Improve Comments Disabling by @ErikBernskiold in https://github.com/bernskioldmedia/bm-wp-experience/pull/100
+- Bump dependabot/fetch-metadata from 1.3.5 to 1.4.0 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/99
+- Bump peter-evans/create-pull-request from 4 to 5 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/98
+- Bump webpack from 5.75.0 to 5.76.1 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/97
+- Automated Matomo Sync by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/101
+- Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/103
+- Bump dependabot/fetch-metadata from 1.4.0 to 1.5.1 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/102
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.10.3...3.11.0
+
 ## 3.10.3 - 2023-01-17
 
 ### What's Changed
