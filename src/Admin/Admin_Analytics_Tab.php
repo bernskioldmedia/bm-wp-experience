@@ -42,6 +42,11 @@ class Admin_Analytics_Tab extends Multisite_Tab
 
     public static function save($site, $request_data): void
     {
+
+        if (isset($request_data['matomo_ID']) && !isset($request_data['automatic_connection'])) {
+            update_blog_option($site->id, 'bm_wp_matomo_site_id', $request_data['matomo_ID']);
+        }
+
         if (isset($request_data['automatic_connection'])) {
             update_blog_option($site->id, Matomo_Sync::$automatic_connection_option,
                 $request_data['automatic_connection'] ?? 0);
@@ -51,10 +56,6 @@ class Admin_Analytics_Tab extends Multisite_Tab
         else{
             update_blog_option($site->id, Matomo_Sync::$automatic_connection_option,
                 0);
-        }
-
-        if (isset($request_data['matomo_ID']) && !isset($request_data['automatic_connection'])) {
-            update_blog_option($site->id, 'bm_wp_matomo_site_id', $request_data['matomo_ID']);
         }
 
         if (isset($request_data['instance_url'])) {

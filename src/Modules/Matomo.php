@@ -49,7 +49,14 @@ class Matomo extends Module
     {
         $value = 'https://analytics.bmedia.io/';
         if (is_multisite()) {
-            $value =  get_option('bm_wp_matomo_url', 'https://analytics.bmedia.io/');
+            $is_connection_enabled_for_site = Matomo_Sync::is_enabled_for_site( get_current_blog_id() );
+            if( $is_connection_enabled_for_site ){
+                $value = defined('BM_WP_MATOMO_INSTANCE_URL') ? BM_WP_MATOMO_INSTANCE_URL : 'https://analytics.bmedia.io/';
+            }
+            else{
+                $value =  get_option('bm_wp_matomo_url', 'https://analytics.bmedia.io/');
+            }
+
         }
 
         return trailingslashit(apply_filters('bm_wpexp_matomo_url', $value ));
