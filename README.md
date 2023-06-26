@@ -60,6 +60,7 @@ For almost every feature there is a filter, constant or action allowing you to c
 - Configure the tracking code with common settings through filters.
 - Ability to configure another Matomo instance for the tracking code.
 - Automatically tracks site search.
+- Enable automatic connection with Matomo by defining `BM_WP_ENABLE_AUTOMATIC_MATOMO`
 
 ### Mail
 
