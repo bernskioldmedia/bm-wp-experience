@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.11.1 - 2023-06-26
+
+### What's changed?
+
+- Fixed an issue where the tracking URL was not properly set when using the Matomo Sync.
+- Save matomo site ID before automated sync is enabled to prevent cases where a duplicate website was mistakenly created
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.11.0...3.11.1
+
 ## 3.11.0 - 2023-06-26
 
 ### What's Changed
