@@ -28,7 +28,7 @@ class Admin implements Hookable {
         // Maybe remove ACF from admin.
         add_filter( 'acf/settings/show_admin', [ self::class, 'maybe_show_acf' ] );
 
-        add_action( 'admin_init', [ self::class, 'maybe_hide_litespeed' ] );
+        add_action( 'admin_menu', [ self::class, 'maybe_hide_litespeed' ] );
     }
 
     /**
