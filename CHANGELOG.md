@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.11.2 - 2023-08-09
+
+### What's Changed
+
+- Fix issue where we get a warning about wp being undefined by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/106
+- fix issue where we get a warning about foreach when removing the lite… by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/107
+- Fix issue where we get a warning for using an Imagick function when Imagick is not enabled
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.11.1...3.11.2
+
 ## 3.11.1 - 2023-06-26
 
 ### What's changed?
