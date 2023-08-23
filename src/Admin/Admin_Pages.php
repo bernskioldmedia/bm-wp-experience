@@ -6,6 +6,7 @@
 
 namespace BernskioldMedia\WP\Experience\Admin;
 
+use BernskioldMedia\WP\Experience\Modules\Users;
 use BernskioldMedia\WP\Experience\Plugin;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\Interfaces\Hookable;
 
@@ -98,6 +99,10 @@ class Admin_Pages implements Hookable {
 		if ( defined( 'BM_WP_ENABLE_IMPORT_EXPORT' ) && BM_WP_ENABLE_IMPORT_EXPORT ) {
 			return;
 		}
+
+        if( Users::is_agency(wp_get_current_user()) ) {
+            return;
+        }
 
 		remove_submenu_page( 'tools.php', 'export.php' );
 		remove_submenu_page( 'tools.php', 'import.php' );
