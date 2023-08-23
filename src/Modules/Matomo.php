@@ -55,6 +55,9 @@ class Matomo extends Module
             }
             else{
                 $value =  get_option('bm_wp_matomo_url', 'https://analytics.bmedia.io/');
+                if( $value === ''){
+                    $value = 'https://analytics.bmedia.io/';
+                }
             }
 
         }
