@@ -47,14 +47,18 @@ class Matomo extends Module
 
     protected static function get_instance_url(): string
     {
-        $value = 'https://analytics.bmedia.io/';
+        $default_url = 'https://analytics.bmedia.io/';
+        $value = $default_url;
         if (is_multisite()) {
             $is_connection_enabled_for_site = Matomo_Sync::is_enabled_for_site( get_current_blog_id() );
             if( $is_connection_enabled_for_site ){
-                $value = defined('BM_WP_MATOMO_INSTANCE_URL') ? BM_WP_MATOMO_INSTANCE_URL : 'https://analytics.bmedia.io/';
+                $value = defined('BM_WP_MATOMO_INSTANCE_URL') ? BM_WP_MATOMO_INSTANCE_URL : $default_url;
             }
             else{
-                $value =  get_option('bm_wp_matomo_url', 'https://analytics.bmedia.io/');
+                $value =  get_option('bm_wp_matomo_url', $default_url);
+                if( $value === ''){
+                    $value = $default_url;
+                }
             }
 
         }
