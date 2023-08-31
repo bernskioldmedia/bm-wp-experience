@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.11.3 - 2023-08-31
+
+### What's Changed
+
+- User access to admin pages by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/108
+- Default URL to analytics by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/109
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.11.2...3.11.3
+
 ## 3.11.2 - 2023-08-09
 
 ### What's Changed
