@@ -8,6 +8,7 @@
 
 namespace BernskioldMedia\WP\Experience\Admin;
 
+use BernskioldMedia\WP\Experience\Modules\Users;
 use BMWPEXP_Vendor\BernskioldMedia\WP\PluginBase\Interfaces\Hookable;
 
 class Admin implements Hookable {
@@ -28,7 +29,8 @@ class Admin implements Hookable {
         // Maybe remove ACF from admin.
         add_filter( 'acf/settings/show_admin', [ self::class, 'maybe_show_acf' ] );
 
-        add_action( 'admin_menu', [ self::class, 'maybe_hide_litespeed' ] );
+        add_action( 'admin_menu', [ self::class, 'maybe_hide_litespeed' ], 999 );
+        add_filter( 'current_screen', [ self::class, 'maybe_redirect_litespeed' ], 10 );
     }
 
     /**
@@ -94,13 +96,32 @@ class Admin implements Hookable {
     }
 
     public static function maybe_show_acf(): bool {
-        return 'production' !== wp_get_environment_type();
+
+        // only hide if is production environment
+        if( 'production' !== wp_get_environment_type() ){
+            return true;
+        }
+
+        // if this is a production environment we want to check that it's not the agency using the site
+        return Users::is_agency( wp_get_current_user() );
     }
 
     public static function maybe_hide_litespeed() {
         if( is_multisite() ){
             if( ! current_user_can('setup_network')){ // is not superadmin
                 remove_menu_page( 'litespeed' );
+            }
+        }
+    }
+
+    public static function maybe_redirect_litespeed(){
+        if( is_multisite() ){
+            if( ! current_user_can('setup_network')){ // is not superadmin
+                $current_screen = get_current_screen();
+                if(strpos($current_screen->id, 'litespeed') !== false){
+                    wp_redirect( admin_url( '' ) );
+                    exit;
+                }
             }
         }
     }
