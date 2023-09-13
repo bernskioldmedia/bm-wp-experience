@@ -205,6 +205,7 @@ configuration.
 `BM_WP_SMTP_PASSWORD` - Define the SMTP e-mail account password to send through.
 `BM_WP_SMTP_PORT` - Set which port the connection should be made through. Should be set as an integer. Defaults to `587`.
 `BM_WP_SMTP_SECURITY` - Set the sending security for the SMTP server. Defaults to `tls`.
+`BM_WP_SMTP_SITE_IDS` - Set side ids in a comma separated string to only use SMTP for some sites in a multisite. Defaults to work for all sites.
 
 `BM_WP_POSTAL_DOMAIN` - Optionally customize the domain for the Postal install. Defaults to `https://postal.oderland.com`
 `BM_WP_POSTAL_API_KEY` - Add the API key for the Postal service. Without it, Postal is not active.

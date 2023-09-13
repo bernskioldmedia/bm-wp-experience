@@ -22,6 +22,10 @@ class Mail extends Module {
 			return;
 		}
 
+        if( ! self::should_send_for_this_site() ){
+            return;
+        }
+
 		if ( self::are_all_configs_set() ) {
 			return;
 		}
@@ -39,6 +43,7 @@ class Mail extends Module {
 
 	public static function send_mail_via_smtp( PHPMailer $mailer ): void {
 
+        if( ! )
 		if ( ! self::should_send_via_smtp() ) {
 			return;
 		}
@@ -55,6 +60,24 @@ class Mail extends Module {
 		$mailer->set( 'SMTPSecure', self::get_smtp_secure_type() );
 		$mailer->isSMTP();
 	}
+
+    protected static function should_send_for_this_site(): bool {
+        if( ! is_multisite() ){
+            return true;
+        }
+
+        if( ! defined( 'BM_WP_SMTP_SITE_IDS' ) ){
+            return true;
+        }
+
+        $site_ids = explode( ',', BM_WP_SMTP_SITE_IDS );
+
+        if( in_array( get_current_blog_id(), $site_ids ) ){
+            return true;
+        }
+
+        return false;
+    }
 
 	protected static function should_send_via_smtp(): bool {
 		if ( 'production' !== wp_get_environment_type() ) {
