@@ -70,9 +70,7 @@ class Mail extends Module {
             return true;
         }
 
-        $site_ids = explode( ',', BM_WP_SMTP_SITE_IDS );
-
-        if( in_array( get_current_blog_id(), $site_ids ) ){
+        if( is_array( BM_WP_SMTP_SITE_IDS ) && in_array( get_current_blog_id(), BM_WP_SMTP_SITE_IDS ) ){
             return true;
         }
 
