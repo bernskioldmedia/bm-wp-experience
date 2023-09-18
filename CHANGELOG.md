@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.11.5 - 2023-09-18
+
+Fixes a bug where faulty code was introduced in the Mail module.
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.11.4...3.11.5
+
 ## 3.11.4 - 2023-09-18
 
 ### What's Changed
