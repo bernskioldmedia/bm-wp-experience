@@ -22,9 +22,9 @@ class Mail extends Module {
 			return;
 		}
 
-        if( ! self::should_send_for_this_site() ){
-            return;
-        }
+	        if( ! self::should_send_for_this_site() ){
+	            return;
+	        }
 
 		if ( self::are_all_configs_set() ) {
 			return;
@@ -43,7 +43,6 @@ class Mail extends Module {
 
 	public static function send_mail_via_smtp( PHPMailer $mailer ): void {
 
-        if( ! )
 		if ( ! self::should_send_via_smtp() ) {
 			return;
 		}
