@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.11.4 - 2023-09-18
+
+### What's Changed
+
+- Make it possible to only use SMTP for some sites in a multisite by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/111
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.11.3...3.11.4
+
 ## 3.11.3 - 2023-08-31
 
 ### What's Changed
