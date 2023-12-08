@@ -246,18 +246,22 @@ class Mail extends Module {
         // get whatever is before the @ and then the domain
         $parts = explode( '@', $from_email );
 
-        $email = apply_filters( 'bm_wpexp_notifications_from_email_username', __( 'notification', 'bm-wp-experience' ) );
+        $username = __( 'notification', 'bm-wp-experience' );
+
 
         if( defined( 'BM_WP_NOTIFICATIONS_FROM_EMAIL_USERNAME' ) ){
-            $email = BM_WP_NOTIFICATIONS_FROM_EMAIL_USERNAME;
+            $username = BM_WP_NOTIFICATIONS_FROM_EMAIL_USERNAME;
         }
 
-        return $email.'@'.$parts[1];
+        $username = apply_filters( 'bm_wpexp_notifications_from_email_username', $username );
+
+
+        return $username.'@'.$parts[1];
     }
 
     public static function change_from_name_setting( $from_name ){
 
-        $name = apply_filters( 'bm_wpexp_notifications_from_name', get_bloginfo( 'name' ) );
+        $name = get_bloginfo( 'name' );
 
         if( defined( 'BM_WP_NOTIFICATIONS_FROM_NAME' ) ){
             $name = BM_WP_NOTIFICATIONS_FROM_NAME;
@@ -268,6 +272,8 @@ class Mail extends Module {
                 $name = get_blog_option(get_current_blog_id(), 'bm_wp_notifications_from_name');
             }
         }
+
+        $name = apply_filters( 'bm_wpexp_notifications_from_name', $name);
 
         return $name;
     }

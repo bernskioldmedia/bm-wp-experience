@@ -206,6 +206,12 @@ configuration.
 `BM_WP_SMTP_PORT` - Set which port the connection should be made through. Should be set as an integer. Defaults to `587`.
 `BM_WP_SMTP_SECURITY` - Set the sending security for the SMTP server. Defaults to `tls`.
 `BM_WP_SMTP_SITE_IDS` - Set side ids in an array to only use SMTP for some sites in a multisite. Defaults to work for all sites.
+`BM_WP_NOTIFICATIONS_FROM_EMAIL_USERNAME` - Define the username for the e-mail address to send from. Defaults to 'notification'
+`BM_WP_NOTIFICATIONS_FROM_NAME` - Define the name for the sender of the e-mail. Defaults to site name.
+`BM_WP_NOTIFICATIONS_FROM_EMAIL_ADDRESS` - Define the e-mail address to send from.
+`bm_wpexp_notifications_from_email_username` - Filter the username for the e-mail address to send from. Defaults to 'notification'
+`bm_wpexp_notifications_from_name` - Filter the name for the sender of the e-mail. Defaults to site name.
+`bm_wp_notifications_from_email_address` - Filter the e-mail address to send from.
 
 `BM_WP_POSTAL_DOMAIN` - Optionally customize the domain for the Postal install. Defaults to `https://postal.oderland.com`
 `BM_WP_POSTAL_API_KEY` - Add the API key for the Postal service. Without it, Postal is not active.
