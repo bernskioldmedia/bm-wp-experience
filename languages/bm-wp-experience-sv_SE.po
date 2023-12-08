@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BM WP Experience 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bm-wp-experience\n"
-"POT-Creation-Date: 2022-09-02 12:56:08+00:00\n"
-"PO-Revision-Date: 2022-09-02 15:08+0200\n"
+"POT-Creation-Date: 2023-12-08 13:25:04+00:00\n"
+"PO-Revision-Date: 2023-12-08 14:30+0100\n"
 "Last-Translator: Erik Bernskiold <erik@bernskioldmedia.com>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: acp-columns/60f1655d5fd1f.php:26 acp-columns/60f16cb5069c4.php:45
 #: acp-columns/60f16cb5069c4.php:54
@@ -119,63 +119,79 @@ msgid "Uploaded To"
 msgstr "Uppladdat till"
 
 #. translators: 1. Site Name
-#: src/Admin/Admin.php:37
+#: src/Admin/Admin.php:41
 msgid ""
-"Thank you for creating with <a href=\"https://wordpress.org\">WordPress</a> "
-"and <a href=\"https://www.bernskioldmedia.com/en/?"
-"utm_source=clientsite&utm_medium=dashboard_link&utm_campaign=%1$s"
-"\">Bernskiold Media</a>."
+"Thank you for creating with <a href=\"https://wordpress.org\">WordPress</a> and "
+"<a href=\"https://www.bernskioldmedia.com/en/?"
+"utm_source=clientsite&utm_medium=dashboard_link&utm_campaign=%1$s\">Bernskiold "
+"Media</a>."
 msgstr ""
-"Tack för att du skapar med <a href=\"https://wordpress.org\">WordPress</a> "
-"och <a href=\"https://www.bernskioldmedia.com/sv/?"
-"utm_source=clientsite&utm_medium=dashboard&utm_campaign=footerlink"
-"\">Bernskiold Media</a>."
+"Tack för att du skapar med <a href=\"https://wordpress.org\">WordPress</a> och "
+"<a href=\"https://www.bernskioldmedia.com/sv/?"
+"utm_source=clientsite&utm_medium=dashboard&utm_campaign=footerlink\">Bernskiold "
+"Media</a>."
 
-#: src/Admin/Admin_Analytics_Tab.php:25
+#: src/Admin/Admin_Analytics_Tab.php:27
 msgid "BM Analytics"
 msgstr "BM Analytics"
 
-#: src/Admin/Admin_Analytics_Tab.php:35
+#: src/Admin/Admin_Analytics_Tab.php:38
 msgid "The analytics settings has been updated"
 msgstr "Analysinställningarna har uppdaterats"
 
-#: src/Admin/Admin_Analytics_Tab.php:93
+#: src/Admin/Admin_Analytics_Tab.php:109
 msgid "Analytics Settings for: %s"
 msgstr "Analysinställningar för: %s"
 
-#: src/Admin/Admin_Analytics_Tab.php:95
+#: src/Admin/Admin_Analytics_Tab.php:112 src/Admin/Admin_Mail_Tab.php:84
 msgid "Visit"
 msgstr "Besök"
 
-#: src/Admin/Admin_Analytics_Tab.php:96
+#: src/Admin/Admin_Analytics_Tab.php:114 src/Admin/Admin_Mail_Tab.php:86
 msgid "Dashboard"
 msgstr "Adminpanel"
 
-#: src/Admin/Admin_Analytics_Tab.php:111
+#: src/Admin/Admin_Analytics_Tab.php:131 src/Modules/Matomo_Sync.php:44
+msgid "Automatic connection with Matomo"
+msgstr "Automatisk anslutning till Matomo"
+
+#: src/Admin/Admin_Analytics_Tab.php:138 src/Modules/Matomo_Sync.php:49
+msgid "Yes, enable automatic connection with Matomo"
+msgstr "Ja, aktivera automatisk anslutning med Matomo"
+
+#: src/Admin/Admin_Analytics_Tab.php:140 src/Modules/Matomo_Sync.php:51
+msgid ""
+"A Matomo ID will be created. Administrators of the site will automatically get "
+"access to Matomo."
+msgstr ""
+"Ett Matomo ID kommer att skapas. Webbplatsens administratörer kommer att "
+"automatiskt få access till Matomo."
+
+#: src/Admin/Admin_Analytics_Tab.php:149
 msgid "Matomo ID"
 msgstr "Matomo-ID"
 
-#: src/Admin/Admin_Analytics_Tab.php:121
+#: src/Admin/Admin_Analytics_Tab.php:162
 msgid "Instance URL"
 msgstr "URL för instans"
 
-#: src/Admin/Admin_Analytics_Tab.php:131
+#: src/Admin/Admin_Analytics_Tab.php:180
 msgid "Cookie Consent"
 msgstr "Cookiesamtycke"
 
-#: src/Admin/Admin_Analytics_Tab.php:135
+#: src/Admin/Admin_Analytics_Tab.php:187
 msgid "Yes, enable automatic cookie consent integration"
 msgstr "Ja, aktivera automatisk integrering av cookie-samtycke"
 
-#: src/Admin/Admin_Analytics_Tab.php:141
+#: src/Admin/Admin_Analytics_Tab.php:194
 msgid "User ID"
 msgstr "Användar-ID"
 
-#: src/Admin/Admin_Analytics_Tab.php:145
+#: src/Admin/Admin_Analytics_Tab.php:201
 msgid "Yes, send user id to analytics"
 msgstr "Ja, skicka användar-id till analytics"
 
-#: src/Admin/Admin_Analytics_Tab.php:146
+#: src/Admin/Admin_Analytics_Tab.php:202
 msgid ""
 "Please note that passing user id to analytics requires informed and specific "
 "user consent under GDPR."
@@ -183,19 +199,19 @@ msgstr ""
 "Observera att överföring av användar-ID till analys kräver informerat och "
 "specifikt användarmedgivande enligt GDPR."
 
-#: src/Admin/Admin_Analytics_Tab.php:152
+#: src/Admin/Admin_Analytics_Tab.php:209
 msgid "Track Subdomains"
 msgstr "Spåra underdomäner"
 
-#: src/Admin/Admin_Analytics_Tab.php:156
+#: src/Admin/Admin_Analytics_Tab.php:216
 msgid "Yes, enable tracking of subdomains"
 msgstr "Ja, aktivera spårning av underdomäner"
 
-#: src/Admin/Admin_Analytics_Tab.php:162
+#: src/Admin/Admin_Analytics_Tab.php:222
 msgid "Domain"
 msgstr "Domän"
 
-#: src/Admin/Admin_Analytics_Tab.php:167
+#: src/Admin/Admin_Analytics_Tab.php:228
 msgid ""
 "If you have enables subdomains above you need to enter your website domain "
 "here, for example: example.com"
@@ -203,12 +219,12 @@ msgstr ""
 "Om du har aktiverat underdomäner ovan måste du ange din webbplatsdomän här, "
 "till exempel: example.com"
 
-#: src/Admin/Admin_Analytics_Tab.php:172
+#: src/Admin/Admin_Analytics_Tab.php:234 src/Admin/Admin_Mail_Tab.php:124
 msgid "Save"
 msgstr "Spara"
 
 #: src/Admin/Admin_Bar.php:100 src/Admin/Admin_Bar.php:103
-#: src/Admin/Admin_Pages.php:43
+#: src/Admin/Admin_Pages.php:44
 msgid "Help & Support"
 msgstr "Hjälp & support"
 
@@ -225,7 +241,7 @@ msgid "Bernskiold Media"
 msgstr "Bernskiold Media"
 
 #: src/Admin/Admin_Bar.php:162 src/Admin/Admin_Bar.php:165
-#: src/Admin/Admin_Pages.php:53
+#: src/Admin/Admin_Pages.php:54
 msgid "About Bernskiold Media"
 msgstr "Om Bernskiold Media"
 
@@ -241,19 +257,67 @@ msgstr "Support"
 msgid "Services"
 msgstr "Tjänster"
 
-#: src/Admin/Admin_Pages.php:32
+#: src/Admin/Admin_Mail_Tab.php:27
+msgid "Mail"
+msgstr "E-post"
+
+#: src/Admin/Admin_Mail_Tab.php:38
+msgid "The mail settings has been updated"
+msgstr "E-postinställningarna har uppdaterats"
+
+#: src/Admin/Admin_Mail_Tab.php:81
+msgid "E-mail settings for: %s"
+msgstr "E-postinställningar för: %s"
+
+#: src/Admin/Admin_Mail_Tab.php:101
+msgid "Name email is sent from"
+msgstr "Namn som e-posten skickas från"
+
+#: src/Admin/Admin_Mail_Tab.php:107
+msgid ""
+"This name will override the sender name, usually the site name, for "
+"notifications e.g. password reset, but also for emails sent with Gravity Forms "
+"and WooCommerce. If no name is added, a default will be used from the config "
+"shown as a placeholder here. If there's no settings in the config, the system "
+"settings will be used."
+msgstr ""
+"Det här namnet kommer att skriva över avsändaren, vanligtvis webbplatsens namn, "
+"för notifikationer tex löslenordsåterställning, men också e-post skickade med "
+"Gravity Forms och WooCommerce. Om inget namn anges kommer en default att "
+"användas från configen vilket visas som platshållare här. Finns det ingen "
+"inställning i configen kommer systeminställningarna att användas."
+
+#: src/Admin/Admin_Mail_Tab.php:113
+msgid "E-mail address"
+msgstr "E-postadress"
+
+#: src/Admin/Admin_Mail_Tab.php:119
+msgid ""
+"This email address will override the system email address for notifications e."
+"g. password reset, but also addresses added to the settings for example Gravity "
+"Forms and WooCommerce. If no address is added, a default will be used from the "
+"config shown as a placeholder here. If there's no settings in the config, the "
+"system settings will be used."
+msgstr ""
+"Den här e-postadressen kommer att skriva över systemets e-postaddress för "
+"notifikationer tex löslenordsåterställning, men också e-post skickade med "
+"Gravity Forms och WooCommerce. Om ingen adress anges kommer en default att "
+"användas från configen vilket visas som platshållare här. Finns det ingen "
+"inställning i configen kommer systeminställningarna att användas."
+
+#: src/Admin/Admin_Pages.php:33
 msgid "Reusable Blocks"
 msgstr "Återanvändbara block"
 
-#: src/Admin/Admin_Pages.php:63
+#: src/Admin/Admin_Pages.php:64
 msgid "Company Cloud Dashboard"
 msgstr "Company Cloud Dashboard"
 
-#: src/Admin/Admin_Pages.php:63
+#: src/Admin/Admin_Pages.php:64
 msgid "My Website"
 msgstr "Min webbplats"
 
-#: src/Modules/Comments.php:69 src/Modules/Comments.php:139
+#: src/Modules/Comments.php:83 src/Modules/Comments.php:153
 msgid "This site does not support comments."
 msgstr "Den här webbplatsen stöder inte kommentarer."
 
@@ -282,8 +346,7 @@ msgid "Configuration files properly secured."
 msgstr "Konfigurationsfiler är ordentligt säkrade."
 
 #: src/Modules/Health_Checks/Security/Bm_Config_Check.php:15
-msgid ""
-"The application and environment configuration files are properly secured."
+msgid "The application and environment configuration files are properly secured."
 msgstr "Program- och miljökonfigurationsfilerna är ordentligt säkrade."
 
 #: src/Modules/Health_Checks/Security/Bm_Config_Check.php:20
@@ -296,8 +359,8 @@ msgid ""
 "please CHMOD the file to a permission set less than, or equal to 440."
 msgstr ""
 "Det kan vara möjligt att få tillgång till filerna i konfigureringskatalogen. "
-"För att åtgärda detta, vänligen CHMOD filen till en behörighetsuppsättning "
-"som är mindre än eller lika med 440."
+"För att åtgärda detta, vänligen CHMOD filen till en behörighetsuppsättning som "
+"är mindre än eller lika med 440."
 
 #: src/Modules/Health_Checks/Security/Bm_Config_Check.php:42
 msgid "Configuration File Permissions"
@@ -316,8 +379,7 @@ msgid "There is no .env file present."
 msgstr "Det finns ingen .env-fil."
 
 #: src/Modules/Health_Checks/Security/Env_File_Check.php:21
-msgid ""
-"You are not using a .env file on this environment. No need to do anything."
+msgid "You are not using a .env file on this environment. No need to do anything."
 msgstr ""
 "Du använder inte en .env-fil i den här miljön. Du behöver inte göra något."
 
@@ -331,8 +393,7 @@ msgid ""
 "immediately as personal data and/or passwords could be exposed."
 msgstr ""
 "Detta problem utgör en stor säkerhetsbrist i systemet. Detta bör åtgärdas "
-"omedelbart eftersom personuppgifter och/eller lösenord kan komma att "
-"avslöjas."
+"omedelbart eftersom personuppgifter och/eller lösenord kan komma att avslöjas."
 
 #: src/Modules/Health_Checks/Security/Env_File_Check.php:40
 msgid ".env File Permissions"
@@ -348,8 +409,8 @@ msgid ""
 "latest security updates and monitoring to keep it safe and secure."
 msgstr ""
 "Denna webbplats omfattas av ett underhållsavtal. Det innebär att den får de "
-"senaste säkerhetsuppdateringarna och övervakningen för att hålla den säker "
-"och trygg."
+"senaste säkerhetsuppdateringarna och övervakningen för att hålla den säker och "
+"trygg."
 
 #: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:25
 msgid "This site is not covered by a maintenance plan."
@@ -359,15 +420,14 @@ msgstr "Denna webbplats omfattas inte av något underhållsavtal."
 msgid ""
 "Not having the site on a maintenance plan means that you need to take extra "
 "care updating WordPress, plugins and themes to keep it up to date with the "
-"latest security fixes. Contact us at <a href=\"mailto:"
-"support@bernskioldmedia.com\">support@bernskioldmedia.com</a> to find out "
-"more."
+"latest security fixes. Contact us at <a href=\"mailto:support@bernskioldmedia."
+"com\">support@bernskioldmedia.com</a> to find out more."
 msgstr ""
-"Om webbplatsen inte har ett underhållsavtal innebär det att du måste vara "
-"extra noga med att uppdatera WordPress, plugins och teman för att hålla den "
+"Om webbplatsen inte har ett underhållsavtal innebär det att du måste vara extra "
+"noga med att uppdatera WordPress, plugins och teman för att hålla den "
 "uppdaterad med de senaste säkerhetsfixarna. Kontakta oss på <a href=\"mailto:"
-"support@bernskioldmedia.com\">support@bernskioldmedia.com</a> för att få "
-"veta mer."
+"support@bernskioldmedia.com\">support@bernskioldmedia.com</a> för att få veta "
+"mer."
 
 #: src/Modules/Health_Checks/Security/Maintenance_Plan_Check.php:39
 msgid "Maintenance Plan Coverage"
@@ -395,39 +455,51 @@ msgstr "Filen wp-config.php kan läsas av allmänheten."
 
 #: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:23
 msgid ""
-"It could be possible to access the wp-config.php file publicly. To fix, "
-"please CHMOD the file to a permission set less than, or equal to 440."
+"It could be possible to access the wp-config.php file publicly. To fix, please "
+"CHMOD the file to a permission set less than, or equal to 440."
 msgstr ""
 "Det kan vara möjligt att komma åt filen wp-config.php offentligt. För att "
-"åtgärda detta, vänligen ändra filens rättigheter till en "
-"behörighetsuppsättning som är mindre än eller lika med 440."
+"åtgärda detta, vänligen ändra filens rättigheter till en behörighetsuppsättning "
+"som är mindre än eller lika med 440."
 
 #: src/Modules/Health_Checks/Security/Wp_Config_Permissions_Check.php:31
 msgid "WP-Config File Permissions"
 msgstr "Filbehörigheter för wp-config"
 
-#: src/Modules/Mail.php:27
+#: src/Modules/Mail.php:45
 msgid "E-Mails Not Sending:"
 msgstr "E-postmeddelanden skickas inte:"
 
-#: src/Modules/Mail.php:29
+#: src/Modules/Mail.php:47
 msgid ""
 "Sending via SMTP is currently enabled but the configuration has not been "
-"properly set in the configuration files. Sending via SMTP is therefore "
-"disabled and e-mail will be send via the default PHP sendmail functions."
+"properly set in the configuration files. Sending via SMTP is therefore disabled "
+"and e-mail will be send via the default PHP sendmail functions."
 msgstr ""
 "Sändning via SMTP är för närvarande aktiverat, men konfigurationen har inte "
 "ställts in korrekt i konfigurationsfilerna. Sändning via SMTP är därför "
 "inaktiverad och e-post kommer att skickas via PHP:s standardfunktioner för "
 "sendmail."
 
-#: src/Modules/Mail.php:30
+#: src/Modules/Mail.php:48
 msgid ""
 "You can fix this error by either disabling SMTP in the configuration, or "
 "providing proper configuration values."
 msgstr ""
-"Du kan åtgärda felet genom att antingen inaktivera SMTP i konfigurationen "
-"eller ange korrekta konfigurationsvärden."
+"Du kan åtgärda felet genom att antingen inaktivera SMTP i konfigurationen eller "
+"ange korrekta konfigurationsvärden."
+
+#: src/Modules/Mail.php:249
+msgid "notification"
+msgstr "notifikation"
+
+#: src/Modules/Matomo.php:174
+msgid "Matomo Site ID"
+msgstr "Matomosid-ID"
+
+#: src/Modules/Matomo_Sync.php:39
+msgid "Matomo"
+msgstr "Matomo"
 
 #. translators: 1. Blog Name
 #: src/Modules/Multisite.php:80
@@ -442,8 +514,8 @@ msgstr "BM-förslag"
 #: src/Modules/Plugins.php:81
 msgid ""
 "Some plugins may affect the display, performance, and reliability of your "
-"website negatively. Please consider <a href='%s'>Bernskiold Media "
-"suggestions</a> and if in doubt consult with Bernskiold Media support."
+"website negatively. Please consider <a href='%s'>Bernskiold Media suggestions</"
+"a> and if in doubt consult with Bernskiold Media support."
 msgstr ""
 "Vissa tillägg kan påverka visningen, prestandan och pålitligheten på din "
 "webbplats på ett negativt sätt. Överväg gärna att använda <a "
@@ -456,15 +528,15 @@ msgstr "Lär dig mer"
 
 #: src/Modules/Plugins.php:114
 msgid ""
-"Warning: This plugin provides additional enterprise-grade protective "
-"measures, alongside WordPress core tweaks for an optimal experience. If you "
-"deactive, you should consider adding similar protective measuress.\n"
+"Warning: This plugin provides additional enterprise-grade protective measures, "
+"alongside WordPress core tweaks for an optimal experience. If you deactive, you "
+"should consider adding similar protective measuress.\n"
 "\n"
 "Are you sure you want to deactivate?"
 msgstr ""
-"Varning: Detta tillägg ger särskilda skyddsåtgärder på enterprise-nivå, "
-"utöver justeringar av WordPress för en optimal upplevelse. Om du deaktiverar "
-"bör du överväga att lägga in liknande skyddsåtgärder.\n"
+"Varning: Detta tillägg ger särskilda skyddsåtgärder på enterprise-nivå, utöver "
+"justeringar av WordPress för en optimal upplevelse. Om du deaktiverar bör du "
+"överväga att lägga in liknande skyddsåtgärder.\n"
 "\n"
 "Är du säker på att du vill deaktivera?"
 
@@ -472,11 +544,19 @@ msgstr ""
 msgid "Authentication is required."
 msgstr "Autentisering krävs."
 
-#: src/Modules/Security/TwoFactorAuthentication.php:280
+#: src/Modules/Security/TwoFactorAuthentication.php:53
+msgid ""
+"The Two Factor Authentication module requires the Imagick PHP extension to be "
+"installed."
+msgstr ""
+"Modulen för tvåfaktorsautentisering kräver att PHP-tillägget Imagick är "
+"installerat."
+
+#: src/Modules/Security/TwoFactorAuthentication.php:293
 msgid "The code you entered is not valid. Please try again."
 msgstr "Koden du angav är inte giltig. Försök igen."
 
-#: src/Modules/Security/TwoFactorAuthentication.php:306
+#: src/Modules/Security/TwoFactorAuthentication.php:319
 msgid "The backup code you entered is not valid. Please try again."
 msgstr "Återställningskoden du angav är inte giltig. Försök igen."
 
@@ -525,8 +605,7 @@ msgid ""
 "Protect your account and increase security by enabling two-factor "
 "authentication."
 msgstr ""
-"Skydda ditt konto och öka säkerheten genom att aktivera "
-"tvåfaktorsautentisering."
+"Skydda ditt konto och öka säkerheten genom att aktivera tvåfaktorsautentisering."
 
 #: views/admin/two-factor.php:12
 msgid "Activation Status"
@@ -564,12 +643,12 @@ msgstr "Aktivera tvåfaktorsautentisering"
 #: views/admin/two-factor.php:31 views/public/2fa-activation.php:11
 msgid ""
 "We recommend using an application such as\n"
-"\t\t\t\t<a href=\"https://1password.com\" target=\"_blank\">1Password</a> "
-"that lets you both store passwords securely, as well two factor codes."
+"\t\t\t\t<a href=\"https://1password.com\" target=\"_blank\">1Password</a> that "
+"lets you both store passwords securely, as well two factor codes."
 msgstr ""
-"Vi rekommenderar att du använder ett program som t.ex <a href="
-"\"https://1password.com\" target=\"_blank\">1Password</a> som låter dig både "
-"lagra lösenord och tvåfaktorskoder säkert."
+"Vi rekommenderar att du använder ett program som t.ex <a "
+"href=\"https://1password.com\" target=\"_blank\">1Password</a> som låter dig "
+"både lagra lösenord och tvåfaktorskoder säkert."
 
 #: views/admin/two-factor.php:33 views/public/2fa-activation.php:13
 msgid ""
@@ -599,11 +678,11 @@ msgstr "Fortsätt till validering"
 
 #: views/admin/two-factor.php:47 views/public/2fa-activation.php:26
 msgid ""
-"Great! Your authenticator app should now be giving you a six-digit code "
-"back. Please enter it in below. "
+"Great! Your authenticator app should now be giving you a six-digit code back. "
+"Please enter it in below. "
 msgstr ""
-"Bra! Din autentiseringsapp bör nu ge dig en sexsiffrig kod tillbaka. Ange "
-"den nedan."
+"Bra! Din autentiseringsapp bör nu ge dig en sexsiffrig kod tillbaka. Ange den "
+"nedan."
 
 #: views/admin/two-factor.php:49
 msgid "Unfortunately the code you entered was not valid . Please try again"
@@ -615,8 +694,8 @@ msgstr "Kontrollera koden"
 
 #: views/admin/two-factor.php:67 views/public/2fa-activation.php:46
 msgid ""
-"Please store the follow recovery codes securely in case you loose access. "
-"You will not be able to see these again."
+"Please store the follow recovery codes securely in case you loose access. You "
+"will not be able to see these again."
 msgstr ""
 "Spara följande återställningskoder om du skulle förlora åtkomst till din "
 "autentiseringsapp. Du kommer inte att kunna se dessa igen."
@@ -638,8 +717,7 @@ msgid ""
 "You are required to activate two-factor authentication for your account to "
 "strengthen security."
 msgstr ""
-"Du måste aktivera tvåfaktorsautentisering för ditt konto för att öka "
-"säkerheten."
+"Du måste aktivera tvåfaktorsautentisering för ditt konto för att öka säkerheten."
 
 #: views/public/2fa-activation.php:28
 msgid "Unfortunately the code you entered was not valid . Please try again."
@@ -687,8 +765,8 @@ msgstr "https://www.bernskioldmedia.com/sv"
 
 #. Description of the plugin/theme
 msgid ""
-"Provides an opinionated WordPress experience with clean-up and tweaks that "
-"we at Bernskiold Media have found runs WordPress best."
+"Provides an opinionated WordPress experience with clean-up and tweaks that we "
+"at Bernskiold Media have found runs WordPress best."
 msgstr ""
 "Ger en WordPress-upplevelse med justeringar och förbättringar som vi på "
 "Bernskiold Media tycker optimerar WordPress på bästa sätt."
@@ -726,8 +804,7 @@ msgstr "Det finns en ny version av tillägget %s tillgängligt."
 #: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:218
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
-msgstr ""
-"Det gick inte att avgöra om det finns tillgängliga uppdateringar för %s."
+msgstr "Det gick inte att avgöra om det finns tillgängliga uppdateringar för %s."
 
 #: views/admin/about-bm.php:12
 msgctxt "bm website about url"
