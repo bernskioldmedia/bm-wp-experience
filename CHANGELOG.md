@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 3.11.6 - 2023-12-08
+
+### What's Changed
+
+* Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/110
+* Bump dependabot/fetch-metadata from 1.5.1 to 1.6.0 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/105
+* Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/104
+* Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/112
+* Bump postcss and postcss-preset-env by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/113
+* Mail Settings by @annlickander in https://github.com/bernskioldmedia/bm-wp-experience/pull/119
+* Bump browserify-sign from 4.2.1 to 4.2.2 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/118
+* Bump actions/setup-node from 3 to 4 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/117
+* Bump @babel/traverse from 7.23.0 to 7.23.2 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/116
+* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/bernskioldmedia/bm-wp-experience/pull/115
+* Upgrade NPM packages (automated) by @github-actions in https://github.com/bernskioldmedia/bm-wp-experience/pull/114
+
+**Full Changelog**: https://github.com/bernskioldmedia/bm-wp-experience/compare/3.11.5...3.11.6
+
 ## 3.11.5 - 2023-09-18
 
 Fixes a bug where faulty code was introduced in the Mail module.
