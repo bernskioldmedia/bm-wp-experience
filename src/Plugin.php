@@ -23,6 +23,7 @@ class Plugin extends BasePlugin {
 		Admin\Admin_Columns::class,
 		Admin\Admin_Pages::class,
         Admin\Admin_Analytics_Tab::class,
+        Admin\Admin_Mail_Tab::class,
 	];
 
 	protected static array $modules = [
