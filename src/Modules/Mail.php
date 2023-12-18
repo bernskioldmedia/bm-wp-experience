@@ -15,9 +15,9 @@ class Mail extends Module {
 		add_action( 'phpmailer_init', [ self::class, 'send_mail_via_smtp' ] );
 		add_action( 'admin_notices', [ self::class, 'warn_improper_smtp_configuration' ] );
 
-        add_filter('wp_mail_from', [ self::class, 'change_username_in_from_email_address_setting' ] );
-        add_filter('wp_mail_from_name', [ self::class, 'change_from_name_setting' ] );
-        add_filter('wp_mail_from', [ self::class, 'change_from_email_address_setting' ] );
+        add_filter('wp_mail_from', [ self::class, 'change_username_in_from_email_address_setting' ], 999 );
+        add_filter('wp_mail_from_name', [ self::class, 'change_from_name_setting' ], 999 );
+        add_filter('wp_mail_from', [ self::class, 'change_from_email_address_setting' ], 999 );
 
     }
 
