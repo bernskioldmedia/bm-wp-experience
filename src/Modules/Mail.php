@@ -71,6 +71,7 @@ class Mail extends Module {
 		$mailer->set( 'Password', self::get_smtp_password() );
 		$mailer->set( 'SMTPAuth', true );
 		$mailer->set( 'SMTPSecure', self::get_smtp_secure_type() );
+        $mailer->set( 'Encoding', 'quoted-printable' );
 		$mailer->isSMTP();
 	}
 
